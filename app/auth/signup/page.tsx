@@ -4,7 +4,6 @@ import { createClient } from '@/lib/supabase'
 import Link from 'next/link'
 
 export default function SignupPage() {
-  const [step, setStep] = useState(1)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [firstName, setFirstName] = useState('')
@@ -30,10 +29,10 @@ export default function SignupPage() {
   }
 
   const logo = (
-    <div style={{ marginTop: '48px', marginBottom: '64px', textAlign: 'center' }}>
+    <div style={{ marginTop: '48px', marginBottom: '56px', textAlign: 'center' }}>
       <picture>
         <source media="(max-width: 768px)" srcSet="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/7f897d71-28bf-4618-b66d-19689f551029/MAISON_SANGUINE_LOGOTYPE_MOBILE_DARK.png?format=1500w" />
-        <img src="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/d680077f-c82d-4753-9711-123fcb38ef39/MAISON_SANGUINE_LOGOTYPE_DARK.png?format=1500w" alt="Maison Sanguine" style={{ height: '32px', width: 'auto' }} />
+        <img src="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/d680077f-c82d-4753-9711-123fcb38ef39/MAISON_SANGUINE_LOGOTYPE_DARK.png?format=1500w" alt="Maison Sanguine" style={{ height: '48px', width: 'auto' }} />
       </picture>
     </div>
   )
@@ -51,7 +50,7 @@ export default function SignupPage() {
   )
 
   return (
-    <main style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}>
+    <main style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', paddingBottom: '60px' }}>
       {logo}
       <div style={{ width: '100%', maxWidth: '480px', padding: '0 24px', boxSizing: 'border-box' }}>
         <h1 style={{ fontSize: '36px', fontWeight: '200', letterSpacing: '4px', textTransform: 'uppercase', color: '#111', margin: '0 0 24px', lineHeight: '1.2' }}>Create your MS Account</h1>

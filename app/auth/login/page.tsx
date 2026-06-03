@@ -21,11 +21,11 @@ export default function LoginPage() {
   }
 
   return (
-    <main style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}>
-      <div style={{ marginTop: '48px', marginBottom: '64px', textAlign: 'center' }}>
+    <main style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', paddingBottom: '60px' }}>
+      <div style={{ marginTop: '48px', marginBottom: '56px', textAlign: 'center' }}>
         <picture>
           <source media="(max-width: 768px)" srcSet="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/7f897d71-28bf-4618-b66d-19689f551029/MAISON_SANGUINE_LOGOTYPE_MOBILE_DARK.png?format=1500w" />
-          <img src="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/d680077f-c82d-4753-9711-123fcb38ef39/MAISON_SANGUINE_LOGOTYPE_DARK.png?format=1500w" alt="Maison Sanguine" style={{ height: '32px', width: 'auto' }} />
+          <img src="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/d680077f-c82d-4753-9711-123fcb38ef39/MAISON_SANGUINE_LOGOTYPE_DARK.png?format=1500w" alt="Maison Sanguine" style={{ height: '48px', width: 'auto' }} />
         </picture>
       </div>
       <div style={{ width: '100%', maxWidth: '480px', padding: '0 24px', boxSizing: 'border-box' }}>
@@ -37,7 +37,7 @@ export default function LoginPage() {
           <span style={{ fontSize: '13px', color: '#444', fontWeight: '300' }}>Don't have an account? </span>
           <Link href="/auth/signup" style={{ fontSize: '13px', color: '#111', fontWeight: '500', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Sign up</Link>
         </div>
-        {error && <p style={{ color: '#c0392b', fontSize: '12px', marginBottom: '16px', letterSpacing: '1px' }}>{error}</p>}
+        {error && <p style={{ color: '#c0392b', fontSize: '12px', marginBottom: '16px' }}>{error}</p>}
         <div style={{ marginBottom: '24px' }}>
           <label style={{ display: 'block', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#111', marginBottom: '10px', fontWeight: '500' }}>Email *</label>
           <input type="email" value={email} onChange={e => setEmail(e.target.value)} style={{ width: '100%', border: 'none', borderBottom: '1px solid #ccc', padding: '10px 0', fontSize: '14px', color: '#111', outline: 'none', background: 'transparent', boxSizing: 'border-box', fontFamily: 'inherit' }} />
