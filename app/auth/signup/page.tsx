@@ -39,7 +39,7 @@ export default function SignupPage() {
   if (success) return (
     <main style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}>
       {logo}
-      <div style={{ width: '100%', maxWidth: '480px', padding: '0 24px', boxSizing: 'border-box' }}>
+      <div style={{ width: '100%', maxWidth: '620px', padding: '0 24px', boxSizing: 'border-box' }}>
         <h1 style={{ fontSize: '44px', fontWeight: '200', letterSpacing: '5px', textTransform: 'uppercase', color: '#111', margin: '0 0 24px' }}>Confirm your email</h1>
         <p style={{ fontSize: '15px', color: '#111', lineHeight: '1.9', fontWeight: '300' }}>
           Please check your inbox at <strong>{email}</strong> and click the confirmation link to activate your account.
@@ -51,7 +51,7 @@ export default function SignupPage() {
   return (
     <main style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', paddingBottom: '60px' }}>
       {logo}
-      <div style={{ width: '100%', maxWidth: '480px', padding: '0 24px', boxSizing: 'border-box' }}>
+      <div style={{ width: '100%', maxWidth: '620px', padding: '0 24px', boxSizing: 'border-box' }}>
         <h1 style={{ fontSize: '44px', fontWeight: '200', letterSpacing: '5px', textTransform: 'uppercase', color: '#111', margin: '0 0 24px', lineHeight: '1.2' }}>Create your MS Account</h1>
         <p style={{ fontSize: '15px', color: '#111', lineHeight: '1.9', margin: '0 0 32px', fontWeight: '300' }}>
           Your personal MS account allows you to view your invitations and experience reservations, and benefit from additional exclusive features.
