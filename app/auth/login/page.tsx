@@ -28,7 +28,7 @@ export default function LoginPage() {
           <img src="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/d680077f-c82d-4753-9711-123fcb38ef39/MAISON_SANGUINE_LOGOTYPE_DARK.png?format=1500w" alt="Maison Sanguine" style={{ height: '50px', width: 'auto' }} />
         </picture>
       </div>
-      <div style={{ width: '100%', maxWidth: '480px', padding: '0 24px', boxSizing: 'border-box' }}>
+      <div style={{ width: '100%', maxWidth: '620px', padding: '0 24px', boxSizing: 'border-box' }}>
         <h1 style={{ fontSize: '44px', fontWeight: '200', letterSpacing: '5px', textTransform: 'uppercase', color: '#111', margin: '0 0 24px', lineHeight: '1.2' }}>Welcome</h1>
         <p style={{ fontSize: '15px', color: '#111', lineHeight: '1.9', margin: '0 0 32px', fontWeight: '300' }}>
           Log in to access your personal MS Account or register using the link below. Your personal account allows you to view your invitations and experience reservations, and benefit from additional exclusive features.
