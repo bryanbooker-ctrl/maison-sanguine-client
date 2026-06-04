@@ -58,7 +58,7 @@ export default function DashboardPage() {
         .ms-tab-btn:hover:not(.active){color:#555}
         .ms-content-area{padding-top:120px}
         @media(max-width:1024px){.ms-content-area{padding-top:80px}}
-        .ms-myms-grid{background:#f5f5f3;min-height:55vh;padding:80px 90px 80px 108px;display:grid;grid-template-columns:1fr 1fr auto;gap:60px;align-items:start;box-sizing:border-box}
+        .ms-myms-grid{background:#f5f5f3;min-height:55vh;padding:80px 90px 80px 90px;display:grid;grid-template-columns:1fr 1fr auto;gap:60px;align-items:start;box-sizing:border-box}
         @media(max-width:1024px){.ms-myms-grid{grid-template-columns:1fr!important;padding:48px 24px!important;gap:32px!important}}
         .ms-content-pad{padding:64px 90px 80px;box-sizing:border-box}
         @media(max-width:1024px){.ms-content-pad{padding:48px 24px 60px!important}}
