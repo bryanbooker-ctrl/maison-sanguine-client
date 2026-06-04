@@ -182,8 +182,8 @@ const HEADER_HTML = `
     </a>
     <div class="msh-sep"></div>
     <nav class="msh-nav">
-      <div class="msh-nav-item" data-panel="season"><a href="https://maisonsanguine.com/season" class="msh-nav-link">Season</a></div>
-      <div class="msh-nav-item" data-panel="world"><a href="https://maisonsanguine.com/about" class="msh-nav-link">Our World</a></div>
+      <div class="msh-nav-item" data-panel="season"><span class="msh-nav-link">Season</span></div>
+      <div class="msh-nav-item" data-panel="world"><span class="msh-nav-link">Our World</span></div>
       <div class="msh-nav-item"><a href="https://maisonsanguine.com/news" class="msh-nav-link">Stories</a></div>
     </nav>
   </div>
