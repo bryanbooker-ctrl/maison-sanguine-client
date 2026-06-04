@@ -51,7 +51,7 @@ export default function DashboardPage() {
       <style>{`
         .ms-tabs-bar{position:sticky;top:120px;z-index:8000;background:#fff;border-bottom:1px solid #e8e8e8}
         @media(max-width:1024px){.ms-tabs-bar{top:80px}}
-        .ms-tabs-inner{display:flex;align-items:center;padding:0 90px}
+        .ms-tabs-inner{display:flex;align-items:center;padding-left:90px}
         @media(max-width:1024px){.ms-tabs-inner{padding:0 24px}}
         .ms-tab-btn{background:none;border:none;cursor:pointer;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:#bbb;padding:20px 0;margin-right:44px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
         .ms-tab-btn.active{color:#111;border-bottom-color:#111;font-weight:500}
