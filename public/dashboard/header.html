@@ -1,0 +1,210 @@
+<div id="ms-header-inject">
+  <style>
+    #ms-header-inject *, #ms-header-inject *::before, #ms-header-inject *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    #ms-header-inject :root { --h:120px; --hm:80px; --px:90px; --pxm:24px; }
+    #ms-header-inject #msh { position:fixed;top:0;left:0;width:100%;height:120px;z-index:9000;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 90px;background:#000;box-sizing:border-box; }
+    #ms-header-inject .msh-left { display:flex;align-items:center;gap:20px; }
+    #ms-header-inject .msh-logo150 { display:flex;align-items:center;text-decoration:none;flex-shrink:0;transition:opacity .25s; }
+    #ms-header-inject .msh-logo150 img { width:80px;height:70px;object-fit:contain;filter:brightness(0) invert(1);display:block;flex-shrink:0; }
+    #ms-header-inject .msh-sep { width:1px;height:24px;background:#fff;flex-shrink:0; }
+    #ms-header-inject .msh-nav { display:flex;align-items:center;gap:28px;height:120px; }
+    #ms-header-inject .msh-nav-item { position:relative;height:120px;display:flex;align-items:center;cursor:pointer; }
+    #ms-header-inject .msh-nav-link { font-size:13px;font-weight:400;letter-spacing:.07em;color:#fff;text-decoration:none;transition:color .25s;user-select:none;font-family:inherit; }
+    #ms-header-inject .msh-nav-item:hover .msh-nav-link { color:rgba(255,255,255,.65); }
+    #ms-header-inject .msh-nav-item.on .msh-nav-link { color:#fff; }
+    #ms-header-inject .msh-nav-item.on::after { content:'';position:absolute;bottom:45px;left:0;right:0;height:2px;background:#fff; }
+    #ms-header-inject .msh-center { display:flex;justify-content:center;text-decoration:none;transition:opacity .25s; }
+    #ms-header-inject .msh-center:hover { opacity:.4; }
+    #ms-header-inject .msh-center img { height:50px;width:auto;object-fit:contain;filter:brightness(0) invert(1);display:block; }
+    #ms-header-inject .msh-right { display:flex;align-items:center;justify-content:flex-end;gap:28px; }
+    #ms-header-inject .msh-icon { display:flex;align-items:center;color:#fff;text-decoration:none;transition:opacity .25s; }
+    #ms-header-inject .msh-icon svg { width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.35; }
+    #ms-header-inject .msh-logout { background:none;border:none;cursor:pointer;color:#fff;font-size:11px;letter-spacing:.07em;padding:0;font-family:inherit; }
+
+    /* MEGA MENU */
+    #ms-header-inject #msm { position:fixed;top:0;left:0;width:100%;height:calc(65vh + 120px);z-index:8998;background:#000;display:none;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.16,1,.3,1); }
+    #ms-header-inject #msm.opening { clip-path:inset(0 0 0% 0); }
+    #ms-header-inject .msm-panel { position:absolute;inset:0;display:grid;grid-template-columns:210px 1fr;grid-template-rows:auto 1fr;grid-template-areas:"sb ti" "sb ca";padding:44px 90px 48px;padding-top:calc(44px + 120px);opacity:0;pointer-events:none;transition:opacity .42s ease,transform .42s ease; }
+    #ms-header-inject .msm-panel.visible { opacity:1;pointer-events:auto;transform:translateX(0)!important; }
+    #ms-header-inject .msm-sb { grid-area:sb;padding-right:60px;padding-top:55px;display:flex;flex-direction:column; }
+    #ms-header-inject .msm-sb a { display:block;padding:9px 0;font-size:12px;font-weight:400;letter-spacing:.05em;color:rgba(255,255,255,.75);text-decoration:none;transition:color .2s; }
+    #ms-header-inject .msm-sb a:hover { color:#fff; }
+    #ms-header-inject .msm-ti { grid-area:ti;padding-left:52px;padding-bottom:40px;display:flex;flex-direction:column;justify-content:flex-end; }
+    #ms-header-inject .msm-ti-head { font-size:28px;font-weight:100;letter-spacing:-.025em;text-transform:uppercase;color:#fff;line-height:.86;display:flex;align-items:baseline;gap:11px; }
+    #ms-header-inject .msm-ti-head em { font-style:italic;font-weight:200;font-size:32px;color:#fff; }
+    #ms-header-inject #msm-ov { position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:8997;opacity:0;pointer-events:none;transition:opacity .4s; }
+    #ms-header-inject #msm-ov.show { opacity:1;pointer-events:auto; }
+
+    /* MOBILE HEADER */
+    #ms-header-inject #msm-mob { display:none;position:fixed;top:0;left:0;width:100%;height:80px;padding:0 24px;z-index:10010;background:#000;box-sizing:border-box;align-items:center; }
+    #ms-header-inject .mob-left { position:relative;flex:1;display:flex;align-items:center;height:100%; }
+    #ms-header-inject .mob-st { display:flex;align-items:center;gap:14px;transition:opacity .22s; }
+    #ms-header-inject .mob-st-0 { position:relative; }
+    #ms-header-inject .mob-st-1 { position:absolute;left:0;top:50%;transform:translateY(-50%);opacity:0;pointer-events:none; }
+    #ms-header-inject .mob-150 { display:flex;align-items:center;text-decoration:none;flex-shrink:0; }
+    #ms-header-inject .mob-150 img { width:60px;height:50px;object-fit:contain;filter:brightness(0) invert(1);display:block; }
+    #ms-header-inject .mob-sep { width:1px;height:24px;background:#fff;flex-shrink:0; }
+    #ms-header-inject .mob-burger { position:relative;width:22px;height:14px;background:none;border:none;padding:0;cursor:pointer;flex-shrink:0; }
+    #ms-header-inject .mob-line { position:absolute;left:0;width:100%;height:1px;background:rgba(255,255,255,.9); }
+    #ms-header-inject .mob-line:nth-child(1) { top:3px; }
+    #ms-header-inject .mob-line:nth-child(2) { top:9px; }
+    #ms-header-inject .mob-x-btn { display:flex;align-items:center;justify-content:center;width:22px;height:22px;background:none;border:none;padding:0;cursor:pointer;color:#fff;flex-shrink:0; }
+    #ms-header-inject .mob-center-logo { position:absolute;left:50%;transform:translateX(-50%);display:flex;text-decoration:none; }
+    #ms-header-inject .mob-center-logo img { height:50px;width:auto;object-fit:contain;filter:brightness(0) invert(1);display:block; }
+    #ms-header-inject .mob-right { flex:1;display:flex;align-items:center;justify-content:flex-end;gap:16px;transition:opacity .22s; }
+    #ms-header-inject .mob-icon-btn { display:flex;align-items:center;color:#fff;background:none;border:none;padding:0;cursor:pointer;text-decoration:none; }
+    #ms-header-inject .mob-icon-btn svg { width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1; }
+    #ms-header-inject #msm-mob.menu-open .mob-st-0 { opacity:0;pointer-events:none; }
+    #ms-header-inject #msm-mob.menu-open .mob-st-1 { opacity:1;pointer-events:auto; }
+    #ms-header-inject #msm-mob.menu-open .mob-right { opacity:0;pointer-events:none; }
+
+    /* MENU MOBILE */
+    #ms-header-inject #mob-menu { display:none;position:fixed;inset:0;z-index:10001;background:#000;overflow-y:auto;clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.16,1,.3,1); }
+    #ms-header-inject #mob-menu.open { clip-path:inset(0 0 0% 0); }
+    #ms-header-inject .mob-menu-content { opacity:0;transition:opacity .42s ease;padding-top:80px; }
+    #ms-header-inject #mob-menu.content-vis .mob-menu-content { opacity:1; }
+    #ms-header-inject .mob-list { padding:36px 24px 0;list-style:none; }
+    #ms-header-inject .mob-li { display:flex;align-items:center;justify-content:space-between;padding:12px 0;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.07); }
+    #ms-header-inject .mob-li-link { font-size:14px;font-weight:400;letter-spacing:.05em;color:rgba(255,255,255,.85);text-decoration:none;font-family:inherit; }
+    #ms-header-inject .mob-li-chev svg { width:18px;height:18px;fill:none;stroke:#fff;stroke-width:1.35; }
+    #ms-header-inject .mob-utils { padding:32px 24px 0;display:flex;flex-direction:column;gap:24px; }
+    #ms-header-inject .mob-util { display:flex;align-items:center;gap:14px;text-decoration:none;color:rgba(255,255,255,.85);background:none;border:none;padding:0;cursor:pointer;font-family:inherit; }
+    #ms-header-inject .mob-util svg { width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.35;opacity:.45; }
+    #ms-header-inject .mob-util-label { font-size:13px;font-weight:400; }
+
+    /* SOUS-MENUS MOBILE */
+    #ms-header-inject .mob-sub { display:none;position:fixed;inset:0;z-index:10002;background:#000;overflow-y:auto;transform:translateX(100%);opacity:0;transition:transform .42s cubic-bezier(.16,1,.3,1),opacity .3s ease; }
+    #ms-header-inject .mob-sub.open { transform:translateX(0);opacity:1; }
+    #ms-header-inject .mob-sub-content { opacity:0;transition:opacity .3s ease; }
+    #ms-header-inject .mob-sub.open .mob-sub-content { opacity:1;transition-delay:.12s; }
+    #ms-header-inject .mob-sub-hdr2 { display:flex;align-items:center;padding:20px 24px;background:#000;position:relative;margin-top:80px; }
+    #ms-header-inject .mob-sub-back { display:flex;align-items:center;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.7);padding:0; }
+    #ms-header-inject .mob-sub-back svg { width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:1; }
+    #ms-header-inject .mob-sub-heading { position:absolute;left:50%;transform:translateX(-50%);font-size:13px;font-weight:600;letter-spacing:.04em;color:#fff;white-space:nowrap; }
+    #ms-header-inject .mob-sub-list { padding:20px 24px 0;list-style:none; }
+    #ms-header-inject .mob-sub-list li { padding:19px 0;border-bottom:1px solid rgba(255,255,255,.07); }
+    #ms-header-inject .mob-sub-list a { font-size:13px;font-weight:400;letter-spacing:.05em;color:rgba(255,255,255,.75);text-decoration:none;display:block; }
+
+    @media (min-width:1025px) { #ms-header-inject #msh { display:grid; } #ms-header-inject #msm-mob,#ms-header-inject #mob-menu,#ms-header-inject .mob-sub { display:none!important; } }
+    @media (max-width:1024px) { #ms-header-inject #msh,#ms-header-inject #msm { display:none!important; } #ms-header-inject #msm-mob { display:flex; } #ms-header-inject #mob-menu,#ms-header-inject .mob-sub { display:block; } }
+  </style>
+
+  <!-- DESKTOP HEADER -->
+  <header id="msh">
+    <div class="msh-left">
+      <a href="https://maisonsanguine.com/initiative-maison-sanguine" class="msh-logo150">
+        <img src="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/2e0ae33b-5066-4687-be76-a473301f9389/INITIATIVE_MAISON_SANGUINE_LOGOTYPE_BLACK_RGB_RS.png" alt="IMS">
+      </a>
+      <div class="msh-sep"></div>
+      <nav class="msh-nav">
+        <div class="msh-nav-item" data-panel="season"><span class="msh-nav-link">Season</span></div>
+        <div class="msh-nav-item" data-panel="world"><span class="msh-nav-link">Our World</span></div>
+        <div class="msh-nav-item"><a href="https://maisonsanguine.com/news" class="msh-nav-link">Stories</a></div>
+      </nav>
+    </div>
+    <a href="https://maisonsanguine.com" class="msh-center">
+      <img src="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/d680077f-c82d-4753-9711-123fcb38ef39/MAISON_SANGUINE_LOGOTYPE_DARK.png?format=1500w" alt="Maison Sanguine">
+    </a>
+    <div class="msh-right">
+      <a href="https://maisonsanguine.com/season" class="msh-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></a>
+      <button class="msh-logout" id="ms-logout-desk">Log out</button>
+    </div>
+  </header>
+
+  <!-- MEGA MENU -->
+  <div id="msm">
+    <div class="msm-panel" id="p-season">
+      <div class="msm-sb">
+        <a href="https://maisonsanguine.com/season">Upcoming Events</a>
+        <a href="https://maisonsanguine.com/event/los-angeles-spring-edition">Los Angeles</a>
+        <a href="https://maisonsanguine.com/event/new-york-summer-edition">New York</a>
+        <a href="https://maisonsanguine.com/event/dubai-fall-edition">Dubai</a>
+        <a href="https://maisonsanguine.com/event/miami-winter-edition">Miami</a>
+      </div>
+      <div class="msm-ti"><div class="msm-ti-head">OUR <em>PRODUCTIONS</em></div></div>
+    </div>
+    <div class="msm-panel" id="p-world">
+      <div class="msm-sb">
+        <a href="https://maisonsanguine.com/about/maison-sanguine-contemporary">MS x Art</a>
+        <a href="https://maisonsanguine.com/about/music">MS x Music</a>
+        <a href="https://maisonsanguine.com/msarchives">MS Archives</a>
+        <a href="https://maisonsanguine.com/msarchives">MS Chronicles</a>
+      </div>
+      <div class="msm-ti"><div class="msm-ti-head">OUR <em>WORLD</em></div></div>
+    </div>
+  </div>
+  <div id="msm-ov"></div>
+
+  <!-- MOBILE HEADER -->
+  <div id="msm-mob">
+    <div class="mob-left">
+      <div class="mob-st mob-st-0">
+        <a href="https://maisonsanguine.com/initiative-maison-sanguine" class="mob-150">
+          <img src="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/2e0ae33b-5066-4687-be76-a473301f9389/INITIATIVE_MAISON_SANGUINE_LOGOTYPE_BLACK_RGB_RS.png" alt="IMS">
+        </a>
+        <div class="mob-sep"></div>
+        <button class="mob-burger" id="ms-mob-burger"><span class="mob-line"></span><span class="mob-line"></span></button>
+      </div>
+      <div class="mob-st mob-st-1">
+        <button class="mob-x-btn" id="ms-mob-close">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <a href="https://maisonsanguine.com" class="mob-center-logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/798b7cdb-21d9-4ac6-8c20-eb97e0e193f6/logo+maison+sanguine+mobile_.png?format=1500w" alt="Maison Sanguine">
+    </a>
+    <div class="mob-right">
+      <a href="https://maisonsanguine.com/season" class="mob-icon-btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></a>
+      <button class="mob-icon-btn" id="ms-logout-mob"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3 21c0-4.97 4.03-9 9-9s9 4.03 9 9"/></svg></button>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <nav id="mob-menu">
+    <div class="mob-menu-content">
+      <ul class="mob-list">
+        <li class="mob-li" id="ms-season-trig"><span class="mob-li-link">Season</span><span class="mob-li-chev"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span></li>
+        <li class="mob-li" id="ms-world-trig"><span class="mob-li-link">Our World</span><span class="mob-li-chev"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span></li>
+        <li class="mob-li"><a href="https://maisonsanguine.com/news" class="mob-li-link">Stories</a></li>
+      </ul>
+      <div class="mob-utils">
+        <a href="https://maisonsanguine.com/season" class="mob-util"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><span class="mob-util-label">Find your Experience</span></a>
+        <button class="mob-util" id="ms-logout-menu"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3 21c0-4.97 4.03-9 9-9s9 4.03 9 9"/></svg><span class="mob-util-label">Log out</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SOUS-MENU SEASON -->
+  <nav id="mob-sub-season" class="mob-sub">
+    <div class="mob-sub-hdr2">
+      <button class="mob-sub-back" data-sub-back><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <span class="mob-sub-heading">Season</span>
+    </div>
+    <div class="mob-sub-content">
+      <ul class="mob-sub-list">
+        <li><a href="https://maisonsanguine.com/season">Upcoming Events</a></li>
+        <li><a href="https://maisonsanguine.com/event/los-angeles-spring-edition">Los Angeles</a></li>
+        <li><a href="https://maisonsanguine.com/event/new-york-summer-edition">New York</a></li>
+        <li><a href="https://maisonsanguine.com/event/dubai-fall-edition">Dubai</a></li>
+        <li><a href="https://maisonsanguine.com/event/miami-winter-edition">Miami</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SOUS-MENU OUR WORLD -->
+  <nav id="mob-sub-world" class="mob-sub">
+    <div class="mob-sub-hdr2">
+      <button class="mob-sub-back" data-sub-back><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <span class="mob-sub-heading">Our World</span>
+    </div>
+    <div class="mob-sub-content">
+      <ul class="mob-sub-list">
+        <li><a href="https://maisonsanguine.com/about/maison-sanguine-contemporary">MS x Art</a></li>
+        <li><a href="https://maisonsanguine.com/about/music">MS x Music</a></li>
+        <li><a href="https://maisonsanguine.com/msarchives">MS Archives</a></li>
+        <li><a href="https://maisonsanguine.com/msarchives">MS Chronicles</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
