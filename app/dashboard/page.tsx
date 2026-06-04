@@ -439,7 +439,7 @@ export default function DashboardPage() {
         const script = document.createElement('script')
         script.id = 'ms-header-script'
         script.text = HEADER_SCRIPT
-        setTimeout(function(){ document.body.appendChild(script); }, 100)
+        document.body.appendChild(script)
       }
 
       return () => {
@@ -491,7 +491,7 @@ export default function DashboardPage() {
 
         .ms-tabs-inner {
           display: flex;
-          align-items: start;
+          align-items: center;
           /* Même padding gauche que --px du header = 90px */
           padding: 0 90px;
         }
