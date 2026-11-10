@@ -14,3 +14,4 @@ html body section.ms-car .ms-car__img:has(img[src^="data:"]){background:var(--ms
 @media (min-width:768px){
   html body section.ms-car--legacy .ms-car__head{margin-top:0}
 }
+html body main.ms-page>section.ms-news:first-child{padding-top:calc(var(--ms-header-h,82px) + var(--ms-sy))!important}
