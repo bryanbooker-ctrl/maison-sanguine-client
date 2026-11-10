@@ -8,6 +8,6 @@ html body section.ms-gts a.ms-gts__link{display:inline-flex;align-items:center;g
 @media (min-width:768px){
   .ms-gts{padding:80px 7.5vw}
   html body section.ms-gts div.ms-gts__intro{margin-bottom:56px!important;font-size:clamp(14px,1.1vw,16px)!important}
-  .ms-gts__list{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:4vw;row-gap:32px}
+  .ms-gts__list{row-gap:clamp(28px,3.2vw,56px)}
   html body section.ms-gts a.ms-gts__link{font-size:clamp(14px,1vw,16px)!important}
 }
