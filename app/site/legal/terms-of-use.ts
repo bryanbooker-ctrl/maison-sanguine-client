@@ -9,7 +9,7 @@ export const TERMS_OF_USE: LegalDoc = {
       title: 'Preamble',
       blocks: [
         'The website www.maisonsanguine.com (the “Site”) is published and administered by Maison Sanguine, a company registered in France with its registered office in Paris (“Maison Sanguine”). Access to and use of the Site are governed by these terms and conditions of use (the “Terms of Use”).',
-        `By accessing, browsing, or using the Site, you unconditionally accept the Terms of Use. By using the Site, you also acknowledge Maison Sanguine’s [Privacy Notice](${MS}/legal/privacy-notice) and [Cookie Policy](${MS}/legal/cookie-policy). Maison Sanguine reserves the right to modify these Terms of Use at any time by publishing an updated version. Maison Sanguine invites you to regularly consult this page to stay informed of the Terms of Use applicable to your use of the Site.`,
+        `By accessing, browsing, or using the Site, you unconditionally accept the Terms of Use. By using the Site, you also acknowledge Maison Sanguine’s [Privacy Notice](/legal/privacy-notice) and [Cookie Policy](${MS}/legal/cookie-policy). Maison Sanguine reserves the right to modify these Terms of Use at any time by publishing an updated version. Maison Sanguine invites you to regularly consult this page to stay informed of the Terms of Use applicable to your use of the Site.`,
       ],
     },
     {
@@ -23,7 +23,7 @@ export const TERMS_OF_USE: LegalDoc = {
     {
       title: 'Personal Data',
       blocks: [
-        `Personal data that may be collected when you access our online or offline services is processed in accordance with our [Privacy Notice](${MS}/legal/privacy-notice). You must be at least 21 years old to register or submit personal data via the Site.`,
+        `Personal data that may be collected when you access our online or offline services is processed in accordance with our [Privacy Notice](/legal/privacy-notice). You must be at least 21 years old to register or submit personal data via the Site.`,
       ],
     },
     {

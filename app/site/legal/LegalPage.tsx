@@ -2,7 +2,7 @@ import { Fragment, type ReactNode } from 'react'
 import LightHeader from '../LightHeader'
 import './legal.css'
 
-export type LegalBlock = string | { list: string[] }
+export type LegalBlock = string | { list: string[] } | { sub: string }
 export type LegalDoc = { title: string; sections: { title: string; blocks: LegalBlock[] }[] }
 
 function inline(text: string): ReactNode[] {
@@ -24,7 +24,9 @@ export default function LegalPage({ doc }: { doc: LegalDoc }) {
               <h2 className="ms-legal__h">{s.title}</h2>
               {s.blocks.map((b, i) => typeof b === 'string'
                 ? <p className="ms-legal__p" key={i}>{inline(b)}</p>
-                : <ul className="ms-legal__list" key={i}>{b.list.map((li, j) => <li key={j}>{inline(li)}</li>)}</ul>
+                : 'sub' in b
+                  ? <h3 className="ms-legal__sub" key={i}>{b.sub}</h3>
+                  : <ul className="ms-legal__list" key={i}>{b.list.map((li, j) => <li key={j}>{inline(li)}</li>)}</ul>
               )}
             </section>
           ))}
