@@ -81,4 +81,14 @@ export const emails = {
       { label: 'My MS Account', href: `${siteUrl()}/dashboard?tab=experiences` }
     )
   },
+  newsletter(firstName: string) {
+    return layout(
+      ['Thank you', 'for subscribing'],
+      [
+        firstName ? `Dear ${esc(firstName)},` : 'Hello,',
+        'You will soon receive the latest news from Maison Sanguine: the nights of the Season, our experiences and upcoming events.',
+      ],
+      { label: 'Discover the Season', href: 'https://maisonsanguine.com/night-collection' }
+    )
+  },
 }

@@ -350,4 +350,4 @@ html body section.ms-sign input.ms-sign__input::placeholder{color:var(--mute)}
 .ms-acc__nav .ms-acc__out{margin-bottom:-1px}
 
 /* No footer on sign in, sign up and request pages */
-body:has(section.ms-sign) #ms-foot-host{display:none}
+body:has(section.ms-sign):not(:has(main.ms-page)) #ms-foot-host{display:none}
