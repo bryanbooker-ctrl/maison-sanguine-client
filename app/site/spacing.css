@@ -16,3 +16,4 @@ html body section.ms-car .ms-car__img:has(img[src^="data:"]){background:var(--ms
 }
 html body main.ms-page>section.ms-news:first-child{padding-top:calc(var(--ms-header-h,82px) + var(--ms-sy))!important}
 html body main.ms-page>section.ms-txt:has(+ section.ms-col){padding-bottom:calc(var(--ms-sy) * 2)!important}
+html body main.ms-page>section.ms-loc:first-child{padding-top:calc(var(--ms-header-h,82px) + var(--ms-sy))!important}
