@@ -1,7 +1,7 @@
 import type { LegalDoc } from './LegalPage'
 
-const PARIS = '[aphouse.paris@maisonsanguine.com](mailto:aphouse.paris@maisonsanguine.com)'
-const NY = '[aphouse.newyork@maisonsanguine.com](mailto:aphouse.newyork@maisonsanguine.com)'
+const PARIS = '[mshouse.paris@maisonsanguine.com](mailto:mshouse.paris@maisonsanguine.com)'
+const NY = '[mshouse.newyork@maisonsanguine.com](mailto:mshouse.newyork@maisonsanguine.com)'
 const PRIVACY = '[privacy@maisonsanguine.com](mailto:privacy@maisonsanguine.com)'
 
 export const MASTERCLASSES_TERMS: LegalDoc = {
