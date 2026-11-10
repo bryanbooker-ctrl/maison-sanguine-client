@@ -3,7 +3,7 @@ import LightHeader from '../LightHeader'
 import './legal.css'
 
 export type LegalBlock = string | { list: string[] } | { sub: string }
-export type LegalDoc = { title: string; sections: { title: string; blocks: LegalBlock[] }[] }
+export type LegalDoc = { title: string; sections: { title?: string; blocks: LegalBlock[] }[] }
 
 function inline(text: string): ReactNode[] {
   return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
@@ -19,9 +19,9 @@ export default function LegalPage({ doc }: { doc: LegalDoc }) {
       <main className="ms-legal">
         <article className="ms-legal__in">
           <h1 className="ms-legal__title">{doc.title}</h1>
-          {doc.sections.map(s => (
-            <section className="ms-legal__sec" key={s.title}>
-              <h2 className="ms-legal__h">{s.title}</h2>
+          {doc.sections.map((s, k) => (
+            <section className="ms-legal__sec" key={k}>
+              {s.title && <h2 className="ms-legal__h">{s.title}</h2>}
               {s.blocks.map((b, i) => typeof b === 'string'
                 ? <p className="ms-legal__p" key={i}>{inline(b)}</p>
                 : 'sub' in b
