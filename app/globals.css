@@ -332,3 +332,22 @@ html body section.ms-sign input.ms-sign__input::placeholder{color:var(--mute)}
   .ms-in,.ms-in__line>span{animation:none;transform:none}
   .ms-in__rise,.ms-in.is-content .ms-in__rise{transition:opacity .3s ease;transform:none}
 }
+
+/* Client space: AP spacing and Log out in the tab bar on mobile */
+@media (max-width:1024px){
+  .ms-acc{padding-top:calc(var(--ms-header-h,82px) + 48px)}
+  .ms-acc__nav{justify-content:space-between;gap:0}
+  .ms-acc__tabs{display:contents}
+  .ms-acc__tab{margin-bottom:-1px}
+  .ms-acc__nav .ms-acc__out{display:block}
+  .ms-acc__foot{display:none}
+}
+@media (max-width:374px){
+  .ms-acc__tab,.ms-acc__out{font-size:13.5px}
+}
+
+/* Log out aligned on the tab baseline */
+.ms-acc__nav .ms-acc__out{margin-bottom:-1px}
+
+/* No footer on sign in, sign up and request pages */
+body:has(section.ms-sign) #ms-foot-host{display:none}
