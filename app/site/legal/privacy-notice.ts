@@ -10,7 +10,7 @@ export const PRIVACY_NOTICE: LegalDoc = {
       title: 'Introduction',
       blocks: [
         'Your personal data is very important to Maison Sanguine (“we” or “our”). This Privacy Notice explains how we collect, use, store and protect personal data when you access our online and offline services, including data gathered via our websites, applications, social media platforms, event registration forms, customer relations channels, and during experiences, celebrations or private events organised by Maison Sanguine.',
-        `The Maison Sanguine [Cookie Policy](${MS}/legal/cookie-policy) supplements this Privacy Notice and describes what cookies are, how we use them, and how you may accept or refuse them.`,
+        `The Maison Sanguine [Cookie Policy](/legal/cookie-policy) supplements this Privacy Notice and describes what cookies are, how we use them, and how you may accept or refuse them.`,
         'Whenever you provide personal data to Maison Sanguine, the relevant Maison Sanguine entity is responsible for its collection and processing in accordance with applicable laws, in particular the GDPR.',
         'You must be 21 years of age or older to submit personal data or request access to any service relating to Maison Sanguine events.',
         `We invite you to read this Privacy Notice carefully. You may request a copy at any time by contacting us at ${MAIL}.`,
