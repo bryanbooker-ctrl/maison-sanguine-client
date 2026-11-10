@@ -7,3 +7,4 @@ html body main.ms-page>section:last-child{padding-bottom:calc(var(--ms-sy) * 1.5
 @media (min-width:768px){
   html body main.ms-page>section.ms-car--lift{padding-top:calc(var(--ms-sy) + 87px)!important}
 }
+html body main.ms-page>section.ms-nl{padding-top:calc(var(--ms-sy) * 1.5)!important;padding-bottom:calc(var(--ms-sy) * 1.5)!important}
