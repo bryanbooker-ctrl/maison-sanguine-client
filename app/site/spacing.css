@@ -4,3 +4,6 @@ html body main.ms-page{display:block;margin:0;padding:0}
 html body main.ms-page>section:not(.ms-hero){padding-top:var(--ms-sy)!important;padding-bottom:var(--ms-sy)!important}
 html body main.ms-page>section.ms-hero{margin-bottom:0!important}
 html body main.ms-page>section:last-child{padding-bottom:calc(var(--ms-sy) * 1.5)!important}
+@media (min-width:768px){
+  html body main.ms-page>section.ms-car--lift{padding-top:calc(var(--ms-sy) + 87px)!important}
+}
