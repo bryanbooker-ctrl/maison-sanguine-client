@@ -239,9 +239,16 @@ html body .ma-hero h1.ma-title--xl{font-size:var(--ms-h2,30px)!important}
 
 /* ms archives split variant: one base, text centred on the image */
 @media (min-width:1025px){
-  html body section.ms-car.ma-split{grid-template-columns:50vw minmax(0,1fr);column-gap:9.7vw;align-items:center;padding:100px 7.5vw 100px 6.1vw}
-  html body section.ms-car.ma-split.ma-split--r{grid-template-columns:minmax(0,1fr) 50vw;padding:100px 6.1vw 100px 7.5vw}
+  html body section.ms-car.ma-split{grid-template-columns:43.7vw minmax(0,1fr)!important;column-gap:9.3vw!important;align-items:center!important;padding:100px 11.4vw!important}
+  html body section.ms-car.ma-split.ma-split--r{grid-template-columns:minmax(0,1fr) 43.7vw!important;padding:100px 11.9vw 100px 11.4vw!important}
   html body section.ma-split.ma-split--r .ms-car__media{order:2}
-  html body section.ma-split .ms-car__media{align-self:center;margin:0}
-  html body section.ma-split .ms-car__head{align-self:center;margin:0;padding:0}
+  html body section.ma-split .ms-car__media{align-self:center;margin:0;width:43.7vw;aspect-ratio:4/3}
+  html body section.ma-split .ms-car__head{align-self:center;margin:0;padding:0;max-width:24vw}
 }
+
+/* header line and hover */
+html.ms-archives #ms-header .ms-navigation__scroll-bg{border-bottom:0!important;box-shadow:inset 0 -.5px 0 rgba(255,255,255,.2)}
+@media (min-width:1025px){#ms-header .ma-sep{margin:0 clamp(20px,2.2vw,36px)!important}}
+html.ms-archives #ms-header *,html.ms-archives #ms-header *:hover,html.ms-archives .ma-foot__social a:hover{opacity:1!important}
+html.ms-archives #ms-root .ms-navigation__top-center-column:hover{opacity:1!important}
+html.ms-archives #ms-header .ma-h a,html.ms-archives #ms-header .ma-h button,html.ms-archives #ms-header .ms-navigation__top-center-column{transition:none!important}
