@@ -113,3 +113,18 @@ html.ms-press #ms-foot-host{display:none!important}
   .ms-pfoot__legal{flex-direction:column;align-items:center;gap:18px}
   .ms-pfoot__copy{margin-top:16px}
 }
+
+/* pressroom header band */
+html.ms-press{--ms-pcard:#0e0e10}
+html.ms-press #ms-header .ms-navigation__scroll-bg{opacity:1!important;background:var(--ms-pcard)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+html.ms-press #ms-header .ms-navigation{pointer-events:auto}
+.ms-plog__media{top:var(--ms-header-h)}
+.ms-plog__in{padding-top:calc(var(--ms-header-h) + 48px)}
+html body .ms-plog .ms-plog__card{background:var(--ms-pcard,#0e0e10);-webkit-backdrop-filter:none;backdrop-filter:none}
+@media (min-width:1025px){.ms-plog--wide .ms-plog__in{padding-top:calc(var(--ms-header-h) + 80px)}}
+@media (max-width:767px){.ms-plog--wide .ms-plog__in{padding-top:calc(var(--ms-header-h) + 36px)}}
+@media (hover:hover) and (pointer:fine){
+  html body .ms-plog input,html body .ms-plog select{font-size:14px}
+  html body .ms-plog select option{font-size:13px}
+}
+html body main.ms-page section.ms-plog.ms-plog{padding:0!important;margin:0!important}
