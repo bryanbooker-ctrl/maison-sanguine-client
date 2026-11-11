@@ -273,3 +273,9 @@ html body .ma-more:hover i,html body .ma-more:focus-visible i{width:56px}
   #ms-header .ma-ims{margin-right:-34px}
   #ms-header .ma-sep{height:24px;margin:0 16px!important}
 }
+
+/* content aligned on the IMS logo */
+@media (min-width:1025px){html.ms-archives{--ma-px:calc(7.5vw + 47px)}}
+@media (max-width:1024px){#ms-header .ma-ims{margin-left:-39px}}
+@media (max-width:600px){#ms-header .ma-ims{margin-left:-35px}}
+html.ms-archives main.ms-page section[id]{scroll-margin-top:var(--ms-header-h)}
