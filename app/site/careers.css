@@ -132,3 +132,4 @@ html.ms-careers #ms-header .ms-cnav a:hover{opacity:.6}
 html.ms-careers #ms-header a.ms-cnav__btn{display:inline-flex;align-items:center;justify-content:center;height:clamp(36px,3vw,56px);padding:0 clamp(18px,2.8vw,52px);border:1px solid var(--hf);border-radius:999px;color:var(--hf)!important;font-family:var(--ms-font);font-size:clamp(13px,1vw,17px);font-weight:500;line-height:1;text-decoration:none!important;white-space:nowrap;pointer-events:auto;transition:background .3s,color .3s}
 html.ms-careers #ms-header a.ms-cnav__btn:hover{background:var(--hf);color:#000!important}
 @media (max-width:1024px){html.ms-careers #ms-header .ms-cnav a:nth-child(2){display:none}}
+@media (min-width:1025px){html.ms-careers #ms-foot .ms-foot__main{grid-template-columns:minmax(0,1fr) repeat(2,22.2vw)}}
