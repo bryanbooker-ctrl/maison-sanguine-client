@@ -18,12 +18,13 @@ html body .ma-menu a,html body .ma-hero a,html body .ma-list a,html body .ma-exp
 html.ms-archives #ms-header .ms-navigation__toggle,html.ms-archives #ms-header .ms-navigation__icon{display:none!important}
 html.ms-archives #ms-header .ms-navigation__scroll-bg{opacity:1!important;background:#000!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-bottom:1px solid var(--ma-line)}
 html.ms-archives #ms-header .ms-navigation{pointer-events:auto}
+html.ms-archives,html.ms-archives.ms-hdr-hidden{--hy:0%!important}
 html body #ms-root .ms-navigation__top-center-column img.ma-logo{width:132px!important;height:auto!important;filter:brightness(0) invert(1);position:relative;top:0}
 @media(min-width:1025px){html body #ms-root .ms-navigation__top-center-column img.ma-logo{width:calc(var(--ms-word-w) * .694)!important;top:2px}}
 #ms-header .ma-h{display:flex;align-items:center;min-width:0;pointer-events:auto;color:var(--hf)}
 #ms-header .ma-h--r{gap:clamp(24px,2.6vw,44px)}
 #ms-header .ma-ims,#ms-header .ma-sep,#ms-header .ma-explore-l,#ms-header .ma-search,#ms-header .ma-about-l,#ms-header .ma-lang{display:none}
-#ms-header .ma-ims img{display:block;height:48px;width:auto;filter:brightness(0) invert(1)}
+#ms-header .ma-ims img{display:block;height:60px;width:auto;filter:brightness(0) invert(1)}
 #ms-header .ma-sep{width:1px;height:28px;margin:0 clamp(20px,2.2vw,36px);background:var(--ma-line)}
 #ms-header .ma-explore-l{align-items:center;gap:12px;font-size:clamp(14px,1vw,17px);font-weight:500;line-height:1;white-space:nowrap;transition:opacity .3s}
 #ms-header .ma-explore-l svg{width:15px;height:15px;fill:currentColor;stroke:none}
@@ -197,27 +198,26 @@ html body .ma-tl__y{margin:0!important;font-family:var(--ma-font)!important;font
 @media (min-width:1025px){.ma-about__cols{grid-template-columns:1fr 1fr;column-gap:6vw;font-size:clamp(14px,1.1vw,17px)}}
 
 /* footer */
-.ma-foot{display:flex;flex-direction:column;align-items:center;gap:48px;padding:64px var(--ma-px) 48px;border-top:1px solid var(--ma-line);background:#000}
-.ma-foot__mono img{display:block;width:40px;height:auto;filter:brightness(0) invert(1)}
+.ma-foot{display:flex;flex-direction:column;align-items:center;gap:48px;padding:64px var(--ma-px) 48px;background:#fff;color:#000}
+html body .ma-foot a{color:#000!important}
+.ma-foot__mono img{display:block;width:40px;height:auto;filter:brightness(0)}
 .ma-foot__base{display:flex;flex-direction:column;align-items:center;gap:32px;width:100%}
-.ma-foot__social{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 16px;max-width:170px}
+.ma-foot__social{display:flex;justify-content:center;gap:22px}
 .ma-foot__social a{display:block;width:20px;height:20px;transition:opacity .3s}
-.ma-foot__social svg{width:100%;height:100%;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ma-foot__social svg{width:100%;height:100%;stroke:#000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .ma-foot__links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 24px;max-width:360px}
 .ma-foot__links a{font-size:14px;font-weight:500;line-height:18px;white-space:nowrap;transition:opacity .3s}
-.ma-foot__links a:hover,.ma-foot__social a:hover{opacity:.6}
+.ma-foot__links a:hover,.ma-foot__social a:hover{opacity:.55}
 .ma-foot__copy{font-size:14px;line-height:18px;white-space:nowrap}
 @media (min-width:1025px){
   .ma-foot{gap:56px;padding:72px 5.3vw 64px}
   .ma-foot__mono img{width:48px}
-  .ma-foot__social{flex-wrap:nowrap;max-width:none;gap:14px}
+  .ma-foot__social{gap:24px}
   .ma-foot__social a{width:18px;height:18px}
   .ma-foot__links{flex-wrap:nowrap;max-width:none;gap:clamp(16px,1.9vw,32px)}
-  .ma-foot__links a,.ma-foot__copy{font-size:13px}
 }
-@media (min-width:1440px){
+@media (min-width:1366px){
   .ma-foot__base{flex-direction:row;justify-content:space-between;gap:24px}
-  .ma-foot__links a,.ma-foot__copy{font-size:14px}
 }
 @media (max-width:374px){
   .ma-tools{gap:10px}
@@ -226,3 +226,7 @@ html body .ma-tl__y{margin:0!important;font-family:var(--ma-font)!important;font
   .ma-msize{gap:12px}
   .ma-msize svg{width:22px;height:16px}
 }
+
+/* splits: site split and inverted split */
+html body section.ma-split .ma-meta{margin:0 0 24px}
+@media (min-width:1025px){html body section.ma-split .ma-meta{margin-bottom:28px}}
