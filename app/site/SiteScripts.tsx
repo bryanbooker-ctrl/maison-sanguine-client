@@ -2,12 +2,13 @@
 
 import { useEffect } from 'react'
 import { SITE_SCRIPTS } from './site-scripts'
+import { FIT_SCRIPT } from './fit'
 
 const OVERLAYS = '.ms-col-bk,.ms-col-fp,.ms-col-bar,.ms-col-cv,.ms-pop'
 
 export default function SiteScripts({ extra = [] }: { extra?: string[] }) {
   useEffect(() => {
-    const nodes = [...SITE_SCRIPTS, ...extra].map(code => {
+    const nodes = [...SITE_SCRIPTS, ...extra, FIT_SCRIPT].map(code => {
       const s = document.createElement('script')
       s.text = code
       document.body.appendChild(s)
