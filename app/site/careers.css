@@ -124,58 +124,11 @@ html body .ms-jempty a{color:#fff;font-weight:500;text-decoration:underline;text
 }
 html body .ms-jmore[hidden]{display:none!important}
 /* careers chrome */
-html:has(.ms-ch) #ms-chrome-host,html:has(.ms-ch) #ms-foot-host,html:has(.ms-ch) #ms-loader{display:none!important}
-html body main.ms-page>header.ms-ch{position:fixed;top:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px;padding:0 24px;background:transparent;color:#fff;font-family:var(--ms-font);transition:background .4s,backdrop-filter .4s}
-.ms-ch.is-solid{background:rgba(10,10,12,.62);-webkit-backdrop-filter:blur(20px) saturate(130%);backdrop-filter:blur(20px) saturate(130%)}
-.ms-ch__nav{position:relative;justify-self:start}
-.ms-ch__links{display:none}
-html body .ms-ch a{color:#fff!important;text-decoration:none!important}
-.ms-ch__links a{font-size:15px;font-weight:500}
-.ms-ch__menu{display:grid;gap:6px;width:28px;padding:6px 0;margin:0;border:0;background:none;cursor:pointer}
-.ms-ch__menu i{display:block;height:1px;background:#fff;transition:transform .3s}
-.ms-ch.is-open .ms-ch__menu i:first-child{transform:translateY(3.5px) rotate(45deg)}
-.ms-ch.is-open .ms-ch__menu i:last-child{transform:translateY(-3.5px) rotate(-45deg)}
-.ms-ch.is-open .ms-ch__links{position:fixed;top:72px;left:0;right:0;display:grid;gap:22px;padding:28px 24px 36px;background:#000;border-bottom:1px solid rgba(255,255,255,.22)}
-.ms-ch__logo{justify-self:center;display:block}
-.ms-ch__logo img{display:block;height:14px;width:auto}
-html body a.ms-ch__btn{justify-self:end;display:inline-flex;align-items:center;height:38px;padding:0 18px;border:1px solid #fff;border-radius:999px;font-size:13px;font-weight:500;transition:background .3s,color .3s}
-html body a.ms-ch__btn:hover{background:#fff;color:#000!important}
-.ms-cf{display:block;background:#000;color:#fff;font-family:var(--ms-font);border-top:1px solid rgba(255,255,255,.22)}
-html body .ms-cf a{color:#fff!important;text-decoration:none!important}
-.ms-cf__band{display:grid;grid-template-columns:1fr 1fr;justify-items:center;align-items:center;gap:40px 24px;padding:48px 24px;border-bottom:1px solid rgba(255,255,255,.22)}
-.ms-cf__band img{display:block;height:34px;width:auto;max-width:150px;object-fit:contain}
-.ms-cf__band a:first-child img{height:16px}
-.ms-cf__main{display:grid;align-items:start;gap:56px;padding:64px 24px}
-.ms-cf__lang{display:inline-flex;align-items:center;gap:12px;font-size:15px;font-weight:300}
-.ms-cf__lang svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.2}
-.ms-cf__cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.ms-cf__col{display:grid;align-content:start;gap:14px}
-.ms-cf__h{margin-bottom:6px;font-size:11.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
-.ms-cf__col a{font-size:15px;font-weight:300;line-height:1.3;transition:opacity .3s}
-.ms-cf__col a:hover,.ms-cf__legal a:hover,.ms-cf__soc a:hover{opacity:.6}
-.ms-cf__bottom{display:grid;gap:32px;padding:0 24px 40px}
-.ms-cf__soc{display:flex;gap:26px}
-.ms-cf__soc a{display:block;width:24px;height:24px;transition:opacity .3s}
-.ms-cf__soc svg{display:block;width:100%;height:100%;fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.ms-cf__legal{display:flex;flex-wrap:wrap;gap:14px 28px}
-.ms-cf__legal a{font-size:14px;font-weight:500;transition:opacity .3s}
-.ms-cf__copy{font-size:14px;font-weight:300}
-html body main.ms-page>section.ms-jopp:first-of-type{padding-top:calc(72px + var(--ms-sy))!important}
-@media (min-width:768px){
-  html body main.ms-page>header.ms-ch{height:clamp(84px,6vw,120px);padding:0 6.6vw}
-  .ms-ch__menu{display:none}
-  .ms-ch__links,.ms-ch.is-open .ms-ch__links{position:static;display:flex;gap:2.6vw;padding:0;background:none;border:0}
-  .ms-ch__links a{font-size:clamp(14px,1vw,17px)}
-  .ms-ch__logo img{height:clamp(16px,1.3vw,24px)}
-  html body a.ms-ch__btn{height:clamp(44px,3.2vw,60px);padding:0 clamp(28px,3.2vw,60px);font-size:clamp(14px,1vw,17px)}
-  .ms-cf__band{display:flex;justify-content:center;gap:5.5vw;padding:3.6vw 6.6vw}
-  .ms-cf__band img{height:clamp(30px,2.6vw,48px);max-width:none}
-  .ms-cf__band a:first-child img{height:clamp(16px,1.2vw,22px)}
-  .ms-cf__main{grid-template-columns:1fr 1fr;padding:7vw 6.6vw 5vw}
-  .ms-cf__cols{gap:4vw}
-  .ms-cf__col a{font-size:clamp(14px,1vw,17px)}
-  .ms-cf__bottom{grid-template-columns:auto 1fr;align-items:center;gap:36px 4vw;padding:0 6.6vw 4vw}
-  .ms-cf__legal{justify-content:center}
-  .ms-cf__copy{grid-column:1/-1}
-  html body main.ms-page>section.ms-jopp:first-of-type{padding-top:calc(clamp(84px,6vw,120px) + var(--ms-sy))!important}
-}
+.ms-cnav,.ms-cnav__btn{display:none}
+html.ms-careers #ms-header .ms-navigation__toggle,html.ms-careers #ms-header .ms-navigation__icon{display:none!important}
+html.ms-careers #ms-header .ms-cnav{display:flex;align-items:center;gap:clamp(28px,2.6vw,48px);pointer-events:auto}
+html.ms-careers #ms-header .ms-cnav a{color:var(--hf)!important;font-family:var(--ms-font);font-size:clamp(14px,1vw,17px);font-weight:500;line-height:1;letter-spacing:0;text-decoration:none!important;white-space:nowrap;transition:opacity .3s,color var(--ms-color-fade,.4s)}
+html.ms-careers #ms-header .ms-cnav a:hover{opacity:.6}
+html.ms-careers #ms-header a.ms-cnav__btn{display:inline-flex;align-items:center;justify-content:center;height:clamp(36px,3vw,56px);padding:0 clamp(18px,2.8vw,52px);border:1px solid var(--hf);border-radius:999px;color:var(--hf)!important;font-family:var(--ms-font);font-size:clamp(13px,1vw,17px);font-weight:500;line-height:1;text-decoration:none!important;white-space:nowrap;pointer-events:auto;transition:background .3s,color .3s}
+html.ms-careers #ms-header a.ms-cnav__btn:hover{background:var(--hf);color:#000!important}
+@media (max-width:1024px){html.ms-careers #ms-header .ms-cnav a:nth-child(2){display:none}}
