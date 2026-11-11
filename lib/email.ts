@@ -91,4 +91,18 @@ export const emails = {
       { label: 'Discover the Season', href: 'https://maisonsanguine.com/night-collection' }
     )
   },
+  pressReceived(firstName: string) {
+    return layout(
+      ['Request', 'received'],
+      [
+        firstName ? `Dear ${esc(firstName)},` : 'Hello,',
+        'Thank you for your interest in Maison Sanguine. Your pressroom access request has been sent to our Media Relations team.',
+        'You will receive an answer by email once your request has been reviewed.',
+      ]
+    )
+  },
+  pressNew(a: Record<string, string>) {
+    const rows = Object.entries(a).filter(([, v]) => v).map(([k, v]) => `<div style="font-size:14px;line-height:1.6;color:#ffffff;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span> ${esc(v)}</div>`).join('')
+    return layout(['New pressroom', 'request'], [], undefined, rows)
+  },
 }

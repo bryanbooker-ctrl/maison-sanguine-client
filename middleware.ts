@@ -21,7 +21,7 @@ export async function middleware(request: NextRequest) {
 
   if (host.startsWith('press.')) {
     if (PASS.some(p => path === p || path.startsWith(p + '/'))) return NextResponse.next()
-    if (path === '/log-in') return NextResponse.rewrite(new URL('/press/log-in' + request.nextUrl.search, request.url))
+    if (path === '/log-in' || path === '/register') return NextResponse.rewrite(new URL('/press' + path + request.nextUrl.search, request.url))
     if (path === '/' || path === '/press' || path.startsWith('/press/') || path.startsWith('/fr')) return NextResponse.redirect(new URL('/log-in' + request.nextUrl.search, request.url))
     return NextResponse.redirect(new URL(path + request.nextUrl.search, 'https://maisonsanguine.com'))
   }

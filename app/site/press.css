@@ -59,6 +59,38 @@ html body .ms-pfoot a:hover{opacity:.6}
 .ms-pfoot__legal{gap:14px 3.2vw}
 }
 
+/* pressroom register */
+.ms-plog--wide .ms-plog__card{max-width:1600px;padding:56px 20px 48px}
+.ms-preg{width:100%;max-width:620px;margin:0 auto}
+.ms-preg__intro{margin:-16px auto 40px;max-width:520px;font:400 15px/1.55 var(--font);color:var(--mute);text-align:center}
+.ms-plog__field i{font-style:normal;color:var(--mute);margin-left:4px}
+.ms-plog__sel{position:relative;display:block}
+.ms-plog__sel::after{content:"";position:absolute;top:50%;right:22px;width:8px;height:8px;margin-top:-6px;border-right:1px solid #fff;border-bottom:1px solid #fff;transform:rotate(45deg);pointer-events:none}
+html body .ms-plog select{display:block;width:100%;height:56px;padding:0 52px 0 18px;border:1px solid transparent;border-radius:0;background:rgba(255,255,255,.08);color:#fff;font:400 16px/1 var(--font);outline:none;-webkit-appearance:none;appearance:none;cursor:pointer;transition:border-color .3s,background .3s}
+html body .ms-plog select:focus{border-color:rgba(255,255,255,.6)}
+html body .ms-plog select option{background:#111;color:#fff}
+html body .ms-plog select:invalid{color:var(--mute)}
+.ms-preg__addr{display:grid;grid-template-columns:1fr 1fr;gap:16px 16px}
+.ms-preg__full{grid-column:1/-1}
+.ms-preg__sub{display:block}
+.ms-preg__sub>span:last-child{display:block;margin-top:8px;font:400 13px/16px var(--font);color:var(--mute)}
+.ms-plog__field>.ms-preg__addr{margin-top:0}
+.ms-preg__form .ms-plog__field+.ms-plog__field,.ms-preg__form .ms-plog__field+div.ms-plog__field,.ms-preg__form div.ms-plog__field+.ms-plog__field{margin-top:24px}
+html body .ms-plog .is-err{border-color:rgba(255,255,255,.85)!important;background:rgba(255,255,255,.14)!important}
+.ms-preg__hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0}
+.ms-preg__consent{display:flex;align-items:flex-start;gap:14px;margin-top:32px;font:400 14px/20px var(--font);color:var(--mute);cursor:pointer}
+html body .ms-plog .ms-preg__consent input{flex:none;width:20px;height:20px;margin-top:0;padding:0;border:1px solid rgba(255,255,255,.6);background:transparent;cursor:pointer;-webkit-appearance:none;appearance:none;display:grid;place-content:center}
+html body .ms-plog .ms-preg__consent input:checked{background:#fff}
+html body .ms-plog .ms-preg__consent input:checked::after{content:"";width:5px;height:10px;margin-top:-3px;border-right:1.5px solid #000;border-bottom:1.5px solid #000;transform:rotate(45deg)}
+.ms-preg__consent a{text-decoration:underline!important;text-underline-offset:3px}
+.ms-plog__btn:disabled{opacity:.5;cursor:default}
+.ms-preg__done{display:flex;flex-direction:column;align-items:center}
+.ms-preg__intro[hidden],.ms-preg__done[hidden],.ms-preg__form[hidden]{display:none!important}
+.ms-preg__done .ms-plog__btn{margin-top:0;text-decoration:none!important}
+html body .ms-plog .ms-preg__done a.ms-plog__btn:hover{background:#fff;color:#000!important;opacity:1}
+@media (min-width:768px){.ms-plog--wide .ms-plog__card{padding:80px 40px 72px}}
+@media (min-width:1025px){.ms-plog--wide .ms-plog__in{padding-left:7vw;padding-right:7vw}}
+
 /* press chrome */
 .ms-pnav{display:none}
 html.ms-press #ms-header .ms-navigation__toggle,html.ms-press #ms-header .ms-navigation__icon{display:none!important}
