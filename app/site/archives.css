@@ -340,9 +340,7 @@ html.ma-tl-on .ma-foot{margin-bottom:64px}
 .ma-explore{--ma-tools-h:64px}
 .ma-veil{position:fixed;inset:0;z-index:10010;background:rgba(0,0,0,.62)}
 .ma-veil[hidden]{display:none}
-html.ma-filter-open .ma-tools{z-index:10030}
 html.ma-filter-open .ma-switch,html.ma-filter-open .ma-msize,html.ma-filter-open .ma-count{visibility:hidden}
-html.ma-filter-open,html.ma-filter-open body{overflow:hidden}
 .ma-filter{position:fixed;left:0;right:0;top:calc(var(--ms-header-h) + var(--ma-tools-h));bottom:0;z-index:10020;display:flex;flex-direction:column;background:var(--ma-bg);overflow-y:auto;font-family:var(--ma-font)}
 .ma-filter[hidden]{display:none}
 .ma-filter__cols{display:grid;grid-template-columns:1fr;gap:44px;padding:36px var(--ma-px) 40px}
@@ -401,3 +399,12 @@ html body .ma-filter__go{height:60px;padding:0 32px;background:#fff!important;bo
 .ma-filter{top:var(--ma-ftop,calc(var(--ms-header-h) + var(--ma-tools-h)))}
 @media (min-width:768px){.ma-filter{max-height:calc(100vh - var(--ma-ftop,calc(var(--ms-header-h) + var(--ma-tools-h))))}}
 @media (min-width:1025px){html.ma-tl-on main.ms-page{padding-bottom:72px}html.ma-tl-on .ma-foot{margin-bottom:72px}}
+/* filter: shutter unfolding from the tools line */
+.ma-veil{opacity:0;transition:opacity .6s var(--ms-ease,cubic-bezier(.25,.1,.25,1))}
+.ma-veil.is-open{opacity:1}
+.ma-filter{bottom:auto;max-height:calc(100vh - var(--ma-ftop,0px));max-height:calc(100dvh - var(--ma-ftop,0px));overscroll-behavior:contain;border-top:.5px solid rgba(255,255,255,.2);clip-path:inset(0 0 100% 0);transition:clip-path .7s var(--ms-ease,cubic-bezier(.25,.1,.25,1))}
+.ma-filter.is-open{clip-path:inset(0 0 0 0)}
+.ma-filter__cols,.ma-filter__foot{opacity:0;transform:translateY(-16px);transition:opacity .45s ease,transform .7s var(--ms-ease,cubic-bezier(.25,.1,.25,1))}
+.ma-filter.is-open .ma-filter__cols,.ma-filter.is-open .ma-filter__foot{opacity:1;transform:none;transition-delay:.15s}
+@media (max-width:767px){.ma-filter{height:calc(100dvh - var(--ma-ftop,0px))}}
+@media (prefers-reduced-motion:reduce){.ma-filter,.ma-veil,.ma-filter__cols,.ma-filter__foot{transition:none}}
