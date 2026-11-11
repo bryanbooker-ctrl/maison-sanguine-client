@@ -1363,3 +1363,15 @@ html body .ms-vn a.ms-vn__btn{margin:40px 24px 0!important;}
   html body section.ms-car:is(.ms-car--portrait,.ms-car--side,.ms-car--landscape,.ms-car--square,.ms-car--mc):not(.ms-car--cards):not(.ms-car--vid):not(.ms-car--split) .ms-car__stage{padding-left:0;}
   html body section.ms-car:is(.ms-car--portrait,.ms-car--side,.ms-car--landscape,.ms-car--square,.ms-car--mc):not(.ms-car--cards):not(.ms-car--vid):not(.ms-car--split) .ms-car__arrow--prev{left:12px;}
 }
+@media (min-width:768px) and (max-width:1199px){
+  html body section.ms-car.ms-car--split:not(.ma-split){grid-template-columns:minmax(0,1fr);column-gap:0;padding:100px 7.5vw;}
+  html body section.ms-car.ms-car--split:not(.ma-split) .ms-car__head{grid-column:1;grid-row:1;margin:0 0 48px;padding:0;}
+  html body section.ms-car.ms-car--split:not(.ma-split) .ms-car__media{grid-column:1;grid-row:2;width:100%;}
+  html body section.ms-car.ms-car--split.ms-car--tall:not(.ma-split) .ms-car__media{width:min(100%,520px);}
+  html body section.ms-car.ms-car--split:not(.ma-split) div.ms-car__head div.ms-car__desc,
+  html body section.ms-car.ms-car--split:not(.ma-split) div.ms-car__head div.ms-car__sub{max-width:none;}
+}
+@media (min-width:768px){
+  html body section.ms-hero--editorial .ms-hero__content{display:grid;grid-template-columns:min-content;justify-content:start;}
+  html body section.ms-hero--editorial div.ms-hero__desc{max-width:none;}
+}
