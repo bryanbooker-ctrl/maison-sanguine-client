@@ -23,24 +23,24 @@ html body #ms-root .ms-navigation__top-center-column img.ma-logo{width:132px!imp
 @media(min-width:1025px){html body #ms-root .ms-navigation__top-center-column img.ma-logo{width:calc(var(--ms-word-w) * .694)!important;top:2px}}
 #ms-header .ma-h{display:flex;align-items:center;min-width:0;pointer-events:auto;color:var(--hf)}
 #ms-header .ma-h--r{gap:clamp(24px,2.6vw,44px)}
-#ms-header .ma-ims,#ms-header .ma-sep,#ms-header .ma-explore-l,#ms-header .ma-search,#ms-header .ma-about-l,#ms-header .ma-lang{display:none}
-#ms-header .ma-ims img{display:block;height:60px;width:auto;filter:brightness(0) invert(1)}
-#ms-header .ma-sep{width:1px;height:28px;margin:0 clamp(20px,2.2vw,36px);background:var(--ma-line)}
+#ms-header .ma-explore-l,#ms-header .ma-search,#ms-header .ma-about-l,#ms-header .ma-lang{display:none}
+#ms-header .ma-ims img{display:block;height:44px;width:auto;filter:brightness(0) invert(1)}
+#ms-header .ma-sep{width:1px;height:28px;margin:0 18px 0 6px;background:var(--ma-line)}
 #ms-header .ma-explore-l{align-items:center;gap:12px;font-size:clamp(14px,1vw,17px);font-weight:500;line-height:1;white-space:nowrap;transition:opacity .3s}
-#ms-header .ma-explore-l svg{width:15px;height:15px;fill:currentColor;stroke:none}
+#ms-header .ma-explore-l svg{width:19px;height:19px;fill:currentColor;stroke:none}
 #ms-header .ma-search{align-items:center;gap:12px;margin-left:clamp(20px,2.4vw,40px);margin-right:24px;min-width:0;overflow:hidden}
 #ms-header .ma-search svg,#ms-header .ma-msbtn svg{width:var(--ms-icon,32px);height:var(--ms-icon,32px);stroke-width:var(--ms-icon-stroke,1)}
-#ms-header .ma-search svg{width:22px;height:22px;stroke-width:1.2}
+#ms-header .ma-search svg{width:27px;height:27px;stroke-width:1.1}
 html body #ms-header .ma-search input,html body .ma-msearch input{width:100%;min-width:0;max-width:clamp(96px,11vw,220px);border:0;border-radius:0;background:transparent;color:#fff;font:400 clamp(14px,1vw,17px)/1.2 var(--ma-font);outline:none;-webkit-appearance:none;appearance:none}
 html body .ma-msearch input{max-width:none;font-size:16px}
 #ms-header .ma-search input::placeholder,.ma-msearch input::placeholder{color:var(--ma-mute)}
 #ms-header .ma-search input::-webkit-search-cancel-button,.ma-msearch input::-webkit-search-cancel-button{-webkit-appearance:none}
 #ms-header .ma-msbtn{display:flex;align-items:center;color:var(--hf)}
-#ms-header .ma-msbtn svg{width:26px;height:26px}
+#ms-header .ma-msbtn svg{width:30px;height:30px;stroke-width:1.1}
 #ms-header .ma-about-l{font-size:clamp(14px,1vw,17px);font-weight:500;line-height:1;transition:opacity .3s}
 #ms-header .ma-lang{position:relative}
 #ms-header .ma-lang__btn{display:flex;align-items:center;gap:8px;font-size:clamp(14px,1vw,17px);font-weight:500;line-height:1}
-#ms-header .ma-lang__btn svg{width:11px;height:11px;stroke-width:1.6}
+#ms-header .ma-lang__btn svg{width:13px;height:13px;stroke-width:1.8}
 #ms-header .ma-lang__list{position:absolute;right:0;top:calc(100% + 16px);min-width:140px;padding:14px 18px;background:#0e0e10;border:1px solid var(--ma-line);list-style:none;font-size:14px}
 #ms-header .ma-lang__list[hidden]{display:none}
 #ms-header .ma-burger{position:relative;display:block;width:var(--ms-toggle,28px);height:var(--ms-toggle,28px)}
@@ -51,7 +51,7 @@ html.ma-menu-open #ms-header .ma-burger span:first-child{top:13.5px;transform:ro
 html.ma-menu-open #ms-header .ma-burger span:last-child{top:13.5px;transform:rotate(-45deg)}
 @media (hover:hover){#ms-header .ma-explore-l:hover,#ms-header .ma-about-l:hover,#ms-header .ma-ims:hover,#ms-header .ma-lang__btn:hover{opacity:.6}}
 @media (min-width:1025px){
-  #ms-header .ma-ims,#ms-header .ma-sep,#ms-header .ma-explore-l,#ms-header .ma-search,#ms-header .ma-about-l,#ms-header .ma-lang{display:flex}
+  #ms-header .ma-explore-l,#ms-header .ma-search,#ms-header .ma-about-l,#ms-header .ma-lang{display:flex}
   #ms-header .ma-msbtn,#ms-header .ma-burger,.ma-msearch{display:none!important}
 }
 .ma-msearch{display:flex;align-items:center;gap:16px;height:58px;padding:0 var(--ma-px);border-bottom:1px solid var(--ma-line);background:#000;position:relative;z-index:2}
@@ -94,8 +94,6 @@ html body a.ma-pill:hover{background:#fff;color:#000!important}
 .ma-hero__media{position:absolute;inset:0}
 .ma-hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.4))}
 .ma-hero__in{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:22px;max-width:1100px;padding:80px var(--ma-px)}
-html body .ma-title--xl{font-size:clamp(34px,10vw,44px)!important}
-@media (min-width:768px){html body .ma-title--xl{font-size:clamp(48px,4.6vw,88px)!important}}
 .ma-list{display:flex;flex-direction:column;gap:clamp(72px,9vw,140px);padding:clamp(56px,7vw,100px) var(--ma-px)!important}
 .ma-row{display:flex;flex-direction:column;gap:24px}
 .ma-row__media{aspect-ratio:4/3}
@@ -230,3 +228,20 @@ html body .ma-foot a{color:#000!important}
 /* splits: site split and inverted split */
 html body section.ma-split .ma-meta{margin:0 0 24px}
 @media (min-width:1025px){html body section.ma-split .ma-meta{margin-bottom:28px}}
+
+#ms-header .ma-ims,#ms-header .ma-sep{display:flex;flex:none}
+@media (min-width:1025px){
+  #ms-header .ma-ims img{height:70px}
+  #ms-header .ma-sep{margin:0 clamp(20px,2.2vw,36px) 0 8px}
+}
+html body .ma-hero h1.ma-title--xl{font-size:var(--ms-h2,30px)!important}
+@media (min-width:1025px){html body .ma-hero h1.ma-title--xl{font-size:var(--ms-h2-d,clamp(40px,3.4vw,64px))!important}}
+
+/* ms archives split variant: one base, text centred on the image */
+@media (min-width:1025px){
+  html body section.ms-car.ma-split{grid-template-columns:50vw minmax(0,1fr);column-gap:9.7vw;align-items:center;padding:100px 7.5vw 100px 6.1vw}
+  html body section.ms-car.ma-split.ma-split--r{grid-template-columns:minmax(0,1fr) 50vw;padding:100px 6.1vw 100px 7.5vw}
+  html body section.ma-split.ma-split--r .ms-car__media{order:2}
+  html body section.ma-split .ms-car__media{align-self:center;margin:0}
+  html body section.ma-split .ms-car__head{align-self:center;margin:0;padding:0}
+}
