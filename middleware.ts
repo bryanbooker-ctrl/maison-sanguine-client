@@ -26,6 +26,14 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(path + request.nextUrl.search, 'https://maisonsanguine.com'))
   }
 
+  if (host.startsWith('msarchives.')) {
+    if (PASS.some(p => path === p || path.startsWith(p + '/'))) return NextResponse.next()
+    if (path === '/') return NextResponse.rewrite(new URL('/msarchives' + request.nextUrl.search, request.url))
+    if (path === '/explore' || path === '/about') return NextResponse.rewrite(new URL('/msarchives' + path + request.nextUrl.search, request.url))
+    if (path === '/msarchives' || path.startsWith('/msarchives/') || path.startsWith('/fr')) return NextResponse.redirect(new URL((path.startsWith('/fr') ? '/' : path.replace(/^\/msarchives/, '') || '/') + request.nextUrl.search, request.url))
+    return NextResponse.redirect(new URL(path + request.nextUrl.search, 'https://maisonsanguine.com'))
+  }
+
   if (!PROTECTED.some(p => path === p || path.startsWith(p + '/')) && !path.startsWith('/auth')) return NextResponse.next()
 
   let supabaseResponse = NextResponse.next({ request })
