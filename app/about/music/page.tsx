@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <SitePage html={MUSIC_HTML} />
+  return <SitePage h1="Maison Sanguine x Music" html={MUSIC_HTML} />
 }

@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <SitePage html={ASPEN_HTML} />
+  return <SitePage h1="Winter Edition Aspen" html={ASPEN_HTML} />
 }

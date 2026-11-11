@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 }
 
 export default function EventsTerms() {
-  return <SitePage html={EVENTS_TERMS_HTML} />
+  return <SitePage h1="Events Terms & Conditions" html={EVENTS_TERMS_HTML} />
 }

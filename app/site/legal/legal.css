@@ -23,3 +23,4 @@ html,body{background:#000}
   .ms-legal__h{margin-bottom:32px;font-size:clamp(30px,2.55vw,48px)}
   .ms-legal__p,.ms-legal__list li,.ms-legal__sub{font-size:clamp(14px,1.1vw,16px)}
 }
+.ms-legal a{overflow-wrap:anywhere}

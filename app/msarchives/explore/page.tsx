@@ -4,12 +4,12 @@ import { MA_EXPLORE_HTML, MA_APP } from '../../site/archives'
 import '../../site/archives.css'
 
 export const metadata: Metadata = {
-  title: 'Explore | MS Archives',
+  title: 'Explore | MS Archives | Maison Sanguine',
   description: 'The living record of Maison Sanguine: stories, innovations and rituals, from the Parisian nights that inspired the Maison to the present day.',
 }
 
 const SCRIPTS = [MA_APP]
 
 export default function ArchivesExplore() {
-  return <SitePage html={MA_EXPLORE_HTML} scripts={SCRIPTS} />
+  return <SitePage h1="Explore the MS Archives" html={MA_EXPLORE_HTML} scripts={SCRIPTS} />
 }

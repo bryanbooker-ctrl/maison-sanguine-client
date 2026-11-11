@@ -4,7 +4,7 @@ import { OPPORTUNITIES_HTML, CAREERS_APP } from '../../site/careers'
 import '../../site/careers.css'
 
 export const metadata: Metadata = {
-  title: 'Opportunities | Maison Sanguine',
+  title: 'Opportunities | Join Maison Sanguine | Maison Sanguine',
   description: 'Find your place at Maison Sanguine.',
 }
 

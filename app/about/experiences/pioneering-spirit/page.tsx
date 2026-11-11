@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function Innovations() {
-  return <SitePage html={INNOVATIONS_HTML} />
+  return <SitePage h1="Our Innovations over the Seasons" html={INNOVATIONS_HTML} />
 }

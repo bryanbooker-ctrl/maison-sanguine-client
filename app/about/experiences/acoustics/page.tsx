@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function Acoustics() {
-  return <SitePage html={ACOUSTICS_HTML} />
+  return <SitePage h1="Acoustics and Mixing Techniques" html={ACOUSTICS_HTML} />
 }

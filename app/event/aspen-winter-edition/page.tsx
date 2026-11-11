@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <SitePage html={ASPEN_EVENT_HTML} />
+  return <SitePage h1="The Winter Edition, Aspen" html={ASPEN_EVENT_HTML} />
 }

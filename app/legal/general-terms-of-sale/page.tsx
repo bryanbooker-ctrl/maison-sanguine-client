@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 }
 
 export default function GeneralTermsOfSale() {
-  return <SitePage html={GTS_HTML} />
+  return <SitePage h1="General Terms and Conditions of Sale" html={GTS_HTML} />
 }

@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function Origins() {
-  return <SitePage html={ORIGINS_HTML} />
+  return <SitePage h1="Born in Paris" html={ORIGINS_HTML} />
 }

@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function Design() {
-  return <SitePage html={DESIGN_HTML} />
+  return <SitePage h1="Spatial Design" html={DESIGN_HTML} />
 }

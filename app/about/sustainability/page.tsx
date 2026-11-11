@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <SitePage html={SUSTAINABILITY_HTML} />
+  return <SitePage h1="Sustainability" html={SUSTAINABILITY_HTML} />
 }

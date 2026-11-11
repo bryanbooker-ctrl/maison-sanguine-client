@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 const SCRIPTS = [MC_APP]
 
 export default function Page() {
-  return <SitePage html={MASTERCLASSES_HTML} scripts={SCRIPTS} />
+  return <SitePage h1="Haute Nuit Experiences" html={MASTERCLASSES_HTML} scripts={SCRIPTS} />
 }

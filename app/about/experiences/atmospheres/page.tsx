@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function Atmospheres() {
-  return <SitePage html={ATMOSPHERES_HTML} />
+  return <SitePage h1="Gallery of Atmospheres" html={ATMOSPHERES_HTML} />
 }
