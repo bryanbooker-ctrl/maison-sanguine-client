@@ -17,7 +17,7 @@ export const PRIVACY_NOTICE: LegalDoc = {
       ],
     },
     {
-      title: 'I. Personal Data We Collect',
+      title: '1. Personal Data We Collect',
       blocks: [
         'This Privacy Notice applies to any personal data collected from you or about you, from the following sources:',
         {
@@ -55,7 +55,7 @@ export const PRIVACY_NOTICE: LegalDoc = {
       ],
     },
     {
-      title: 'II. Use of Your Personal Data',
+      title: '2. Use of Your Personal Data',
       blocks: [
         'We process your personal data based on:',
         { list: ['your consent;', 'the performance of a contract or service you request;', 'our legitimate interest;', 'compliance with legal obligations.'] },
@@ -79,14 +79,14 @@ export const PRIVACY_NOTICE: LegalDoc = {
       ],
     },
     {
-      title: 'III. How We Protect Your Personal Data',
+      title: '3. How We Protect Your Personal Data',
       blocks: [
         'We implement strict organisational, technical and security measures to protect your data against unauthorised access, alteration or disclosure.',
         'Although we apply high-level security standards, no method of Internet transmission is entirely secure during transit.',
       ],
     },
     {
-      title: 'IV. Sharing of Your Personal Data',
+      title: '4. Sharing of Your Personal Data',
       blocks: [
         'Maison Sanguine does not sell or rent your personal data.',
         'We may share your data with:',
@@ -103,9 +103,9 @@ export const PRIVACY_NOTICE: LegalDoc = {
       ],
     },
     {
-      title: 'V. Storage of Your Personal Data',
+      title: '5. Storage of Your Personal Data',
       blocks: [
-        'We retain your personal data only for the time necessary to fulfil the purposes listed in Section II, except where a longer retention period is required or permitted by law. For example:',
+        'We retain your personal data only for the time necessary to fulfil the purposes listed in Section 2, except where a longer retention period is required or permitted by law. For example:',
         {
           list: [
             'contact and communication data: up to 3 years from last interaction;',
@@ -118,7 +118,7 @@ export const PRIVACY_NOTICE: LegalDoc = {
       ],
     },
     {
-      title: 'VI. Your Rights',
+      title: '6. Your Rights',
       blocks: [
         'Under the GDPR, you may:',
         {
@@ -135,13 +135,13 @@ export const PRIVACY_NOTICE: LegalDoc = {
       ],
     },
     {
-      title: 'VII. Amendments to this Privacy Notice',
+      title: '7. Amendments to this Privacy Notice',
       blocks: [
         'Maison Sanguine may update this Privacy Notice at any time. Changes take effect upon publication. We encourage you to consult this page regularly.',
       ],
     },
     {
-      title: 'VIII. Contact Us',
+      title: '8. Contact Us',
       blocks: [
         `For any questions regarding this Privacy Notice, please contact the Maison Sanguine Data Protection Office at ${MAIL}.`,
         'This document was last updated on December 1, 2025.',

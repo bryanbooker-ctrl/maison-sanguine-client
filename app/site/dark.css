@@ -20,3 +20,8 @@ html body section.ms-car--mc a.ms-car__cta{text-decoration-color:#fff!important}
 html body section.ms-car--mc .ms-car__lock{background:#fff}
 html body section.ms-car--mc .ms-car__lock svg,html body section.ms-car--mc .ms-car__lock *{color:#000!important}
 html body section.ms-car--mc .ms-car__arrow{color:#000}
+html body .ms-loc-mask{background:#000}
+html body section.ms-loc .ms-loc__card{background:#121212}
+html body section.ms-car--mc div.ms-car__body div.ms-car__tag{color:#fff!important}
+html body section.ms-car--mc a.ms-car__cta{color:#fff!important}
+html body section.ms-car--mc .ms-car__arrow{color:#fff;top:calc(50% - 22px)}

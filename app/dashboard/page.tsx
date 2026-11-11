@@ -151,12 +151,17 @@ export default function DashboardPage() {
   const upcoming = reservations.filter(r => !r.experience_date || new Date(r.experience_date).getTime() >= today)
   const past = reservations.filter(r => r.experience_date && new Date(r.experience_date).getTime() < today).reverse()
 
+  const nightName = (name?: string | null) => {
+    const m = (name || '').match(/^(.+?)\s+(\S+\s+Edition)$/i)
+    return m ? <><span>{m[1]}</span><span className="ms-it">{m[2]}</span></> : name
+  }
+
   const NightCard = ({ r }: { r: Reservation }) => (
     <div className="ms-acc__card">
       <span className="ms-acc__kick">
         {formatDate(r.experience_date)}
       </span>
-      <span className="ms-acc__cname">{r.experience_name}</span>
+      <span className="ms-acc__cname">{nightName(r.experience_name)}</span>
       <span className={`ms-acc__tag${r.status === 'confirmed' ? ' is-on' : ''}`}>
         {r.status === 'confirmed' ? 'Confirmed' : r.admission_id ? 'Awaiting payment' : 'Pending'}
       </span>
@@ -169,7 +174,7 @@ export default function DashboardPage() {
   const RequestCard = ({ q }: { q: Request }) => (
     <div className="ms-acc__card">
       <span className="ms-acc__kick">{formatDate(q.date)}</span>
-      <span className="ms-acc__cname">{q.name}</span>
+      <span className="ms-acc__cname">{nightName(q.name)}</span>
       <span className="ms-acc__tag">Under review</span>
     </div>
   )
