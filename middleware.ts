@@ -4,15 +4,25 @@ import { safeNext } from '@/lib/next'
 
 const PROTECTED = ['/dashboard', '/request', '/admin']
 
-const CAREERS_PATHS = ['/fr', '/_next', '/api', '/favicon.ico']
+const PASS = ['/_next', '/api', '/favicon.ico']
 
 export async function middleware(request: NextRequest) {
   const host = (request.headers.get('host') || '').toLowerCase()
   const { pathname: path } = request.nextUrl
 
   if (host.startsWith('careers.')) {
-    if (path === '/' || path === '/fr' || path === '/fr/') return NextResponse.redirect(new URL('/fr/home', request.url))
-    if (CAREERS_PATHS.some(p => path === p || path.startsWith(p + '/'))) return NextResponse.next()
+    if (PASS.some(p => path === p || path.startsWith(p + '/'))) return NextResponse.next()
+    if (path === '/') return NextResponse.rewrite(new URL('/careers' + request.nextUrl.search, request.url))
+    if (path === '/opportunities') return NextResponse.rewrite(new URL('/careers/opportunities' + request.nextUrl.search, request.url))
+    if (path === '/careers' || path.startsWith('/fr')) return NextResponse.redirect(new URL('/' + request.nextUrl.search, request.url))
+    if (path === '/careers/opportunities') return NextResponse.redirect(new URL('/opportunities' + request.nextUrl.search, request.url))
+    return NextResponse.redirect(new URL(path + request.nextUrl.search, 'https://maisonsanguine.com'))
+  }
+
+  if (host.startsWith('press.')) {
+    if (PASS.some(p => path === p || path.startsWith(p + '/'))) return NextResponse.next()
+    if (path === '/log-in') return NextResponse.rewrite(new URL('/press/log-in' + request.nextUrl.search, request.url))
+    if (path === '/' || path === '/press' || path.startsWith('/press/') || path.startsWith('/fr')) return NextResponse.redirect(new URL('/log-in' + request.nextUrl.search, request.url))
     return NextResponse.redirect(new URL(path + request.nextUrl.search, 'https://maisonsanguine.com'))
   }
 
