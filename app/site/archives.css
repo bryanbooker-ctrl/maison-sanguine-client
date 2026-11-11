@@ -261,3 +261,15 @@ html body .ma-more:hover i,html body .ma-more:focus-visible i{width:56px}
 /* IMS: compensate the transparent margin of the logo file */
 #ms-header .ma-ims{margin-right:-29px}
 @media (min-width:1025px){#ms-header .ma-ims{margin-right:-46px}}
+
+/* IMS below desktop: larger logo, balanced spacing */
+@media (max-width:1024px){
+  #ms-header .ma-ims img{height:58px}
+  #ms-header .ma-ims{margin-right:-38px}
+  #ms-header .ma-sep{height:26px;margin:0 20px!important}
+}
+@media (max-width:600px){
+  #ms-header .ma-ims img{height:52px}
+  #ms-header .ma-ims{margin-right:-34px}
+  #ms-header .ma-sep{height:24px;margin:0 16px!important}
+}
