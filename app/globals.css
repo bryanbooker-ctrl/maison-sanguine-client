@@ -333,7 +333,7 @@ html body section.ms-sign input.ms-sign__input::placeholder{color:var(--mute)}
   .ms-in__rise,.ms-in.is-content .ms-in__rise{transition:opacity .3s ease;transform:none}
 }
 
-/* Client space: AP spacing and Log out in the tab bar on mobile */
+/* Client space: spacing and Log out in the tab bar on mobile */
 @media (max-width:1024px){
   .ms-acc{padding-top:calc(var(--ms-header-h,82px) + 48px)}
   .ms-acc__nav{justify-content:space-between;gap:0}

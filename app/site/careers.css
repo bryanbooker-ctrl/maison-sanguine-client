@@ -133,3 +133,41 @@ html.ms-careers #ms-header a.ms-cnav__btn{display:inline-flex;align-items:center
 html.ms-careers #ms-header a.ms-cnav__btn:hover{background:var(--hf);color:#000!important}
 @media (max-width:1024px){html.ms-careers #ms-header .ms-cnav a:nth-child(2){display:none}}
 @media (min-width:1025px){html.ms-careers #ms-foot .ms-foot__main{grid-template-columns:minmax(0,1fr) repeat(2,22.2vw)}}
+
+/* careers mobile */
+.ms-cburger,.ms-cmenu{display:none}
+.ms-cfoot-legal{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 24px}
+html body #ms-foot .ms-cfoot-legal a{font:500 14px/18px var(--ms-font)}
+@media (max-width:1024px){
+  html.ms-careers #ms-header .ms-cnav,html.ms-careers #ms-header a.ms-cnav__btn{display:none!important}
+  html.ms-careers #ms-header .ms-cburger{position:relative;display:block;width:28px;height:28px;padding:0;margin:0;border:0;background:none;cursor:pointer;pointer-events:auto;color:var(--hf);z-index:2}
+  html.ms-careers #ms-header .ms-cburger::after{content:"";position:absolute;inset:-12px}
+  html.ms-careers #ms-header .ms-cburger span{position:absolute;left:2px;right:2px;height:1px;background:currentColor;transition:transform .45s var(--ms-ease-out,ease),top .45s var(--ms-ease-out,ease)}
+  html.ms-careers #ms-header .ms-cburger span:first-child{top:10px}
+  html.ms-careers #ms-header .ms-cburger span:last-child{top:17px}
+  html.ms-cmenu-open #ms-header .ms-cburger span:first-child{top:14px;transform:rotate(45deg)}
+  html.ms-cmenu-open #ms-header .ms-cburger span:last-child{top:14px;transform:rotate(-45deg)}
+  html.ms-careers .ms-cmenu{position:fixed;inset:0;z-index:10010;display:flex;flex-direction:column;justify-content:space-between;padding:calc(var(--ms-header-h) + 40px) 24px calc(40px + env(safe-area-inset-bottom,0px));background:rgba(10,10,12,.92);-webkit-backdrop-filter:blur(20px) saturate(130%);backdrop-filter:blur(20px) saturate(130%);font-family:var(--ms-font);opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+  html.ms-cmenu-open .ms-cmenu{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
+  html.ms-cmenu-open{overflow:hidden}
+  .ms-cmenu__nav{display:flex;flex-direction:column;gap:22px}
+  html body .ms-cmenu__nav a{color:#fff!important;text-decoration:none!important;font-size:clamp(26px,7vw,40px);font-weight:200;line-height:1.05;letter-spacing:-0.03em;text-transform:uppercase}
+  html body a.ms-cmenu__btn{display:flex;align-items:center;justify-content:center;height:52px;border:1px solid #fff;border-radius:999px;color:#fff!important;text-decoration:none!important;font-size:15px;font-weight:500}
+}
+@media (max-width:767px){
+  .ms-jsearch{grid-template-columns:1fr 1fr}
+  .ms-jsearch>.ms-jsearch__f:first-child,html body .ms-jsearch>button.ms-jsearch__btn{grid-column:1/-1}
+  .ms-jsearch>.ms-jsearch__f:not(:first-child){border-bottom:0;padding:0 12px 0 18px}
+  .ms-jfilters{flex-wrap:nowrap;width:100%;padding:0}
+  .ms-jfilter{flex:1 1 0;min-width:0;padding:0 16px}
+  html body .ms-jfilter select{font-size:14px;text-overflow:ellipsis}
+  html body a.ms-jdept{grid-template-columns:94px 1fr auto;height:100px}
+  .ms-jdept__nm{font-size:16px}
+  .ms-jcar__track{grid-auto-columns:calc(100vw - 90px)}
+  html.ms-careers #ms-foot .ms-foot__base{display:flex;flex-direction:column;align-items:stretch}
+  html.ms-careers #ms-foot .ms-cfoot-legal{margin-top:56px}
+  html.ms-careers #ms-foot .ms-foot__copy{padding-top:48px}
+}
+@media (min-width:1025px){
+  html.ms-careers #ms-foot .ms-cfoot-legal{flex:1;justify-content:center;gap:12px 3.2vw}
+}
