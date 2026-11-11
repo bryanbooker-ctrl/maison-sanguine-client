@@ -4,7 +4,20 @@ import { safeNext } from '@/lib/next'
 
 const PROTECTED = ['/dashboard', '/request', '/admin']
 
+const CAREERS_PATHS = ['/fr', '/_next', '/api', '/favicon.ico']
+
 export async function middleware(request: NextRequest) {
+  const host = (request.headers.get('host') || '').toLowerCase()
+  const { pathname: path } = request.nextUrl
+
+  if (host.startsWith('careers.')) {
+    if (path === '/' || path === '/fr' || path === '/fr/') return NextResponse.redirect(new URL('/fr/home', request.url))
+    if (CAREERS_PATHS.some(p => path === p || path.startsWith(p + '/'))) return NextResponse.next()
+    return NextResponse.redirect(new URL(path + request.nextUrl.search, 'https://maisonsanguine.com'))
+  }
+
+  if (!PROTECTED.some(p => path === p || path.startsWith(p + '/')) && !path.startsWith('/auth')) return NextResponse.next()
+
   let supabaseResponse = NextResponse.next({ request })
 
   const supabase = createServerClient(
@@ -41,5 +54,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/auth/:path*', '/request/:path*', '/admin/:path*'],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 }
