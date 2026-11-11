@@ -252,3 +252,12 @@ html.ms-archives #ms-header .ms-navigation__scroll-bg{border-bottom:0!important;
 html.ms-archives #ms-header *,html.ms-archives #ms-header *:hover,html.ms-archives .ma-foot__social a:hover{opacity:1!important}
 html.ms-archives #ms-root .ms-navigation__top-center-column:hover{opacity:1!important}
 html.ms-archives #ms-header .ma-h a,html.ms-archives #ms-header .ma-h button,html.ms-archives #ms-header .ms-navigation__top-center-column{transition:none!important}
+
+/* read more: same link as the site */
+html body .ma-more{gap:8px;font-size:14px;font-weight:500}
+html body .ma-more i{transition:width .3s var(--ms-ease,cubic-bezier(.22,.61,.36,1))}
+html body .ma-more:hover i,html body .ma-more:focus-visible i{width:56px}
+@media (min-width:768px){html body .ma-more{font-size:15px}}
+/* IMS: compensate the transparent margin of the logo file */
+#ms-header .ma-ims{margin-right:-29px}
+@media (min-width:1025px){#ms-header .ma-ims{margin-right:-46px}}
