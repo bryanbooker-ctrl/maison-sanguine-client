@@ -1,0 +1,22 @@
+html body section.ms-car--light,html body section.ms-car--mc,html body section.ms-car--steel{--bg:#000!important;--fg:#fff!important;background:#000!important;color:#fff}
+html body section.ms-txt--light{--bg:#000;--fg:#fff}
+html body section.ms-vp--light{--bg:#000}
+html body section.ms-nl{--bg:#000;--fg:#fff;--bb:#fff;--bf:#000}
+html body section.ms-sign{--bg:#000;--fg:#fff;--mute:#9a9a9a;--lab:#9a9a9a;--line:#5c5c5c;--box:#121212;--err:#ff6b5e}
+html body section.ms-news{--bg:#000;--fg:#fff;--mute:rgba(255,255,255,.5);--line:rgba(255,255,255,.22);--ph:var(--ms-ph)}
+html body section.ms-loc{--bg:#000;--fg:#fff;--mute:#9a9a9a;--line:#5c5c5c;--soft:#5c5c5c;--ph:#121212}
+html body section.ms-loc .ms-loc__zoom,html body section.ms-loc .ms-loc__zoom button{background:#000!important;color:#fff!important;border-color:#5c5c5c!important}
+html body section.ms-loc a.ms-loc__btn:hover,html body section.ms-loc a.ms-loc__btn:focus-visible{background:#fff!important;color:#000!important}
+html body section.ms-vn{--fg:#fff;--bg:#000;--mute:rgba(255,255,255,.5);background:#000}
+html body section.ms-vn .ms-vn__map{background:#121212}
+html body .ms-vn a.ms-vn__btn:hover,html body .ms-vn a.ms-vn__btn:focus-visible{background:#fff!important;color:#000!important}
+html body .ms-loc__map .gm-style,html body .ms-vn__map .gm-style{filter:invert(1) hue-rotate(180deg) brightness(.9)}
+html body section.ms-col,html body .ms-col-fp,html body .ms-col-bar,html body .ms-col-cv{filter:invert(1) hue-rotate(180deg)}
+html body section.ms-col img,html body section.ms-col video,html body .ms-col-cv img,html body .ms-col-bar img{filter:invert(1) hue-rotate(180deg)}
+html body section.ms-car--mc .ms-car__card{background:#0e0e10!important;border:1px solid rgba(255,255,255,.14)}
+html body section.ms-car--mc .ms-car__card *{color:#fff!important}
+html body section.ms-car--mc div.ms-car__body div.ms-car__tag{background:#1c1c1f!important}
+html body section.ms-car--mc a.ms-car__cta{text-decoration-color:#fff!important}
+html body section.ms-car--mc .ms-car__lock{background:#fff}
+html body section.ms-car--mc .ms-car__lock svg,html body section.ms-car--mc .ms-car__lock *{color:#000!important}
+html body section.ms-car--mc .ms-car__arrow{color:#000}

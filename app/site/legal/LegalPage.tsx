@@ -1,5 +1,4 @@
 import { Fragment, type ReactNode } from 'react'
-import LightHeader from '../LightHeader'
 import './legal.css'
 
 export type LegalBlock = string | { list: string[] } | { sub: string }
@@ -15,7 +14,6 @@ function inline(text: string): ReactNode[] {
 export default function LegalPage({ doc }: { doc: LegalDoc }) {
   return (
     <>
-      <LightHeader />
       <main className="ms-legal">
         <article className="ms-legal__in">
           <h1 className="ms-legal__title">{doc.title}</h1>

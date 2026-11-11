@@ -1,19 +1,19 @@
-html,body{background:#fff}
-.ms-legal{--font:var(--ms-font,"Helvetica Neue","Inter Tight",Helvetica,Arial,sans-serif);display:block;margin:0;padding:calc(var(--ms-header-h,82px) + clamp(56px,7vw,100px)) 24px clamp(84px,10.5vw,150px);background:#fff;color:#000;font-family:var(--font);-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{background:#000}
+.ms-legal{--font:var(--ms-font,"Helvetica Neue","Inter Tight",Helvetica,Arial,sans-serif);display:block;margin:0;padding:calc(var(--ms-header-h,82px) + clamp(56px,7vw,100px)) 24px clamp(84px,10.5vw,150px);background:#000;color:#fff;font-family:var(--font);-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .ms-legal__in{max-width:64em}
-.ms-legal__title{margin:0;font-family:var(--font);font-weight:200;font-size:clamp(30px,9vw,42px);line-height:1.05;letter-spacing:-0.03em;text-transform:uppercase;color:#000}
+.ms-legal__title{margin:0;font-family:var(--font);font-weight:200;font-size:clamp(30px,9vw,42px);line-height:1.05;letter-spacing:-0.03em;text-transform:uppercase;color:#fff}
 .ms-legal__sec{margin-top:48px}
 .ms-legal__title+.ms-legal__sec{margin-top:40px}
-.ms-legal__h{margin:0 0 24px;font-family:var(--font);font-weight:200;font-size:clamp(20px,6.75vw,30px);line-height:1.05;letter-spacing:-0.03em;text-transform:uppercase;color:#000}
-.ms-legal__p{margin:0;font-family:var(--font);font-weight:300;font-size:15px;line-height:1.5;letter-spacing:0;color:#000}
+.ms-legal__h{margin:0 0 24px;font-family:var(--font);font-weight:200;font-size:clamp(20px,6.75vw,30px);line-height:1.05;letter-spacing:-0.03em;text-transform:uppercase;color:#fff}
+.ms-legal__p{margin:0;font-family:var(--font);font-weight:300;font-size:15px;line-height:1.5;letter-spacing:0;color:#fff}
 .ms-legal__p+.ms-legal__p,.ms-legal__list+.ms-legal__p,.ms-legal__p+.ms-legal__list{margin-top:18px}
-.ms-legal__sub{margin:32px 0 10px;font-family:var(--font);font-weight:500;font-size:15px;line-height:1.4;letter-spacing:0;text-transform:none;color:#000}
+.ms-legal__sub{margin:32px 0 10px;font-family:var(--font);font-weight:500;font-size:15px;line-height:1.4;letter-spacing:0;text-transform:none;color:#fff}
 .ms-legal__h+.ms-legal__sub{margin-top:0}
 .ms-legal__sub+.ms-legal__p{margin-top:0}
 .ms-legal__list{margin:0;padding:0 0 0 20px;list-style:disc}
 .ms-legal__list li{margin:0;padding-left:4px;font-weight:300;font-size:15px;line-height:1.5}
 .ms-legal__list li+li{margin-top:10px}
-.ms-legal a{color:#000;font-weight:500;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.ms-legal a{color:#fff;font-weight:500;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .ms-legal a:hover{text-decoration:none}
 @media (min-width:768px){
   .ms-legal{padding-left:7.5vw;padding-right:7.5vw}

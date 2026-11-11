@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import SitePage from '../site/SitePage'
-import LightHeader from '../site/LightHeader'
 import { NEWS_HTML, NEWS_APP } from '../site/news'
 
 export const metadata: Metadata = {
@@ -11,10 +10,5 @@ export const metadata: Metadata = {
 const SCRIPTS = [NEWS_APP]
 
 export default function News() {
-  return (
-    <>
-      <LightHeader />
-      <SitePage html={NEWS_HTML} scripts={SCRIPTS} />
-    </>
-  )
+  return <SitePage html={NEWS_HTML} scripts={SCRIPTS} />
 }

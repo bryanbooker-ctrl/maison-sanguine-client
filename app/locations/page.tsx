@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import SitePage from '../site/SitePage'
-import LightHeader from '../site/LightHeader'
 import { LOCATIONS_HTML, LOCATIONS_APP } from '../site/locations'
 
 export const metadata: Metadata = {
@@ -11,10 +10,5 @@ export const metadata: Metadata = {
 const SCRIPTS = [LOCATIONS_APP]
 
 export default function Locations() {
-  return (
-    <>
-      <LightHeader />
-      <SitePage html={LOCATIONS_HTML} scripts={SCRIPTS} />
-    </>
-  )
+  return <SitePage html={LOCATIONS_HTML} scripts={SCRIPTS} />
 }

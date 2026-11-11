@@ -1,0 +1,117 @@
+.ms-jhero,.ms-jsec,.ms-jfull{--fg:#fff;--bg:#000;--line:rgba(255,255,255,.22);--mute:#9a9a9a;--font:var(--ms-font);display:block;width:100%;background:#000;color:#fff;font-family:var(--font);box-sizing:border-box;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.ms-jhero *,.ms-jsec *,.ms-jfull *{box-sizing:border-box}
+.ms-jsec{padding:0 24px}
+html body h1.ms-jtitle,html body h2.ms-jtitle{margin:0!important;padding:0!important;font-family:var(--font)!important;font-weight:200!important;font-style:normal!important;text-transform:uppercase!important;font-size:var(--ms-h2)!important;line-height:1.05!important;letter-spacing:-0.03em!important;color:#fff!important;text-align:left}
+html body .ms-jtitle span{display:block}
+html body .ms-jtitle span.ms-it{font-style:italic!important;font-weight:300!important}
+html body .ms-jtitle--c{text-align:center!important}
+.ms-jhead__desc,.ms-jfull__text,.ms-jbox__text{margin:28px 0 0;font-size:15px;font-weight:300;line-height:1.4;color:#fff}
+/* hero */
+html body main.ms-page>section.ms-jhero.ms-jhero,html body main.ms-page>section.ms-jfull.ms-jfull{padding:0!important}
+.ms-jhero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.ms-jhero__media,.ms-jfull__media{position:absolute;inset:0;background:var(--ms-ph)}
+.ms-jhero__media img,.ms-jfull__media img{width:100%;height:100%;object-fit:cover;display:block}
+.ms-jhero__media::after,.ms-jfull__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.55))}
+.ms-jhero__in{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:140px 24px 40px}
+html body .ms-jhero h1.ms-jtitle{font-size:clamp(30px,9vw,44px)!important}
+/* search */
+.ms-jsearch{position:relative;z-index:1;display:grid;grid-template-columns:1fr;border:1px solid var(--line);background:#000}
+.ms-jsearch--hero{margin:0 24px 32px}
+.ms-jsearch__f{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 18px;border-bottom:1px solid var(--line)}
+.ms-jsearch__f svg{width:20px;height:20px;flex:none;fill:none;stroke:#fff;stroke-width:1.4}
+html body .ms-jsearch input,html body .ms-jsearch select,html body .ms-jfilter select,html body .ms-jsort select{width:100%;margin:0;padding:0;border:0;border-radius:0;background:transparent;color:#fff;font:300 15px/1.2 var(--font);outline:none;-webkit-appearance:none;appearance:none}
+html body .ms-jsearch select,html body .ms-jfilter select,html body .ms-jsort select{cursor:pointer;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2 5l5 5 5-5' fill='none' stroke='%23fff' stroke-width='1.3'/%3E%3C/svg%3E") right center/12px no-repeat;padding-right:22px}
+html body .ms-jsearch select option,html body .ms-jfilter select option,html body .ms-jsort select option{background:#000;color:#fff}
+.ms-jsearch input::placeholder{color:var(--mute)}
+html body button.ms-jsearch__btn{height:56px;margin:0;border:0;border-radius:0;background:#fff;color:#000;font:500 15px/1 var(--font);cursor:pointer;transition:opacity .3s}
+.ms-jsearch__btn:hover{opacity:.85}
+/* departments */
+.ms-jhead{margin-bottom:40px}
+.ms-jdepts{display:grid;grid-template-columns:1fr;gap:10px}
+html body a.ms-jdept{display:grid;grid-template-columns:32% 1fr auto;align-items:center;min-height:96px;border:1px solid var(--line);color:#fff!important;text-decoration:none!important;transition:border-color .3s}
+.ms-jdept:hover{border-color:#fff}
+.ms-jdept__img{align-self:stretch;background:var(--ms-ph)}
+.ms-jdept__img img{width:100%;height:100%;object-fit:cover;display:block}
+.ms-jdept__nm{padding:0 18px;font-size:15px;font-weight:500;line-height:1.3}
+.ms-jdept__ar{padding-right:20px}
+.ms-jdept__ar svg{display:block;width:20px;height:20px;fill:none;stroke:#fff;stroke-width:1.4;transition:transform .3s}
+.ms-jdept:hover .ms-jdept__ar svg{transform:translateX(4px)}
+.ms-jcta{display:flex;justify-content:center;margin-top:48px}
+html body a.ms-jbtn,html body button.ms-jbtn{display:inline-flex;align-items:center;justify-content:center;min-width:240px;height:56px;margin:0;padding:0 32px;border:1px solid #fff;border-radius:0;background:transparent;color:#fff!important;text-decoration:none!important;font:500 15px/1 var(--font);cursor:pointer;transition:background .3s,color .3s}
+html body a.ms-jbtn:hover,html body button.ms-jbtn:hover,html body a.ms-jbtn--fill{background:#fff;color:#000!important}
+html body a.ms-jbtn--fill:hover{background:transparent;color:#fff!important}
+/* carousels */
+.ms-jcar{position:relative;margin-right:-24px}
+.ms-jcar__track{display:grid;grid-auto-flow:column;grid-auto-columns:82%;column-gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-right:24px}
+.ms-jcar__track::-webkit-scrollbar{display:none}
+.ms-jcard{scroll-snap-align:start;min-width:0}
+.ms-jcard__img{position:relative;aspect-ratio:16/9;background:var(--ms-ph)}
+.ms-jcard__img img{width:100%;height:100%;object-fit:cover;display:block}
+html body .ms-jcard a.ms-play{position:absolute;top:50%;left:50%;display:grid;place-items:center;width:56px;height:56px;margin:0;border:1px solid #fff;border-radius:50%;background:rgba(0,0,0,.25);color:#fff;transform:translate(-50%,-50%);transition:background .3s}
+html body .ms-jcard a.ms-play:hover{background:rgba(0,0,0,.5)}
+.ms-jcard a.ms-play svg{width:34%;height:34%;margin-left:8%;fill:currentColor}
+.ms-jcard__t{margin-top:24px;font-size:15px;font-weight:500;line-height:1.3}
+.ms-jcard__q{margin-top:14px;max-width:30em;font-size:15px;font-weight:300;line-height:1.45;color:#fff}
+.ms-jcar__arrow{display:none}
+/* full bleed */
+.ms-jfull{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ms-jfull__in{position:relative;z-index:1;max-width:46em;padding:120px 24px;text-align:center}
+.ms-jfull--cta .ms-jfull__in .ms-jbtn{margin-top:40px}
+/* box */
+.ms-jbox{border:1px solid var(--line);padding:72px 24px;text-align:center}
+.ms-jsoc{display:flex;justify-content:center;gap:40px;margin-top:36px}
+.ms-jsoc a{display:block;width:26px;height:26px;color:#fff;transition:opacity .3s}
+.ms-jsoc a:hover{opacity:.6}
+.ms-jsoc svg{display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+/* opportunities */
+html body main.ms-page>section.ms-jopp:first-of-type{padding-top:calc(var(--ms-header-h,82px) + var(--ms-sy))!important}
+html body .ms-jopp h1.ms-jtitle{font-size:clamp(30px,9vw,44px)!important}
+.ms-jsearch--page{margin-top:48px}
+.ms-jfilters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+.ms-jfilter{display:flex;align-items:center;min-width:180px;height:48px;padding:0 16px;border:1px solid var(--line)}
+.ms-jbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-top:64px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.ms-jcount{font-size:15px;font-weight:300;color:var(--mute)}
+.ms-jsort{width:150px}
+html body .ms-jsort select{font-weight:500}
+.ms-jlist{display:grid;gap:10px;margin-top:24px}
+html body a.ms-job{display:grid;grid-template-columns:1fr;gap:18px;padding:28px 24px;border:1px solid var(--line);color:#fff!important;text-decoration:none!important;transition:border-color .3s}
+.ms-job:hover{border-color:#fff}
+.ms-job__t{font-size:clamp(20px,5.5vw,24px);font-weight:300;line-height:1.2}
+.ms-job__m{margin-top:8px;font-size:14px;font-weight:300;color:var(--mute)}
+.ms-job__tag{display:inline-block;margin-top:22px;padding:12px 16px;background:#1c1c1f;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
+.ms-job__r{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.ms-job__loc{font-size:14px;font-weight:500}
+.ms-job__d{font-size:14px;font-weight:300;color:var(--mute)}
+.ms-jempty{padding:56px 24px;border:1px solid var(--line);font-size:15px;font-weight:300;line-height:1.5;text-align:center}
+html body .ms-jempty a{color:#fff;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+@media (min-width:768px){
+  .ms-jsec{padding:0 7.5vw}
+  html body h1.ms-jtitle,html body h2.ms-jtitle{font-size:var(--ms-h2-d)!important}
+  html body .ms-jhero h1.ms-jtitle,html body .ms-jopp h1.ms-jtitle{font-size:clamp(48px,4.6vw,88px)!important}
+  .ms-jhead__desc,.ms-jfull__text,.ms-jbox__text,.ms-jcard__q,.ms-jdept__nm,.ms-jcard__t{font-size:clamp(14px,1.1vw,17px)}
+  .ms-jfull__text{font-size:clamp(16px,1.35vw,22px)}
+  .ms-jhead{display:grid;grid-template-columns:1fr 1fr;column-gap:8vw;align-items:start;margin-bottom:56px}
+  .ms-jhead__desc{margin-top:.6em;max-width:28em}
+  .ms-jsearch{grid-template-columns:2fr 1fr 1fr auto;align-items:stretch}
+  .ms-jsearch--hero{margin:0 7.5vw 6vh}
+  .ms-jsearch__f{min-height:72px;padding:0 24px;border-bottom:0;border-right:1px solid var(--line)}
+  html body button.ms-jsearch__btn{height:auto;min-width:180px}
+  .ms-jdepts{grid-template-columns:1fr 1fr;gap:14px}
+  html body a.ms-jdept{min-height:clamp(110px,7.6vw,150px)}
+  .ms-jdept__nm{padding:0 32px}
+  .ms-jdept__ar{padding-right:32px}
+  .ms-jcar{margin-right:-7.5vw;padding-left:21vw}
+  .ms-jsec--nohead .ms-jcar{padding-left:21vw}
+  .ms-jcar__track{grid-auto-columns:calc((100% - 7.5vw - 24px) / 2.15);column-gap:14px;padding-right:7.5vw}
+  .ms-jcar__arrow{position:absolute;top:calc((100vw - 21vw - 7.5vw - 7.5vw - 24px) / 2.15 * 9 / 16 / 2 - 22px);display:grid;place-items:center;width:44px;height:44px;border:1px solid #fff;border-radius:50%;background:rgba(0,0,0,.35);color:#fff;cursor:pointer;transition:opacity .3s}
+  .ms-jcar__arrow svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.4}
+  .ms-jcar__arrow:disabled{opacity:0;pointer-events:none}
+  .ms-jcar__arrow--prev{left:calc(21vw + 16px)}
+  .ms-jcar__arrow--next{right:calc(7.5vw + 16px)}
+  .ms-jcard a.ms-play{width:72px;height:72px}
+  .ms-jbox{padding:clamp(100px,10vw,180px) 24px}
+  html body a.ms-job{grid-template-columns:1fr auto;padding:40px}
+  .ms-job__r{flex-direction:column;justify-content:space-between;align-items:flex-end}
+  .ms-job__t{font-size:clamp(22px,1.9vw,34px)}
+}
+html body .ms-jmore[hidden]{display:none!important}
