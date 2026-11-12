@@ -34,7 +34,7 @@ function eventPage() {
   }
   const NIGHTS: Record<string, string> = {
     'aspen-winter-edition': 'https://maisonsanguine.com/night-collection/winter-edition/saturday-february-20-2027',
-    'new-york-spring-edition': 'https://maisonsanguine.com/night-collection/spring-edition/saturday-april-24-2027',
+    'new-york-spring-edition': 'https://maisonsanguine.com/night-collection/spring-edition/monday-may-3-2027',
     'rite-of-summer-saint-tropez': 'https://maisonsanguine.com/night-collection/rite-of-summer/saturday-july-24-2027',
     'paris-fall-edition': 'https://maisonsanguine.com/night-collection/fall-edition/saturday-october-2-2027',
     'msnye-2027-rio-de-janeiro': 'https://maisonsanguine.com/night-collection/msnye/friday-december-31-2027',
