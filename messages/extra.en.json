@@ -18,6 +18,20 @@
     "Innovative || Atmospheres",
     "Absolute || Mastery",
     "Spatial || Design",
-    "The Winter || Edition"
+    "The Winter || Edition",
+    "Change || Location /",
+    "Location / || Language",
+    "Location / Language || Location"
+  ],
+  "location": [
+    "Change",
+    "Location",
+    "Language",
+    "Apply",
+    "Close",
+    "International",
+    "Dubai",
+    "Select a country or region to set your language and the currency of your reservations.",
+    "Czech Republic"
   ]
 }

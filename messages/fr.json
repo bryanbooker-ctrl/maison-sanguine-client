@@ -665,7 +665,10 @@
     "0keba3j": "innovantes",
     "0a91ki9": "absolue",
     "041e4mh": "spatial",
-    "1dqu8up": "Edition"
+    "1dqu8up": "Edition",
+    "06ndphj": "de pays /",
+    "1k08r1d": "de langue",
+    "1ficy6c": "Pays"
   },
   "design": {
     "0u9z06r": "Design spatial",
@@ -894,7 +897,8 @@
     "1l0xxoj": "Fermer"
   },
   "lang": {
-    "07nql6j": "English"
+    "07nql6j": "English",
+    "1nlzxk1": "':'&gt;','"
   },
   "legal-accessibility": {
     "19ts4jy": "Déclaration d’accessibilité",
@@ -2199,5 +2203,16 @@
     "00ztv8i": "Cultiver des partenariats éthiques et de confiance",
     "0vcw7si": "Le développement durable est inscrit dans notre vision de long terme et piloté au plus haut niveau de la Maison. Notre gouvernance repose sur la continuité, la discrétion, la responsabilité et une prise de décision rigoureuse, encadrées par notre Code de conduite et nos protocoles. Nous voyons notre réseau de partenaires et de fournisseurs comme un levier pour répondre aux défis sociaux et environnementaux actuels, en plaçant la collaboration au cœur de notre démarche.",
     "1u8rr8d": "Voir le récit"
+  },
+  "location": {
+    "18wuq59": "Changer",
+    "16us7mj": "Langue",
+    "1k6e5zv": "Appliquer",
+    "0f9zd0j": "International",
+    "11an6vn": "Sélectionnez un pays ou une région pour définir votre langue et la devise de vos réservations.",
+    "0pghiva": "Lieu",
+    "1l0xxoj": "Fermer",
+    "1uz5u66": "Dubaï",
+    "16syk1s": "République tchèque"
   }
 }

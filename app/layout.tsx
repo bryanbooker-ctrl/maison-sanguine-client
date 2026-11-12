@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from 'next'
 import SiteChrome from './site/SiteChrome'
 import { MS_DATA, MS_SCRIPTS } from './site/chrome'
-import { getLocale, getPublicPath, accountDict, trHtml, trJs, localizeMetadata } from '@/lib/i18n'
+import { getLocale, getPublicPath, accountDict, trHtml, trJs, localizeMetadata, t, tc } from '@/lib/i18n'
 import AccountI18n from './site/AccountI18n'
-import { LOCALES } from '@/lib/locales'
+import { TRANSLATED } from '@/lib/locales'
+import { INTL_COUNTRIES, LANG_NAMES, LOCATIONS, htmlLang, langOf, locOf } from '@/lib/locations'
 import './globals.css'
 
 const META: Metadata = {
@@ -21,9 +22,22 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const locale = await getLocale()
   const path = await getPublicPath()
-  const account = locale !== 'en' && /^\/(dashboard|auth|request)(\/|$)/.test(path)
+  const lang = langOf(locale)
+  const ui = TRANSLATED.includes(lang) ? lang : 'en'
+  const account = ui !== 'en' && /^\/(dashboard|auth|request)(\/|$)/.test(path)
+  const loc = {
+    ctx: locale, loc: locOf(locale), lang, ui: htmlLang(ui),
+    locations: LOCATIONS, names: LANG_NAMES,
+    intl: INTL_COUNTRIES.map(c => ({ region: c.region, label: c.label && t(c.label, locale) })),
+    t: {
+      change: t('Change', locale), location2: tc('Change', 'Location /', locale), language2: tc('Location /', 'Language', locale),
+      location: tc('Location / Language', 'Location', locale), language: t('Language', locale), apply: t('Apply', locale), close: t('Close', locale),
+      international: t('International', locale),
+      help: t('Select a country or region to set your language and the currency of your reservations.', locale),
+    },
+  }
   return (
-    <html lang={locale} data-langs={LOCALES.join(',')} suppressHydrationWarning>
+    <html lang={htmlLang(ui)} data-ms-loc={locale} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://images.squarespace-cdn.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,6 +46,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@200,400&display=swap" />
       </head>
       <body suppressHydrationWarning>
+        <script type="application/json" id="ms-loc-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(loc).replace(/</g, '\\u003c') }} />
         <SiteChrome data={trHtml(MS_DATA, locale)} scripts={MS_SCRIPTS.map(code => trJs(code, locale))} />
         {children}
         {account && <AccountI18n dict={accountDict(locale)} />}

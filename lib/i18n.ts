@@ -1,8 +1,12 @@
 import { headers } from 'next/headers'
-import { DEFAULT_LOCALE, LOCALES, PREFIXED, type Locale } from './locales'
+import { DEFAULT_LOCALE, LOCALES, TRANSLATED } from './locales'
 import { SOURCE as EN, TRANSLATIONS as SOURCES, type Messages } from './messages'
+import { LOCATIONS, PREFIX_RE, homePath, hreflangOf, isContext, langOf, prefixOf } from './locations'
 
-export { DEFAULT_LOCALE, LOCALES, type Locale }
+export { DEFAULT_LOCALE, LOCALES }
+
+// A locale here is the location context of the URL: "en" (International) or "<country>/<language>", like "fr/fr".
+export type Locale = string
 
 export function norm(s: string) {
   return s.replace(/\s+/g, ' ').trim()
@@ -29,8 +33,13 @@ const FLAT: Record<string, Record<string, string>> = Object.fromEntries(Object.e
 
 export async function getLocale(): Promise<Locale> {
   const h = await headers()
-  const l = h.get('x-ms-locale') || ''
-  return (PREFIXED.includes(l) ? l : DEFAULT_LOCALE) as Locale
+  const l = h.get('x-ms-locale')
+  return isContext(l) ? l : DEFAULT_LOCALE
+}
+
+function translatable(locale: Locale) {
+  const lang = langOf(locale)
+  return lang !== DEFAULT_LOCALE && !!FLAT[lang]
 }
 
 export async function getPublicPath(): Promise<string> {
@@ -38,19 +47,19 @@ export async function getPublicPath(): Promise<string> {
   return h.get('x-ms-path') || '/'
 }
 
-function tc(prev: string, text: string, locale: Locale): string {
-  if (prev && locale !== DEFAULT_LOCALE) {
+export function tc(prev: string, text: string, locale: Locale): string {
+  if (prev && translatable(locale)) {
     const key = textKey(prev + ' || ' + norm(text))
-    const v = FLAT[locale]?.[key]
+    const v = FLAT[langOf(locale)]?.[key]
     if (v && EN_FLAT[key] !== undefined) return text.match(/^\s*/)![0] + v + text.match(/\s*$/)![0]
   }
   return t(text, locale)
 }
 
 export function t(text: string, locale: Locale): string {
-  if (locale === DEFAULT_LOCALE || !text || !/[A-Za-z]/.test(text)) return text
+  if (!text || !translatable(locale) || !/[A-Za-z]/.test(text)) return text
   const key = textKey(text)
-  const v = FLAT[locale]?.[key]
+  const v = FLAT[langOf(locale)]?.[key]
   if (!v || EN_FLAT[key] === undefined) return text
   const lead = text.match(/^\s*/)![0]
   const trail = text.match(/\s*$/)![0]
@@ -58,26 +67,25 @@ export function t(text: string, locale: Locale): string {
 }
 
 const OWN_HOST = /^https?:\/\/((?:www|careers|press|msarchives)\.)?maisonsanguine\.com(?=\/|$|[?#])/i
-const SKIP_PATH = new RegExp('^/(?:api|_next|' + PREFIXED.join('|') + ')(?:/|$)|\\.[a-z0-9]{2,4}$', 'i')
+const SKIP_PATH = /^\/(?:api|_next|auth\/callback)(?:\/|$)|\.[a-z0-9]{2,4}$/i
 
 export function localizeHref(href: string, locale: Locale): string {
-  if (locale === DEFAULT_LOCALE || !href) return href
+  if (!href) return href
   const abs = href.match(OWN_HOST)
   if (abs) {
     const [, path = '', suffix = ''] = href.slice(abs[0].length).match(/^([^?#]*)(.*)$/) || []
-    if (path && SKIP_PATH.test(path)) return href
-    return abs[0] + '/' + locale + (path === '/' ? '' : path) + suffix
+    if (path && (SKIP_PATH.test(path) || PREFIX_RE.test(path))) return href
+    return abs[0] + '/' + locale + homePath(path) + suffix
   }
   if (href.startsWith('/') && !href.startsWith('//')) {
     const path = href.match(/^[^?#]*/)![0]
-    if (SKIP_PATH.test(path)) return href
-    return '/' + locale + (path === '/' ? '' : path) + href.slice(path.length)
+    if (SKIP_PATH.test(path) || PREFIX_RE.test(path)) return href
+    return '/' + locale + homePath(path) + href.slice(path.length)
   }
   return href
 }
 
 export function trData<T>(value: T, locale: Locale): T {
-  if (locale === DEFAULT_LOCALE) return value
   if (typeof value === 'string') return t(value, locale) as T
   if (Array.isArray(value)) return value.map(v => trData(v, locale)) as T
   if (value && typeof value === 'object') {
@@ -109,7 +117,7 @@ function trFragment(html: string, locale: Locale) {
 const cache = new Map<string, string>()
 
 export function trHtml(html: string, locale: Locale): string {
-  if (locale === DEFAULT_LOCALE || !html) return html
+  if (!html) return html
   const ck = locale + '\u0000' + html
   const hit = cache.get(ck)
   if (hit !== undefined) return hit
@@ -142,7 +150,8 @@ export function trHtml(html: string, locale: Locale): string {
 }
 
 export function trJs(code: string, locale: Locale): string {
-  if (locale === DEFAULT_LOCALE || !code) return code
+  if (!code || !translatable(locale)) return code
+  locale = langOf(locale)
   const ck = locale + '\u0001' + code
   const hit = cache.get(ck)
   if (hit !== undefined) return hit
@@ -160,23 +169,23 @@ export function trJs(code: string, locale: Locale): string {
 
 export async function localizeMetadata<M extends { title?: unknown; description?: unknown }>(meta: M): Promise<M & { alternates: { canonical: string; languages: Record<string, string> } }> {
   const h = await headers()
-  const l = h.get('x-ms-locale') || ''
-  const locale = (PREFIXED.includes(l) ? l : DEFAULT_LOCALE) as Locale
+  const locale = await getLocale()
   const host = h.get('host') || 'maisonsanguine.com'
-  const path = h.get('x-ms-path') || '/'
+  const path = homePath(h.get('x-ms-path') || '/')
   const origin = (/^(localhost|127\.)/.test(host) ? 'http://' : 'https://') + host
-  const urls: Record<string, string> = { en: origin + path }
-  for (const l of LOCALES) if (l !== DEFAULT_LOCALE) urls[l] = origin + '/' + l + (path === '/' ? '' : path)
+  const languages: Record<string, string> = {}
+  for (const l of LOCATIONS) for (const lang of l.langs) if (TRANSLATED.includes(lang)) languages[hreflangOf(l.code, lang)] = origin + '/' + prefixOf(l.code, lang) + path
+  const intl = origin + '/en' + path
   return {
     ...meta,
     title: typeof meta.title === 'string' ? t(meta.title, locale) : meta.title,
     description: typeof meta.description === 'string' ? t(meta.description, locale) : meta.description,
-    alternates: { canonical: urls[locale], languages: { ...urls, 'x-default': urls.en } },
+    alternates: { canonical: TRANSLATED.includes(langOf(locale)) ? origin + '/' + locale + path : intl, languages: { ...languages, 'x-default': intl } },
   }
 }
 
 export function accountDict(locale: Locale): Record<string, string> {
-  const src = (SOURCES[locale]?.account || {}) as Record<string, string>
+  const src = (SOURCES[langOf(locale)]?.account || {}) as Record<string, string>
   const en = EN.account || {}
   const out: Record<string, string> = {}
   for (const [k, v] of Object.entries(src)) if (en[k] && v) out[en[k]] = v

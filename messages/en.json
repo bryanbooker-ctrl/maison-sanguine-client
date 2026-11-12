@@ -248,7 +248,6 @@
     "0bg0a2v": "Cookie Policy",
     "10tizdr": "Accessibility",
     "191w9lj": "© 2026 Maison Sanguine",
-    "07nql6j": "English",
     "007q5wa": "Menu",
     "1eyiwn6": "Explore the archives",
     "1vvvdef": "Filter",
@@ -665,7 +664,10 @@
     "0keba3j": "Innovative || Atmospheres",
     "0a91ki9": "Absolute || Mastery",
     "041e4mh": "Spatial || Design",
-    "1dqu8up": "The Winter || Edition"
+    "1dqu8up": "The Winter || Edition",
+    "06ndphj": "Change || Location /",
+    "1k08r1d": "Location / || Language",
+    "1ficy6c": "Location / Language || Location"
   },
   "design": {
     "0u9z06r": "Spatial Design",
@@ -894,7 +896,7 @@
     "1l0xxoj": "Close"
   },
   "lang": {
-    "07nql6j": "English"
+    "1nlzxk1": "':'&gt;','"
   },
   "legal-accessibility": {
     "19ts4jy": "Accessibility Statement",
@@ -1305,6 +1307,17 @@
     "0w3fq2r": "Contact",
     "1mlzlvk": "Any request relating to these Terms of Use, the Site, or its Content may be submitted through the [Contact](https://maisonsanguine.com/contact) section.",
     "0u3oa63": "These Terms of Use were last updated on December 1, 2025."
+  },
+  "location": {
+    "18wuq59": "Change",
+    "0pghiva": "Location",
+    "16us7mj": "Language",
+    "1k6e5zv": "Apply",
+    "1l0xxoj": "Close",
+    "0f9zd0j": "International",
+    "1uz5u66": "Dubai",
+    "11an6vn": "Select a country or region to set your language and the currency of your reservations.",
+    "16syk1s": "Czech Republic"
   },
   "locations": {
     "0hmv423": "Find an Experience",

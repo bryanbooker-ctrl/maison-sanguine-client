@@ -12,10 +12,21 @@ node scripts/i18n-extract.mjs
 
 The command updates `en.json` and reports how many texts are translated in each language. Translate the new keys in `fr.json`.
 
+## Locations and languages
+
+Locations, their currency and the languages offered in each are listed in `lib/locations.ts`.
+URLs are `/<country>/<language>/...` (for example `/fr/fr/home`, `/jp/ja/home`, `/tw/zh-hant/home`) and `/en/...` for International.
+A language offered in a location without its file here is shown in English until the file exists.
+The choice is made in the Location / Language window, opened from the footer and from the MS Archives header.
+
 ## Adding a language
 
-1. Copy `fr.json` to `<code>.json` (for example `zh.json`) and translate the values.
+1. Copy `fr.json` to `<code>.json` (for example `de.json`, `ja.json`, `zh-hant.json`) and translate the values.
 2. Add the code to `LOCALES` in `lib/locales.ts`.
 3. Add the import line in `lib/messages.ts`.
 
-URLs become `/<code>/...` and the language appears in the footer and MS Archives language menus automatically.
+Nothing else changes: the URLs already exist, and the language is picked by default in its locations as soon as it is listed in `LOCALES`.
+
+## Prices per currency
+
+The currency of each location is used at checkout when the edition has a price for it in the `prices` column (see `supabase-editions-prices.sql`). Without it, the price in EUR is used.

@@ -1,57 +1,73 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { safeNext } from '@/lib/next'
-import { PREFIXED } from '@/lib/locales'
+import { TRANSLATED } from '@/lib/locales'
+import { INTL, LANGS, homePath, isContext, locationOf, parsePrefix, prefixOf } from '@/lib/locations'
 
 const PROTECTED = ['/dashboard', '/request', '/admin']
 
 const PASS = ['/_next', '/api', '/favicon.ico']
 
+const COOKIE = 'ms_loc'
 
-function splitLocale(path: string) {
-  const m = path.match(/^\/([a-z]{2})(?=\/|$)/)
-  if (m && PREFIXED.includes(m[1])) return { locale: m[1], path: path.slice(3) || '/' }
-  return { locale: 'en', path }
+function geoContext(country: string) {
+  const c = country.toLowerCase()
+  const loc = locationOf(c)
+  if (!loc || loc.code === INTL) return 'en'
+  const lang = loc.langs.find(l => TRANSLATED.includes(l)) || loc.langs[0]
+  return prefixOf(loc.code, lang)
 }
 
 export async function middleware(request: NextRequest) {
   const host = (request.headers.get('host') || '').toLowerCase()
   const search = request.nextUrl.search
   const raw = request.nextUrl.pathname
+  const sub = /^(careers|press|msarchives)\./.test(host)
 
   if (PASS.some(p => raw === p || raw.startsWith(p + '/'))) return NextResponse.next()
+  if (/\.[a-z0-9]{2,5}$/i.test(raw)) return NextResponse.next()
 
-  if (!/^(careers|press|msarchives)\./.test(host)) {
-    if (raw === '/fr/home') return NextResponse.redirect(new URL('/fr/careers' + search, request.url))
-    if (raw === '/fr/opportunities') return NextResponse.redirect(new URL('/fr/careers/opportunities' + search, request.url))
+  const saved = request.cookies.get(COOKIE)?.value
+  const preferred = isContext(saved) ? saved : geoContext(request.headers.get('x-vercel-ip-country') || '')
+  const redirect = (target: string) => NextResponse.redirect(new URL(target + search, request.url))
+
+  const bare = raw === '/auth/callback'
+  const parsed = bare ? { ctx: preferred, rest: raw } : parsePrefix(raw)
+
+  if (!parsed) {
+    const seg = raw.match(/^\/([a-z]{2})(?:\/([a-z]{2}(?:-[a-z]{4})?))?(?=\/|$)/)
+    const loc = seg && locationOf(seg[1])
+    if (loc && seg![2] && LANGS.includes(seg![2])) return redirect('/' + prefixOf(loc.code, loc.langs[0]) + raw.slice(seg![0].length))
+    if (seg && seg[1] === 'fr' && !seg[2]) {
+      const rest = raw.slice(3)
+      if (!sub && rest === '/home') return redirect('/fr/fr/careers')
+      if (!sub && rest === '/opportunities') return redirect('/fr/fr/careers/opportunities')
+      return redirect('/fr/fr' + homePath(rest))
+    }
+    return redirect('/' + preferred + homePath(raw))
   }
 
-  const { locale, path } = splitLocale(raw)
-  const pre = locale === 'en' ? '' : '/' + locale
+  const locale = parsed.ctx
+  if (!bare && (parsed.rest === '' || parsed.rest === '/')) return redirect('/' + locale + '/home')
+  const path = !bare && parsed.rest === '/home' ? '/' : parsed.rest
+  const pre = '/' + locale
 
   const reqHeaders = new Headers(request.headers)
   reqHeaders.set('x-ms-locale', locale)
   reqHeaders.set('x-ms-path', path)
 
-  const isAccount = /^\/(dashboard|auth|request)(\/|$)/.test(path)
-  const pref = request.cookies.get('ms_lang')?.value
-  if (locale === 'en' && pref && pref !== 'en' && PREFIXED.includes(pref) && isAccount) {
-    return NextResponse.redirect(new URL('/' + pref + path + search, request.url))
-  }
   const remember = (res: NextResponse) => {
-    if ((locale !== 'en' && pref !== locale) || (locale === 'en' && pref && pref !== 'en' && !isAccount)) {
-      res.cookies.set('ms_lang', locale, { path: '/', maxAge: 60 * 60 * 24 * 365, sameSite: 'lax' })
-    }
+    if (!bare && saved !== locale) res.cookies.set(COOKIE, locale, { path: '/', maxAge: 60 * 60 * 24 * 365, sameSite: 'lax' })
     return res
   }
 
   const go = (target?: string) => {
-    const url = target ?? (pre ? path : null)
+    const url = bare ? null : (target ?? path)
     return remember(url
       ? NextResponse.rewrite(new URL(url + search, request.url), { request: { headers: reqHeaders } })
       : NextResponse.next({ request: { headers: reqHeaders } }))
   }
-  const to = (target: string, base?: string) => NextResponse.redirect(new URL(pre + target + search, base ?? request.url))
+  const to = (target: string, base?: string) => NextResponse.redirect(new URL(pre + homePath(target) + search, base ?? request.url))
 
   if (host.startsWith('careers.')) {
     if (path === '/') return go('/careers')

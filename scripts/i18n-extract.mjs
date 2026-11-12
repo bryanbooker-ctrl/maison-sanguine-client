@@ -141,7 +141,7 @@ fs.mkdirSync(OUT, { recursive: true })
 fs.writeFileSync(path.join(OUT, 'en.json'), JSON.stringify(sorted, null, 2) + '\n')
 
 for (const f of fs.readdirSync(OUT)) {
-  if (!/^[a-z]{2}\.json$/.test(f) || f === 'en.json') continue
+  if (!/^[a-z]{2}(-[a-z]{4})?\.json$/.test(f) || f === 'en.json') continue
   const tr = JSON.parse(fs.readFileSync(path.join(OUT, f), 'utf8'))
   let missing = 0, total = 0
   for (const ns of Object.keys(sorted)) for (const k of Object.keys(sorted[ns])) { total++; if (!tr[ns]?.[k]) missing++ }

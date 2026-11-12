@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { createUserClient, createServiceClient, siteUrl } from '@/lib/supabase-server'
 import { createCheckout, createIdentitySession } from '@/lib/stripe'
 import { applyIdentity } from '@/lib/identity'
+import { cookies } from 'next/headers'
+import { isContext, locOf, locationOf } from '@/lib/locations'
 
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -45,8 +47,12 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
       }
     }
 
+    const ctx = (await cookies()).get('ms_loc')?.value
+    const wanted = (isContext(ctx) ? locationOf(locOf(ctx))?.currency : null)?.toLowerCase()
+    const local = wanted && ed.prices && Number(ed.prices[wanted]) > 0 ? Number(ed.prices[wanted]) : null
+
     const checkout = await createCheckout({
-      name: ed.name, amount: ed.price_cents, currency: ed.currency || 'eur', quantity: a.places,
+      name: ed.name, amount: local ?? ed.price_cents, currency: local ? wanted! : (ed.currency || 'eur'), quantity: a.places,
       email: a.email, admissionId: a.id,
       successUrl: `${base}/api/pay/${a.id}/done?session_id={CHECKOUT_SESSION_ID}`,
       cancelUrl: `${base}/dashboard?tab=experiences`,

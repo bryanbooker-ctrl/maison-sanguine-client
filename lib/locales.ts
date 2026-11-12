@@ -1,6 +1,6 @@
-// Languages of the site. English is the default and has no URL prefix.
+// Languages that have a translation file in messages/. English is the source language.
 // To add a language: create messages/<code>.json, add the code below and its import in lib/messages.ts.
+// A language offered in a location (lib/locations.ts) without a file here is shown in English.
 export const LOCALES = ['en', 'fr'] as const
-export type Locale = (typeof LOCALES)[number]
-export const DEFAULT_LOCALE: Locale = 'en'
-export const PREFIXED: readonly string[] = LOCALES.filter(l => l !== DEFAULT_LOCALE)
+export const DEFAULT_LOCALE = 'en'
+export const TRANSLATED: readonly string[] = LOCALES
