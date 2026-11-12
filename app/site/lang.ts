@@ -1,42 +1,44 @@
-export const LANG_CSS = `.ms-lw{position:fixed;inset:0;z-index:2147483000;font-family:var(--ms-font,"Helvetica Neue",Helvetica,Arial,sans-serif);color:#000;-webkit-font-smoothing:antialiased}
+export const LANG_CSS = `.ms-lw{position:fixed;inset:0;z-index:2147483000;font-family:var(--ms-font,"Helvetica Neue",Helvetica,Arial,sans-serif);color:#fff;-webkit-font-smoothing:antialiased}
 .ms-lw[hidden]{display:none}
 .ms-lw *{box-sizing:border-box}
-.ms-lw__veil{position:absolute;inset:0;background:rgba(0,0,0,.06);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);opacity:0;transition:opacity .5s cubic-bezier(.4,0,.2,1)}
-.ms-lw__panel{position:absolute;top:0;bottom:0;left:0;display:flex;flex-direction:column;width:100%;max-width:100%;padding:28px 24px 24px;overflow-y:auto;background:#fff;transform:translateX(-100%);transition:transform .6s cubic-bezier(.16,1,.3,1);overscroll-behavior:contain}
-.ms-lw.is-open .ms-lw__veil{opacity:1}
-.ms-lw.is-open .ms-lw__panel{transform:none}
+.ms-lw__veil{position:absolute;inset:0;background:rgba(10,10,12,.55);-webkit-backdrop-filter:blur(20px) saturate(130%);backdrop-filter:blur(20px) saturate(130%);clip-path:inset(0 0 100% 0);transition:clip-path .72s cubic-bezier(.65,0,.35,1)}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.ms-lw__veil{background:rgba(10,10,12,.92)}}
+.ms-lw__panel{position:absolute;top:0;bottom:0;left:0;display:flex;flex-direction:column;width:100%;max-width:100%;padding:28px 24px 24px;overflow-y:auto;background:transparent;opacity:0;transition:opacity .25s cubic-bezier(.4,0,.2,1);overscroll-behavior:contain}
+.ms-lw.is-open .ms-lw__veil{clip-path:inset(0 0 0 0)}
+.ms-lw.is-open .ms-lw__panel{opacity:1;transition:opacity .5s cubic-bezier(.4,0,.2,1) .35s}
 .ms-lw__close{display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:-10px 0 0 -10px;padding:0;border:0;background:none;color:inherit;cursor:pointer;transition:opacity .3s ease}
 .ms-lw__close:hover{opacity:.55}
 .ms-lw__close svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.1}
 .ms-lw__title{margin:56px 0 0;padding:0;font-family:inherit;font-weight:200;font-style:normal;text-transform:uppercase;font-size:var(--ms-h2,clamp(20px,6.75vw,30px));line-height:1.05;letter-spacing:-0.03em;color:inherit}
 .ms-lw__title span{display:block}
 .ms-lw__title .ms-it{font-style:italic;font-weight:300}
-.ms-lw__body{margin:56px 0 40px}
-.ms-lw__label{display:block;margin:0 0 10px;padding:0;border:0;font-family:inherit;font-weight:500;font-size:11.2px;line-height:14px;letter-spacing:.12em;text-transform:uppercase;color:rgba(0,0,0,.55)}
+.ms-lw__body{margin:56px 0 40px;padding:0}
+.ms-lw__label{display:block;margin:0 0 10px;padding:0;border:0;font-family:inherit;font-weight:500;font-size:11.2px;line-height:14px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .ms-lw__select{position:relative}
-.ms-lw__current{display:flex;align-items:center;gap:6px;width:100%;margin:0;padding:0 2px 12px 0;border:0;border-bottom:1px solid #000;background:none;color:inherit;font-family:inherit;font-weight:300;font-size:15px;line-height:20px;text-align:left;cursor:pointer}
+.ms-lw__current{display:flex;align-items:center;gap:6px;width:100%;margin:0;padding:0 2px 12px 0;border:0;border-bottom:1px solid rgba(255,255,255,.55);background:none;color:inherit;font-family:inherit;font-weight:300;font-size:15px;line-height:20px;text-align:left;cursor:pointer;transition:border-color .3s ease}
+.ms-lw__current:hover,.ms-lw__current[aria-expanded="true"]{border-bottom-color:#fff}
 .ms-lw__current b{font-weight:500}
 .ms-lw__current svg{width:14px;height:14px;margin-left:auto;flex:none;fill:none;stroke:currentColor;stroke-width:1.2;transition:transform .3s ease}
 .ms-lw__current[aria-expanded="true"] svg{transform:rotate(180deg)}
-.ms-lw__list{position:absolute;left:0;right:0;top:100%;z-index:2;max-height:min(300px,45vh);margin:0;padding:6px 0;list-style:none;overflow-y:auto;background:#fff;border:1px solid rgba(0,0,0,.25);border-top:0;overscroll-behavior:contain}
+.ms-lw__list{position:absolute;left:0;right:0;top:100%;z-index:2;max-height:min(300px,45vh);margin:0;padding:6px 0;list-style:none;overflow-y:auto;background:#121212;border:1px solid rgba(255,255,255,.22);border-top:0;overscroll-behavior:contain;scrollbar-color:rgba(255,255,255,.3) transparent}
 .ms-lw__list[hidden]{display:none}
-.ms-lw__list li{display:block;padding:12px 20px;cursor:pointer;font-family:inherit;font-weight:300;font-size:15px;line-height:20px;transition:background .2s ease}
-.ms-lw__list li small{display:block;margin-top:2px;font-size:12.5px;line-height:16px;color:rgba(0,0,0,.55)}
-.ms-lw__list li:hover,.ms-lw__list li.is-active{background:rgba(0,0,0,.04)}
+.ms-lw__list li{display:block;margin:0;padding:12px 20px;cursor:pointer;font-family:inherit;font-weight:300;font-size:15px;line-height:20px;transition:background .2s ease}
+.ms-lw__list li small{display:block;margin-top:2px;font-size:12.5px;line-height:16px;color:rgba(255,255,255,.55)}
+.ms-lw__list li:hover,.ms-lw__list li.is-active{background:rgba(255,255,255,.06)}
 .ms-lw__list li[aria-selected="true"]{font-weight:500}
-.ms-lw__help{margin:14px 0 0;font-family:inherit;font-weight:300;font-size:13.5px;line-height:1.45;color:rgba(0,0,0,.55)}
+.ms-lw__help{margin:14px 0 0;font-family:inherit;font-weight:300;font-size:13.5px;line-height:1.45;color:rgba(255,255,255,.55)}
 .ms-lw__langs{margin:48px 0 0;padding:0;border:0;min-width:0}
 .ms-lw__langs .ms-lw__label{margin-bottom:18px}
 .ms-lw__radio{position:relative;display:flex;align-items:center;gap:16px;margin:0 0 16px;cursor:pointer;font-family:inherit;font-weight:500;font-size:15px;line-height:20px}
 .ms-lw__radio input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
-.ms-lw__radio i{position:relative;flex:none;width:24px;height:24px;border:1px solid #000;border-radius:50%}
-.ms-lw__radio i::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#000;transform:scale(0);transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.ms-lw__radio i{position:relative;flex:none;width:24px;height:24px;border:1px solid #fff;border-radius:50%}
+.ms-lw__radio i::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#fff;transform:scale(0);transition:transform .25s cubic-bezier(.16,1,.3,1)}
 .ms-lw__radio input:checked+i::after{transform:none}
-.ms-lw__radio input:focus-visible+i{outline:1px solid #000;outline-offset:3px}
-.ms-lw__apply{display:flex;align-items:center;justify-content:center;flex:none;width:100%;height:60px;margin:auto 0 0;padding:0 24px;border:1px solid #000;border-radius:0;background:#000;color:#fff;cursor:pointer;font-family:inherit;font-weight:500;font-size:15px;line-height:1.2;letter-spacing:0;text-transform:none;transition:background .3s ease,color .3s ease}
-.ms-lw__apply:hover,.ms-lw__apply:focus-visible{background:transparent;color:#000}
+.ms-lw__radio input:focus-visible+i{outline:1px solid #fff;outline-offset:3px}
+.ms-lw__apply{display:flex;align-items:center;justify-content:center;flex:none;width:100%;height:60px;margin:auto 0 0;padding:0 24px;border:1px solid #fff;border-radius:0;background:#fff;color:#000;cursor:pointer;font-family:inherit;font-weight:500;font-size:15px;line-height:1.2;letter-spacing:0;text-transform:none;transition:background .3s ease,color .3s ease}
+.ms-lw__apply:hover,.ms-lw__apply:focus-visible{background:transparent;color:#fff}
 .ms-lw__panel:focus{outline:0}
-.ms-lw button:focus-visible{outline:1px solid #000;outline-offset:4px}
+.ms-lw button:focus-visible{outline:1px solid #fff;outline-offset:4px}
 html.ms-lw-lock,html.ms-lw-lock body{overflow:hidden}
 @media (min-width:768px){
 .ms-lw__panel{width:min(560px,100%);padding:44px 56px 40px}
@@ -149,7 +151,7 @@ export const LANG_SCRIPT = `(function(){
   function close(){
     if(!root||root.hidden)return;
     toggle(false);root.classList.remove('is-open');document.documentElement.classList.remove('ms-lw-lock');
-    setTimeout(function(){if(!root.classList.contains('is-open'))root.hidden=true},600);
+    setTimeout(function(){if(!root.classList.contains('is-open'))root.hidden=true},750);
     if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});
   }
   function apply(){
