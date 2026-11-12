@@ -137,7 +137,7 @@ export const LANG_SCRIPT = `(function(){
     var l=LOCS[state.loc],en=ENTRIES[find(state)];
     cur.innerHTML='<b>'+esc(en.name)+'</b> '+en.cur+V;
     cur.setAttribute('aria-label',T.location+': '+en.name+' '+en.cur);
-    langs.innerHTML=l.langs.map(function(k){return '<label class="ms-lw__radio"><input type="radio" name="ms-lw-lang" value="'+k+'"'+(k===state.lang?' checked':'')+'><i aria-hidden="true"></i><span lang="'+(k==='zh-hant'?'zh-Hant':k)+'">'+esc(C.names[k]||k)+'</span></label>'}).join('');
+    langs.innerHTML=l.langs.map(function(k){return '<label class="ms-lw__radio"><input type="radio" name="ms-lw-lang" value="'+k+'"'+(k===state.lang?' checked':'')+'><i aria-hidden="true"></i><span lang="'+(k==='zh-hant'?'zh-Hant':k==='zh-hans'?'zh-Hans':k)+'">'+esc(C.names[k]||k)+'</span></label>'}).join('');
     [].forEach.call(langs.querySelectorAll('input'),function(r){r.addEventListener('change',function(){state.lang=r.value})});
   }
   function open(){

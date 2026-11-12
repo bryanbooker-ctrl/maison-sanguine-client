@@ -9,6 +9,7 @@ export const INTL = 'intl'
 export const LOCATIONS: Location[] = [
   { code: INTL, currency: 'EUR', langs: ['en'] },
   { code: 'br', currency: 'BRL', langs: ['pt', 'en'] },
+  { code: 'cn', currency: 'CNY', langs: ['zh-hans', 'en'] },
   { code: 'fr', currency: 'EUR', langs: ['fr', 'en'] },
   { code: 'de', currency: 'EUR', langs: ['de', 'en'] },
   { code: 'hk', currency: 'HKD', langs: ['en', 'zh-hant'] },
@@ -45,13 +46,13 @@ export function currencyOf(ctx: string, region?: string | null) {
 
 export const LANG_NAMES: Record<string, string> = {
   en: 'English', fr: 'Français', de: 'Deutsch', it: 'Italiano', es: 'Español', pt: 'Português',
-  ko: '한국어', ja: '日本語', ru: 'Русский', 'zh-hant': '繁體中文',
+  ko: '한국어', ja: '日本語', ru: 'Русский', 'zh-hant': '繁體中文', 'zh-hans': '简体中文',
 }
 
 export const LANGS = Object.keys(LANG_NAMES)
 
 export function htmlLang(lang: string) {
-  return lang === 'zh-hant' ? 'zh-Hant' : lang
+  return lang === 'zh-hant' ? 'zh-Hant' : lang === 'zh-hans' ? 'zh-Hans' : lang
 }
 
 export function locationOf(code: string) {

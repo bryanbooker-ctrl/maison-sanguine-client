@@ -8,6 +8,7 @@ import JA from '@/messages/ja.json'
 import KO from '@/messages/ko.json'
 import RU from '@/messages/ru.json'
 import ZH_HANT from '@/messages/zh-hant.json'
+import ZH_HANS from '@/messages/zh-hans.json'
 
 export type Messages = Record<string, Record<string, string>>
 
@@ -23,4 +24,5 @@ export const TRANSLATIONS: Record<string, Messages> = {
   ko: KO as Messages,
   ru: RU as Messages,
   'zh-hant': ZH_HANT as Messages,
+  'zh-hans': ZH_HANS as Messages,
 }
