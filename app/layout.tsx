@@ -1,20 +1,29 @@
 import type { Metadata, Viewport } from 'next'
 import SiteChrome from './site/SiteChrome'
+import { MS_DATA, MS_SCRIPTS } from './site/chrome'
+import { getLocale, getPublicPath, accountDict, trHtml, trJs, localizeMetadata } from '@/lib/i18n'
+import AccountI18n from './site/AccountI18n'
+import { LOCALES } from '@/lib/locales'
 import './globals.css'
 
-export const metadata: Metadata = {
+const META: Metadata = {
   title: 'MS Account | Maison Sanguine',
   description: 'Your personal MS Account: invitations, experiences and exclusive services of Maison Sanguine.',
 }
+
+export const generateMetadata = () => localizeMetadata(META)
 
 export const viewport: Viewport = {
   themeColor: '#ffffff',
   viewportFit: 'cover',
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const locale = await getLocale()
+  const path = await getPublicPath()
+  const account = locale !== 'en' && /^\/(dashboard|auth|request)(\/|$)/.test(path)
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} data-langs={LOCALES.join(',')} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://images.squarespace-cdn.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,8 +32,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@200,400&display=swap" />
       </head>
       <body suppressHydrationWarning>
-        <SiteChrome />
+        <SiteChrome data={trHtml(MS_DATA, locale)} scripts={MS_SCRIPTS.map(code => trJs(code, locale))} />
         {children}
+        {account && <AccountI18n dict={accountDict(locale)} />}
         <div id="ms-foot-host" />
       </body>
     </html>

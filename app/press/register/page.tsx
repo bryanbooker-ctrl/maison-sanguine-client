@@ -1,13 +1,16 @@
 import type { Metadata } from 'next'
+import { localizeMetadata } from '@/lib/i18n'
 import SitePage from '../../site/SitePage'
 import { PRESS_REGISTER_HTML, PRESS_APP } from '../../site/press'
 import '../../site/press.css'
 
-export const metadata: Metadata = {
+const META: Metadata = {
   title: 'Register | Pressroom | Maison Sanguine',
   description: 'Request access to the Maison Sanguine pressroom.',
   robots: { index: false, follow: false },
 }
+
+export const generateMetadata = () => localizeMetadata(META)
 
 const SCRIPTS = [PRESS_APP]
 

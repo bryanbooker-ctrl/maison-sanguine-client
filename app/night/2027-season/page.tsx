@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
+import { localizeMetadata } from '@/lib/i18n'
 import SitePage from '../../site/SitePage'
 import { SEASON_HTML } from '../../site/season'
 import { COLLECTION_APP } from '../../site/collection-app'
 
-export const metadata: Metadata = {
+const META: Metadata = {
   title: '2027 Season | Maison Sanguine',
   description: 'A distinctive season of experiences where creative vision meets the art of celebration.',
 }
+
+export const generateMetadata = () => localizeMetadata(META)
 
 const SCRIPTS = [COLLECTION_APP]
 

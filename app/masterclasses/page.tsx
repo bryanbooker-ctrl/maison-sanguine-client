@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
+import { localizeMetadata } from '@/lib/i18n'
 import SitePage from '../site/SitePage'
 import { MASTERCLASSES_HTML, MC_APP } from '../site/masterclasses'
 import '../site/masterclasses.css'
 
-export const metadata: Metadata = {
+const META: Metadata = {
   title: 'Haute Nuit Experiences | Maison Sanguine',
   description: 'Immerse yourself in the world of Maison Sanguine with a series of masterclasses.',
 }
+
+export const generateMetadata = () => localizeMetadata(META)
 
 const SCRIPTS = [MC_APP]
 
