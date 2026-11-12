@@ -35,7 +35,7 @@ export async function POST(request: Request) {
   }
 
   const admin = createServiceClient()
-  const { data: edition } = await admin.from('editions').select('slug, name, is_open').eq('slug', edition_slug).single()
+  const { data: edition } = await admin.from('editions').select('*').eq('slug', edition_slug).single()
   if (!edition || !edition.is_open) return NextResponse.json({ error: 'edition' }, { status: 400 })
 
   const { data: existing } = await admin.from('admissions').select('id')
@@ -51,10 +51,11 @@ export async function POST(request: Request) {
 
   await admin.from('profiles').update({ first_name, last_name, phone }).eq('id', user.id)
 
-  await sendEmail(user.email, 'Your request has been received', emails.received(edition.name, first_name))
+  if (edition.kind === 'masterclass') await sendEmail(user.email, 'Your booking has been received', emails.bookingReceived(edition.name, first_name))
+  else await sendEmail(user.email, 'Your request has been received', emails.received(edition.name, first_name))
   const adminList = (process.env.ADMIN_EMAILS || '').split(',').map(e => e.trim()).filter(Boolean)
   if (adminList.length) {
-    await sendEmail(adminList, `New admission request: ${first_name} ${last_name}, ${edition.name}`, emails.adminNew({
+    await sendEmail(adminList, `${edition.kind === 'masterclass' ? 'New masterclass booking' : 'New admission request'}: ${first_name} ${last_name}, ${edition.name}`, emails.adminNew({
       Edition: edition.name, Name: `${first_name} ${last_name}`, Email: user.email, Phone: phone,
       City: `${city}, ${country}`, Activity: activity, Instagram: instagram ? `@${instagram}` : null, Website: website || null,
       Places: places, Companion: companion_name || null,

@@ -1,6 +1,12 @@
 {
   "account": [
-    "in"
+    "in",
+    "Thank you for booking",
+    ". Our team will confirm your booking by email, and you will then be able to complete your payment from your MS Account.",
+    "Thank you for your interest in",
+    ". Our selection committee will review your request and come back to you personally by email. You can follow your request at any time from your MS Account.",
+    "Admission is subject to approval and you will receive our answer by email.",
+    "You will receive our confirmation by email, then complete your payment from your MS Account."
   ],
   "careers": [
     "of",
@@ -21,7 +27,8 @@
     "The Winter || Edition",
     "Change || Location /",
     "Location / || Language",
-    "Location / Language || Location"
+    "Location / Language || Location",
+    "Masterclass || Introduction"
   ],
   "location": [
     "Change",

@@ -3,12 +3,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { createClient } from '@/lib/supabase'
 
-type Edition = { slug: string; name: string; edition_date: string | null; is_open: boolean }
+type Edition = { slug: string; name: string; edition_date: string | null; is_open: boolean; kind?: string | null }
+type Kind = 'night' | 'masterclass'
 
 const ERRORS: Record<string, string> = {
   missing: 'Please complete all required fields.',
   edition: 'Requests for this night are currently closed.',
   duplicate: 'You have already requested an invitation for this night. You can follow it from your MS Account.',
+  mc_edition: 'Bookings for this masterclass are currently closed.',
+  mc_duplicate: 'You have already booked this masterclass. You can follow your booking from your MS Account.',
   auth: 'Your session has expired. Please log in again.',
   save: 'Your request could not be sent. Please try again.',
   age: 'Admission is reserved for guests aged 21 or older.',
@@ -21,12 +24,18 @@ const REQUIREMENTS = [
 
 const EVENT_PAGES = ['aspen-winter-edition', 'new-york-spring-edition', 'rite-of-summer-saint-tropez', 'msnye-2027-rio-de-janeiro']
 
+const MC_PAGES = ['introduction-to-mixology', 'the-architecture-of-a-night', 'scenography']
+
 function eventPage() {
   const slug = typeof window === 'undefined' ? '' : new URLSearchParams(window.location.search).get('edition') || ''
+  if (slug.startsWith('mc-')) {
+    const page = MC_PAGES.find(p => slug.startsWith(`mc-${p}`))
+    return page ? `https://maisonsanguine.com/masterclasses/${page}` : 'https://maisonsanguine.com/masterclasses'
+  }
   return EVENT_PAGES.includes(slug) ? `https://maisonsanguine.com/event/${slug}` : 'https://maisonsanguine.com/night-collection'
 }
 
-function AgeGate({ onPass }: { onPass: (year: number) => void }) {
+function AgeGate({ onPass, kind }: { onPass: (year: number) => void; kind: Kind }) {
   const [d, setD] = useState(['', '', '', ''])
   const [err, setErr] = useState('')
   const [under, setUnder] = useState(false)
@@ -65,7 +74,9 @@ function AgeGate({ onPass }: { onPass: (year: number) => void }) {
     <div className="ms-gate" role="dialog" aria-modal="true" aria-labelledby="ms-gate-t">
       <form className="ms-gate__in" onSubmit={enter} noValidate>
         <p className="ms-gate__lead" id="ms-gate-t">
-          Admission to Maison Sanguine nights is reserved for guests aged 21 or older. Please enter your year of birth to continue.
+          {kind === 'masterclass'
+            ? 'Maison Sanguine masterclasses are reserved for participants aged 21 or older. Please enter your year of birth to continue.'
+            : 'Admission to Maison Sanguine nights is reserved for guests aged 21 or older. Please enter your year of birth to continue.'}
         </p>
         <div className="ms-gate__year">
           {d.map((v, i) => (
@@ -101,6 +112,7 @@ export default function RequestPage() {
   const supabase = createClient()
   const [ready, setReady] = useState(false)
   const [editions, setEditions] = useState<Edition[]>([])
+  const [kind, setKind] = useState<Kind>('night')
   const [f, setF] = useState({
     edition: '', first_name: '', last_name: '', email: '', phone: '', city: '', country: '',
     activity: '', instagram: '', website: '', places: '1', companion_name: '',
@@ -116,10 +128,13 @@ export default function RequestPage() {
       const { data: { user } } = await supabase.auth.getUser()
       const [{ data: p }, { data: eds }] = await Promise.all([
         user ? supabase.from('profiles').select('*').eq('id', user.id).single() : Promise.resolve({ data: null }),
-        supabase.from('editions').select('slug, name, edition_date, is_open').eq('is_open', true).order('sort', { ascending: true }),
+        supabase.from('editions').select('*').eq('is_open', true).order('sort', { ascending: true }),
       ])
       const wanted = new URLSearchParams(window.location.search).get('edition') || ''
-      const list = (eds || []) as Edition[]
+      const all = (eds || []) as Edition[]
+      const k: Kind = all.find(e => e.slug === wanted)?.kind === 'masterclass' || wanted.startsWith('mc-') ? 'masterclass' : 'night'
+      const list = all.filter(e => (e.kind === 'masterclass' ? 'masterclass' : 'night') === k)
+      setKind(k)
       setEditions(list)
       setF(s => ({
         ...s,
@@ -155,10 +170,11 @@ export default function RequestPage() {
     const data = await res.json().catch(() => ({}))
     setLoading(false)
     if (res.ok) { setDone(data.edition || ''); window.scrollTo({ top: 0 }) }
-    else setError(ERRORS[data.error] || ERRORS.save)
+    else setError((kind === 'masterclass' && ERRORS['mc_' + data.error]) || ERRORS[data.error] || ERRORS.save)
   }
 
   const selected = editions.find(e => e.slug === f.edition)
+  const mc = kind === 'masterclass'
 
   if (done) return (
     <main>
@@ -168,7 +184,9 @@ export default function RequestPage() {
           <span className="ms-it">received</span>
         </h1>
         <div className="ms-sign__intro">
-          Thank you for your interest in {done}. Our selection committee will review your request and come back to you personally by email. You can follow your request at any time from your MS Account.
+          {mc
+            ? <>Thank you for booking {done}. Our team will confirm your booking by email, and you will then be able to complete your payment from your MS Account.</>
+            : <>Thank you for your interest in {done}. Our selection committee will review your request and come back to you personally by email. You can follow your request at any time from your MS Account.</>}
         </div>
         <button className="ms-sign__btn" type="button" onClick={() => { window.location.href = '/dashboard?tab=experiences' }}>My MS Account</button>
       </section>
@@ -179,22 +197,36 @@ export default function RequestPage() {
 
   return (
     <main>
-      {!birthYear && <AgeGate onPass={setBirthYear} />}
+      {!birthYear && <AgeGate onPass={setBirthYear} kind={kind} />}
       <section className={`ms-sign ms-sign--dark${birthYear ? '' : ' is-gated'}`} aria-hidden={!birthYear}>
-        <h1 className="ms-sign__title">
-          <span>Request</span>
-          <span className="ms-it">an invitation</span>
-        </h1>
-        <div className="ms-sign__intro">
-          {selected ? <>Your request for <strong>{selected.name}</strong> will be reviewed personally by our selection committee. </> : 'Each request is reviewed personally by our selection committee. '}
-          Admission is subject to approval and you will receive our answer by email.
-        </div>
+        {mc ? (
+          <h1 className="ms-sign__title">
+            <span>Book</span>
+            <span className="ms-it">a masterclass</span>
+          </h1>
+        ) : (
+          <h1 className="ms-sign__title">
+            <span>Request</span>
+            <span className="ms-it">an invitation</span>
+          </h1>
+        )}
+        {mc ? (
+          <div className="ms-sign__intro">
+            {selected ? <>Your booking for <strong>{selected.name}</strong> will be confirmed by our team. </> : 'Each booking is confirmed by our team. '}
+            You will receive our confirmation by email, then complete your payment from your MS Account.
+          </div>
+        ) : (
+          <div className="ms-sign__intro">
+            {selected ? <>Your request for <strong>{selected.name}</strong> will be reviewed personally by our selection committee. </> : 'Each request is reviewed personally by our selection committee. '}
+            Admission is subject to approval and you will receive our answer by email.
+          </div>
+        )}
 
         <form className="ms-sign__form" onSubmit={submit} noValidate>
           <div className="ms-sign__field">
-            <label className="ms-sign__label" htmlFor="r-ed">Night *</label>
+            <label className="ms-sign__label" htmlFor="r-ed">{mc ? 'Masterclass *' : 'Night *'}</label>
             <select className={`ms-sign__input${f.edition ? '' : ' is-empty'}`} id="r-ed" value={f.edition} onChange={set('edition')}>
-              <option value="">Select a night</option>
+              <option value="">{mc ? 'Select a masterclass' : 'Select a night'}</option>
               {editions.map(e => <option key={e.slug} value={e.slug}>{e.name}</option>)}
             </select>
           </div>
@@ -266,17 +298,21 @@ export default function RequestPage() {
 
           <label className="ms-sign__check">
             <input type="checkbox" checked={f.partner_consent} onChange={set('partner_consent')} />
-            <span>I agree that the photos and videos taken during the night, in which I may appear, can be used by Maison Sanguine and its partners.</span>
+            <span>{mc
+              ? 'I agree that the photos and videos taken during the masterclass, in which I may appear, can be used by Maison Sanguine and its partners.'
+              : 'I agree that the photos and videos taken during the night, in which I may appear, can be used by Maison Sanguine and its partners.'}</span>
           </label>
 
           <label className="ms-sign__check">
             <input type="checkbox" checked={f.consent} onChange={set('consent')} />
-            <span>I agree that Maison Sanguine processes my information to review my request and contact me about it.</span>
+            <span>{mc
+              ? 'I agree that Maison Sanguine processes my information to manage my booking and contact me about it.'
+              : 'I agree that Maison Sanguine processes my information to review my request and contact me about it.'}</span>
           </label>
 
           {error && <p className="ms-sign__err ms-sign__err--send" role="alert">{error}</p>}
           <button className="ms-sign__btn" type="submit" disabled={loading}>
-            {loading ? 'Sending' : 'Send my request'}
+            {loading ? 'Sending' : mc ? 'Send my booking' : 'Send my request'}
           </button>
         </form>
       </section>

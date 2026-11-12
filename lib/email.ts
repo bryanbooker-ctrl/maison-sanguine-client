@@ -42,6 +42,17 @@ export const emails = {
       { label: 'My MS Account', href: `${siteUrl()}/dashboard?tab=experiences` }
     )
   },
+  bookingReceived(masterclass: string, firstName: string) {
+    return layout(
+      ['Booking', 'received'],
+      [
+        firstName ? `Dear ${esc(firstName)},` : 'Hello,',
+        `Thank you for booking ${esc(masterclass)}. Our team will confirm your booking by email, and you will then be able to complete your payment from your MS Account.`,
+        'You can follow your booking at any time from your MS Account.',
+      ],
+      { label: 'My MS Account', href: `${siteUrl()}/dashboard?tab=experiences` }
+    )
+  },
   adminNew(a: Record<string, string | number | null>) {
     const rows = Object.entries(a).filter(([, v]) => v !== null && v !== '').map(([k, v]) => `<div style="font-size:14px;line-height:1.6;color:#ffffff;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span> ${esc(String(v))}</div>`).join('')
     return layout(['New admission', 'request'], [], { label: 'Review requests', href: `${siteUrl()}/admin` }, rows)
