@@ -4,7 +4,7 @@ import SitePage from '../../site/SitePage'
 import { MUSIC_HTML } from '../../site/music'
 
 const META: Metadata = {
-  title: 'Maison Sanguine x Music | Maison Sanguine',
+  title: 'Maison Sanguine | MS x Music',
   description: 'Maison Sanguine shares its passion for music and excellence through a common language of emotion.',
 }
 

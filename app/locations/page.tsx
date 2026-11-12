@@ -4,7 +4,7 @@ import SitePage from '../site/SitePage'
 import { LOCATIONS_HTML, LOCATIONS_APP } from '../site/locations'
 
 const META: Metadata = {
-  title: 'Find an Experience | Maison Sanguine',
+  title: 'Maison Sanguine | Find an Experience',
   description: 'Discover the destinations of the Maison, from the nights of the Season to our Houses and Cafés.',
 }
 

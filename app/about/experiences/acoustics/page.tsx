@@ -4,7 +4,7 @@ import SitePage from '../../../site/SitePage'
 import { ACOUSTICS_HTML } from '../../../site/acoustics'
 
 const META: Metadata = {
-  title: 'Acoustics and Mixing Techniques | Maison Sanguine',
+  title: 'Maison Sanguine | Acoustics and Mixing Techniques',
   description: 'Maison Sanguine conceives refined sonic architectures, studied and calibrated for each property.',
 }
 

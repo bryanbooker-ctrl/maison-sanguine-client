@@ -4,7 +4,7 @@ import SitePage from '../../site/SitePage'
 import { SUBSCRIPTION_HTML, SUBSCRIPTION_APP } from '../../site/subscription'
 
 const META: Metadata = {
-  title: 'Newsletter | Maison Sanguine',
+  title: 'Maison Sanguine | Get the Latest News',
   description: 'Be the first to receive the latest news on Maison Sanguine nights and upcoming events.',
 }
 

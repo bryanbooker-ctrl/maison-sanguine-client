@@ -5,7 +5,7 @@ import { MASTERCLASSES_HTML, MC_APP } from '../site/masterclasses'
 import '../site/masterclasses.css'
 
 const META: Metadata = {
-  title: 'Haute Nuit Experiences | Maison Sanguine',
+  title: 'Maison Sanguine | Haute Nuit Experiences',
   description: 'Immerse yourself in the world of Maison Sanguine with a series of masterclasses.',
 }
 

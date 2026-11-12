@@ -5,7 +5,7 @@ import { PRESS_LOGIN_HTML, PRESS_APP } from '../../site/press'
 import '../../site/press.css'
 
 const META: Metadata = {
-  title: 'Pressroom | Maison Sanguine',
+  title: 'Maison Sanguine | Pressroom',
   description: 'Maison Sanguine pressroom. Access reserved for accredited journalists and media.',
   robots: { index: false, follow: false },
 }

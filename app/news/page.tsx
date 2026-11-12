@@ -4,7 +4,7 @@ import SitePage from '../site/SitePage'
 import { NEWS_HTML, NEWS_APP } from '../site/news'
 
 const META: Metadata = {
-  title: 'Latest Stories | Maison Sanguine',
+  title: 'Maison Sanguine | Stories',
   description: 'News, savoir-faire, art and music from Maison Sanguine.',
 }
 

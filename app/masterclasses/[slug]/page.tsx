@@ -15,7 +15,7 @@ const PAGES: Record<string, { html: string; editions: string[]; h1: string; meta
     editions: ['mc-introduction-to-mixology-paris'],
     h1: 'Introduction to Mixology',
     meta: {
-      title: 'Introduction to Mixology | Maison Sanguine',
+      title: 'Maison Sanguine | Introduction to Mixology',
       description: 'Discover the gestures of our bartenders through a practical introduction to mixology, and craft a signature serve inspired by the Maison.',
     },
   },
@@ -24,7 +24,7 @@ const PAGES: Record<string, { html: string; editions: string[]; h1: string; meta
     editions: ['mc-the-architecture-of-a-night-paris', 'mc-the-architecture-of-a-night-new-york'],
     h1: 'The Architecture of a Night',
     meta: {
-      title: 'The Architecture of a Night | Maison Sanguine',
+      title: 'Maison Sanguine | The Architecture of a Night',
       description: 'Guided by the Creative Division, a practical masterclass revealing how sound, scenography and production come together to shape a night.',
     },
   },
@@ -33,7 +33,7 @@ const PAGES: Record<string, { html: string; editions: string[]; h1: string; meta
     editions: ['mc-scenography-paris'],
     h1: 'Scenography: Shaping the Space',
     meta: {
-      title: 'Scenography: Shaping the Space | Maison Sanguine',
+      title: 'Maison Sanguine | Scenography: Shaping the Space',
       description: 'Explore the art of scenography through a hands-on masterclass revealing how light, volumes and atmosphere turn a space into an unforgettable night.',
     },
   },
@@ -42,7 +42,7 @@ const PAGES: Record<string, { html: string; editions: string[]; h1: string; meta
     editions: [],
     h1: 'EXTEND™: Sound Architecture',
     meta: {
-      title: 'EXTEND™: Sound Architecture | Maison Sanguine',
+      title: 'Maison Sanguine | EXTEND™: Sound Architecture',
       description: 'Discover EXTEND™, the Maison’s sonic architecture, and how music inhabits and moves through each space.',
     },
   },
@@ -51,7 +51,7 @@ const PAGES: Record<string, { html: string; editions: string[]; h1: string; meta
     editions: [],
     h1: 'Behind an Edition: Rio de Janeiro',
     meta: {
-      title: 'Behind an Edition: Rio de Janeiro | Maison Sanguine',
+      title: 'Maison Sanguine | Behind an Edition: Rio de Janeiro',
       description: 'Step behind the scenes of MSNYE 2027 and follow the creation of an edition, from the first idea to the night itself.',
     },
   },

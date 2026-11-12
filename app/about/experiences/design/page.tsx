@@ -4,7 +4,7 @@ import SitePage from '../../../site/SitePage'
 import { DESIGN_HTML } from '../../../site/design'
 
 const META: Metadata = {
-  title: 'Spatial Design | Maison Sanguine',
+  title: 'Maison Sanguine | Spatial Design',
   description: 'Edition after edition, the creators and producers of Maison Sanguine continually push artistic and technical boundaries.',
 }
 

@@ -4,7 +4,7 @@ import SitePage from '../../site/SitePage'
 import { PRODUCTIONS_HTML } from '../../site/productions'
 
 const META: Metadata = {
-  title: 'Exceptional Productions | Maison Sanguine',
+  title: 'Maison Sanguine | Exceptional Productions',
   description: 'Maison Sanguine redefines traditional entertainment with nights that combine technical innovation and creativity.',
 }
 

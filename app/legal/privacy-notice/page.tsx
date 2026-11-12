@@ -4,7 +4,7 @@ import LegalPage from '../../site/legal/LegalPage'
 import { PRIVACY_NOTICE } from '../../site/legal/privacy-notice'
 
 const META: Metadata = {
-  title: 'Privacy Notice | Maison Sanguine',
+  title: 'Maison Sanguine | Privacy Notice',
   description: 'How Maison Sanguine collects, uses, stores and protects your personal data.',
 }
 

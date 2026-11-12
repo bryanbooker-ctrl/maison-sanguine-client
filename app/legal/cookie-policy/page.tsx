@@ -4,7 +4,7 @@ import LegalPage from '../../site/legal/LegalPage'
 import { COOKIE_POLICY } from '../../site/legal/cookie-policy'
 
 const META: Metadata = {
-  title: 'Cookie Policy | Maison Sanguine',
+  title: 'Maison Sanguine | Cookie Policy',
   description: 'How Maison Sanguine uses cookies and similar technologies.',
 }
 

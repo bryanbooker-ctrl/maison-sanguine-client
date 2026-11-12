@@ -4,7 +4,7 @@ import SitePage from '../../site/SitePage'
 import { ASPEN_EVENT_HTML } from '../../site/aspen-event'
 
 const META: Metadata = {
-  title: 'The Winter Edition, Aspen | Maison Sanguine',
+  title: 'Maison Sanguine | The Winter Edition, Aspen',
   description: 'The Winter Edition, Aspen, Season 2027. Saturday, February 20, 2027.',
 }
 

@@ -5,7 +5,7 @@ import { MA_HOME_HTML, MA_APP } from '../site/archives'
 import '../site/archives.css'
 
 const META: Metadata = {
-  title: 'MS Archives | Maison Sanguine',
+  title: 'Maison Sanguine | MS Archives',
   description: 'The living record of Maison Sanguine: stories, innovations and rituals, from the Parisian nights that inspired the Maison to the present day.',
 }
 

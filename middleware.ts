@@ -48,6 +48,7 @@ export async function middleware(request: NextRequest) {
   }
 
   const locale = parsed.ctx
+  if (!bare && parsed.rest.replace(/\/$/, '') === '/about/sustainability') return redirect('/' + locale + '/about/commitments')
   if (!bare && (parsed.rest === '' || parsed.rest === '/')) return redirect('/' + locale + '/home')
   const path = !bare && parsed.rest === '/home' ? '/' : parsed.rest
   const pre = '/' + locale

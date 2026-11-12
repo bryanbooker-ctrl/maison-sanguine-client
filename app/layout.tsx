@@ -9,7 +9,7 @@ import { cookies } from 'next/headers'
 import './globals.css'
 
 const META: Metadata = {
-  title: 'MS Account | Maison Sanguine',
+  title: 'Maison Sanguine | MS Account',
   description: 'Your personal MS Account: invitations, experiences and exclusive services of Maison Sanguine.',
 }
 

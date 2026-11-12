@@ -4,7 +4,7 @@ import SitePage from '../../site/SitePage'
 import { ASPEN_HTML } from '../../site/aspen'
 
 const META: Metadata = {
-  title: 'Winter Edition Aspen | Maison Sanguine',
+  title: 'Maison Sanguine | The Winter Edition “Aspen” Season 27',
   description: 'A winter night designed for Aspen, at the heart of the Colorado Rockies.',
 }
 

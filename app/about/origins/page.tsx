@@ -4,7 +4,7 @@ import SitePage from '../../site/SitePage'
 import { ORIGINS_HTML } from '../../site/origins'
 
 const META: Metadata = {
-  title: 'Born in Paris | Maison Sanguine',
+  title: 'Maison Sanguine | Our Heritage: Born in Paris',
   description: 'Our story begins in Paris, where nightlife entertainment has been written for more than 140 years.',
 }
 

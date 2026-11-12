@@ -5,7 +5,7 @@ import { GTS_HTML } from '../../site/legal/general-terms'
 import '../../site/legal/gts.css'
 
 const META: Metadata = {
-  title: 'General Terms and Conditions of Sale | Maison Sanguine',
+  title: 'Maison Sanguine | General Terms and Conditions of Sale',
   description: 'General Terms and Conditions of Sale for Maison Sanguine nights, masterclasses and MS Houses.',
 }
 

@@ -4,7 +4,7 @@ import LegalPage from '../../site/legal/LegalPage'
 import { TERMS_OF_USE } from '../../site/legal/terms-of-use'
 
 const META: Metadata = {
-  title: 'Terms of Use | Maison Sanguine',
+  title: 'Maison Sanguine | Terms of Use',
   description: 'Terms and conditions of use of the Maison Sanguine website.',
 }
 

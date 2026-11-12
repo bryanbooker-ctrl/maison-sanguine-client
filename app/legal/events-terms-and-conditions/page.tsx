@@ -5,7 +5,7 @@ import { EVENTS_TERMS_HTML } from '../../site/legal/events-terms'
 import '../../site/legal/gts.css'
 
 const META: Metadata = {
-  title: 'Events Terms & Conditions | Maison Sanguine',
+  title: 'Maison Sanguine | Events Terms & Conditions',
   description: 'Maison Sanguine Nights General Terms & Conditions.',
 }
 

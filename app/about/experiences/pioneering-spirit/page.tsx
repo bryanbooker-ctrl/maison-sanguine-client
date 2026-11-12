@@ -4,7 +4,7 @@ import SitePage from '../../../site/SitePage'
 import { INNOVATIONS_HTML } from '../../../site/innovations'
 
 const META: Metadata = {
-  title: 'Our Innovations over the Seasons | Maison Sanguine',
+  title: 'Maison Sanguine | Our Innovations over the Seasons',
   description: 'Maison Sanguine keeps one foot rooted in Parisian nightlife heritage and one foot stepping into the future of entertainment and culture.',
 }
 

@@ -5,7 +5,7 @@ import { HOJ_HTML, HOJ_APP } from '../../site/jubilation'
 import '../../site/jubilation.css'
 
 const META: Metadata = {
-  title: 'House of Jubilation | Maison Sanguine',
+  title: 'Maison Sanguine | House of Jubilation',
   description: 'Step inside the House of Jubilation and explore the rooms of Maison Sanguine.',
 }
 

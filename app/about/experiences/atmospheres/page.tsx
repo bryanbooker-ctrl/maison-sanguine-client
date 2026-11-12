@@ -4,7 +4,7 @@ import SitePage from '../../../site/SitePage'
 import { ATMOSPHERES_HTML } from '../../../site/atmospheres'
 
 const META: Metadata = {
-  title: 'Gallery of Atmospheres | Maison Sanguine',
+  title: 'Maison Sanguine | Gallery of Atmospheres',
   description: 'Throughout the Seasons, Maison Sanguine explores new territories and atmospheres to shape avant-garde nocturnal experiences.',
 }
 

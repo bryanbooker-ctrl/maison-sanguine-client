@@ -5,7 +5,7 @@ import { SEASON_HTML } from '../../site/season'
 import { COLLECTION_APP } from '../../site/collection-app'
 
 const META: Metadata = {
-  title: '2027 Season | Maison Sanguine',
+  title: 'Maison Sanguine | 2027 Season',
   description: 'A distinctive season of experiences where creative vision meets the art of celebration.',
 }
 

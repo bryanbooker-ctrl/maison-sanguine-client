@@ -4,7 +4,7 @@ import LegalPage from '../../site/legal/LegalPage'
 import { ACCESSIBILITY } from '../../site/legal/accessibility'
 
 const META: Metadata = {
-  title: 'Accessibility Statement | Maison Sanguine',
+  title: 'Maison Sanguine | Accessibility',
   description: 'Maison Sanguine accessibility commitment.',
 }
 
