@@ -414,3 +414,19 @@ html body .ma-filter__go{height:60px;padding:0 32px;background:#fff!important;bo
 #ms-header .ma-lang__list li[aria-current="true"] a{font-weight:500}
 @media (hover:hover){#ms-header .ma-lang__list a:hover{opacity:.6}}
 @media (min-width:1366px) and (max-width:1699px){html[lang="fr"] .ma-foot__base{flex-direction:column;justify-content:flex-start;gap:32px}}
+
+/* mobile header: search on the left (to explore), logo centred, menu on the right */
+@media (max-width:1024px){
+  #ms-header .ma-ims,#ms-header .ma-sep{display:none!important}
+}
+/* splash: the MS Archives wordmark keeps its desktop width */
+html.ms-archives #ms-loader .ms-loader__logo{width:min(56vw,280px)!important}
+
+/* explore timeline on mobile: full year, its entries, then the next year */
+.ma-tl__cc{display:none}
+@media (max-width:767px){
+  .ma-cent{display:block;padding:12px 0 40px}
+  .ma-cent__c{display:none}
+  .ma-tl__cc{display:inline}
+  html body .ma-tl__items{margin-left:0}
+}

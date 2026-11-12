@@ -171,3 +171,11 @@ html body #ms-foot .ms-cfoot-legal a{font:500 14px/18px var(--ms-font)}
 @media (min-width:1025px){
   html.ms-careers #ms-foot .ms-cfoot-legal{flex:1;justify-content:center;gap:12px 3.2vw}
 }
+
+/* full-screen image below desktop: fixed layer clipped by its section (no sticky, no bar when the toolbar hides) */
+@media (max-width:1024px){
+  html body main.ms-page>section.ms-jfull.ms-jfull{clip-path:inset(0);-webkit-clip-path:inset(0)}
+  .ms-jfull::before{content:"";display:block;height:100vh;height:100svh}
+  .ms-jfull__media{position:fixed;top:0;left:0;right:0;height:100vh;height:100lvh;z-index:0}
+  .ms-jfull__in{z-index:1}
+}
