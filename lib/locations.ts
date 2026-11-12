@@ -24,11 +24,24 @@ export const LOCATIONS: Location[] = [
   { code: 'us', currency: 'USD', langs: ['en'] },
 ]
 
-// Countries shown in the list that use the International location (English, EUR).
-export const INTL_COUNTRIES: { region: string; label?: string }[] = [
-  { region: 'AU' }, { region: 'CZ', label: 'Czech Republic' }, { region: 'AE', label: 'Dubai' }, { region: 'IL' },
-  { region: 'MY' }, { region: 'NL' }, { region: 'SG' }, { region: 'TH' },
+// Countries shown in the list that use the International pages (English) with their own currency.
+export const INTL_COUNTRIES: { region: string; currency: string; label?: string }[] = [
+  { region: 'AU', currency: 'AUD' }, { region: 'CZ', currency: 'CZK', label: 'Czech Republic' },
+  { region: 'AE', currency: 'AED', label: 'Dubai' }, { region: 'IL', currency: 'ILS' },
+  { region: 'MY', currency: 'MYR' }, { region: 'NL', currency: 'EUR' },
+  { region: 'SG', currency: 'SGD' }, { region: 'TH', currency: 'THB' },
 ]
+
+export function intlCountry(region: string | undefined | null) {
+  return INTL_COUNTRIES.find(c => c.region === region)
+}
+
+// Currency for a location context, and for International the country chosen in the window.
+export function currencyOf(ctx: string, region?: string | null) {
+  const loc = locOf(ctx)
+  if (loc === INTL) return intlCountry(region)?.currency || 'EUR'
+  return locationOf(loc)?.currency || 'EUR'
+}
 
 export const LANG_NAMES: Record<string, string> = {
   en: 'English', fr: 'Français', de: 'Deutsch', it: 'Italiano', es: 'Español', pt: 'Português',

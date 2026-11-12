@@ -77,16 +77,16 @@ export const LANG_SCRIPT = `(function(){
   try{rn=new Intl.DisplayNames([C.ui],{type:'region'})}catch(e){rn=null}
   function region(r){try{return rn?rn.of(r):r}catch(e){return r}}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  var ENTRIES=[{loc:'intl',name:T.international,cur:'EUR'}];
+  var ENTRIES=[{loc:'intl',region:'',name:T.international,cur:'EUR'}];
   var rest=[];
   C.locations.forEach(function(l){if(l.code!=='intl')rest.push({loc:l.code,name:region(l.code.toUpperCase()),cur:l.currency})});
-  C.intl.forEach(function(c){rest.push({loc:'intl',name:c.label||region(c.region),cur:'EUR',alias:1})});
+  C.intl.forEach(function(c){rest.push({loc:'intl',region:c.region,name:c.label||region(c.region),cur:c.currency})});
   rest.sort(function(a,b){return a.name.localeCompare(b.name,C.ui)});
   ENTRIES=ENTRIES.concat(rest);
   var X='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg>';
   var V='<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 5l4.5 4.5L11.5 5"/></svg>';
   var root,panel,cur,list,langs,state,lastFocus;
-  function nameOf(loc){if(loc==='intl')return T.international;for(var i=0;i<ENTRIES.length;i++)if(ENTRIES[i].loc===loc&&!ENTRIES[i].alias)return ENTRIES[i].name;return loc}
+  function find(st){for(var i=0;i<ENTRIES.length;i++){var e=ENTRIES[i];if(e.loc===st.loc&&(e.loc!=='intl'||(e.region||'')===(st.region||'')))return i}return 0}
   function build(){
     root=document.createElement('div');root.className='ms-lw';root.id='ms-lw';root.hidden=true;
     root.setAttribute('role','dialog');root.setAttribute('aria-modal','true');root.setAttribute('aria-labelledby','ms-lw-t');
@@ -120,7 +120,7 @@ export const LANG_SCRIPT = `(function(){
   }
   function focusItem(li){[].forEach.call(list.children,function(n){n.classList.remove('is-active')});if(!li)return;li.classList.add('is-active');list.setAttribute('aria-activedescendant',li.id);li.scrollIntoView({block:'nearest'})}
   function renderList(){
-    var sel=-1;for(var i=0;i<ENTRIES.length;i++)if(ENTRIES[i].loc===state.loc&&!ENTRIES[i].alias){sel=i;break}
+    var sel=find(state);
     var order=[sel].concat(ENTRIES.map(function(_,i){return i}).filter(function(i){return i!==sel}));
     list.innerHTML=order.map(function(i){var en=ENTRIES[i];return '<li role="option" id="ms-lw-o'+i+'" data-i="'+i+'" aria-selected="'+(i===sel)+'">'+esc(en.name)+'<small>'+en.cur+'</small></li>'}).join('');
   }
@@ -129,20 +129,20 @@ export const LANG_SCRIPT = `(function(){
     else{list.hidden=true;cur.setAttribute('aria-expanded','false')}
   }
   function pick(i){
-    var en=ENTRIES[i];state.loc=en.loc;
+    var en=ENTRIES[i];state.loc=en.loc;state.region=en.region||'';
     var ls=LOCS[state.loc].langs;if(ls.indexOf(state.lang)<0)state.lang=ls[0];
     toggle(false);render();cur.focus();
   }
   function render(){
-    var l=LOCS[state.loc];
-    cur.innerHTML='<b>'+esc(nameOf(state.loc))+'</b> '+l.currency+V;
-    cur.setAttribute('aria-label',T.location+': '+nameOf(state.loc)+' '+l.currency);
+    var l=LOCS[state.loc],en=ENTRIES[find(state)];
+    cur.innerHTML='<b>'+esc(en.name)+'</b> '+en.cur+V;
+    cur.setAttribute('aria-label',T.location+': '+en.name+' '+en.cur);
     langs.innerHTML=l.langs.map(function(k){return '<label class="ms-lw__radio"><input type="radio" name="ms-lw-lang" value="'+k+'"'+(k===state.lang?' checked':'')+'><i aria-hidden="true"></i><span lang="'+(k==='zh-hant'?'zh-Hant':k)+'">'+esc(C.names[k]||k)+'</span></label>'}).join('');
     [].forEach.call(langs.querySelectorAll('input'),function(r){r.addEventListener('change',function(){state.lang=r.value})});
   }
   function open(){
     if(!root)build();
-    state={loc:C.loc,lang:C.lang};
+    state={loc:C.loc,lang:C.lang,region:C.region||''};
     render();lastFocus=document.activeElement;
     root.hidden=false;document.documentElement.classList.add('ms-lw-lock');
     requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add('is-open')})});
@@ -156,8 +156,9 @@ export const LANG_SCRIPT = `(function(){
   }
   function apply(){
     var ctx=state.loc==='intl'?'en':state.loc+'/'+state.lang;
-    if(ctx===C.ctx){close();return}
-    try{document.cookie='ms_loc='+ctx+';path=/;max-age=31536000;samesite=lax'}catch(e){}
+    var rg=state.loc==='intl'?state.region:'';
+    if(ctx===C.ctx&&rg===(C.region||'')){close();return}
+    try{document.cookie='ms_loc='+ctx+';path=/;max-age=31536000;samesite=lax';document.cookie='ms_region='+rg+';path=/;max-age='+(rg?31536000:0)+';samesite=lax'}catch(e){}
     var p=location.pathname.replace(HAS,'')||'/';
     location.href='/'+ctx+HOME(p)+location.search+location.hash;
   }

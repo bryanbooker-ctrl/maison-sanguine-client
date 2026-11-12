@@ -3,7 +3,7 @@ import { createUserClient, createServiceClient, siteUrl } from '@/lib/supabase-s
 import { createCheckout, createIdentitySession } from '@/lib/stripe'
 import { applyIdentity } from '@/lib/identity'
 import { cookies } from 'next/headers'
-import { isContext, locOf, locationOf } from '@/lib/locations'
+import { currencyOf, isContext } from '@/lib/locations'
 
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -47,8 +47,9 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
       }
     }
 
-    const ctx = (await cookies()).get('ms_loc')?.value
-    const wanted = (isContext(ctx) ? locationOf(locOf(ctx))?.currency : null)?.toLowerCase()
+    const jar = await cookies()
+    const ctx = jar.get('ms_loc')?.value
+    const wanted = (isContext(ctx) ? currencyOf(ctx, jar.get('ms_region')?.value) : null)?.toLowerCase()
     const local = wanted && ed.prices && Number(ed.prices[wanted]) > 0 ? Number(ed.prices[wanted]) : null
 
     const checkout = await createCheckout({

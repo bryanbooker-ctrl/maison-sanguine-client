@@ -4,7 +4,8 @@ import { MS_DATA, MS_SCRIPTS } from './site/chrome'
 import { getLocale, getPublicPath, accountDict, trHtml, trJs, localizeMetadata, t, tc } from '@/lib/i18n'
 import AccountI18n from './site/AccountI18n'
 import { TRANSLATED } from '@/lib/locales'
-import { INTL_COUNTRIES, LANG_NAMES, LOCATIONS, htmlLang, langOf, locOf } from '@/lib/locations'
+import { INTL, INTL_COUNTRIES, LANG_NAMES, LOCATIONS, htmlLang, intlCountry, langOf, locOf } from '@/lib/locations'
+import { cookies } from 'next/headers'
 import './globals.css'
 
 const META: Metadata = {
@@ -25,10 +26,12 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const lang = langOf(locale)
   const ui = TRANSLATED.includes(lang) ? lang : 'en'
   const account = ui !== 'en' && /^\/(dashboard|auth|request)(\/|$)/.test(path)
+  const saved = (await cookies()).get('ms_region')?.value
   const loc = {
     ctx: locale, loc: locOf(locale), lang, ui: htmlLang(ui),
+    region: locOf(locale) === INTL && intlCountry(saved) ? saved : '',
     locations: LOCATIONS, names: LANG_NAMES,
-    intl: INTL_COUNTRIES.map(c => ({ region: c.region, label: c.label && t(c.label, locale) })),
+    intl: INTL_COUNTRIES.map(c => ({ region: c.region, currency: c.currency, label: c.label && t(c.label, locale) })),
     t: {
       change: t('Change', locale), location2: tc('Change', 'Location /', locale), language2: tc('Location /', 'Language', locale),
       location: tc('Location / Language', 'Location', locale), language: t('Language', locale), apply: t('Apply', locale), close: t('Close', locale),

@@ -29,4 +29,4 @@ Nothing else changes: the URLs already exist, and the language is picked by defa
 
 ## Prices per currency
 
-The currency of each location is used at checkout when the edition has a price for it in the `prices` column (see `supabase-editions-prices.sql`). Without it, the price in EUR is used.
+The currency of each location is used at checkout (for International, the currency of the country chosen in the window, for example AED for Dubai) when the edition has a price for it in the `prices` column (see `supabase-editions-prices.sql`). Without it, the price in EUR is used.
