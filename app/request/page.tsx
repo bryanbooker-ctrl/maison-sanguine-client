@@ -32,6 +32,7 @@ function eventPage() {
     const page = MC_PAGES.find(p => slug.startsWith(`mc-${p}`))
     return page ? `https://maisonsanguine.com/masterclasses/${page}` : 'https://maisonsanguine.com/masterclasses'
   }
+  if (slug === 'aspen-winter-edition') return 'https://maisonsanguine.com/night-collection/winter-edition/saturday-february-20-2027'
   return EVENT_PAGES.includes(slug) ? `https://maisonsanguine.com/event/${slug}` : 'https://maisonsanguine.com/night-collection'
 }
 
