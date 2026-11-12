@@ -14,6 +14,7 @@ export const LOCATIONS: Location[] = [
   { code: 'de', currency: 'EUR', langs: ['de', 'en'] },
   { code: 'hk', currency: 'HKD', langs: ['en', 'zh-hant'] },
   { code: 'it', currency: 'EUR', langs: ['it', 'en'] },
+  { code: 'pt', currency: 'EUR', langs: ['pt', 'en'] },
   { code: 'jp', currency: 'JPY', langs: ['ja', 'en'] },
   { code: 'mo', currency: 'MOP', langs: ['zh-hant', 'en'] },
   { code: 'mx', currency: 'MXN', langs: ['es', 'en'] },
@@ -83,6 +84,13 @@ export function isContext(ctx: string | undefined | null): ctx is string {
 
 export function langOf(ctx: string) {
   return ctx.split('/').pop() || 'en'
+}
+
+// Texts of a location context: some locations share a language code but have their own regional texts.
+const TEXT_VARIANTS: Record<string, string> = { 'br/pt': 'pt-br', 'hk/zh-hant': 'zh-hk', 'mo/zh-hant': 'zh-hk' }
+
+export function textLangOf(ctx: string) {
+  return TEXT_VARIANTS[ctx] || langOf(ctx)
 }
 
 export function locOf(ctx: string) {

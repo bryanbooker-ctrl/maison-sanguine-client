@@ -1,7 +1,7 @@
 import { headers } from 'next/headers'
 import { DEFAULT_LOCALE, LOCALES, TRANSLATED } from './locales'
 import { SOURCE as EN, TRANSLATIONS as SOURCES, type Messages } from './messages'
-import { LOCATIONS, PREFIX_RE, homePath, hreflangOf, isContext, langOf, prefixOf } from './locations'
+import { LOCATIONS, PREFIX_RE, homePath, hreflangOf, isContext, langOf, prefixOf, textLangOf } from './locations'
 
 export { DEFAULT_LOCALE, LOCALES }
 
@@ -38,7 +38,7 @@ export async function getLocale(): Promise<Locale> {
 }
 
 function translatable(locale: Locale) {
-  const lang = langOf(locale)
+  const lang = textLangOf(locale)
   return lang !== DEFAULT_LOCALE && !!FLAT[lang]
 }
 
@@ -50,12 +50,12 @@ export async function getPublicPath(): Promise<string> {
 export function tc(prev: string, text: string, locale: Locale, next = ''): string {
   if (next && translatable(locale)) {
     const key = textKey(norm(text) + ' >> ' + next)
-    const v = FLAT[langOf(locale)]?.[key]
+    const v = FLAT[textLangOf(locale)]?.[key]
     if (v && EN_FLAT[key] !== undefined) return text.match(/^\s*/)![0] + v + text.match(/\s*$/)![0]
   }
   if (prev && translatable(locale)) {
     const key = textKey(prev + ' || ' + norm(text))
-    const v = FLAT[langOf(locale)]?.[key]
+    const v = FLAT[textLangOf(locale)]?.[key]
     if (v && EN_FLAT[key] !== undefined) return text.match(/^\s*/)![0] + v + text.match(/\s*$/)![0]
   }
   return t(text, locale)
@@ -64,7 +64,7 @@ export function tc(prev: string, text: string, locale: Locale, next = ''): strin
 export function t(text: string, locale: Locale): string {
   if (!text || !translatable(locale) || !/[A-Za-z]/.test(text)) return text
   const key = textKey(text)
-  const v = FLAT[langOf(locale)]?.[key]
+  const v = FLAT[textLangOf(locale)]?.[key]
   if (!v || EN_FLAT[key] === undefined) return text
   const lead = text.match(/^\s*/)![0]
   const trail = text.match(/\s*$/)![0]
@@ -162,7 +162,7 @@ export function trHtml(html: string, locale: Locale): string {
 
 export function trJs(code: string, locale: Locale): string {
   if (!code || !translatable(locale)) return code
-  locale = langOf(locale)
+  locale = textLangOf(locale)
   const ck = locale + '\u0001' + code
   const hit = cache.get(ck)
   if (hit !== undefined) return hit
@@ -196,7 +196,7 @@ export async function localizeMetadata<M extends { title?: unknown; description?
 }
 
 export function accountDict(locale: Locale): Record<string, string> {
-  const src = (SOURCES[langOf(locale)]?.account || {}) as Record<string, string>
+  const src = (SOURCES[textLangOf(locale)]?.account || {}) as Record<string, string>
   const en = EN.account || {}
   const out: Record<string, string> = {}
   for (const [k, v] of Object.entries(src)) if (en[k] && v) out[en[k]] = v
