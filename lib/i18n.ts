@@ -47,7 +47,12 @@ export async function getPublicPath(): Promise<string> {
   return h.get('x-ms-path') || '/'
 }
 
-export function tc(prev: string, text: string, locale: Locale): string {
+export function tc(prev: string, text: string, locale: Locale, next = ''): string {
+  if (next && translatable(locale)) {
+    const key = textKey(norm(text) + ' >> ' + next)
+    const v = FLAT[langOf(locale)]?.[key]
+    if (v && EN_FLAT[key] !== undefined) return text.match(/^\s*/)![0] + v + text.match(/\s*$/)![0]
+  }
   if (prev && translatable(locale)) {
     const key = textKey(prev + ' || ' + norm(text))
     const v = FLAT[langOf(locale)]?.[key]
@@ -122,9 +127,15 @@ export function trHtml(html: string, locale: Locale): string {
   const hit = cache.get(ck)
   if (hit !== undefined) return hit
   let prev = ''
-  const out = html
-    .split(/(<script\b[^>]*>[\s\S]*?<\/script>|<style\b[^>]*>[\s\S]*?<\/style>|<!--[\s\S]*?-->|<[^>]+>)/g)
-    .map(p => {
+  const parts = html.split(/(<script\b[^>]*>[\s\S]*?<\/script>|<style\b[^>]*>[\s\S]*?<\/style>|<!--[\s\S]*?-->|<[^>]+>)/g)
+  const nexts: string[] = new Array(parts.length)
+  for (let i = parts.length - 1, nx = ''; i >= 0; i--) {
+    nexts[i] = nx
+    const q = parts[i]
+    if (q && !q.startsWith('<') && /[A-Za-z]/.test(q)) nx = norm(q)
+  }
+  const out = parts
+    .map((p, i) => {
       if (!p) return p
       if (p.startsWith('<script')) {
         const m = p.match(/^(<script\b[^>]*>)([\s\S]*?)(<\/script>)$/)!
@@ -140,7 +151,7 @@ export function trHtml(html: string, locale: Locale): string {
       if (p.startsWith('<style') || p.startsWith('<!--')) return p
       if (p.startsWith('<')) return trTag(p, locale)
       if (!/[A-Za-z]/.test(p)) return p
-      const out = tc(prev, p, locale)
+      const out = tc(prev, p, locale, nexts[i])
       prev = norm(p)
       return out
     })
