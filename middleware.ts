@@ -49,7 +49,14 @@ export async function middleware(request: NextRequest) {
 
   const locale = parsed.ctx
   if (!bare && parsed.rest.replace(/\/$/, '') === '/about/sustainability') return redirect('/' + locale + '/about/commitments')
-  if (!bare && parsed.rest.replace(/\/$/, '') === '/event/aspen-winter-edition') return redirect('/' + locale + '/night-collection/winter-edition/saturday-february-20-2027')
+  const MOVED: Record<string, string> = {
+    '/event/aspen-winter-edition': '/night-collection/winter-edition/saturday-february-20-2027',
+    '/event/new-york-spring-edition': '/night-collection/spring-edition/saturday-april-24-2027',
+    '/event/rite-of-summer-saint-tropez': '/night-collection/rite-of-summer/saturday-july-24-2027',
+    '/event/msnye-2027-rio-de-janeiro': '/night-collection/msnye/friday-december-31-2027',
+  }
+  const moved = !bare && MOVED[parsed.rest.replace(/\/$/, '')]
+  if (moved) return redirect('/' + locale + moved)
   if (!bare && parsed.rest.replace(/\/$/, '') === '/night-collection') return redirect('/' + locale + '/night/2027-season')
   if (!bare && (parsed.rest === '' || parsed.rest === '/')) return redirect('/' + locale + '/home')
   const path = !bare && parsed.rest === '/home' ? '/' : parsed.rest

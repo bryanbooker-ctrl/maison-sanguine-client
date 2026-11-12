@@ -32,7 +32,14 @@ function eventPage() {
     const page = MC_PAGES.find(p => slug.startsWith(`mc-${p}`))
     return page ? `https://maisonsanguine.com/masterclasses/${page}` : 'https://maisonsanguine.com/masterclasses'
   }
-  if (slug === 'aspen-winter-edition') return 'https://maisonsanguine.com/night-collection/winter-edition/saturday-february-20-2027'
+  const NIGHTS: Record<string, string> = {
+    'aspen-winter-edition': 'https://maisonsanguine.com/night-collection/winter-edition/saturday-february-20-2027',
+    'new-york-spring-edition': 'https://maisonsanguine.com/night-collection/spring-edition/saturday-april-24-2027',
+    'rite-of-summer-saint-tropez': 'https://maisonsanguine.com/night-collection/rite-of-summer/saturday-july-24-2027',
+    'paris-fall-edition': 'https://maisonsanguine.com/night-collection/fall-edition/saturday-october-2-2027',
+    'msnye-2027-rio-de-janeiro': 'https://maisonsanguine.com/night-collection/msnye/friday-december-31-2027',
+  }
+  if (NIGHTS[slug]) return NIGHTS[slug]
   return EVENT_PAGES.includes(slug) ? `https://maisonsanguine.com/event/${slug}` : 'https://maisonsanguine.com/night-collection'
 }
 
