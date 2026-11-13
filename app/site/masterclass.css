@@ -97,3 +97,15 @@ html body main.ms-page>section.mc-top{padding-top:calc(var(--ms-header-h,82px) +
 .mc-key__note{margin-top:36px;font-size:15px;font-weight:300;line-height:1.5;color:rgba(255,255,255,.75)}
 a.mc-btn--line{background:transparent;color:#fff}
 a.mc-btn--line:hover,a.mc-btn--line:focus-visible{background:#fff;color:#000}
+
+/* Mobile and tablet: intro, photo, then Key information overlapping the photo.
+   The intro and the key block share one section in the DOM, so the section is
+   flattened and its two children are ordered around the photo. Desktop keeps the grid. */
+@media (max-width:1024px){
+html body main.ms-page:has(>section.mc-top){display:flex;flex-direction:column}
+html body main.ms-page:has(>section.mc-top)>*{order:4}
+html body main.ms-page>section.mc-top{display:contents}
+html body main.ms-page>section.mc-top>.mc-top__main{order:1;padding:calc(var(--ms-header-h,82px) + 56px) var(--mc-px) 40px;background:#000}
+html body main.ms-page>section.mc-media{order:2}
+html body main.ms-page>section.mc-top>aside.mc-key{order:3;position:relative;z-index:1;margin:-28px var(--mc-px) 64px;background:#000}
+}
