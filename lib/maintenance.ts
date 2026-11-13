@@ -1,0 +1,39 @@
+// Maintenance mode. Off by default. Set MAINTENANCE=on in Vercel and redeploy to close the site,
+// remove it (or set it to off) and redeploy to reopen. Visitors with the access code get a cookie and see the real site.
+export const MAINTENANCE_ON = process.env.MAINTENANCE === 'on'
+export const ACCESS_COOKIE = 'ms_access'
+
+const secret = () => process.env.MAINTENANCE_CODE || 'Gloire19'
+
+export async function accessToken() {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(secret() + ':ms-maintenance'))
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('')
+}
+
+export function codeIsValid(code: string) {
+  return code.trim() === secret()
+}
+
+const LOGO = 'data:image/png;base64,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'
+const RING = 'radial-gradient(60px 40px at 6% 0,rgba(120,190,255,.75),rgba(120,190,255,0) 70%),radial-gradient(70px 40px at 96% 100%,rgba(255,170,90,.7),rgba(255,170,90,0) 70%),radial-gradient(50px 30px at 62% 0,rgba(255,255,255,.95),rgba(255,255,255,0) 70%),linear-gradient(120deg,#f4f4f6 0,#8d8d93 14%,#fdfdfe 27%,#55555b 44%,#e6e6ea 58%,#76767c 74%,#fbfbfd 88%,#a4a4aa 100%)'
+
+export function maintenanceHtml(error: boolean) {
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#000000"><title>Maison Sanguine</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#000;color:#fff;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+main{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px}
+img{width:52px;height:auto;display:block;margin:0 0 56px}
+h1{margin:0 0 12px;font-weight:200;font-size:clamp(28px,5vw,48px);letter-spacing:-.02em;text-transform:uppercase}
+p{margin:0;font-weight:300;font-size:16px;line-height:1.6;color:rgba(255,255,255,.72)}
+form{margin:64px 0 0;display:flex;flex-direction:column;gap:12px;width:100%;max-width:320px}
+input{height:56px;padding:0 18px;border:1px solid rgba(255,255,255,.35);border-radius:0;background:#000;color:#fff;font:inherit;font-size:16px;text-align:center;outline:none}
+input:focus{border-color:#fff}
+button{height:56px;border:1px solid transparent;border-radius:0;background:linear-gradient(#000,#000) padding-box,${RING} border-box;color:#fff;font:inherit;font-size:16px;font-weight:500;cursor:pointer}
+form p.e{margin-top:4px;font-size:14px;color:#fff;opacity:${error ? 1 : 0}}
+</style></head><body><main>
+<img src="${LOGO}" alt="Maison Sanguine">
+<h1>Our House is being prepared</h1><p>Maison Sanguine reopens soon.</p>
+<h1 style="margin-top:40px;font-size:clamp(20px,3vw,28px)">Notre Maison est en préparation</h1><p>Maison Sanguine rouvre très bientôt.</p>
+<form method="post" action="/api/maintenance"><input type="password" name="code" placeholder="Access code / Code d'accès" autocomplete="off" required><button type="submit">Enter / Entrer</button><p class="e">Incorrect code / Code incorrect</p></form>
+</main></body></html>`
+}

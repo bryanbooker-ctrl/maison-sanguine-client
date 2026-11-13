@@ -2,6 +2,7 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { safeNext } from '@/lib/next'
 import { TRANSLATED } from '@/lib/locales'
+import { ACCESS_COOKIE, MAINTENANCE_ON, accessToken, maintenanceHtml } from '@/lib/maintenance'
 import { INTL, LANGS, homePath, isContext, locationOf, parsePrefix, prefixOf } from '@/lib/locations'
 
 const PROTECTED = ['/dashboard', '/request', '/admin']
@@ -23,6 +24,16 @@ export async function middleware(request: NextRequest) {
   const search = request.nextUrl.search
   const raw = request.nextUrl.pathname
   const sub = /^(careers|press|msarchives)\./.test(host)
+
+  if (MAINTENANCE_ON) {
+    const open = raw.startsWith('/_next/') || raw === '/api/stripe/webhook' || raw === '/api/maintenance' || /^\/(favicon\.ico|icon\.png|apple-icon\.png)$/.test(raw)
+    if (!open && request.cookies.get(ACCESS_COOKIE)?.value !== (await accessToken())) {
+      return new NextResponse(maintenanceHtml(request.nextUrl.searchParams.get('e') === '1'), {
+        status: 503,
+        headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'retry-after': '3600', 'x-robots-tag': 'noindex, nofollow' },
+      })
+    }
+  }
 
   if (PASS.some(p => raw === p || raw.startsWith(p + '/'))) return NextResponse.next()
   if (/\.[a-z0-9]{2,5}$/i.test(raw)) return NextResponse.next()
