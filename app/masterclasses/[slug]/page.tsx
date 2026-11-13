@@ -5,6 +5,7 @@ import { createClient } from '@supabase/supabase-js'
 import { getLocale, localizeMetadata } from '@/lib/i18n'
 import { TRANSLATED } from '@/lib/locales'
 import { currencyOf, htmlLang, langOf } from '@/lib/locations'
+import { fixedPrice, minorUnits } from '@/lib/prices'
 import SitePage from '../../site/SitePage'
 import { MC_ARCHITECTURE_HTML, MC_EXTEND_HTML, MC_MIXOLOGY_HTML, MC_PAGE_APP, MC_RIO_HTML, MC_SCENOGRAPHY_HTML } from '../../site/masterclass-pages'
 import '../../site/masterclass.css'
@@ -81,7 +82,8 @@ async function prices(slugs: string[]): Promise<Record<string, string>> {
     const fmtLang = htmlLang(TRANSLATED.includes(lang) ? lang : 'en')
     const out: Record<string, string> = {}
     for (const ed of (data || []) as Edition[]) {
-      const local = ed.prices && Number(ed.prices[wanted]) > 0 ? Number(ed.prices[wanted]) : null
+      const fixed = ed.price_cents ? fixedPrice(ed.price_cents / 100, wanted) : null
+      const local = ed.prices && Number(ed.prices[wanted]) > 0 ? Number(ed.prices[wanted]) : fixed ? minorUnits(fixed, wanted) : null
       const amount = local ?? ed.price_cents
       const currency = (local ? wanted : ed.currency || 'eur').toUpperCase()
       if (!amount) continue

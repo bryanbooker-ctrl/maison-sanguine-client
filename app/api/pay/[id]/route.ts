@@ -4,6 +4,7 @@ import { createCheckout, createIdentitySession } from '@/lib/stripe'
 import { applyIdentity } from '@/lib/identity'
 import { cookies } from 'next/headers'
 import { currencyOf, isContext } from '@/lib/locations'
+import { fixedPrice, minorUnits } from '@/lib/prices'
 
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -50,7 +51,8 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     const jar = await cookies()
     const ctx = jar.get('ms_loc')?.value
     const wanted = (isContext(ctx) ? currencyOf(ctx, jar.get('ms_region')?.value) : null)?.toLowerCase()
-    const local = wanted && ed.prices && Number(ed.prices[wanted]) > 0 ? Number(ed.prices[wanted]) : null
+    const fixed = wanted && ed.price_cents ? fixedPrice(ed.price_cents / 100, wanted) : null
+    const local = wanted && ed.prices && Number(ed.prices[wanted]) > 0 ? Number(ed.prices[wanted]) : fixed && wanted ? minorUnits(fixed, wanted) : null
 
     const checkout = await createCheckout({
       name: ed.name, amount: local ?? ed.price_cents, currency: local ? wanted! : (ed.currency || 'eur'), quantity: a.places,
