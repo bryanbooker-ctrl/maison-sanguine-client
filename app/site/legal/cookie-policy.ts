@@ -160,7 +160,7 @@ export const COOKIE_POLICY: LegalDoc = {
         'Depending on the configuration of the Site, such third parties may include, for example:',
         {
           list: [
-            'website hosting or platform providers (such as Squarespace);',
+            'website hosting or platform providers (such as Vercel);',
             'analytics providers (such as Google Analytics);',
             'social media platforms (such as Meta / Facebook, Instagram, LinkedIn, TikTok).',
           ],

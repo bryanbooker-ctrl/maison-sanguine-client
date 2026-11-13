@@ -112,7 +112,7 @@ function scanPages(dir) {
   }
 }
 
-const ACCOUNT = ['app/dashboard/page.tsx', 'app/dashboard/YoureIn.tsx', 'app/dashboard/invitation/page.tsx', 'app/auth/login/page.tsx', 'app/auth/signup/page.tsx', 'app/request/page.tsx']
+const ACCOUNT = ['app/dashboard/page.tsx', 'app/dashboard/YoureIn.tsx', 'app/dashboard/invitation/page.tsx', 'app/auth/login/page.tsx', 'app/auth/signup/page.tsx', 'app/request/page.tsx', 'app/site/MenuSession.tsx']
 function scanAccount() {
   for (const rel of ACCOUNT) {
     const p = path.join(ROOT, rel)

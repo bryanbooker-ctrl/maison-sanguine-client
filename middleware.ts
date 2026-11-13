@@ -50,6 +50,7 @@ export async function middleware(request: NextRequest) {
   const locale = parsed.ctx
   if (!bare && parsed.rest.replace(/\/$/, '') === '/about/sustainability') return redirect('/' + locale + '/about/commitments')
   const MOVED: Record<string, string> = {
+    '/contact': '/form/contact-us',
     '/event/aspen-winter-edition': '/night-collection/winter-edition/saturday-february-20-2027',
     '/event/new-york-spring-edition': '/night-collection/spring-edition/monday-may-3-2027',
     '/night-collection/spring-edition/saturday-april-24-2027': '/night-collection/spring-edition/monday-may-3-2027',

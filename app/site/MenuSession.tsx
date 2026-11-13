@@ -13,9 +13,12 @@ function waitFor(sel: string, cb: (el: Element) => void, tries = 60) {
   if (tries > 0) setTimeout(() => waitFor(sel, cb, tries - 1), 100)
 }
 
-function findTile(kicker: string) {
+function findTile(kicker: string, local?: string) {
   const ks = Array.from(document.querySelectorAll('#ms-menu .ms-drawer__kicker'))
-  const k = ks.find(n => n.getAttribute('data-ms-kicker') === kicker || n.textContent?.trim() === kicker)
+  const k = ks.find(n => {
+    const v = n.getAttribute('data-ms-kicker') || n.textContent?.trim()
+    return v === kicker || (!!local && v === local)
+  })
   return k ? (k.closest('.ms-drawer__link') as HTMLAnchorElement | null) : null
 }
 
@@ -46,18 +49,20 @@ function resetTile(a: HTMLAnchorElement) {
   delete a.dataset.msLogout
 }
 
-function setTitle(text: string) {
+function setTitle(text: string, base = DEFAULT_TITLE) {
   const sec = (window as MSWindow).MS?.menu?.sections
   if (sec && sec[0]) sec[0].title = text
   const on = document.querySelector('#ms-menu .ms-drawer__title-text.is-on')
   const first = document.querySelectorAll('#ms-menu .ms-drawer__title-text')
   const cur = on?.textContent?.trim().toLowerCase()
-  if (on && (cur === DEFAULT_TITLE.toLowerCase() || cur?.startsWith(DEFAULT_TITLE.toLowerCase() + ','))) on.textContent = text
+  const b = base.toLowerCase()
+  if (on && (cur === b || cur?.startsWith(b + ',') || cur?.startsWith(b + '，'))) on.textContent = text
   else if (!on && first[0]) first[0].textContent = text
 }
 
-export default function MenuSession() {
+export default function MenuSession({ dict }: { dict?: Record<string, string> }) {
   useEffect(() => {
+    const tr = (k: string) => (dict && dict[k]) || k
     const supabase = createClient()
     let alive = true
 
@@ -75,11 +80,11 @@ export default function MenuSession() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!alive) return
       waitFor('#ms-menu .ms-drawer__kicker', async () => {
-        const next = findTile('Upcoming Night')
-        const account = findTile('My MS')
+        const next = findTile('Upcoming Night', tr('Upcoming Night'))
+        const account = findTile('My MS', tr('My MS'))
 
         if (!user) {
-          setTitle(DEFAULT_TITLE)
+          setTitle(tr(DEFAULT_TITLE), tr(DEFAULT_TITLE))
           if (next) resetTile(next)
           if (account) resetTile(account)
           return
@@ -94,13 +99,13 @@ export default function MenuSession() {
         if (!alive) return
 
         const name = (p?.first_name || '').trim()
-        setTitle(name ? `${DEFAULT_TITLE}, ${name}` : DEFAULT_TITLE)
+        setTitle(name ? `${tr(DEFAULT_TITLE)}, ${name}` : tr(DEFAULT_TITLE), tr(DEFAULT_TITLE))
 
-        if (next && r && r[0]) setTile(next, 'Your Next Night', r[0].experience_name, '/dashboard?tab=experiences')
+        if (next && r && r[0]) setTile(next, tr('Your Next Night'), r[0].experience_name, '/dashboard?tab=experiences')
         else if (next) resetTile(next)
 
         if (account) {
-          setTile(account, 'My MS', 'Log out', '/auth/login')
+          setTile(account, tr('My MS'), tr('Log out'), '/auth/login')
           account.dataset.msLogout = '1'
         }
       })
@@ -114,7 +119,7 @@ export default function MenuSession() {
       document.removeEventListener('click', logout, true)
       sub.subscription.unsubscribe()
     }
-  }, [])
+  }, [dict])
 
   return null
 }

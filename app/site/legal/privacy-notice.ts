@@ -26,7 +26,7 @@ export const PRIVACY_NOTICE: LegalDoc = {
             'participation in experiences, installations, or brand activations;',
             'requests for access, invitations or guest-list submissions;',
             'electronic communications or direct interactions with our team;',
-            'on-site or digital forms (Squarespace, Typeform, WhatsApp Business);',
+            'on-site or digital forms (maisonsanguine.com, Typeform, WhatsApp Business);',
             'visits to our websites or use of digital services;',
             'interaction with Maison Sanguine on social media;',
             'partnership or collaboration requests;',

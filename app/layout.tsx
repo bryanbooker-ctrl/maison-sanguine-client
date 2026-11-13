@@ -50,7 +50,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       </head>
       <body suppressHydrationWarning>
         <script type="application/json" id="ms-loc-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(loc).replace(/</g, '\\u003c') }} />
-        <SiteChrome data={trHtml(MS_DATA, locale)} scripts={MS_SCRIPTS.map(code => trJs(code, locale))} />
+        <SiteChrome data={trHtml(MS_DATA, locale)} scripts={MS_SCRIPTS.map(code => trJs(code, locale))} menu={Object.fromEntries(['Welcome', 'Upcoming Night', 'My MS', 'Your Next Night', 'Log out'].map(k => [k, t(k, locale)]))} />
         {children}
         {account && <AccountI18n dict={accountDict(locale)} />}
         <div id="ms-foot-host" />

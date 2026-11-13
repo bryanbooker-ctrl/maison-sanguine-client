@@ -430,3 +430,4 @@ html.ms-archives #ms-loader .ms-loader__logo{width:min(56vw,280px)!important}
   .ma-tl__cc{display:inline}
   html body .ma-tl__items{margin-left:0}
 }
+.ma-foot__social a[hidden]{display:none!important}

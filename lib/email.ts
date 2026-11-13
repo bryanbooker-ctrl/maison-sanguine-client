@@ -20,12 +20,12 @@ function layout(title: string[], paragraphs: string[], cta?: { label: string; hr
 </table></td></tr></table></body></html>`
 }
 
-export async function sendEmail(to: string | string[], subject: string, html: string) {
+export async function sendEmail(to: string | string[], subject: string, html: string, replyTo?: string) {
   if (!process.env.RESEND_API_KEY) return { skipped: true }
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from: FROM, to, subject, html }),
+    body: JSON.stringify({ from: FROM, to, subject, html, ...(replyTo ? { reply_to: replyTo } : {}) }),
   })
   return { ok: res.ok }
 }
@@ -51,6 +51,19 @@ export const emails = {
         'You can follow your booking at any time from your MS Account.',
       ],
       { label: 'My MS Account', href: `${siteUrl()}/dashboard?tab=experiences` }
+    )
+  },
+  contactNew(a: Record<string, string>) {
+    const rows = Object.entries(a).filter(([, v]) => v).map(([k, v]) => `<div style="font-size:14px;line-height:1.6;color:#ffffff;white-space:pre-wrap;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span> ${esc(v)}</div>`).join('')
+    return layout(['New contact', 'message'], [], undefined, rows)
+  },
+  contactReceived(firstName: string) {
+    return layout(
+      ['Message', 'received'],
+      [
+        firstName ? `Dear ${esc(firstName)},` : 'Hello,',
+        'Thank you for contacting Maison Sanguine. Our Guest Relations team has received your message and will come back to you personally.',
+      ]
     )
   },
   adminNew(a: Record<string, string | number | null>) {

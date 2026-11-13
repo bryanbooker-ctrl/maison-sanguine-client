@@ -9,7 +9,7 @@ declare global {
   interface Window { __msChrome?: boolean }
 }
 
-function SiteChrome({ data, scripts }: { data: string; scripts: string[] }) {
+function SiteChrome({ data, scripts, menu }: { data: string; scripts: string[]; menu?: Record<string, string> }) {
   useEffect(() => {
     if (window.__msChrome) return
     window.__msChrome = true
@@ -25,7 +25,7 @@ function SiteChrome({ data, scripts }: { data: string; scripts: string[] }) {
       <style dangerouslySetInnerHTML={{ __html: MS_CSS + '\n' + LANG_CSS }} />
       <div hidden dangerouslySetInnerHTML={{ __html: data }} />
       <div id="ms-chrome-host" suppressHydrationWarning />
-      <MenuSession />
+      <MenuSession dict={menu} />
     </>
   )
 }

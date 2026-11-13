@@ -26,3 +26,4 @@ html body section.ms-car--cols h2.ms-car__title span::before{content:none!import
 html body main.ms-page>section.ms-sign:first-of-type{padding-top:calc(var(--ms-header-h,82px) + var(--ms-sy))!important}
 
 .ms-hero__frame{max-width:100%}
+html body main.ms-page>section.ms-col:first-of-type{padding-top:calc(var(--ms-header-h,82px) + var(--ms-sy))!important}

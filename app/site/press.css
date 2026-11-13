@@ -128,3 +128,4 @@ html body .ms-plog .ms-plog__card{background:var(--ms-pcard,#0e0e10);-webkit-bac
   html body .ms-plog select option{font-size:13px}
 }
 html body main.ms-page section.ms-plog.ms-plog{padding:0!important;margin:0!important}
+.ms-pfoot__social a[hidden]{display:none!important}
