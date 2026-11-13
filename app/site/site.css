@@ -1429,3 +1429,6 @@ html body section.ms-sign a.ms-nf__btn{display:inline-flex;align-items:center;ju
 html body section.ms-sign a.ms-nf__btn:hover{background:transparent;color:var(--fg)!important;}
 .ms-sign.ms-nf{min-height:70vh;}
 @media (min-width:1025px){html body section.ms-sign a.ms-nf__btn{width:21.2vw;height:clamp(52px,4.2vw,84px);margin-top:3vw;font-size:clamp(13px,.9vw,18px);}}
+
+/* Night pages: header background permanently black */
+html body:has(section.ms-hero--event) #ms-root .ms-navigation__scroll-bg{opacity:1!important;background:#000!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
