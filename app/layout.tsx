@@ -42,6 +42,8 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html lang={htmlLang(ui)} data-ms-loc={locale} suppressHydrationWarning>
       <head>
+        <style dangerouslySetInnerHTML={{ __html: 'html:not(.ms-cover-off){background:#000}html:not(.ms-cover-off) body{visibility:hidden}' }} />
+        <script dangerouslySetInnerHTML={{ __html: "setTimeout(function(){document.documentElement.classList.add('ms-cover-off')},4000)" }} />
         <link rel="preconnect" href="https://images.squarespace-cdn.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
