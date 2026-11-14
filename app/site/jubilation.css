@@ -99,3 +99,7 @@ html body .hj-panel__text{margin:0!important;font-size:15px!important;line-heigh
   .hj-room__enter,.hj-room.is-zoom .hj-room__zoom{transform:none}
   .hj-dot span{animation:none}
 }
+
+.hj-3d{position:absolute;inset:0;overflow:hidden;background:#01040a}
+.hj-3d canvas{display:block;width:100%;height:100%}
+.hj-has3d .hj-layer{display:none}

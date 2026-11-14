@@ -11,7 +11,9 @@ const META: Metadata = {
 
 export const generateMetadata = () => localizeMetadata(META)
 
-const SCRIPTS = [HOJ_APP]
+const HOJ_3D = "(function(){var r=document.getElementById('atelier-of-nights');if(!r||r.__s3)return;r.__s3=1;import('/hoj/scene.js?v=1').then(function(m){window.__hojScene=m.mount(r)}).catch(function(){})})()"
+
+const SCRIPTS = [HOJ_APP, HOJ_3D]
 
 export default function HouseOfJubilation() {
   return <SitePage html={HOJ_HTML} scripts={SCRIPTS} />
