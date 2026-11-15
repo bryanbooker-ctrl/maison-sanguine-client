@@ -113,3 +113,13 @@ html body .hj-panel__text{margin:0!important;font-size:15px!important;line-heigh
 .hj-3d{position:absolute;inset:0;overflow:hidden;background:#01040a}
 .hj-3d canvas{display:block;width:100%;height:100%}
 .hj-has3d .hj-layer{display:none}
+
+.hj-fx{position:absolute;inset:3%;pointer-events:none;overflow:hidden}
+.hj-fx i{position:absolute;display:block;mix-blend-mode:screen}
+.hj-glow{left:49.8%;top:78.9%;width:34%;height:13%;transform:translate(-50%,-50%);background:radial-gradient(ellipse at 50% 50%,rgba(205,224,255,.5) 0%,rgba(120,168,236,.22) 38%,rgba(60,100,170,0) 70%);filter:blur(6px);animation:hjBreathe 6s ease-in-out infinite}
+.hj-shaft{left:49.8%;bottom:20.8%;width:15%;height:40%;transform:translateX(-50%);background:linear-gradient(0deg,rgba(175,205,255,.34) 0%,rgba(110,150,225,.14) 45%,rgba(80,120,200,0) 100%);-webkit-mask-image:radial-gradient(ellipse 50% 100% at 50% 100%,#000 25%,transparent 72%);mask-image:radial-gradient(ellipse 50% 100% at 50% 100%,#000 25%,transparent 72%);filter:blur(10px);transform-origin:50% 100%;animation:hjRise 6s ease-in-out infinite}
+.hj-shaft::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(220,235,255,.0) 0%,rgba(220,235,255,.32) 18%,rgba(220,235,255,0) 38%);background-size:100% 220%;animation:hjPulseUp 6s linear infinite}
+@keyframes hjBreathe{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(.94)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}}
+@keyframes hjRise{0%,100%{opacity:.65;transform:translateX(-50%) scaleY(.92)}50%{opacity:1;transform:translateX(-50%) scaleY(1.08)}}
+@keyframes hjPulseUp{0%{background-position:0 100%;opacity:0}15%{opacity:1}85%{opacity:.7}100%{background-position:0 -20%;opacity:0}}
+@media (prefers-reduced-motion:reduce){.hj-glow,.hj-shaft,.hj-shaft::after{animation:none}}
