@@ -1,5 +1,5 @@
 html body main.ms-page>section.hj.hj{padding:0!important;margin:0!important}
-.hj{--hj-ease:var(--ms-ease,cubic-bezier(.22,.61,.36,1));position:relative;height:100vh;height:100dvh;min-height:480px;overflow:hidden;background:#000;color:#fff;font-family:var(--ms-font,inherit);-webkit-user-select:none;user-select:none;touch-action:pan-y}
+.hj{--hj-ease:var(--ms-ease,cubic-bezier(.22,.61,.36,1));position:relative;height:100vh;height:100dvh;min-height:480px;overflow:hidden;background:#000;color:#fff;font-family:var(--ms-font,inherit);-webkit-user-select:none;user-select:none;touch-action:none}
 .hj__sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hj__rooms{position:absolute;inset:0}
 .hj-room{position:absolute;inset:0;will-change:transform;transition:transform 1.15s cubic-bezier(.77,0,.18,1)}
@@ -115,3 +115,7 @@ html body .hj-panel__text{margin:0!important;font-size:15px!important;line-heigh
 .hj-has3d .hj-layer{display:none}
 
 .hj-layer--plate img{transform:scale(1.05)}
+html.ms-hoj,html.ms-hoj body{overflow:hidden!important;height:100%;overscroll-behavior:none}
+html.ms-hoj .ms-foot{display:none!important}
+.hj__nav{grid-column:2}
+@media (max-width:767px){.hj__ui{grid-template-columns:1fr}.hj__nav{grid-column:1;grid-row:1}}
