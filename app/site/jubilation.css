@@ -2,8 +2,7 @@ html body main.ms-page>section.hj.hj{padding:0!important;margin:0!important}
 .hj{--hj-ease:var(--ms-ease,cubic-bezier(.22,.61,.36,1));position:relative;height:100vh;height:100dvh;min-height:480px;overflow:hidden;background:#000;color:#fff;font-family:var(--ms-font,inherit);-webkit-user-select:none;user-select:none;touch-action:pan-y}
 .hj__sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hj__rooms{position:absolute;inset:0}
-.hj-room{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.1s var(--hj-ease),visibility 0s linear 1.1s}
-.hj-room.is-on{opacity:1;visibility:visible;transition:opacity 1.1s var(--hj-ease),visibility 0s}
+.hj-room{position:absolute;inset:0;will-change:transform;transition:transform 1.15s cubic-bezier(.77,0,.18,1)}
 .hj--instant .hj-room,.hj--instant .hj-room__enter{transition:none!important}
 .hj-room__scene{position:absolute;left:50%;top:50%;width:max(100%,177.78vh);width:max(100%,177.78dvh);aspect-ratio:16/9;transform:translate(calc(-50% + var(--px,0px)),-50%);transition:transform .9s var(--hj-ease)}
 .hj--dragged .hj-room__scene{transition:none}
@@ -54,7 +53,15 @@ html body .hj__title{min-width:clamp(150px,16vw,260px);margin:0!important;font-f
 .hj__title.is-out{opacity:0;transform:translateY(8px)}
 .hj__arrow{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(255,255,255,.45);border-radius:50%;background:rgba(0,0,0,.15);color:#fff;cursor:pointer}
 .hj__arrow svg{width:18px;height:18px}
-.hj__next svg{transform:scaleX(-1)}
+.hj__arrow:disabled{opacity:.28;cursor:default}
+.hj__lvl{position:absolute;left:clamp(20px,3vw,48px);top:50%;z-index:4;display:flex;align-items:center;gap:14px;transform:translateY(-50%);color:#fff;pointer-events:none;transition:opacity .5s ease}
+.hj__lvl svg{flex:none;width:34px;height:42px;overflow:visible}
+.hj__lvl path{stroke:rgba(255,255,255,.4);fill:none;transition:stroke .6s ease,fill .6s ease}
+.hj__lvl path.is-on{stroke:#fff;fill:rgba(255,255,255,.4)}
+.hj__lvlname{font-weight:300;font-size:clamp(13px,1.05vw,17px);line-height:1.2;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
+.hj__lvlname span{display:inline}
+.hj__lvlname .hj-it{font-style:italic;text-transform:none;margin-left:.3em}
+html.hj-panel-open .hj__lvl{opacity:0}
 .hj__surprise{justify-self:end;display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 18px;border:1px solid rgba(255,255,255,.45);border-radius:999px;background:rgba(0,0,0,.15);color:#fff;font:400 13px/1 var(--ms-font,inherit);cursor:pointer}
 .hj__surprise svg{width:18px;height:18px}
 .hj__hint{display:none}
@@ -67,6 +74,9 @@ html body .hj__title{min-width:clamp(150px,16vw,260px);margin:0!important;font-f
   .hj__hint{display:block;position:absolute;left:50%;bottom:calc(100% + 18px);transform:translateX(-50%);margin:0;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.35);font-size:12px;white-space:nowrap;transition:opacity .5s}
   .hj--dragged .hj__hint{opacity:0}
   .hj-dot em{display:none}
+  .hj__lvl{left:14px}
+  .hj__lvl svg{width:24px;height:30px}
+  .hj__lvlname{display:none}
 }
 @media (min-width:1025px){.hj__ui{padding:0 calc(7.5vw + 47px) 40px}.hj__arrow{width:48px;height:48px}}
 /* panel */
