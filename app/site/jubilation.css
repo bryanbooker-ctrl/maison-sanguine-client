@@ -1,8 +1,8 @@
 html body main.ms-page>section.hj.hj{padding:0!important;margin:0!important}
-.hj{--hj-ease:var(--ms-ease,cubic-bezier(.22,.61,.36,1));position:relative;height:100vh;height:100dvh;min-height:480px;overflow:hidden;background:#000;color:#fff;font-family:var(--ms-font,inherit);-webkit-user-select:none;user-select:none;touch-action:none}
+.hj{--hj-ease:var(--ms-ease,cubic-bezier(.22,.61,.36,1));position:fixed;top:0;right:0;bottom:0;left:0;z-index:1;overflow:hidden;background:#000;color:#fff;font-family:var(--ms-font,inherit);-webkit-user-select:none;user-select:none;touch-action:none}
 .hj__sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hj__rooms{position:absolute;inset:0}
-.hj-room{position:absolute;inset:0;will-change:transform;transition:transform 1.15s cubic-bezier(.77,0,.18,1)}
+.hj-room{position:absolute;inset:0;overflow:hidden;will-change:transform;transition:transform 1.15s cubic-bezier(.77,0,.18,1)}
 .hj--instant .hj-room,.hj--instant .hj-room__enter{transition:none!important}
 .hj-room__scene{position:absolute;left:50%;top:50%;width:max(100%,177.78vh);width:max(100%,177.78dvh);aspect-ratio:16/9;transform:translate(calc(-50% + var(--px,0px)),-50%);transition:transform .9s var(--hj-ease)}
 .hj--dragged .hj-room__scene{transition:none}
@@ -67,7 +67,7 @@ html.hj-panel-open .hj__lvl{opacity:0}
 .hj__hint{display:none}
 .hj-place{position:absolute;top:calc(var(--ms-header-h,82px) + 16px);left:50%;z-index:6;transform:translateX(-50%);padding:10px 16px;background:#fff;color:#000;font:500 13px/1 monospace}
 @media (max-width:767px){
-  .hj__ui{grid-template-columns:1fr 1fr;row-gap:18px;padding:0 20px calc(22px + env(safe-area-inset-bottom,0px))}
+  .hj__ui{grid-template-columns:1fr 1fr;row-gap:18px;padding:0 20px calc(36px + env(safe-area-inset-bottom,0px))}
   .hj__nav{grid-column:1/-1;grid-row:1;justify-content:center}
   .hj__count{grid-row:2}
   .hj__surprise{grid-row:2;height:36px;padding:0 14px;font-size:12px}
@@ -117,3 +117,4 @@ html.ms-hoj,html.ms-hoj body{overflow:hidden!important;height:100%;overscroll-be
 html.ms-hoj .ms-foot{display:none!important}
 .hj__nav{grid-column:2}
 @media (max-width:767px){.hj__ui{grid-template-columns:1fr}.hj__nav{grid-column:1;grid-row:1}}
+html.ms-hoj,html.ms-hoj body{background:#000}
