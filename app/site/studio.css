@@ -56,7 +56,7 @@ html body a.st-link{display:inline-flex;align-items:center;gap:12px;margin:24px 
 .st-visit{background:#000;color:#fff}
 .st-visit__media::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
 .st-visit__in{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*34);z-index:1;padding:0 24px}
-.st-visit__text{margin:0;max-width:640px;font-family:var(--ms-font);font-size:23px;font-weight:200;line-height:1.5;letter-spacing:-0.01em;color:#fff}
+.st-visit__text{margin:0;max-width:640px;font-family:var(--ms-font);font-size:29px;font-weight:200;line-height:1.38;letter-spacing:-0.01em;color:#fff}
 html body a.st-btn{display:flex;align-items:center;justify-content:center;width:100%;height:57px;margin:22px 0 0;border:1px solid #fff;background:#fff;color:#222!important;text-decoration:none!important;font-family:var(--ms-font);font-size:15px;font-weight:600;transition:background .3s,color .3s}
 html body a.st-btn:hover{background:transparent;color:#fff!important}
 
@@ -107,7 +107,7 @@ html[data-ms-site="studio"].st-nohdr,html[data-ms-site="studio"].st-nohdr.ms-hdr
 html[data-ms-site="studio"] #ms-foot .ms-foot__band{display:none!important}
 @media (max-width:1024px){
 html body .st-ib section.ms-qt .ms-qt__in{padding-left:11px;padding-right:11px}
-html body .st-visit a.st-btn{margin-top:4px}
+html body .st-visit a.st-btn{margin-top:30px}
 html[data-ms-site="studio"] #ms-foot .ms-foot__main{padding-top:54px}
 html[data-ms-site="studio"] #ms-foot .ms-foot__cols{margin-top:28px}
 html[data-ms-site="studio"] #ms-foot .ms-foot__head{padding:26px 0 12px}
