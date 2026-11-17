@@ -10,8 +10,8 @@ html:has(#st-deck) #ms-foot{scroll-snap-align:start end}
 @media (pointer:coarse){.st-deck{--st-H:max(100lvh,var(--st-h,0px))}}
 .st-pg{position:relative;height:100vh;height:var(--st-H);overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always}
 .st-ia,.st-ib{background:#0c0f17}
-.st-ia h2.st-title{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*54);padding:0 24px!important}
-html body .st-ib section.ms-qt{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*13);margin:0;padding-top:0;padding-bottom:0;background:transparent;overflow:visible}
+.st-ia h2.st-title{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*42);padding:0 24px!important}
+html body .st-ib section.ms-qt{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*5.8);margin:0;padding-top:0;padding-bottom:0;background:transparent;overflow:visible}
 html body .st-ib .ms-qt__in{max-width:none}
 html body .st-ib section.ms-qt div.ms-qt__text{text-align:left!important;text-justify:auto!important;hyphens:none!important;-webkit-hyphens:none!important;word-spacing:normal!important}
 .st-hero__media,.st-intro__bg,.st-visit__media{position:absolute;inset:0;background:var(--ms-ph)}
@@ -46,7 +46,7 @@ html body h2.st-title--intro{font-size:8.4vw!important;line-height:1!important;c
 .st-f--t{transform:rotateX(90deg) translateZ(calc(var(--H) / 2));background:linear-gradient(180deg,#e9e8e4,#dcdad5)}
 .st-f--bt{transform:rotateX(-90deg) translateZ(calc(var(--H) / 2));background:#b9b7b1}
 
-.st-ch__txt{position:absolute;left:0;right:0;bottom:calc(9svh + var(--st-H) - 100svh + env(safe-area-inset-bottom,0px));z-index:2;padding:0 24px}
+.st-ch__txt{position:absolute;left:0;right:0;bottom:calc(9svh + 11px + var(--st-H) - 100svh + env(safe-area-inset-bottom,0px));z-index:2;padding:0 24px}
 html body .st-ch h2.st-title{margin-left:-.12em!important;padding-left:.12em!important}
 .st-text{margin:7.5vw 0 0;max-width:600px;font-family:var(--ms-font);font-size:14px;font-weight:400;line-height:1.55;letter-spacing:0;color:#333}
 html body a.st-link{display:inline-flex;align-items:center;gap:12px;margin:24px 0 0;padding:0;color:#111!important;text-decoration:none!important;font-family:var(--ms-font);font-size:14px;font-weight:600;line-height:1.4}
@@ -55,7 +55,7 @@ html body a.st-link{display:inline-flex;align-items:center;gap:12px;margin:24px 
 
 .st-visit{background:#000;color:#fff}
 .st-visit__media::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
-.st-visit__in{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*31);z-index:1;padding:0 24px}
+.st-visit__in{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*34);z-index:1;padding:0 24px}
 .st-visit__text{margin:0;max-width:640px;font-family:var(--ms-font);font-size:23px;font-weight:200;line-height:1.5;letter-spacing:-0.01em;color:#fff}
 html body a.st-btn{display:flex;align-items:center;justify-content:center;width:100%;height:57px;margin:22px 0 0;border:1px solid #fff;background:#fff;color:#222!important;text-decoration:none!important;font-family:var(--ms-font);font-size:15px;font-weight:600;transition:background .3s,color .3s}
 html body a.st-btn:hover{background:transparent;color:#fff!important}
@@ -105,3 +105,12 @@ html body #ms-header a.st-visit-l{display:block;color:var(--hf)!important;text-d
 html[data-ms-site="studio"].st-nohdr,html[data-ms-site="studio"].st-nohdr.ms-hdr-hidden{--hy:-101%!important}
 @media (max-width:1024px){html[data-ms-site="studio"] #ms-header .ms-navigation__top-center-column img{height:25px!important;width:auto!important}}
 html[data-ms-site="studio"] #ms-foot .ms-foot__band{display:none!important}
+@media (max-width:1024px){
+html body .st-ib section.ms-qt .ms-qt__in{padding-left:11px;padding-right:11px}
+html body .st-visit a.st-btn{margin-top:4px}
+html[data-ms-site="studio"] #ms-foot .ms-foot__main{padding-top:54px}
+html[data-ms-site="studio"] #ms-foot .ms-foot__cols{margin-top:28px}
+html[data-ms-site="studio"] #ms-foot .ms-foot__head{padding:26px 0 12px}
+html[data-ms-site="studio"] #ms-foot .ms-foot__cols{margin-bottom:0}
+html[data-ms-site="studio"] #ms-foot .ms-foot__social{margin-top:-8px}
+}
