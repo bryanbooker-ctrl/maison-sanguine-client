@@ -5,7 +5,7 @@ import { getLocale, getPublicPath, accountDict, trHtml, trJs, localizeMetadata, 
 import AccountI18n from './site/AccountI18n'
 import { TRANSLATED } from '@/lib/locales'
 import { INTL, INTL_COUNTRIES, LANG_NAMES, LOCATIONS, htmlLang, intlCountry, langOf, locOf } from '@/lib/locations'
-import { cookies } from 'next/headers'
+import { cookies, headers } from 'next/headers'
 import './globals.css'
 
 const META: Metadata = {
@@ -23,6 +23,8 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const locale = await getLocale()
   const path = await getPublicPath()
+  const site = (await headers()).get('x-ms-site') || (path === '/studio' ? 'studio' : '')
+  const chromeData = site === 'studio' ? MS_DATA.replace(/"logo(Mobile)?": "[^"]*"/g, '"logo$1": "/studio/ms-studio-logo.png"') : MS_DATA
   const lang = langOf(locale)
   const ui = TRANSLATED.includes(lang) ? lang : 'en'
   const account = ui !== 'en' && /^\/(dashboard|auth|request)(\/|$)/.test(path)
@@ -40,7 +42,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     },
   }
   return (
-    <html lang={htmlLang(ui)} data-ms-loc={locale} suppressHydrationWarning>
+    <html lang={htmlLang(ui)} data-ms-loc={locale} data-ms-site={site || undefined} suppressHydrationWarning>
       <head>
         <style dangerouslySetInnerHTML={{ __html: 'html:not(.ms-cover-off){background:#000}html:not(.ms-cover-off) body{visibility:hidden}' }} />
         <script dangerouslySetInnerHTML={{ __html: "setTimeout(function(){document.documentElement.classList.add('ms-cover-off')},4000)" }} />
@@ -52,7 +54,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       </head>
       <body suppressHydrationWarning>
         <script type="application/json" id="ms-loc-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(loc).replace(/</g, '\\u003c') }} />
-        <SiteChrome data={trHtml(MS_DATA, locale)} scripts={MS_SCRIPTS.map(code => trJs(code, locale))} menu={Object.fromEntries(['Welcome', 'Upcoming Night', 'My MS', 'Your Next Night', 'Log out'].map(k => [k, t(k, locale)]))} />
+        <SiteChrome data={trHtml(chromeData, locale)} scripts={MS_SCRIPTS.map(code => trJs(code, locale))} menu={Object.fromEntries(['Welcome', 'Upcoming Night', 'My MS', 'Your Next Night', 'Log out'].map(k => [k, t(k, locale)]))} />
         {children}
         {account && <AccountI18n dict={accountDict(locale)} />}
         <div id="ms-foot-host" />
