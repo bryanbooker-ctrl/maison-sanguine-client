@@ -357,14 +357,6 @@
     "0045v37": "Subscribe"
   },
   "aspen-event": {
-    "1qken5r": "The Winter Edition",
-    "1oahzqm": "\"Aspen\"",
-    "1gm31ct": "Season 2027",
-    "09o243z": "SATURDAY, FEBRUARY 20, 2027",
-    "1ye3sd1": "Information",
-    "1khq91a": "Access by application only. Payment is required upon confirmation of admission.",
-    "1swcf0p": "Night Access",
-    "0svbsag": "Bringing together the distinctive character of the Colorado Rockies and Maison Sanguine’s approach to nocturnal creation, the Winter Edition is conceived as an immersive composition shaped by its surroundings. From spatial design and scenography to sound architecture, every discipline answers the alpine environment. Materials, volumes and sound sources form a unified whole, revealing a new interpretation of the landscape. As night unfolds, the spirit of Aspen meets the Maison’s creative and technical mastery.",
     "1roweei": "Haute Nuit",
     "1abrqaw": "Play video",
     "0v45hmz": "SETTING",
@@ -2246,6 +2238,12 @@
     "0fc0dvb": "EXTEND™ accompanies the night from the first drink to the last track, in 360°. Overhead sources and distributed bass give the open air a presence usually reserved for the club.",
     "1r5iiiz": "Saturday, July 24, 2027",
     "0ngfddp": "Saint-Tropez, French Riviera"
+  },
+  "night-hero": {
+    "0zhde96": "MAISON SANGUINE",
+    "03zxf06": "Saturday",
+    "1fjda26": "February 20, 2027",
+    "1swcf0p": "Night Access"
   },
   "not-found": {
     "0cwso0c": "Page unavailable",
