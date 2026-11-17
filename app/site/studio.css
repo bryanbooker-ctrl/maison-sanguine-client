@@ -8,7 +8,6 @@ html:has(#st-deck){scroll-snap-type:y mandatory}
 html:has(#st-deck) #ms-foot{scroll-snap-align:start end}
 .st-deck{--st-H:100lvh}
 @media (pointer:coarse){.st-deck{--st-H:max(100lvh,var(--st-h,0px))}}
-html{transition:background-color .35s}
 .st-pg{position:relative;height:100vh;height:var(--st-H);overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always}
 .st-ia,.st-ib{background:#0c0f17}
 .st-ia h2.st-title{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*54);padding:0 24px!important}
@@ -105,3 +104,4 @@ html body #ms-header a.st-visit-l{display:block;color:var(--hf)!important;text-d
 
 html[data-ms-site="studio"].st-nohdr,html[data-ms-site="studio"].st-nohdr.ms-hdr-hidden{--hy:-101%!important}
 @media (max-width:1024px){html[data-ms-site="studio"] #ms-header .ms-navigation__top-center-column img{height:25px!important;width:auto!important}}
+html[data-ms-site="studio"] #ms-foot .ms-foot__band{display:none!important}
