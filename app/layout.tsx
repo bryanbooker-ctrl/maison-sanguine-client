@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const locale = await getLocale()
   const path = await getPublicPath()
-  const site = (await headers()).get('x-ms-site') || (path === '/studio' ? 'studio' : '')
+  const site = (await headers()).get('x-ms-site') || (path === '/studio' || path.startsWith('/studio/') ? 'studio' : '')
   const chromeData = site === 'studio' ? MS_DATA.replace(/"logo(Mobile)?": "[^"]*"/g, '"logo$1": "/studio/ms-studio-logo.png"') : MS_DATA
   const lang = langOf(locale)
   const ui = TRANSLATED.includes(lang) ? lang : 'en'
