@@ -6,7 +6,7 @@ html body main.ms-page{background:#000;color:#fff;overflow:visible}
 .st-deck{position:relative;font-family:var(--ms-font)}
 html:has(#st-deck){scroll-snap-type:y mandatory}
 html:has(#st-deck) #ms-foot{scroll-snap-align:start end}
-.st-pg{position:relative;height:100vh;height:100svh;overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always}
+.st-pg{position:relative;height:100vh;height:100lvh;overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always}
 .st-ia,.st-ib{background:#0c0f17}
 .st-ia h2.st-title{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*54);padding:0 24px!important}
 html body .st-ib section.ms-qt{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*13);margin:0;padding-top:0;padding-bottom:0;background:transparent;overflow:visible}
@@ -30,7 +30,7 @@ html body h2.st-title--intro{font-size:8.4vw!important;line-height:1!important;c
 
 .st-ch{--u:min(44vw,calc(var(--sv,1svh)*22));background:#f8f8f6;color:#000}
 .st-ch__art{position:absolute;left:0;right:0;top:var(--ms-header-h);height:calc(calc(var(--sv,1svh)*53) - var(--ms-header-h));perspective:1300px;perspective-origin:50% 45%}
-.st-ch__bp{position:absolute;left:50%;top:52%;width:118vw;height:118vw;margin:-59vw 0 0 -59vw;background:url(/studio/blueprint.svg) center/contain no-repeat;opacity:.5;transform:rotate(var(--bpr,0deg));pointer-events:none}
+.st-ch__bp{position:absolute;left:50%;top:52%;width:118vw;height:118vw;margin:-59vw 0 0 -59vw;display:block;max-width:none;object-fit:contain;opacity:.5;transform:rotate(var(--bpr,0deg)) translateZ(0);backface-visibility:hidden;-webkit-user-drag:none;user-select:none;pointer-events:none}
 .st-ch__art::after{content:"";position:absolute;left:50%;top:calc(50% + var(--u) * var(--h) / 2 + 22px);width:calc(var(--u) * var(--w) * 1.05);height:28px;margin-left:calc(var(--u) * var(--w) * -.525);background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.16),rgba(0,0,0,0) 70%);pointer-events:none}
 .st-obj{--W:calc(var(--u) * var(--w));--H:calc(var(--u) * var(--h));--D:calc(var(--u) * .14);position:absolute;left:50%;top:50%;width:var(--W);height:var(--H);margin:calc(var(--H) / -2) 0 0 calc(var(--W) / -2);transform-style:preserve-3d}
 .st-obj__b{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
@@ -44,7 +44,7 @@ html body h2.st-title--intro{font-size:8.4vw!important;line-height:1!important;c
 .st-f--t{transform:rotateX(90deg) translateZ(calc(var(--H) / 2));background:linear-gradient(180deg,#e9e8e4,#dcdad5)}
 .st-f--bt{transform:rotateX(-90deg) translateZ(calc(var(--H) / 2));background:#b9b7b1}
 
-.st-ch__txt{position:absolute;left:0;right:0;bottom:calc(calc(var(--sv,1svh)*9) + env(safe-area-inset-bottom,0px));z-index:2;padding:0 24px}
+.st-ch__txt{position:absolute;left:0;right:0;bottom:calc(9svh + 100lvh - 100svh + env(safe-area-inset-bottom,0px));z-index:2;padding:0 24px}
 html body .st-ch h2.st-title{margin-left:-.12em!important;padding-left:.12em!important}
 .st-text{margin:7.5vw 0 0;max-width:600px;font-family:var(--ms-font);font-size:14px;font-weight:400;line-height:1.55;letter-spacing:0;color:#333}
 html body a.st-link{display:inline-flex;align-items:center;gap:12px;margin:24px 0 0;padding:0;color:#111!important;text-decoration:none!important;font-family:var(--ms-font);font-size:14px;font-weight:600;line-height:1.4}
@@ -89,10 +89,8 @@ html body a.st-btn:hover{background:transparent;color:#fff!important}
 @media(prefers-reduced-motion:reduce){.st-cue svg{animation:none}}
 
 
-html[data-ms-site="studio"],html[data-ms-site="studio"].ms-hdr-hidden{--hy:0%!important}
 html[data-ms-site="studio"] #ms-loader .ms-loader__logo{width:min(56vw,280px)!important}
 html[data-ms-site="studio"] #ms-header .ms-navigation__icon{display:none!important}
-html[data-ms-site="studio"]:not(.ms-menu-open) #ms-root .ms-navigation__scroll-bg{opacity:0!important}
 #ms-header .st-h{display:flex;align-items:center;flex:none;pointer-events:auto;color:var(--hf)}
 html body #ms-header a.st-visit-l{display:block;color:var(--hf)!important;text-decoration:none!important;font-family:var(--ms-font);font-size:15px;font-weight:500;line-height:1;white-space:nowrap;transition:color var(--ms-color-fade) var(--ms-ease-soft),opacity .25s}
 @media(hover:hover){html body #ms-header a.st-visit-l:hover{opacity:.55}}
