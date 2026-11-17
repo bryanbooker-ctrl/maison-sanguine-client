@@ -56,7 +56,7 @@ html body a.st-link{display:inline-flex;align-items:center;gap:12px;margin:24px 
 .st-visit{background:#000;color:#fff}
 .st-visit__media::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
 .st-visit__in{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*34);z-index:1;padding:0 24px}
-.st-visit__text{margin:0;max-width:640px;font-family:var(--ms-font);font-size:29px;font-weight:200;line-height:1.38;letter-spacing:-0.01em;color:#fff}
+.st-visit__text{margin:0;max-width:640px;font-family:var(--ms-font);font-size:26px;font-weight:200;line-height:1.38;letter-spacing:-0.01em;color:#fff}
 html body a.st-btn{display:flex;align-items:center;justify-content:center;width:100%;height:57px;margin:22px 0 0;border:1px solid #fff;background:#fff;color:#222!important;text-decoration:none!important;font-family:var(--ms-font);font-size:15px;font-weight:600;transition:background .3s,color .3s}
 html body a.st-btn:hover{background:transparent;color:#fff!important}
 
