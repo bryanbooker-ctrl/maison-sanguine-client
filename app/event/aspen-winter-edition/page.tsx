@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { localizeMetadata } from '@/lib/i18n'
 import SitePage from '../../site/SitePage'
 import { ASPEN_EVENT_HTML } from '../../site/aspen-event'
+import { NIGHT_HERO_APP } from '../../site/night-hero'
 
 const META: Metadata = {
   title: 'Maison Sanguine | The Winter Edition, Aspen',
@@ -11,5 +12,5 @@ const META: Metadata = {
 export const generateMetadata = () => localizeMetadata(META)
 
 export default function Page() {
-  return <SitePage h1="The Winter Edition, Aspen" html={ASPEN_EVENT_HTML} />
+  return <SitePage h1="The Winter Edition, Aspen" html={ASPEN_EVENT_HTML} scripts={[NIGHT_HERO_APP]} />
 }
