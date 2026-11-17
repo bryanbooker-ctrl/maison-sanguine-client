@@ -71,7 +71,7 @@ export function t(text: string, locale: Locale): string {
   return lead + v + trail
 }
 
-const OWN_HOST = /^https?:\/\/((?:www|careers|press|msarchives)\.)?maisonsanguine\.com(?=\/|$|[?#])/i
+const OWN_HOST = /^https?:\/\/((?:www|careers|press|msarchives|studio)\.)?maisonsanguine\.com(?=\/|$|[?#])/i
 const SKIP_PATH = /^\/(?:api|_next|auth\/callback)(?:\/|$)|\.[a-z0-9]{2,4}$/i
 
 export function localizeHref(href: string, locale: Locale): string {

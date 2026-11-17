@@ -54,7 +54,7 @@ export const LANG_SCRIPT = `(function(){
   var el=document.getElementById('ms-loc-data');if(!el)return;
   var C;try{C=JSON.parse(el.textContent)}catch(e){return}
   var PRE='/'+C.ctx,HOME=function(p){return !p||p==='/'?'/home':p};
-  var OWN=/^https?:\\/\\/((?:www|careers|press|msarchives)\\.)?maisonsanguine\\.com(?=\\/|$|[?#])/i;
+  var OWN=/^https?:\\/\\/((?:www|careers|press|msarchives|studio)\\.)?maisonsanguine\\.com(?=\\/|$|[?#])/i;
   var SKIP=/^\\/(?:api|_next|auth\\/callback)(?:\\/|$)|\\.[a-z0-9]{2,4}$/i;
   var HAS=/^\\/(?:en|[a-z]{2}\\/[a-z]{2}(?:-[a-z]{4})?)(?=\\/|$)/;
   function lz(h){

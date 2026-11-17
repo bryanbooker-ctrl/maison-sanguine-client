@@ -23,7 +23,7 @@ export async function middleware(request: NextRequest) {
   const host = (request.headers.get('host') || '').toLowerCase()
   const search = request.nextUrl.search
   const raw = request.nextUrl.pathname
-  const sub = /^(careers|press|msarchives)\./.test(host)
+  const sub = /^(careers|press|msarchives|studio)\./.test(host)
 
   if (MAINTENANCE_ON) {
     const open = raw.startsWith('/_next/') || raw === '/api/stripe/webhook' || raw === '/api/maintenance' || /^\/(favicon\.ico|icon\.png|apple-icon\.png)$/.test(raw)
@@ -109,6 +109,12 @@ export async function middleware(request: NextRequest) {
     if (path === '/') return go('/msarchives')
     if (path === '/explore' || path === '/about') return go('/msarchives' + path)
     if (path === '/msarchives' || path.startsWith('/msarchives/')) return to(path.replace(/^\/msarchives/, '') || '/')
+    return to(path, 'https://maisonsanguine.com')
+  }
+
+  if (host.startsWith('studio.')) {
+    if (path === '/') return go('/studio')
+    if (path === '/studio') return to('/')
     return to(path, 'https://maisonsanguine.com')
   }
 
