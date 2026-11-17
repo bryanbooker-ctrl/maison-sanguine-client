@@ -2,7 +2,7 @@
 html body main.ms-page>section.ms-rh{padding:0!important;margin:0!important}
 .ms-rh__in{position:fixed;inset:0;z-index:60;overflow:hidden;background:rgba(0,0,0,var(--rh-bg,1));color:#fff;font-family:var(--font,inherit);pointer-events:none}
 .ms-rh__in[hidden]{display:none}
-.ms-rh__wrap{position:absolute;left:50%;top:15.5vh;width:min(67vw,calc((84.5vh - 240px) * 16 / 9));transform:translateX(-50%)}
+.ms-rh__wrap{position:absolute;left:50%;top:15.8vh;width:min(66.5vw,calc(66vh * 16 / 9));transform:translateX(-50%) scale(var(--rh-s,1));transform-origin:50% 40%;will-change:transform}
 .ms-rh__stage{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:rgba(21,21,26,var(--rh-o,1))}
 .ms-rh__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:var(--rh-o,1)}
 .ms-rh__img--ph{background:radial-gradient(120% 90% at 50% 55%,#26262f 0%,#101015 72%)}
@@ -19,6 +19,8 @@ html body a.ms-rh__btn:hover,html body a.ms-rh__btn:focus-visible{filter:brightn
 .ms-rh__chev svg{display:block;width:100%;height:100%}
 html body:has(section.ms-rh) #ms-root .ms-navigation__scroll-bg{opacity:1!important;background:#000!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
 html.ms-rh-on body:has(section.ms-rh) #ms-root .ms-navigation__scroll-bg{opacity:0!important}
+html body:has(section.ms-rh) section.ms-vp a.ms-play{transition:opacity .6s ease,filter .3s ease!important}
+html.ms-rh-on body:has(section.ms-rh) section.ms-vp a.ms-play{opacity:0!important;pointer-events:none!important}
 @media (max-width:767px){
   .ms-rh{height:160svh}
   .ms-rh__wrap{top:calc(var(--ms-header-h,72px) + 8px);width:calc(100vw - 32px)}
