@@ -124,3 +124,4 @@ html[data-ms-site="studio"] #ms-foot .st-foot-legal{order:3;margin-top:24px;padd
 @media (max-width:1024px){
 .st-visit__in{top:0;bottom:auto;height:calc(var(--sv,1svh)*100);display:flex;flex-direction:column;justify-content:center}
 }
+@media (max-width:1024px){.st-visit__text{padding-right:22px}}
