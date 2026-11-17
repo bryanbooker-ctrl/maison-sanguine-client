@@ -108,11 +108,6 @@ html[data-ms-site="studio"] #ms-foot .ms-foot__band{display:none!important}
 @media (max-width:1024px){
 html body .st-ib section.ms-qt .ms-qt__in{padding-left:11px;padding-right:11px}
 html body .st-visit a.st-btn{margin-top:30px}
-html[data-ms-site="studio"] #ms-foot .ms-foot__main{padding-top:54px}
-html[data-ms-site="studio"] #ms-foot .ms-foot__cols{margin-top:28px}
-html[data-ms-site="studio"] #ms-foot .ms-foot__head{padding:26px 0 12px}
-html[data-ms-site="studio"] #ms-foot .ms-foot__cols{margin-bottom:0}
-html[data-ms-site="studio"] #ms-foot .ms-foot__social{margin-top:-8px}
 }
 html[data-ms-site="studio"] #ms-foot .ms-foot__list li strong{font-weight:600}
 html[data-ms-site="studio"] #ms-foot .ms-foot__list li span,html[data-ms-site="studio"] #ms-foot .ms-foot__list li strong{display:block}
@@ -121,9 +116,9 @@ html body #ms-foot .st-foot-legal a{font:500 14px/18px var(--ms-font);color:inhe
 @media (hover:hover){html body #ms-foot .st-foot-legal a:hover{opacity:.6}}
 @media (max-width:1024px){
 html[data-ms-site="studio"] #ms-foot .ms-foot__base{display:flex;flex-direction:column;align-items:stretch}
-html[data-ms-site="studio"] #ms-foot .ms-foot__copy{order:2;padding-top:48px;text-align:center}
+html[data-ms-site="studio"] #ms-foot .ms-foot__copy{order:2;text-align:center}
 html[data-ms-site="studio"] #ms-foot .ms-foot__copy{padding-bottom:0}
-html[data-ms-site="studio"] #ms-foot .st-foot-legal{order:3;margin-top:32px;padding-bottom:40px}
+html[data-ms-site="studio"] #ms-foot .st-foot-legal{order:3;margin-top:24px;padding-bottom:35px}
 }
 @media (min-width:1025px){html[data-ms-site="studio"] #ms-foot .st-foot-legal{flex:1;justify-content:center;gap:12px 3.2vw}}
 @media (max-width:1024px){
