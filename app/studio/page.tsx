@@ -5,7 +5,7 @@ import { STUDIO_HTML, STUDIO_APP } from '../site/studio'
 import '../site/studio.css'
 
 const META: Metadata = {
-  title: 'Maison Sanguine | Maison Sanguine Studio',
+  title: 'Maison Sanguine Studio',
   description: 'Step into the heart of the universe of Maison Sanguine and discover the Maison Sanguine Studio, a living place that pays tribute to the artists and creators of the Maison.',
 }
 

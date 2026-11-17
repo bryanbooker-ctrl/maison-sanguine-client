@@ -49,9 +49,10 @@ html body h2.st-title--intro{font-size:8.4vw!important;line-height:1!important;c
 .st-ch__txt{position:absolute;left:0;right:0;bottom:calc(9svh + 11px + var(--st-H) - 100svh + env(safe-area-inset-bottom,0px));z-index:2;padding:0 24px}
 html body .st-ch h2.st-title{margin-left:-.12em!important;padding-left:.12em!important}
 .st-text{margin:7.5vw 0 0;max-width:600px;font-family:var(--ms-font);font-size:14px;font-weight:400;line-height:1.55;letter-spacing:0;color:#333}
-html body a.st-link{display:inline-flex;align-items:center;gap:12px;margin:24px 0 0;padding:0;color:#111!important;text-decoration:none!important;font-family:var(--ms-font);font-size:14px;font-weight:600;line-height:1.4}
-.st-link i{display:block;flex:none;width:36px;height:1px;background:currentColor;transition:width .3s cubic-bezier(.4,0,.2,1)}
-.st-link:hover i,.st-link:focus-visible i{width:50px}
+html body a.st-link{display:inline-flex;align-items:center;gap:8px;margin:24px 0 0;padding:0;color:#111!important;text-decoration:none!important;font-family:var(--ms-font);font-size:15px;font-weight:500;line-height:1.4;letter-spacing:0}
+.st-link i{display:block;flex:none;width:42px;height:1px;background:currentColor;transition:width .3s var(--ms-ease,cubic-bezier(.4,0,.2,1))}
+.st-link:hover i,.st-link:focus-visible i{width:56px}
+.st-link:focus-visible{outline:1px solid currentColor;outline-offset:4px}
 
 .st-visit{background:#000;color:#fff}
 .st-visit__media::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
@@ -82,7 +83,7 @@ html body a.st-btn:hover{background:transparent;color:#fff!important}
   .st-obj{left:62%}
   .st-ch__txt{left:0;right:auto;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;padding:calc(var(--sv,1svh)*4) 0 0 5.3vw}
   .st-text{margin:4.3vw 0 0 7.1vw;width:23vw;min-width:300px;max-width:none;font-size:clamp(14px,1.04vw,20px);line-height:1.6}
-  html body a.st-link{margin:2.6vw 0 0 7.1vw;font-size:clamp(14px,.9vw,17px)}
+  html body a.st-link{margin:2.6vw 0 0 7.1vw;font-size:14px}
   .st-visit__in{left:14.5vw;right:auto;top:calc(var(--sv,1svh)*37);padding:0;width:38vw}
   .st-visit__text{max-width:none;font-size:clamp(26px,2.35vw,46px);line-height:1.17}
   html body a.st-btn{width:16vw;min-width:204px;height:54px;margin-top:3.1vw;font-size:14px}
