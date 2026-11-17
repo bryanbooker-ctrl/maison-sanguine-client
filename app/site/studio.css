@@ -3,12 +3,15 @@ html body main.ms-page{background:#000;color:#fff;overflow:visible}
 .st-deck *,.st-cue *,.st-dots *{box-sizing:border-box}
 
 .st-hero{background:#000}
-.st-deck{position:relative;z-index:0;height:var(--sh,calc(var(--sv,1svh)*100));overflow:hidden;background:#000;contain:layout paint}
-.st-s{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;visibility:hidden;transform:translate3d(0,100%,0);transition:transform 1.15s cubic-bezier(.65,0,.25,1),visibility 0s linear 1.15s;will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
-.st-s.is-on{visibility:visible;transform:translate3d(0,0,0);transition:transform 1.15s cubic-bezier(.65,0,.25,1),visibility 0s}
-.st-s.is-pa{visibility:visible;transform:translate3d(0,-24%,0);transition:transform 1.15s cubic-bezier(.65,0,.25,1),visibility 0s}
-.st-s.is-far{transform:translate3d(0,-24%,0)}
-.st-hero:not(.is-pa):not(.is-far){visibility:visible;transform:none}
+.st-deck{position:relative;font-family:var(--ms-font)}
+html:has(#st-deck){scroll-snap-type:y mandatory}
+html:has(#st-deck) #ms-foot{scroll-snap-align:start end}
+.st-pg{position:relative;height:100vh;height:100svh;overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always}
+.st-ia,.st-ib{background:#0c0f17}
+.st-ia h2.st-title{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*54);padding:0 24px!important}
+html body .st-ib section.ms-qt{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*13);margin:0;padding-top:0;padding-bottom:0;background:transparent;overflow:visible}
+html body .st-ib .ms-qt__in{max-width:none}
+html body .st-ib section.ms-qt div.ms-qt__text{text-align:left!important;text-justify:auto!important;hyphens:none!important;-webkit-hyphens:none!important;word-spacing:normal!important}
 .st-hero__media,.st-intro__bg,.st-visit__media{position:absolute;inset:0;background:var(--ms-ph)}
 .st-hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 65%,rgba(0,0,0,.35) 100%)}
 
@@ -24,16 +27,6 @@ html body .st-title span{display:block}
 html body .st-title span.ms-it{font-style:italic!important;font-weight:300!important}
 html body h2.st-title--intro{font-size:8.4vw!important;line-height:1!important;color:#fff!important}
 
-.st-intro__stage{position:absolute;inset:0;overflow:hidden;background:#000}
-.st-intro__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,18,28,.55),rgba(8,10,16,.72))}
-.st-intro__flow{position:absolute;left:0;right:0;top:calc(var(--sv,1svh)*54);will-change:transform;transition:transform 1.3s cubic-bezier(.65,0,.25,1)}
-.st-intro.is-q .st-intro__flow{transform:translate3d(0,calc(var(--stD,0px) * -1),0)}
-html body .st-intro__flow h2.st-title{padding:0 24px!important}
-html body .st-intro section.ms-qt{margin-top:calc(var(--sv,1svh)*30);padding-top:0;padding-bottom:0;background:transparent;overflow:visible}
-html body .st-intro .ms-qt__in{max-width:none}
-html body .st-intro section.ms-qt{opacity:0;transition:opacity .5s ease}
-html body .st-intro.is-q section.ms-qt{opacity:1;transition:opacity 1s ease .3s}
-html body .st-intro section.ms-qt div.ms-qt__text{text-align:left!important;text-justify:auto!important;hyphens:none!important;-webkit-hyphens:none!important;word-spacing:normal!important}
 
 .st-ch{--u:min(44vw,calc(var(--sv,1svh)*22));background:#f8f8f6;color:#000}
 .st-ch__art{position:absolute;left:0;right:0;top:var(--ms-header-h);height:calc(calc(var(--sv,1svh)*53) - var(--ms-header-h));perspective:1300px;perspective-origin:50% 45%}
@@ -77,10 +70,9 @@ html body a.st-btn:hover{background:transparent;color:#fff!important}
   html body a.st-cue{bottom:calc(var(--sv,1svh)*7.5);font-size:15px}
   html body h2.st-title{font-size:7.8vw!important;line-height:.97!important}
   html body h2.st-title--intro{font-size:4.9vw!important;line-height:.97!important}
-  .st-intro__flow{top:calc(var(--sv,1svh)*31)}
-  html body .st-intro__flow h2.st-title{padding:0 0 0 5.3vw!important}
-  html body .st-intro section.ms-qt{margin-top:calc(var(--sv,1svh)*52);padding-left:13vw;padding-right:0}
-  html body .st-intro .ms-qt__in{max-width:45vw}
+  .st-ia h2.st-title{top:calc(var(--sv,1svh)*31);padding:0 0 0 5.3vw!important}
+  html body .st-ib section.ms-qt{top:calc(var(--sv,1svh)*16);padding-left:13vw;padding-right:0}
+  html body .st-ib .ms-qt__in{max-width:45vw}
   .st-ch{--u:min(21vw,calc(var(--sv,1svh)*38))}
   .st-ch__art{left:38vw;right:3vw;top:0;height:100%}
   .st-ch__art::after{left:62%}
@@ -97,21 +89,15 @@ html body a.st-btn:hover{background:transparent;color:#fff!important}
 @media(prefers-reduced-motion:reduce){.st-cue svg{animation:none}}
 
 
-html.st-lock,html.st-lock body{overflow:hidden!important;overscroll-behavior:none}
 html[data-ms-site="studio"],html[data-ms-site="studio"].ms-hdr-hidden{--hy:0%!important}
 html[data-ms-site="studio"] #ms-loader .ms-loader__logo{width:min(56vw,280px)!important}
 html[data-ms-site="studio"] #ms-header .ms-navigation__icon{display:none!important}
 html[data-ms-site="studio"]:not(.ms-menu-open) #ms-root .ms-navigation__scroll-bg{opacity:0!important}
-html body #ms-root .ms-navigation__top-center-column img.st-logo{width:150px!important;height:auto!important;position:relative;top:0}
 #ms-header .st-h{display:flex;align-items:center;flex:none;pointer-events:auto;color:var(--hf)}
 html body #ms-header a.st-visit-l{display:block;color:var(--hf)!important;text-decoration:none!important;font-family:var(--ms-font);font-size:15px;font-weight:500;line-height:1;white-space:nowrap;transition:color var(--ms-color-fade) var(--ms-ease-soft),opacity .25s}
 @media(hover:hover){html body #ms-header a.st-visit-l:hover{opacity:.55}}
-@media(min-width:601px) and (max-width:1024px){
-  html body #ms-root .ms-navigation__top-center-column img.st-logo{width:150px!important}
-}
 @media(min-width:1025px){
-  html body #ms-root .ms-navigation__top-center-column img.st-logo{width:calc(var(--ms-word-w) * .85)!important;top:2px}
-  html body #ms-header a.st-visit-l{font-size:clamp(15px,1.05vw,18px)}
+    html body #ms-header a.st-visit-l{font-size:clamp(15px,1.05vw,18px)}
 }
 @keyframes st-sway{0%,100%{transform:rotateX(0) rotateY(0)}50%{transform:rotateX(2.5deg) rotateY(-5deg)}}
 @media(hover:none){.st-ch .st-obj{animation:st-sway 9s ease-in-out infinite;animation-play-state:paused}.st-ch.is-on .st-obj{animation-play-state:running}}
