@@ -1436,4 +1436,4 @@ html body:has(section.ms-hero--event) #ms-root .ms-navigation__scroll-bg{opacity
 
 html body a.ms-play,html body section.ms-car a.ms-car__playbtn,html body .ms-jcard a.ms-play,html body section.ms-vp a.ms-play,html body section.ms-sec a.ms-play,html body .ms-in__play{width:clamp(44px,5.6vw,80px)!important;height:clamp(44px,5.6vw,80px)!important;margin:0!important;border:1px solid #fff!important;border-radius:50%!important;background:rgba(33,37,43,.78)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;color:#fff!important;transform:translate(-50%,-50%)!important;left:50%!important;top:50%!important}
 html body a.ms-play:hover,html body a.ms-car__playbtn:hover,html body .ms-in__play:not([disabled]):hover{background:rgba(33,37,43,.95)!important}
-html body a.ms-play svg,html body a.ms-car__playbtn svg,html body .ms-in__play svg{display:block!important;width:38%!important;height:38%!important;margin-left:6%!important;fill:currentColor}
+html body a.ms-play svg,html body a.ms-car__playbtn svg,html body .ms-in__play svg{display:block!important;width:38%!important;height:38%!important;margin:0!important;fill:currentColor}
