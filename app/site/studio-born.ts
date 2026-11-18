@@ -19,7 +19,7 @@ export const STUDIO_BORN_HTML = `<section class="stp-top" aria-label="The Capita
 </section>
 <section class="ms-car ms-car--square ms-car--float" aria-label="Inspired by Art &amp; Architecture">
   <div class="ms-car__head">
-    <h2 class="ms-car__title"><span>INSPIRED</span><span class="ms-it">BY ART &amp; ARCHITECTURE</span></h2>
+    <h2 class="ms-car__title"><span>INSPIRED</span><span class="ms-it">BY ART &amp;</span><span class="ms-it">ARCHITECTURE</span></h2>
     <div class="ms-car__desc">Paris has inspired artists and creators for centuries. Its architectural heritage, historic monuments, art galleries, iconic venues and distinctive neighbourhoods form an exceptionally rich cultural landscape. This diversity has shaped the evolution of art, hospitality and entertainment, providing creators with an ever-evolving setting for expression and experimentation. To this day, the capital’s architectural beauty and artistic energy continue to inspire new forms of creation, reflecting the timeless connection between art, architecture and the art of hospitality.</div>
   </div>
   <div class="ms-car__stage">
