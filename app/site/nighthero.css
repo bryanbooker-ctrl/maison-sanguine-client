@@ -33,3 +33,6 @@ html.ms-rh-on body:has(section.ms-rh) section.ms-vp a.ms-play{opacity:0!importan
   .ms-rh__logo b{font-size:14px}
   .ms-rh__chev{display:block;bottom:calc(18px + env(safe-area-inset-bottom))}
 }
+
+html body main.ms-page>section.ms-rh+section.ms-vp{padding:0!important;margin:0!important;height:100vh;height:100svh;min-height:100vh}
+html body main.ms-page>section.ms-rh+section.ms-vp .ms-vp__media{height:100%!important;aspect-ratio:auto!important;width:100%}
