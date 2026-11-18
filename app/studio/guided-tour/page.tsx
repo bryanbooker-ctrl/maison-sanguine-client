@@ -15,6 +15,8 @@ export const generateMetadata = () => localizeMetadata(META)
 
 const SCRIPTS = [STUDIO_CHROME_APP, MC_PAGE_APP]
 
+const PRICES = '<script type="application/json" id="mc-prices">{"studio-guided-tour-paris":"€45"}</script>'
+
 export default function GuidedTour() {
-  return <SitePage html={STUDIO_TOUR_HTML} scripts={SCRIPTS} h1="Guided Tour, Maison Sanguine Studio" />
+  return <SitePage html={STUDIO_TOUR_HTML + PRICES} scripts={SCRIPTS} h1="Guided Tour, Maison Sanguine Studio" />
 }

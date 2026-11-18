@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { verifyStripeSignature } from '@/lib/stripe'
 import { markPaid } from '@/lib/payments'
+import { markTourPaid } from '@/lib/studio-tours'
 import { applyIdentity } from '@/lib/identity'
 
 export async function POST(request: Request) {
@@ -22,7 +23,8 @@ export async function POST(request: Request) {
   const id = session?.metadata?.admission_id
   if (!id || session.payment_status !== 'paid') return NextResponse.json({ received: true })
 
-  await markPaid(id)
+  if (id.startsWith('tour_')) await markTourPaid(id.slice(5))
+  else await markPaid(id)
 
   return NextResponse.json({ received: true })
 }

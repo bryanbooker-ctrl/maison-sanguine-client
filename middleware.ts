@@ -116,8 +116,10 @@ export async function middleware(request: NextRequest) {
     reqHeaders.set('x-ms-site', 'studio')
     if (path === '/') return go('/studio')
     if (path === '/guided-tour') return go('/studio/guided-tour')
+    if (path === '/book') return go('/studio/book')
     if (path === '/studio') return to('/')
     if (path === '/studio/guided-tour') return to('/guided-tour')
+    if (path === '/studio/book') return to('/book')
     return to(path, 'https://maisonsanguine.com')
   }
 

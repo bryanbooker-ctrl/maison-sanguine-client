@@ -95,6 +95,23 @@ export const emails = {
       { label: 'Discover the Season', href: 'https://maisonsanguine.com/night-collection' }
     )
   },
+  tourConfirmed(firstName: string, t: { date: string; slot: string; language: string; places: number }) {
+    const rows = [['Date', t.date], ['Time', t.slot], ['Language', t.language], ['Guests', String(t.places)]]
+      .map(([k, v]) => `<div style="font-size:15px;line-height:1.7;color:#ffffff;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span>&nbsp;&nbsp;${esc(v)}</div>`).join('')
+    return layout(
+      ['Your visit', 'is confirmed'],
+      [
+        firstName ? `Dear ${esc(firstName)},` : 'Hello,',
+        'Your guided tour of the Maison Sanguine Studio is confirmed. We recommend arriving ten minutes before the start of your tour, and our team will send you the access details before your visit.',
+      ],
+      undefined,
+      `<div style="margin:8px 0 18px;">${rows}</div>`
+    )
+  },
+  adminTour(a: Record<string, string | number | null>) {
+    const rows = Object.entries(a).filter(([, v]) => v !== null && v !== '').map(([k, v]) => `<div style="font-size:14px;line-height:1.6;color:#ffffff;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span> ${esc(String(v))}</div>`).join('')
+    return layout(['New Studio', 'visit'], [], undefined, rows)
+  },
   confirmed(edition: string, firstName: string) {
     return layout(
       ['Your night', 'is confirmed'],

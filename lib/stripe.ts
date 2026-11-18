@@ -2,7 +2,7 @@ import { createHmac, timingSafeEqual } from 'crypto'
 
 export async function createCheckout(p: {
   name: string; amount: number; currency: string; quantity: number; email: string;
-  admissionId: string; successUrl: string; cancelUrl: string
+  admissionId: string; successUrl: string; cancelUrl: string; expiresAt?: number
 }) {
   const body = new URLSearchParams({
     mode: 'payment',
@@ -17,6 +17,7 @@ export async function createCheckout(p: {
     'payment_intent_data[metadata][admission_id]': p.admissionId,
     'adaptive_pricing[enabled]': 'false',
   })
+  if (p.expiresAt) body.set('expires_at', String(p.expiresAt))
   const res = await fetch('https://api.stripe.com/v1/checkout/sessions', {
     method: 'POST',
     headers: { Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`, 'Content-Type': 'application/x-www-form-urlencoded' },
