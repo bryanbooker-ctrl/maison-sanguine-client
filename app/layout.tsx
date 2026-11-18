@@ -27,7 +27,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const chromeData = site === 'studio' ? MS_DATA.replace(/"logo(Mobile)?": "[^"]*"/g, '"logo$1": "/studio/ms-studio-logo.png"') : MS_DATA
   const lang = langOf(locale)
   const ui = TRANSLATED.includes(lang) ? lang : 'en'
-  const account = ui !== 'en' && (/^\/(dashboard|auth|request)(\/|$)/.test(path) || /^\/(studio\/)?book\/?$/.test(path))
+  const account = ui !== 'en' && (/^\/(dashboard|auth|request)(\/|$)/.test(path) || /^\/(studio\/|masterclasses\/)?book\/?$/.test(path))
   const saved = (await cookies()).get('ms_region')?.value
   const loc = {
     ctx: locale, loc: locOf(locale), lang, ui: htmlLang(ui),

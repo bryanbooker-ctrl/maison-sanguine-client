@@ -269,6 +269,8 @@ html body section.ms-sign input.ms-sign__input::placeholder{color:var(--mute)}
 .ms-gate__btn{width:100%;max-width:420px;height:60px;margin:16px 0 0;border:1px solid #fff;border-radius:0;background:#fff;color:#000;font-family:var(--ms-font);font-size:15px;font-weight:500;cursor:pointer;transition:background .3s cubic-bezier(.4,0,.2,1),color .3s cubic-bezier(.4,0,.2,1)}
 .ms-gate__btn:hover,.ms-gate__btn:focus-visible{background:transparent;color:#fff}
 .ms-gate__back{margin-top:24px;color:rgba(255,255,255,.6);font-size:13px;text-decoration:underline;text-underline-offset:3px}
+.ms-gate__req li{display:inline}
+.ms-gate__req li+li::before{content:' '}
 .ms-gate__req{margin:56px 0 0;padding:0;list-style:none;font-size:11px;font-weight:500;line-height:1.8;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 @media (min-width:1024px){
   .ms-gate__in{max-width:820px}

@@ -209,7 +209,31 @@
     "0vp7tiw": "Disponible",
     "0c2igz9": "Visite guidée",
     "0os77f3": "Redirection",
-    "0v41ul7": "Continuer vers le paiement"
+    "0v41ul7": "Continuer vers le paiement",
+    "1gmmxvp": "Masterclass",
+    "023x28t": "MS House",
+    "1amg5z1": "Places",
+    "1ddfqga": "Votre paiement n’a pas été finalisé et vos places ont été libérées.",
+    "13h0dtm": "Toutes les masterclasses",
+    "1pa03e5": "Session *",
+    "0n7wu3b": "Chargement",
+    "0zaadws": "Aucune session n’est programmée pour le moment. Les nouvelles sessions sont annoncées peu avant chaque édition.",
+    "04si57y": "Recevoir les dernières actualités",
+    "0uggjm2": "Nom complet du second participant *",
+    "1wgzbzw": "Je confirme avoir 21 ans ou plus.",
+    "10up6tx": "Les masterclasses sont réservées aux participants âgés de 21 ans ou plus.",
+    "06qi95s": "Veuillez accepter le traitement de vos informations pour réserver votre masterclass.",
+    "0psu3qd": "Cette session ne dispose plus d’assez de places. Veuillez en choisir une autre.",
+    "0p8bh5y": "La réservation n’est pas encore ouverte pour cette masterclass.",
+    "0hkmr9z": "Les sessions n’ont pas pu être chargées. Veuillez réessayer.",
+    "1tdixq4": "Votre masterclass",
+    "1x79kmn": "Votre réservation est confirmée. Une confirmation vous a été envoyée par e-mail. Nous vous recommandons d’arriver dix minutes avant le début de votre masterclass.",
+    "1uy3s4m": "Choisissez votre session, puis réglez en ligne pour confirmer immédiatement votre place.",
+    "1y0pe8k": "Initiation à la mixologie",
+    "0hz40zh": "L’architecture d’une nuit",
+    "1cvigq3": "Scénographie : façonner l’espace",
+    "0wfi84e": "MS House Paris",
+    "1238fly": "MS House New York"
   },
   "acoustics": {
     "0c9p60n": "Acoustique et techniques de mixage",
@@ -1800,7 +1824,9 @@
     "0vm0l6z": "Découvrez le Studio Maison Sanguine en visite guidée par petits groupes, et entrez dans les lieux où prend forme chaque nuit de la Maison.",
     "0oh9md4": "Visite guidée, Maison Sanguine Studio",
     "10a31lw": "Maison Sanguine Studio | Réserver une visite guidée",
-    "0mtiy9x": "Réservez votre visite guidée du Studio Maison Sanguine à Paris, du mardi au samedi."
+    "0mtiy9x": "Réservez votre visite guidée du Studio Maison Sanguine à Paris, du mardi au samedi.",
+    "0skrfma": "Maison Sanguine | Réserver une masterclass",
+    "0no7red": "Réservez votre place à une masterclass Maison Sanguine et réglez en ligne pour la confirmer immédiatement."
   },
   "music": {
     "10whop9": "Maison Sanguine x Musique",
@@ -2526,7 +2552,11 @@
     "02ph7w0": "Rio de Janeiro",
     "02raea0": "Entrez dans les coulisses de MSNYE 2027 et suivez la création d’une édition, de la première idée jusqu’à la nuit elle-même, tandis que la Creative Division façonne la vision de la célébration propre à la Maison.",
     "1d5eqt1": "Passez dans les coulisses de MSNYE 2027 et suivez la création d’une édition, de la première idée jusqu’à la nuit elle-même. La masterclass retrace comment la Creative Division a façonné la vision de la fête de la Maison à Rio de Janeiro.",
-    "19zj3tm": "Esquisses, planches d’inspiration et plans de production dévoilent chaque étape du parcours, et les décisions qui ont transformé une intuition en nuit. Un regard exclusif sur la fabrication d’une édition, conservé dans les Archives des masterclasses."
+    "19zj3tm": "Esquisses, planches d’inspiration et plans de production dévoilent chaque étape du parcours, et les décisions qui ont transformé une intuition en nuit. Un regard exclusif sur la fabrication d’une édition, conservé dans les Archives des masterclasses.",
+    "0nqr8c0": "Choisissez votre MS House et sélectionnez Réserver. Choisissez une session, indiquez le nombre de places et vos coordonnées, puis réglez en ligne. Votre réservation est confirmée immédiatement et une confirmation vous est envoyée par e-mail.",
+    "1pm29u8": "Vous réglez par carte au moment de la réservation, et votre place est confirmée dès que le paiement est finalisé. Les paiements sont traités par notre prestataire de paiement sécurisé, Stripe, et Maison Sanguine ne conserve aucune donnée de carte.",
+    "0ziz5v7": "Non. Vous réservez avec votre nom et votre adresse e-mail, et votre confirmation vous est envoyée par e-mail. Chaque réservation est nominative.",
+    "0fkqcqm": "Vous pouvez modifier ou annuler votre réservation sans frais jusqu’à trois jours avant la masterclass en contactant la MS House. Le prix payé vous est alors intégralement remboursé. Aucun remboursement n’est dû pour une annulation faite moins de trois jours avant la masterclass ou en cas d’absence."
   },
   "night-events": {
     "1gm31ct": "Saison 2027",

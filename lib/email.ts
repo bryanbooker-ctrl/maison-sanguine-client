@@ -112,6 +112,23 @@ export const emails = {
     const rows = Object.entries(a).filter(([, v]) => v !== null && v !== '').map(([k, v]) => `<div style="font-size:14px;line-height:1.6;color:#ffffff;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span> ${esc(String(v))}</div>`).join('')
     return layout(['New Studio', 'visit'], [], undefined, rows)
   },
+  masterclassConfirmed(firstName: string, t: { name: string; date: string; time: string; language: string; places: number }) {
+    const rows = [['Masterclass', t.name], ['Date', t.date], ['Time', t.time], ['Language', t.language], ['Places', String(t.places)]]
+      .map(([k, v]) => `<div style="font-size:15px;line-height:1.7;color:#ffffff;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span>&nbsp;&nbsp;${esc(v)}</div>`).join('')
+    return layout(
+      ['Your masterclass', 'is confirmed'],
+      [
+        firstName ? `Dear ${esc(firstName)},` : 'Hello,',
+        'Your booking is confirmed and your payment has been received. We recommend arriving ten minutes before the start of your masterclass, and our team will send you the access details before the day.',
+      ],
+      undefined,
+      `<div style="margin:8px 0 18px;">${rows}</div>`
+    )
+  },
+  adminMasterclass(a: Record<string, string | number | null>) {
+    const rows = Object.entries(a).filter(([, v]) => v !== null && v !== '').map(([k, v]) => `<div style="font-size:14px;line-height:1.6;color:#ffffff;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span> ${esc(String(v))}</div>`).join('')
+    return layout(['New masterclass', 'booking'], [], undefined, rows)
+  },
   confirmed(edition: string, firstName: string) {
     return layout(
       ['Your night', 'is confirmed'],

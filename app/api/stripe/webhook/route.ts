@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { verifyStripeSignature } from '@/lib/stripe'
 import { markPaid } from '@/lib/payments'
 import { markTourPaid } from '@/lib/studio-tours'
+import { markMasterclassPaid } from '@/lib/masterclass-sessions'
 import { applyIdentity } from '@/lib/identity'
 
 export async function POST(request: Request) {
@@ -24,6 +25,7 @@ export async function POST(request: Request) {
   if (!id || session.payment_status !== 'paid') return NextResponse.json({ received: true })
 
   if (id.startsWith('tour_')) await markTourPaid(id.slice(5))
+  else if (id.startsWith('mc_')) await markMasterclassPaid(id.slice(3))
   else await markPaid(id)
 
   return NextResponse.json({ received: true })
