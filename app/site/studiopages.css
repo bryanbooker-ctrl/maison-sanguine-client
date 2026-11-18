@@ -32,3 +32,6 @@ html body section.ms-car div.ms-car__desc.stp-sub,html body section.ms-car--wide
 html body section.ms-car div.ms-car__desc span.stp-sub{display:block;margin-bottom:20px}
 html body section.ms-car--side div.ms-car__head div.ms-car__desc.stp-sub{margin-top:20px!important}
 @media (min-width:1025px){html body section.stp-two .ms-car__track{justify-content:center}}
+
+html body section.ms-car--float+section.ms-car--float,html body section.ms-car--float+section.ms-qt{margin-top:clamp(40px,7vw,110px)}
+@media (max-width:1024px){html body section.ms-car--float+section.ms-car--float,html body section.ms-car--float+section.ms-qt{margin-top:56px}}

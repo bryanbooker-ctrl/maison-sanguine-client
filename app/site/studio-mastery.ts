@@ -79,6 +79,6 @@ export const STUDIO_MASTERY_HTML = `<section class="stp-top" aria-label="At the 
   <div class="ms-car__dots" role="group" aria-label="Pagination"></div>
 </section>
 <section class="stp-next" aria-label="Next chapter">
-  <h2 class="stp-next__title"><span>Designing</span><span class="ms-it">the Night</span></h2>
-  <a class="stp-next__link" href="/about/designing-the-night" data-st-page="designing-the-night"><i></i><span>Next chapter</span></a>
+  <h2 class="stp-next__title"><span>At the Forefront</span><span class="ms-it">of Design</span></h2>
+  <a class="stp-next__link" href="/about/designing-night" data-st-page="designing-night"><i></i><span>Next chapter</span></a>
 </section>`

@@ -1836,7 +1836,10 @@
     "0lne4ob": "Born in Paris, Studio Maison Sanguine",
     "09m2iv2": "Maison Sanguine Studio | Au cœur de la maîtrise",
     "0goxweo": "Au cœur de la maîtrise, Studio Maison Sanguine",
-    "1s8lta0": "Au cœur de la maîtrise, le Studio Maison Sanguine réunit scénographie, architecture sonore et ingénierie technique pour faire de chaque nuit une expérience pleinement immersive."
+    "1s8lta0": "Au cœur de la maîtrise, le Studio Maison Sanguine réunit scénographie, architecture sonore et ingénierie technique pour faire de chaque nuit une expérience pleinement immersive.",
+    "1hfrbkm": "Maison Sanguine Studio | À l’avant-garde du design",
+    "1g1ef4u": "À l’avant-garde du design, Studio Maison Sanguine",
+    "0qmpxhq": "À l’avant-garde du design, le Studio Maison Sanguine imagine des designs spatiaux avant-gardistes inspirés par l’art, l’architecture et les courants culturels de chaque époque."
   },
   "music": {
     "10whop9": "Maison Sanguine x Musique",
@@ -3120,6 +3123,37 @@
     "14kit6j": "L’architecture sonore spatiale",
     "0s6lc8w": "L’ARCHITECTURE",
     "0qa88iu": "NOTRE MAÎTRISE",
-    "14fu9b2": "ABSOLUE"
+    "14fu9b2": "ABSOLUE",
+    "1lgex9m": "À l’avant-garde",
+    "1f1erla": "du design"
+  },
+  "studio-design": {
+    "0l1ydtj": "À l’avant-garde du design",
+    "095w60a": "À L’AVANT-GARDE",
+    "1vbbc3y": "DU DESIGN",
+    "04a54gs": "Au fil des saisons, les créateurs de Maison Sanguine imaginent des designs spatiaux avant-gardistes, repoussant les conventions architecturales et esthétiques pour explorer de nouvelles formes d’expression.",
+    "0t0uhuw": "Tournées vers le passé, le présent et l’avenir, ces créations prennent vie dans des environnements variés, des propriétés privées les plus emblématiques, telles que les villas, les penthouses et les yachts, aux territoires les plus exigeants, des paysages désertiques aux reliefs montagneux. L’architecture des lieux, les influences culturelles locales, les matériaux et les contraintes naturelles deviennent autant de sources d’inspiration, réinterprétées à travers la vision créative de Maison Sanguine.",
+    "1sbx3wj": "Art nouveau",
+    "09cn6uu": "NOUVEAU",
+    "0fw7fxu": "Depuis sa création, les créateurs de Maison Sanguine puisent leur inspiration dans l’univers culturel et artistique, et collaborent avec des designers et artistes de renom afin de faire rayonner leur vision à l’international.",
+    "0u98h17": "Art déco",
+    "16c365w": "DÉCO",
+    "1wng5z0": "Inspirées de l’esthétique Art Déco, à la rencontre de l’héritage architectural et du design contemporain, les compositions spatiales avant-gardistes de Maison Sanguine se distinguent par leurs formes géométriques affirmées et leurs lignes structurées.",
+    "1ws39jj": "Bauhaus et modernisme",
+    "1xsubax": "BAUHAUS ET",
+    "0z295bd": "MODERNISME",
+    "12q7oqo": "La période allant de la fin des années 1940 aux années 1960 prolonge l’influence du Bauhaus et représente un Âge d’Or pour le design moderniste en termes de créativité et d’innovation technique. On voit alors apparaître des compositions asymétriques, des jeux de volumes géométriques, ainsi que des structures épurées faisant appel à de nouveaux matériaux et à des formes organiques.",
+    "1yi60rj": "Nous façonnons des expériences destinées à marquer les esprits et à traverser le temps. Chaque production est l’expression de notre vision créative, de notre maîtrise artistique et du savoir-faire de nos créateurs.",
+    "06s0j1b": "Années 1970–1990",
+    "0663lgi": "ANNÉES",
+    "1ahybkz": "Alors que le postmodernisme remet en question les codes établis du design et de l’architecture, Maison Sanguine puise dans cette nouvelle liberté créative pour imaginer des compositions spatiales aux formes audacieuses, aux couleurs affirmées et aux associations inattendues.",
+    "1m97f7t": "Fin du XXe siècle",
+    "1hblyqp": "FIN DU",
+    "1dcce0r": "XXe",
+    "00s85cn": "SIÈCLE",
+    "0r9qneu": "Alors que les nouvelles technologies et les matériaux innovants ouvrent de nouvelles perspectives dans le monde du design, les créateurs de Maison Sanguine s’inspirent de ces évolutions pour explorer des formes architecturales épurées, des structures légères et des compositions audacieuses, faisant dialoguer innovation technique et expression esthétique.",
+    "1bowqe3": "XXIe siècle",
+    "0i4dlob": "XXIe",
+    "0sajsmx": "Avec l’avènement de l’ère numérique, Maison Sanguine s’inscrit en précurseur d’une nouvelle vision du divertissement nocturne, en intégrant les technologies émergentes à la création d’expériences immersives et avant-gardistes, tout en restant fidèle à ses références artistiques et à sa culture de la nuit."
   }
 }
