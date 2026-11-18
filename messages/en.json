@@ -2,9 +2,6 @@
   "account": {
     "0ny5xv2": "Complete my reservation",
     "01xx7qn": "Under review",
-    "1a3e2rx": "Security Notice",
-    "00sg1po": "Maison Sanguine will never request payments, passwords, or confidential information through unofficial channels.",
-    "0vqdtwe": "I Understand",
     "11y83at": "Log out",
     "0okelqr": "Welcome",
     "153hvbp": "Register your invitations in your Portfolio to access all our services in one place.",
@@ -34,7 +31,6 @@
     "00ldjvc": "at the Maison.",
     "0himz2c": "Explore the destinations of the Season and the Houses of the Maison to find the experience closest to you, wherever you are in the world.",
     "0hmv423": "Find an Experience",
-    "1l0xxoj": "Close",
     "0maaf71": "My MS",
     "1fisgxe": "My Experiences",
     "1ps8s3y": "My Wishlist",
@@ -1133,7 +1129,11 @@
     "1gt5t6b": "Find your night",
     "1swcf0p": "Night Access",
     "08taunl": "Special Request",
-    "14k3kid": "Contact us"
+    "14k3kid": "Contact us",
+    "0t456oc": "Get the",
+    "08o3s1p": "Latest News",
+    "0swve2s": "Be the first to receive the latest news on our brand, products and upcoming events.",
+    "0045v37": "Subscribe"
   },
   "initiative": {
     "0o2sz42": "Initiative Maison Sanguine",
