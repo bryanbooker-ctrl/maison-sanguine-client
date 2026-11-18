@@ -26,7 +26,7 @@ html body:has(section.ms-rh) section.ms-vp a.ms-play{transition:opacity .6s ease
 html.ms-rh-on body:has(section.ms-rh) section.ms-vp a.ms-play{opacity:0!important;pointer-events:none!important}
 @media (max-width:767px){
   .ms-rh-pin{height:260vh}
-  .ms-rh__wrap{top:calc(50svh + var(--ms-header-h,72px) / 4);bottom:auto;display:flex;flex-direction:column;align-items:center;width:min(70vw,calc((100svh - var(--ms-header-h,72px) - 270px) * .9));min-width:200px;transform:translate(-50%,-50%) scale(var(--rh-s,1));transform-origin:50% 50%}
+  .ms-rh__wrap{top:calc(50svh + var(--ms-header-h,72px) / 4);bottom:auto;display:flex;flex-direction:column;align-items:center;width:min(84vw,calc((100svh - var(--ms-header-h,72px) - 240px) * .9));min-width:200px;transform:translate(-50%,-50%) scale(var(--rh-s,1));transform-origin:50% 50%}
   .ms-rh__stage{order:2;aspect-ratio:9/10;max-height:none;margin:0}
   .ms-rh__bar{display:contents}
   .ms-rh__bar>span{display:none}
