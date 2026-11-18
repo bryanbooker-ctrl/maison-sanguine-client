@@ -26,12 +26,12 @@ html body:has(section.ms-rh) section.ms-vp a.ms-play{transition:opacity .6s ease
 html.ms-rh-on body:has(section.ms-rh) section.ms-vp a.ms-play{opacity:0!important;pointer-events:none!important}
 @media (max-width:767px){
   .ms-rh-pin{height:260vh}
-  .ms-rh__wrap{top:calc(50svh + var(--ms-header-h,72px) / 4);bottom:auto;display:flex;flex-direction:column;align-items:center;width:70vw;transform:translate(-50%,-50%) scale(var(--rh-s,1));transform-origin:50% 50%}
+  .ms-rh__wrap{top:calc(50svh + var(--ms-header-h,72px) / 4);bottom:auto;display:flex;flex-direction:column;align-items:center;width:min(70vw,calc((100svh - var(--ms-header-h,72px) - 270px) * .9));min-width:200px;transform:translate(-50%,-50%) scale(var(--rh-s,1));transform-origin:50% 50%}
   .ms-rh__stage{order:2;aspect-ratio:9/10;max-height:none;margin:0}
   .ms-rh__bar{display:contents}
   .ms-rh__bar>span{display:none}
-  .ms-rh__date{order:1;align-self:stretch;margin-bottom:24px;font-size:22px;text-align:left;opacity:var(--rh-o,1);white-space:nowrap}
-  html body a.ms-rh__btn{order:3;width:220px;height:56px;margin-top:36px;opacity:var(--rh-o,1);pointer-events:inherit}
+  .ms-rh__date{order:1;align-self:stretch;margin-bottom:clamp(14px,2.6svh,24px);font-size:clamp(17px,5.4vw,22px);text-align:left;opacity:var(--rh-o,1);white-space:nowrap}
+  html body a.ms-rh__btn{order:3;width:220px;height:56px;margin-top:clamp(20px,4svh,36px);opacity:var(--rh-o,1);pointer-events:inherit}
   .ms-rh__logo{width:76%}
   .ms-rh__logo b{font-size:14px}
   .ms-rh__chev{display:block;top:calc(100svh - 32px - env(safe-area-inset-bottom));bottom:auto}
