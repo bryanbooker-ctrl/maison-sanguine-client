@@ -30,7 +30,7 @@ html.ms-rh-on body:has(section.ms-rh) section.ms-vp a.ms-play{opacity:0!importan
   .ms-rh__stage{order:2;aspect-ratio:9/10;max-height:none;margin:0}
   .ms-rh__bar{display:contents}
   .ms-rh__bar>span{display:none}
-  .ms-rh__date{order:1;margin-bottom:24px;font-size:22px;text-align:center;opacity:var(--rh-o,1);white-space:nowrap}
+  .ms-rh__date{order:1;align-self:stretch;margin-bottom:24px;font-size:22px;text-align:left;opacity:var(--rh-o,1);white-space:nowrap}
   html body a.ms-rh__btn{order:3;width:220px;height:56px;margin-top:36px;opacity:var(--rh-o,1);pointer-events:inherit}
   .ms-rh__logo{width:76%}
   .ms-rh__logo b{font-size:14px}
