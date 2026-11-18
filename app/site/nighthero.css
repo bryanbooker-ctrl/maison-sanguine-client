@@ -17,8 +17,8 @@ html body a.ms-rh__btn{--ms-nb-gloss:linear-gradient(#000,#000);display:flex;ali
 html body a.ms-rh__btn:hover,html body a.ms-rh__btn:focus-visible{filter:brightness(1.18)}
 .ms-rh__chev{position:absolute;left:50%;bottom:14px;width:26px;height:14px;opacity:calc(var(--rh-o,1) * .8);transform:translateX(-50%)}
 .ms-rh__chev svg{display:block;width:100%;height:100%}
-html body:has(section.ms-rh) #ms-root .ms-navigation__scroll-bg{opacity:1!important;background:#000!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
-html.ms-rh-on body:has(section.ms-rh) #ms-root .ms-navigation__scroll-bg{opacity:0!important}
+html body:has(section.ms-rh) #ms-root .ms-navigation__scroll-bg{opacity:0!important;background:transparent!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+html:has(section.ms-rh),html.ms-hdr-hidden:has(section.ms-rh){--hy:0%!important}
 html body:has(section.ms-rh) section.ms-vp a.ms-play{transition:opacity .6s ease,filter .3s ease!important}
 html.ms-rh-on body:has(section.ms-rh) section.ms-vp a.ms-play{opacity:0!important;pointer-events:none!important}
 @media (max-width:767px){
