@@ -83,7 +83,6 @@ export default function DashboardPage() {
   const [welcome, setWelcome] = useState<Confirmed | null>(null)
   const [loading, setLoading] = useState(true)
   const [tab, setTab] = useState<Tab>('myms')
-  const [notice, setNotice] = useState(false)
   const router = useRouter()
   const supabase = createClient()
 
@@ -121,9 +120,6 @@ export default function DashboardPage() {
       if (q.get('payment') === 'error') setFlash('The payment page could not be opened. Please try again or contact our Guest Relations team.')
       const t = q.get('tab')
       if (t === 'experiences' || t === 'wishlist') setTab(t)
-      try {
-        if (!sessionStorage.getItem('ms_notice')) setNotice(true)
-      } catch { setNotice(true) }
     }
     load()
   }, [])
@@ -133,11 +129,6 @@ export default function DashboardPage() {
   const goTab = (t: Tab) => {
     setTab(t)
     window.scrollTo({ top: 0 })
-  }
-
-  const closeNotice = () => {
-    setNotice(false)
-    try { sessionStorage.setItem('ms_notice', '1') } catch {}
   }
 
   const logout = async () => {
@@ -182,18 +173,6 @@ export default function DashboardPage() {
   return (
     <main className={`ms-acc${welcome ? ' has-in' : ''}`}>
       {welcome && <YoureIn data={welcome} onClose={closeWelcome} />}
-      {notice && (
-        <div className="ms-acc__notice" role="dialog" aria-modal="true" aria-labelledby="ms-notice-title">
-          <div className="ms-acc__panel">
-            <button className="ms-acc__close" type="button" onClick={closeNotice} aria-label="Close">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.34 6.34L17.66 17.66M17.66 6.34L6.34 17.66" /></svg>
-            </button>
-            <span className="ms-acc__kick" id="ms-notice-title">Security Notice</span>
-            <p className="ms-acc__desc">Maison Sanguine will never request payments, passwords, or confidential information through unofficial channels.</p>
-            <button className="ms-acc__btn" type="button" onClick={closeNotice}>I Understand</button>
-          </div>
-        </div>
-      )}
 
       <nav className="ms-acc__nav" aria-label="My MS">
         <div className="ms-acc__tabs">
