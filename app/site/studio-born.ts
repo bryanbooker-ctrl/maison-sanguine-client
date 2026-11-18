@@ -58,6 +58,6 @@ export const STUDIO_BORN_HTML = `<section class="stp-top" aria-label="The Capita
   </div>
 </section>
 <section class="stp-next" aria-label="Next chapter">
-  <h2 class="stp-next__title"><span>Exceptional</span><span class="ms-it">Nights</span></h2>
-  <a class="stp-next__link" href="/about/exceptional-nights" data-st-page="exceptional-nights"><i></i><span>Next chapter</span></a>
+  <h2 class="stp-next__title"><span>At the Heart</span><span class="ms-it">of Mastery</span></h2>
+  <a class="stp-next__link" href="/about/at-the-heart-of-mastery" data-st-page="at-the-heart-of-mastery"><i></i><span>Next chapter</span></a>
 </section>`

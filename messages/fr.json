@@ -852,7 +852,10 @@
     "1dcl4zc": "d’exception",
     "06wnugd": "Les",
     "00jxzie": "Le",
-    "0js2g1f": "Le"
+    "0js2g1f": "Le",
+    "1pq502o": "NUITS",
+    "0vh49ug": "D’EXCEPTION",
+    "1ik5sir": "SONORE"
   },
   "design": {
     "0u9z06r": "Design spatial",
@@ -1830,7 +1833,10 @@
     "0no7red": "Réservez votre place à une masterclass Maison Sanguine et réglez en ligne pour la confirmer immédiatement.",
     "11085il": "Maison Sanguine Studio | Born in Paris",
     "1efx0pj": "Born in Paris, le Studio Maison Sanguine puise dans l’héritage artistique et nocturne de la capitale pour imaginer chacune des nuits de la Maison.",
-    "0lne4ob": "Born in Paris, Studio Maison Sanguine"
+    "0lne4ob": "Born in Paris, Studio Maison Sanguine",
+    "09m2iv2": "Maison Sanguine Studio | Au cœur de la maîtrise",
+    "0goxweo": "Au cœur de la maîtrise, Studio Maison Sanguine",
+    "1s8lta0": "Au cœur de la maîtrise, le Studio Maison Sanguine réunit scénographie, architecture sonore et ingénierie technique pour faire de chaque nuit une expérience pleinement immersive."
   },
   "music": {
     "10whop9": "Maison Sanguine x Musique",
@@ -3088,6 +3094,32 @@
     "0hzlkau": "Une",
     "0ophdcy": "Architecture",
     "1swwkt8": "PAR L’ART &",
-    "1j9oldu": "L’ARCHITECTURE"
+    "1j9oldu": "L’ARCHITECTURE",
+    "0149qnz": "Au cœur",
+    "09lqvrp": "de la maîtrise"
+  },
+  "studio-mastery": {
+    "0si771p": "Au cœur de la maîtrise",
+    "1vb7chr": "AU CŒUR",
+    "1h9bg7p": "DE LA MAÎTRISE",
+    "0v2jey1": "La quête de la maîtrise absolue est au cœur de l’ADN de Maison Sanguine et de la philosophie créative de son Studio.",
+    "0ha9264": "Depuis sa création, le Studio développe un savoir-faire spécialisé dans la conception de scénographies immersives, l’architecture sonore spatialisée et l’ingénierie technique de production. De la transformation des espaces à la maîtrise de la lumière, du son et des technologies, chaque discipline est pensée dans une approche globale afin de créer une expérience sensorielle cohérente et enveloppante. Ces expertises incarnent la vision de Maison Sanguine : repousser les limites de la création et de la technologie pour faire de chaque nuit une expérience immersive à part entière.",
+    "0vwhuic": "Avec seulement cinq nuits produites par saison, les éditions Maison Sanguine sont conçues pour figurer parmi les nuits les plus exclusives au monde. Chaque production fait l’objet d’une documentation dédiée et rejoint les archives du Studio, témoignant du travail créatif, artistique et technique réalisé pour chaque édition.",
+    "0stqz78": "Le langage cinématographique constitue une source d’inspiration majeure pour les créateurs et les producteurs de Maison Sanguine. À l’image des réalisateurs qui façonnent chaque plan pour donner vie à une œuvre, nos équipes imaginent chaque nuit comme une création à part entière, où la direction artistique, la scénographie, la lumière, le son et le mouvement composent une expérience immersive.",
+    "1oniidi": "Dès sa création, Maison Sanguine développe une approche de la production inspirée des exigences du cinéma. Chaque édition est pensée dans sa globalité, de la première intention créative à sa réalisation, avec une ambition commune : donner naissance à des nuits singulières, façonnées avec la précision, l’exigence artistique et l’ampleur d’une véritable production cinématographique.",
+    "1jcfndh": "Au fil des saisons, les créateurs de Maison Sanguine nourrissent le rêve de créer des nuits d’une qualité sonore équivalente à celle des instruments de musique.",
+    "19xrd38": "EXTEND™. ARCHITECTURE SONORE IMMERSIVE",
+    "03ndt7n": "Cette technologie développe une approche immersive de la diffusion sonore à 360°, pensée pour envelopper chaque espace et restituer le son avec précision et homogénéité. Étudiée et calibrée en fonction des caractéristiques acoustiques et architecturales de chaque propriété, elle transforme l’environnement sonore en une composante essentielle de l’expérience Maison Sanguine.",
+    "1vr21u0": "Pour donner naissance à une production Maison Sanguine, cinq disciplines doivent converger : la direction artistique, le design spatial, la scénographie, l’architecture sonore et l’ingénierie technique. Depuis sa création, Maison Sanguine place la maîtrise de ces cinq expertises au cœur de son savoir-faire, en développant une approche commune qui guide la conception et la réalisation de chacune de ses productions.",
+    "1j3wbop": "Conçu pour les productions artistiques d’exception, ce cadre établit un ensemble de principes communs qui orientent le travail de chacune des cinq disciplines. Continuellement enrichi par la recherche et l’expérimentation, il définit un standard d’excellence créative propre à Maison Sanguine, garantissant cohérence et exigence à travers chacune de ses productions.",
+    "1tyc7cv": "RD#3. Absolute Mastery",
+    "0769q52": "D’EXCEPTION",
+    "1vn1s7i": "Le langage du cinéma",
+    "0n4gp3y": "LE LANGAGE",
+    "1cijywr": "DU CINÉMA",
+    "14kit6j": "L’architecture sonore spatiale",
+    "0s6lc8w": "L’ARCHITECTURE",
+    "0qa88iu": "NOTRE MAÎTRISE",
+    "14fu9b2": "ABSOLUE"
   }
 }
