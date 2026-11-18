@@ -851,7 +851,8 @@
     "1m5oqrk": "Nuits",
     "1dcl4zc": "d’exception",
     "06wnugd": "Les",
-    "00jxzie": "Le"
+    "00jxzie": "Le",
+    "0js2g1f": "Le"
   },
   "design": {
     "0u9z06r": "Design spatial",
@@ -1826,7 +1827,10 @@
     "10a31lw": "Maison Sanguine Studio | Réserver une visite guidée",
     "0mtiy9x": "Réservez votre visite guidée du Studio Maison Sanguine à Paris, du mardi au samedi.",
     "0skrfma": "Maison Sanguine | Réserver une masterclass",
-    "0no7red": "Réservez votre place à une masterclass Maison Sanguine et réglez en ligne pour la confirmer immédiatement."
+    "0no7red": "Réservez votre place à une masterclass Maison Sanguine et réglez en ligne pour la confirmer immédiatement.",
+    "11085il": "Maison Sanguine Studio | Born in Paris",
+    "1efx0pj": "Born in Paris, le Studio Maison Sanguine puise dans l’héritage artistique et nocturne de la capitale pour imaginer chacune des nuits de la Maison.",
+    "0lne4ob": "Born in Paris, Studio Maison Sanguine"
   },
   "music": {
     "10whop9": "Maison Sanguine x Musique",
@@ -3060,5 +3064,29 @@
     "0r3ffme": "Saint-Barthelemy, FWI",
     "06sjwol": "Rite of Summer",
     "16y5be4": "Saint-Tropez, France"
+  },
+  "studio-born": {
+    "1pmvuln": "La capitale de l’art et de la culture",
+    "0anbklx": "LA CAPITALE DE",
+    "10kk7td": "L’ART ET DE LA CULTURE",
+    "12grw85": "Paris est une capitale au patrimoine artistique et culturel exceptionnel, dont l’histoire nocturne s’est construite au fil des siècles. Au cœur de la ville, cafés, cabarets et lieux de divertissement ont progressivement donné naissance à une vie nocturne foisonnante, faisant de Paris un lieu privilégié de rencontre et de création.",
+    "1c16gv2": "Dès le XIXe siècle, artistes, écrivains et musiciens ont investi ces établissements, transformant les nuits parisiennes en espaces d’expression, de liberté et d’effervescence. De Montmartre aux grands boulevards, ces lieux ont accueilli des générations de talents et contribué à façonner l’identité culturelle de la capitale.",
+    "0ovu2xe": "Cet héritage singulier a vu émerger certains des établissements les plus emblématiques de l’histoire de la nuit parisienne. C’est dans cette tradition artistique et nocturne que s’inscrit Maison Sanguine, qui en puise l’inspiration pour réinterpréter aujourd’hui l’art de la fête à l’échelle internationale.",
+    "0g5oxtf": "Inspirés par l’art et l’architecture",
+    "1rfgeer": "INSPIRÉS",
+    "1ymm36f": "PAR L’ART & L’ARCHITECTURE",
+    "019hv2c": "Paris est depuis des siècles une source d’inspiration pour les artistes et les créateurs. Son patrimoine architectural, ses monuments historiques, ses galeries d’art, ses lieux emblématiques et ses quartiers singuliers composent un environnement culturel d’une richesse exceptionnelle. Cette diversité a nourri l’évolution des arts, de l’hospitalité et du divertissement, offrant aux créateurs un terrain d’expression et d’expérimentation sans cesse renouvelé. Aujourd’hui encore, la beauté architecturale et l’effervescence artistique de la capitale continuent d’inspirer de nouvelles formes de création, témoignant du lien intemporel entre l’art, l’architecture et l’art de recevoir.",
+    "069qdvg": "Le",
+    "027712b": "Studio",
+    "1b43fh5": "Le Studio Maison Sanguine réunit des créateurs et des talents issus de différents horizons, qui s’emploient à repousser les limites de leur art et de leur savoir-faire, édition après édition.",
+    "1bp73m4": "Profondément ancré dans la culture parisienne, le Studio Maison Sanguine conçoit chaque production à Paris, avant de la développer au fil des saisons dans les destinations qui accueillent ses événements. Nourries par les cultures locales et portées par une vision créative commune, les nuits Maison Sanguine sont imaginées à Paris pour rayonner dans le monde entier.",
+    "05cqf3j": "Le Fondateur",
+    "1qabyok": "Fondateur",
+    "19m5zvf": "En 2023, Bryan Booker fonde Maison Sanguine à Paris, avec l’ambition de créer une nouvelle vision du divertissement et de l’hospitalité de luxe.",
+    "0p42h8z": "Animé par une vision singulière, il imagine une Maison indépendante, dédiée à la conception et à la production d’expériences nocturnes immersives dans des propriétés privées d’exception. À la croisée de la culture club internationale, de la création artistique et de l’excellence de production, Maison Sanguine développe une approche nouvelle de la fête, où chaque destination devient le décor d’une expérience unique.",
+    "0zp7yo6": "Depuis sa création, Maison Sanguine cultive un esprit d’indépendance et une vision sans compromis. Cette philosophie continue de guider son développement, portée par la volonté de repousser les frontières du divertissement et de réinventer les codes de la nuit à l’échelle internationale.",
+    "0zxnx2l": "Chapitre suivant",
+    "0hzlkau": "Une",
+    "0ophdcy": "Architecture"
   }
 }

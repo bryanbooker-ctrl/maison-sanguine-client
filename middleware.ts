@@ -7,6 +7,8 @@ import { INTL, LANGS, homePath, isContext, locationOf, parsePrefix, prefixOf } f
 
 const PROTECTED = ['/dashboard', '/request', '/admin']
 
+const STUDIO_PAGES = ['born-in-paris']
+
 const PASS = ['/_next', '/api', '/favicon.ico']
 
 const COOKIE = 'ms_loc'
@@ -117,6 +119,12 @@ export async function middleware(request: NextRequest) {
     if (path === '/') return go('/studio')
     if (path === '/guided-tour') return go('/studio/guided-tour')
     if (path === '/book') return go('/studio/book')
+    const lp = path.toLowerCase()
+    const about = lp.match(/^\/(?:studio\/)?about\/([a-z-]+)\/?$/)
+    if (about && STUDIO_PAGES.includes(about[1])) {
+      if (lp.startsWith('/studio/') || path !== lp) return to('/about/' + about[1])
+      return go('/studio/about/' + about[1])
+    }
     if (path === '/studio') return to('/')
     if (path === '/studio/guided-tour') return to('/guided-tour')
     if (path === '/studio/book') return to('/book')
