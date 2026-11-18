@@ -5,11 +5,8 @@ html body section.stp-top h2.stp-title span.ms-it{font-style:italic!important;fo
 .stp-top__media{width:100%;aspect-ratio:2052/1160;overflow:hidden;background:var(--ms-ph)}
 .stp-top__media img{display:block;width:100%;height:100%;object-fit:cover}
 
-html body main.ms-page>section.stp-intro{display:grid;grid-template-columns:minmax(0,26vw) minmax(0,26vw);column-gap:11vw;align-items:start;padding:var(--ms-sy) 7.5vw!important}
-html body section.stp-intro p{margin:0 0 24px;font-family:var(--font);font-size:var(--ms-body-d,16px);line-height:1.55;font-weight:300;color:var(--fg)}
-html body section.stp-intro p:last-child{margin-bottom:0}
-html body section.stp-intro p.stp-intro__lead{font-weight:500}
 
+html body section.ms-car--duo div.stp-col div.ms-car__desc+div.ms-car__desc{margin-top:40px!important}
 html body section.stp-split div.ms-car__desc--lead{font-weight:500!important}
 html body section.stp-split div.ms-car__desc+div.ms-car__desc{margin-top:24px!important}
 
@@ -25,10 +22,9 @@ html body section.stp-next a.stp-next__link{display:inline-flex;align-items:cent
   html body main.ms-page>section.stp-top{padding:calc(var(--ms-header-h,72px) + 28px) 24px 0!important}
   html body section.stp-top h2.stp-title{font-size:var(--ms-h2)!important}
   .stp-top__media{aspect-ratio:4/3}
-  html body main.ms-page>section.stp-intro{display:block;padding:56px 24px!important}
-  html body section.stp-intro .stp-intro__col+.stp-intro__col{margin-top:24px}
-  html body main.ms-page>section.stp-next{padding:72px 24px!important}
+    html body main.ms-page>section.stp-next{padding:72px 24px!important}
   html body section.stp-next h2.stp-next__title{font-size:var(--ms-h2)!important}
   html body section.stp-next a.stp-next__link{font-size:15px}
 }
 html body section.ms-car--float+section.stp-split{margin-top:clamp(24px,4.5vw,72px)}
+@media (max-width:1024px){html body section.ms-car--duo div.stp-col+div.ms-car__desc{margin-top:40px!important}}

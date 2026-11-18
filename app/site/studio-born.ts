@@ -8,13 +8,15 @@ export const STUDIO_BORN_HTML = `<section class="stp-top" aria-label="The Capita
   <h2 class="stp-title"><span>THE CAPITAL OF</span><span class="ms-it">ART &amp; CULTURE</span></h2>
   <div class="stp-top__media"><img src="${PH}" alt="The Capital of Art &amp; Culture" loading="eager" draggable="false"></div>
 </section>
-<section class="stp-intro" aria-label="Born in Paris">
-  <div class="stp-intro__col">
-    <p class="stp-intro__lead">Paris is a capital of exceptional artistic and cultural heritage, whose nocturnal identity has been shaped over centuries. At the heart of the city, cafés, cabarets and entertainment venues gradually gave rise to a thriving nightlife, making Paris a place of encounter and creative expression.</p>
-    <p>From the 19th century onwards, artists, writers and musicians gathered in these establishments, transforming Parisian nights into spaces of expression, freedom and creative energy. From Montmartre to the Grands Boulevards, these venues welcomed generations of talent and helped shape the cultural identity of the capital.</p>
-  </div>
-  <div class="stp-intro__col">
-    <p>This remarkable heritage gave rise to some of the most iconic establishments in the history of Parisian nightlife. It is within this artistic and nocturnal tradition that Maison Sanguine finds its inspiration, drawing on its legacy to reinterpret the art of celebration on an international stage today.</p>
+<section class="ms-car ms-car--duo" aria-label="Born in Paris">
+  <div class="ms-car__head">
+    <div class="ms-car__intro">
+      <div class="stp-col">
+        <div class="ms-car__desc ms-car__desc--lead">Paris is a capital of exceptional artistic and cultural heritage, whose nocturnal identity has been shaped over centuries. At the heart of the city, cafés, cabarets and entertainment venues gradually gave rise to a thriving nightlife, making Paris a place of encounter and creative expression.</div>
+        <div class="ms-car__desc">From the 19th century onwards, artists, writers and musicians gathered in these establishments, transforming Parisian nights into spaces of expression, freedom and creative energy. From Montmartre to the Grands Boulevards, these venues welcomed generations of talent and helped shape the cultural identity of the capital.</div>
+      </div>
+      <div class="ms-car__desc">This remarkable heritage gave rise to some of the most iconic establishments in the history of Parisian nightlife. It is within this artistic and nocturnal tradition that Maison Sanguine finds its inspiration, drawing on its legacy to reinterpret the art of celebration on an international stage today.</div>
+    </div>
   </div>
 </section>
 <section class="ms-car ms-car--square ms-car--float" aria-label="Inspired by Art &amp; Architecture">
