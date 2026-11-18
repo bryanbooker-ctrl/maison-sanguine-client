@@ -31,3 +31,4 @@ html body section.ms-car--float+section.stp-split{margin-top:clamp(24px,4.5vw,72
 html body section.ms-car div.ms-car__desc.stp-sub,html body section.ms-car--wide div.ms-car__desc span.stp-sub{font-weight:500!important}
 html body section.ms-car div.ms-car__desc span.stp-sub{display:block;margin-bottom:20px}
 html body section.ms-car--side div.ms-car__head div.ms-car__desc.stp-sub{margin-top:20px!important}
+@media (min-width:1025px){html body section.stp-two .ms-car__track{justify-content:center}}

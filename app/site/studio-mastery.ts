@@ -28,7 +28,7 @@ export const STUDIO_MASTERY_HTML = `<section class="stp-top" aria-label="At the 
   </div>
   <div class="ms-car__dots" role="group" aria-label="Pagination"></div>
 </section>
-<section class="ms-car ms-car--wide" aria-label="The Language of Cinema">
+<section class="ms-car ms-car--wide stp-two" aria-label="The Language of Cinema">
   <div class="ms-car__head">
     <h2 class="ms-car__title"><span>THE LANGUAGE</span><span class="ms-it">OF CINEMA</span></h2>
     <div class="ms-car__intro">
@@ -61,7 +61,7 @@ export const STUDIO_MASTERY_HTML = `<section class="stp-top" aria-label="At the 
   </div>
   <div class="ms-car__dots" role="group" aria-label="Pagination"></div>
 </section>
-<section class="ms-car ms-car--wide" aria-label="Our Absolute Mastery">
+<section class="ms-car ms-car--wide stp-two" aria-label="Our Absolute Mastery">
   <div class="ms-car__head">
     <h2 class="ms-car__title"><span>OUR ABSOLUTE</span><span class="ms-it">MASTERY</span></h2>
     <div class="ms-car__intro">
