@@ -20,6 +20,7 @@ const ERRORS: Record<string, string> = {
 const REQUIREMENTS = [
   'Each request is reviewed personally by our selection committee. Admission is not guaranteed.',
   'Invitations are personal and non-transferable.',
+  'A valid photo ID will be requested at payment and on arrival.',
 ]
 
 const EVENT_PAGES = ['aspen-winter-edition', 'new-york-spring-edition', 'rite-of-summer-saint-tropez', 'msnye-2027-rio-de-janeiro']
