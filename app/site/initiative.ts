@@ -16,7 +16,7 @@ export const INITIATIVE_ABOUT_HTML = `<div class="ini-site ini-about"><section c
 <section class="ini-sec">
   <div class="ini-sec__in">
     <h2 class="ini-h">Our Vision</h2>
-    <div class="ini-sec__txt"><p>Committed to artistic creation, heritage and cultural transmission, the Maison Sanguine Initiative works to support artists, creators and cultural institutions, contributing to a vibrant and enduring culture that can be shared across generations.</p></div>
+    <div class="ini-sec__txt"><p>Committed to artistic creation, cultural heritage and cultural transmission, the Maison Sanguine Initiative works to support artists, creators and cultural institutions, contributing to a vibrant, accessible and enduring culture that can be shared across generations.</p></div>
     <div class="ini-img"></div>
   </div>
 </section>
@@ -52,7 +52,7 @@ export const INITIATIVE_ABOUT_HTML = `<div class="ini-site ini-about"><section c
 <section class="ini-sec ini-sec--alt">
   <div class="ini-sec__in">
     <h2 class="ini-h">Governance and Organisation</h2>
-    <div class="ini-sec__txt"><p>Established in Paris, France, the Maison Sanguine Initiative pursues charitable aims in the public interest. It is an integral part of Maison Sanguine’s philanthropic vision and is fully funded by the House.</p><p>The Initiative is an independent legal entity, accountable to the relevant supervisory authorities. It follows strict governance rules and operating principles that ensure a clear separation between its activities and those of Maison Sanguine.</p><p>The Maison Sanguine Initiative is chaired by Bryan Booker, with its operational management entrusted to Cindy Marin.</p></div>
+    <div class="ini-sec__txt"><p>Established in Paris, France, the Maison Sanguine Initiative serves as the philanthropic framework of Maison Sanguine. It is an integral part of the House’s cultural vision and structures its commitment to artistic creation, cultural heritage and cultural transmission.</p><p>The Initiative pursues its commitments through patronage, cultural partnerships and creative collaborations. Its operations are guided by principles of governance and transparency, ensuring that its resources are consistently directed towards its mission.</p><p>The Maison Sanguine Initiative is chaired by Bryan Booker, with its operational management entrusted to Cindy Marin.</p></div>
     
   </div>
 </section>
