@@ -21,7 +21,7 @@ html body section.stp-next a.stp-next__link{display:inline-flex;align-items:cent
 @media (max-width:1024px){
   html body main.ms-page>section.stp-top{padding:calc(var(--ms-header-h,72px) + 28px) 24px 0!important}
   html body section.stp-top h2.stp-title{font-size:var(--ms-h2)!important}
-  .stp-top__media{aspect-ratio:4/3}
+  .stp-top__media{width:calc(100% + 24px);margin-right:-24px;aspect-ratio:1132/1215}
     html body main.ms-page>section.stp-next{padding:72px 24px!important}
   html body section.stp-next h2.stp-next__title{font-size:var(--ms-h2)!important}
   html body section.stp-next a.stp-next__link{font-size:15px}

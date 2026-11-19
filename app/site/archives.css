@@ -420,7 +420,7 @@ html body .ma-filter__go{height:60px;padding:0 32px;background:#fff!important;bo
   #ms-header .ma-ims,#ms-header .ma-sep{display:none!important}
 }
 /* splash: the MS Archives wordmark keeps its desktop width */
-html.ms-archives #ms-loader .ms-loader__logo{width:min(56vw,280px)!important}
+html.ms-archives #ms-loader .ms-loader__logo{width:min(46vw,200px)!important}
 
 /* explore timeline on mobile: full year, its entries, then the next year */
 .ma-tl__cc{display:none}
