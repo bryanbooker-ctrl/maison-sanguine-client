@@ -12,32 +12,32 @@ export const INITIATIVE_HTML = `<div class="ini-site"><section class="ini-pg ini
 `
 
 export const INITIATIVE_ABOUT_HTML = `<div class="ini-site ini-about"><section class="ini-col" aria-label="Initiative Maison Sanguine"><div class="ini-col__i"></div><div class="ini-col__i"></div><div class="ini-col__i"></div></section>
-<section class="ini-quote"><p>Statement to be added.</p></section>
+<section class="ini-quote"><p>Initiative Maison Sanguine brings the creative spirit of the Maison to artists and cultural projects, so that every night leaves something lasting.</p></section>
 <section class="ini-sec">
   <div class="ini-sec__in">
     <h2 class="ini-h">Our Vision</h2>
-    <div class="ini-sec__txt"><p>Content to be added.</p></div>
+    <div class="ini-sec__txt"><p>Born from the same demanding standards as every production of the Maison, the Initiative believes that art and culture deserve the means to exist, to be shared and to last. It extends the Maison’s creative expression beyond the night.</p></div>
     <div class="ini-img"></div>
   </div>
 </section>
 <section class="ini-sec ini-sec--alt">
   <div class="ini-sec__in">
     <h2 class="ini-h">Our Missions</h2>
-    <div class="ini-sec__txt"><p>Content to be added.</p><p>Content to be added.</p></div>
+    <div class="ini-sec__txt"><p>For Art supports the creation of new artistic works and the artists who bring them to life, from the first idea to the stage.</p><p>For Culture supports cultural initiatives that carry creative expression further and shares them beyond the nights of the Maison.</p></div>
     <div class="ini-img"></div>
   </div>
 </section>
 <section class="ini-sec">
   <div class="ini-sec__in">
     <h2 class="ini-h">Our Approach</h2>
-    <div class="ini-sec__txt"><p>Content to be added.</p></div>
+    <div class="ini-sec__txt"><p>Maison Sanguine is a young house, and the Initiative grows with it, step by step. It chooses its projects with care, works closely with the artists and partners it supports and reinvests every resource in artistic and cultural initiatives.</p></div>
     
   </div>
 </section>
 <section class="ini-sec ini-sec--alt">
   <div class="ini-sec__in">
     <h2 class="ini-h">Our Values</h2>
-    <div class="ini-sec__txt"><p>The values that guide us.</p><ul><li>Value one, to be added.</li><li>Value two, to be added.</li><li>Value three, to be added.</li></ul></div>
+    <div class="ini-sec__txt"><p>Three values guide the Initiative, shared with the Maison.</p><ul><li>Excellence: the same standard of care and craft that shapes every production of the Maison guides every project the Initiative supports.</li><li>Creativity: we give artists the freedom and the means to imagine, and to bring new ideas to life.</li><li>Transmission: we value sharing know-how and creative culture, so that what is built endures.</li></ul></div>
     
   </div>
 </section>
@@ -45,14 +45,14 @@ export const INITIATIVE_ABOUT_HTML = `<div class="ini-site ini-about"><section c
 <section class="ini-sec">
   <div class="ini-sec__in">
     <h2 class="ini-h">Our Fields of Action</h2>
-    <div class="ini-sec__txt"><p>Content to be added.</p><p>Content to be added.</p><p>Content to be added.</p></div>
+    <div class="ini-sec__txt"><p>The Ritual of Jubilation is the main resource of the Initiative. At Rite of Summer, an exceptional bottle entrusted by a partner champagne house is transformed by an artist and unveiled during a dedicated artistic production.</p><p>The bottle is then offered at auction. All proceeds go to the Initiative and are reinvested in future artistic and cultural initiatives.</p><p>Through this ritual, each Rite of Summer becomes a gesture of creation and of support for the artists and cultural projects of tomorrow.</p></div>
     <div class="ini-img"></div>
   </div>
 </section>
 <section class="ini-sec ini-sec--alt">
   <div class="ini-sec__in">
     <h2 class="ini-h">Governance</h2>
-    <div class="ini-sec__txt"><p>Content to be added.</p><p>Content to be added.</p></div>
+    <div class="ini-sec__txt"><p>Initiative Maison Sanguine is carried by Maison Sanguine and guided by its founder and creative director, Bryan Booker. Its actions follow the same standards of rigour as the Maison’s productions.</p><p>Every resource raised through the Ritual of Jubilation is allocated to artistic and cultural initiatives.</p></div>
     
   </div>
 </section>
