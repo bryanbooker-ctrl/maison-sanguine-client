@@ -10,24 +10,25 @@
 @media (hover:hover){.ini-btn:hover i{transform:translateX(6px)}}
 .ini-hero__bar{position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:flex-start;gap:18px;padding:0 24px 28px}
 .ini-hero__l{display:flex;align-items:center;gap:14px;min-width:0}
+.ini-hero__t{display:flex;flex-direction:column;gap:4px}
 .ini-in{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:#fff;color:#000}
 .ini-in svg{width:18px;height:18px}
 .ini-hero__copy{color:rgba(255,255,255,.7);font-size:12px}
 .ini-hero__links{display:flex;gap:20px}
 .ini-hero__links span{color:#fff;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
-html:has(.ini-pg) .ms-foot,html:has(.ini-pg) #ms-foot{display:none!important}
-html:has(.ini-pg) #ms-root .ms-navigation__top{grid-template-columns:auto 1fr auto}
-html:has(.ini-pg) #ms-root .ms-navigation__top-center-column{grid-column:1;grid-row:1;justify-self:start}
-html:has(.ini-pg) #ms-root .ms-navigation__top-center-column img{width:auto!important;height:52px!important;position:static!important}
-html:has(.ini-pg) #ms-root .ms-navigation__top-end-column{display:none}
-html:has(.ini-pg) #ms-root .ms-navigation__top-start-column{grid-column:3;grid-row:1;justify-self:end}
-html:has(.ini-pg) #ms-root .ms-navigation__toggle{width:44px;height:44px;border-radius:50%;background:#fff;color:#000}
-html:has(.ini-pg) #ms-root .ms-navigation__toggle svg{display:none}
-html:has(.ini-pg) #ms-root .ms-navigation__toggle::before,html:has(.ini-pg) #ms-root .ms-navigation__toggle::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:1.5px;background:#000;transition:transform .3s}
-html:has(.ini-pg) #ms-root .ms-navigation__toggle::before{transform:translate(-50%,-4px);box-shadow:0 4px 0 #000,0 8px 0 #000}
-html:has(.ini-pg) #ms-root .ms-navigation__toggle::after{transform:translate(-50%,0);opacity:0}
-html:has(.ini-pg) #ms-root .ms-navigation__toggle[aria-expanded="true"]::before{transform:translate(-50%,0) rotate(45deg);box-shadow:none}
-html:has(.ini-pg) #ms-root .ms-navigation__toggle[aria-expanded="true"]::after{opacity:1;transform:translate(-50%,0) rotate(-45deg)}
+html:has(.ini-site) .ms-foot,html:has(.ini-site) #ms-foot{display:none!important}
+html:has(.ini-site) #ms-root .ms-navigation__top{grid-template-columns:auto 1fr auto}
+html:has(.ini-site) #ms-root .ms-navigation__top-center-column{grid-column:1;grid-row:1;justify-self:start}
+html:has(.ini-site) #ms-root .ms-navigation__top-center-column img{width:auto!important;height:52px!important;position:static!important}
+html:has(.ini-site) #ms-root .ms-navigation__top-end-column{display:none}
+html:has(.ini-site) #ms-root .ms-navigation__top-start-column{grid-column:3;grid-row:1;justify-self:end}
+html:has(.ini-site) #ms-root .ms-navigation__toggle{width:44px;height:44px;border-radius:50%;background:#fff;color:#000}
+html:has(.ini-site) #ms-root .ms-navigation__toggle svg{display:none}
+html:has(.ini-site) #ms-root .ms-navigation__toggle::before,html:has(.ini-site) #ms-root .ms-navigation__toggle::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:1.5px;background:#000;transition:transform .3s}
+html:has(.ini-site) #ms-root .ms-navigation__toggle::before{transform:translate(-50%,-4px);box-shadow:0 4px 0 #000,0 8px 0 #000}
+html:has(.ini-site) #ms-root .ms-navigation__toggle::after{transform:translate(-50%,0);opacity:0}
+html:has(.ini-site) #ms-root .ms-navigation__toggle[aria-expanded="true"]::before{transform:translate(-50%,0) rotate(45deg);box-shadow:none}
+html:has(.ini-site) #ms-root .ms-navigation__toggle[aria-expanded="true"]::after{opacity:1;transform:translate(-50%,0) rotate(-45deg)}
 @media (min-width:1025px){
   .ini-hero__bar{flex-direction:row;align-items:center;justify-content:space-between;padding:0 7.5vw 40px}
   .ini-in{width:44px;height:44px}
@@ -38,8 +39,48 @@ html:has(.ini-pg) #ms-root .ms-navigation__toggle[aria-expanded="true"]::after{o
   .ini-hero__title{font-size:var(--ms-h2-d)}
   .ini-hero__in{padding:0}
   .ini-btn{margin-top:56px}
-  html:has(.ini-pg) #ms-root .ms-navigation__top-center-column img{height:64px!important}
-  html:has(.ini-pg) #ms-root .ms-navigation__toggle{width:52px;height:52px}
-  html:has(.ini-pg) #ms-root .ms-navigation__toggle::before,html:has(.ini-pg) #ms-root .ms-navigation__toggle::after{width:22px}
-  html:has(.ini-pg) #ms-root .ms-navigation__toggle::before{transform:translate(-50%,-5px);box-shadow:0 5px 0 #000,0 10px 0 #000}
+  html:has(.ini-site) #ms-root .ms-navigation__top-center-column img{height:64px!important}
+  html:has(.ini-site) #ms-root .ms-navigation__toggle{width:52px;height:52px}
+  html:has(.ini-site) #ms-root .ms-navigation__toggle::before,html:has(.ini-site) #ms-root .ms-navigation__toggle::after{width:22px}
+  html:has(.ini-site) #ms-root .ms-navigation__toggle::before{transform:translate(-50%,-5px);box-shadow:0 5px 0 #000,0 10px 0 #000}
+}
+
+.ini-about{background:#0a0a0c;color:#fff}
+.ini-col{display:grid;grid-template-columns:1fr;gap:0;height:70svh}
+.ini-col__i,.ini-duo__i,.ini-img{background:var(--ms-ph,#18181c)}
+.ini-col__i:nth-child(n+2){display:none}
+.ini-quote{display:grid;place-items:center;padding:96px 24px;background:#111114;text-align:center}
+.ini-quote p{margin:0;max-width:900px;font-weight:200;font-size:var(--ms-h2);line-height:1.3;letter-spacing:-.02em;color:rgba(255,255,255,.8)}
+.ini-sec{padding:96px 24px;background:#0a0a0c}
+.ini-sec--alt{background:#111114}
+.ini-sec__in{max-width:1440px;margin:0 auto}
+.ini-h{margin:0 0 36px;font-weight:200;font-size:var(--ms-h2);line-height:1.05;letter-spacing:-.03em;text-transform:uppercase}
+.ini-sec__txt p{margin:0 0 18px;max-width:640px;font-size:15px;font-weight:300;line-height:1.5}
+.ini-sec__txt ul{margin:20px 0 0;padding:0 0 0 20px;max-width:640px;font-size:15px;font-weight:300;line-height:1.5}
+.ini-sec__txt li{margin:0 0 14px}
+.ini-img{margin-top:48px;aspect-ratio:16/10}
+.ini-duo{display:grid;grid-template-columns:1fr;height:60svh}
+.ini-duo__i:nth-child(n+2){display:none}
+.ini-end{background:#1a1a1d}
+.ini-hero__bar--end{position:static;padding:72px 24px 40px}
+.ini-end__nav{display:flex;flex-wrap:wrap;gap:6px 14px}
+.ini-end__nav a{color:rgba(255,255,255,.8);font-size:12px;text-decoration:none}
+.ini-end__nav a:hover{color:#fff}
+.ini-top{position:fixed;right:20px;bottom:20px;z-index:20;display:grid;place-items:center;width:52px;height:52px;padding:0;border:0;border-radius:50%;background:#fff;color:#000;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s linear .3s}
+.ini-top.is-on{opacity:1;visibility:visible;transition:opacity .3s}
+.ini-top svg{width:22px;height:22px}
+@media (min-width:1025px){
+  .ini-col{grid-template-columns:repeat(3,1fr);gap:0;height:100svh}
+  .ini-col__i:nth-child(n+2),.ini-duo__i:nth-child(n+2){display:block}
+  .ini-col__i:nth-child(2){margin:0 -1px}
+  .ini-quote{padding:160px 7.5vw}
+  .ini-quote p{font-size:var(--ms-h2-d)}
+  .ini-sec{padding:160px 7.5vw}
+  .ini-h{font-size:var(--ms-h2-d);margin-bottom:56px}
+  .ini-sec__txt{margin-left:21.5%}
+  .ini-sec__txt p,.ini-sec__txt ul{font-size:16px;max-width:760px}
+  .ini-img{margin-top:72px;aspect-ratio:2.06/1}
+  .ini-duo{grid-template-columns:repeat(3,1fr);height:100svh}
+  .ini-hero__bar--end{padding:120px 7.5vw 56px}
+  .ini-top{right:2vw;bottom:2vw}
 }

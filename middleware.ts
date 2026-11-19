@@ -115,11 +115,14 @@ export async function middleware(request: NextRequest) {
 
   if (host.startsWith('initiative.')) {
     if (path === '/') return go('/about/initiative')
+    if (path === '/about') return go('/about/initiative/about')
     if (path === '/about/initiative') return to('/')
+    if (path === '/about/initiative/about') return to('/about')
     return to(path, 'https://maisonsanguine.com')
   }
 
   if (/^(www\.)?maisonsanguine\.com$/.test(host) && path === '/about/initiative') return to('/', 'https://initiative.maisonsanguine.com')
+  if (/^(www\.)?maisonsanguine\.com$/.test(host) && path === '/about/initiative/about') return to('/about', 'https://initiative.maisonsanguine.com')
 
   if (host.startsWith('msarchives.')) {
     if (path === '/') return go('/msarchives')
