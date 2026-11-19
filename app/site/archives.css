@@ -431,3 +431,4 @@ html.ms-archives #ms-loader .ms-loader__logo{width:min(46vw,200px)!important}
   html body .ma-tl__items{margin-left:0}
 }
 .ma-foot__social a[hidden]{display:none!important}
+@media (min-width:1025px){html.ms-archives #ms-loader .ms-loader__logo{width:250px!important}}
