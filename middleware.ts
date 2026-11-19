@@ -114,6 +114,7 @@ export async function middleware(request: NextRequest) {
   }
 
   if (host.startsWith('initiative.')) {
+    reqHeaders.set('x-ms-site', 'initiative')
     if (path === '/') return go('/about/initiative')
     if (path === '/about') return go('/about/initiative/about')
     if (path === '/about/initiative') return to('/')

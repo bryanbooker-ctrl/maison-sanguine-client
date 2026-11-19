@@ -84,3 +84,5 @@ html:has(.ini-site) #ms-root .ms-navigation__toggle[aria-expanded="true"]::after
   .ini-hero__bar--end{padding:120px 7.5vw 56px}
   .ini-top{right:2vw;bottom:2vw}
 }
+
+html[data-ms-site="initiative"] #ms-loader .ms-loader__logo{width:min(34vw,130px)}
