@@ -1848,7 +1848,12 @@
     "0qmpxhq": "À l’avant-garde du design, le Studio Maison Sanguine imagine des designs spatiaux avant-gardistes inspirés par l’art, l’architecture et les courants culturels de chaque époque.",
     "0osvmev": "Maison Sanguine Studio | Le Studio",
     "036o5nb": "Le Studio, Studio Maison Sanguine",
-    "12y1f7s": "Le Studio Maison Sanguine réunit les créateurs et les producteurs de la Maison, là où prennent forme les créations artistiques, spatiales et techniques de chaque production."
+    "12y1f7s": "Le Studio Maison Sanguine réunit les créateurs et les producteurs de la Maison, là où prennent forme les créations artistiques, spatiales et techniques de chaque production.",
+    "1qipdwk": "Maison Sanguine Studio | Réserver la masterclass",
+    "0a1erfd": "Réservez votre place à la masterclass du Studio Maison Sanguine et réglez en ligne pour la confirmer immédiatement.",
+    "0gm65cs": "Maison Sanguine Studio | Masterclass : The Making of a Night",
+    "0i5ae75": "Suivez la fabrication d’une nuit au Studio Maison Sanguine, des premières esquisses à la mise en scène finale, aux côtés des artistes et des créateurs de la Maison.",
+    "0vrrvk8": "Masterclass : The Making of a Night, Studio Maison Sanguine"
   },
   "music": {
     "10whop9": "Maison Sanguine x Musique",
@@ -3075,7 +3080,8 @@
     "1wy6wvf": "Obtenir l’itinéraire",
     "1fnjk0c": "60 rue François 1er",
     "0flz710": "75008 Paris",
-    "1u9525e": "Visites du mardi au samedi"
+    "1u9525e": "Visites du mardi au samedi",
+    "0kthoxg": "Sélectionnez Réserver, choisissez une date et un créneau, puis réglez en ligne. Votre visite est confirmée immédiatement et une confirmation vous est envoyée par e-mail."
   },
   "night-hero": {
     "0zhde96": "MAISON SANGUINE",
@@ -3204,5 +3210,22 @@
     "0jfjmyh": "OF A NIGHT.",
     "08gxtr8": "Cette expérience immersive invite chaque participant à découvrir les coulisses de la conception et de la production d’une nuit Maison Sanguine. De la direction artistique à l’architecture sonore, en passant par le design spatial et la scénographie, les participants explorent les différentes disciplines qui donnent naissance à ces productions. Au contact des créateurs et des producteurs de la Maison, ils découvrent comment chaque détail contribue à transformer une propriété privée en une expérience nocturne immersive.",
     "1n4iqey": "En savoir plus"
+  },
+  "studio-mc": {
+    "1h7y3hn": "The Making of a Night",
+    "0t0y4c9": "The Making",
+    "0fsrro7": "Dirigée par le Studio, cette masterclass immersive suit la fabrication d’une nuit, des premières esquisses à la mise en scène finale, aux côtés des artistes et des créateurs de la Maison.",
+    "0xz8us1": "Masterclass du Studio",
+    "0ewumf8": "Entrez dans le Studio Maison Sanguine et suivez la fabrication d’une nuit avec les artistes et les créateurs qui la façonnent. À travers un parcours pratique, découvrez comment une idée devient un lieu, un son, une lumière et un instant, des premières esquisses à la mise en scène finale.",
+    "1eln6sw": "Aux côtés des équipes du Studio, les participants explorent les ateliers, les références créatives et les gestes qui se cachent derrière chaque édition, puis dessinent le canevas d’une nuit qui leur appartient. Un regard rare sur le savoir-faire de la Maison, et une nouvelle façon de vivre chaque nuit à venir.",
+    "1sn3fwr": "Sélectionnez Réserver. Choisissez une session, indiquez le nombre de places et vos coordonnées, puis réglez en ligne. Votre réservation est confirmée immédiatement et une confirmation vous est envoyée par e-mail.",
+    "007lov8": "Vous pouvez modifier ou annuler votre réservation sans frais jusqu’à trois jours avant la masterclass en contactant le Studio. Le prix payé vous est alors intégralement remboursé. Aucun remboursement n’est dû pour une annulation faite moins de trois jours avant la masterclass ou en cas d’absence.",
+    "1068c99": "Les langues disponibles sont indiquées dans les informations clés de cette masterclass."
+  },
+  "studio-404": {
+    "0z4jwvr": "Page introuvable",
+    "13kd85q": "Oups",
+    "1m4eaz4": "...Désolé ! La page que vous recherchez est introuvable.",
+    "08cfug6": "Retour à l’accueil"
   }
 }

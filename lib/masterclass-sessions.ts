@@ -6,6 +6,10 @@ import { fixedPrice, minorUnits } from '@/lib/prices'
 
 export const MC = { holdMinutes: 33, maxPlaces: 2 }
 
+export function bookPath(slug: string) {
+  return slug.startsWith('mc-the-making-of-a-night') ? '/studio/masterclasses/book' : '/masterclasses/book'
+}
+
 export type McSession = { id: string; date: string; time: string; language: string; left: number }
 
 type Edition = { slug: string; name: string; kind: string | null; is_open: boolean; price_cents: number | null; currency: string | null; prices?: Record<string, number> | null }

@@ -61,6 +61,12 @@ export async function middleware(request: NextRequest) {
   }
 
   const locale = parsed.ctx
+  if (process.env.STUDIO_LOCK === 'on' && (host.startsWith('studio.') || parsed.rest.startsWith('/studio')) && request.cookies.get(ACCESS_COOKIE)?.value !== (await accessToken())) {
+    return new NextResponse(maintenanceHtml(request.nextUrl.searchParams.get('e') === '1'), {
+      status: 503,
+      headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'retry-after': '3600', 'x-robots-tag': 'noindex, nofollow' },
+    })
+  }
   if (!bare && parsed.rest.replace(/\/$/, '') === '/about/sustainability') return redirect('/' + locale + '/about/commitments')
   const MOVED: Record<string, string> = {
     '/contact': '/form/contact-us',
@@ -119,6 +125,8 @@ export async function middleware(request: NextRequest) {
     if (path === '/') return go('/studio')
     if (path === '/guided-tour') return go('/studio/guided-tour')
     if (path === '/book') return go('/studio/book')
+    if (path === '/masterclasses/book') return go('/studio/masterclasses/book')
+    if (path === '/masterclasses/the-making-of-a-night') return go('/studio/masterclasses/the-making-of-a-night')
     const lp = path.toLowerCase()
     const about = lp.match(/^\/(?:studio\/)?about\/([a-z-]+)\/?$/)
     if (about && STUDIO_PAGES.includes(about[1])) {
@@ -128,6 +136,9 @@ export async function middleware(request: NextRequest) {
     if (path === '/studio') return to('/')
     if (path === '/studio/guided-tour') return to('/guided-tour')
     if (path === '/studio/book') return to('/book')
+    if (path === '/studio/masterclasses/book') return to('/masterclasses/book')
+    if (path === '/studio/masterclasses/the-making-of-a-night') return to('/masterclasses/the-making-of-a-night')
+    if (/^\/(about|masterclasses|studio)(\/|$)/i.test(path)) return go('/studio/not-found')
     return to(path, 'https://maisonsanguine.com')
   }
 

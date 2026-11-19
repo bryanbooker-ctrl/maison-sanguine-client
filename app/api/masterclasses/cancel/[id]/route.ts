@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { createServiceClient, siteUrl } from '@/lib/supabase-server'
+import { bookPath } from '@/lib/masterclass-sessions'
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -12,5 +13,5 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
       slug = s?.edition_slug || ''
     }
   }
-  return NextResponse.redirect(`${siteUrl()}/masterclasses/book?cancelled=1${slug ? `&edition=${encodeURIComponent(slug)}` : ''}`, 303)
+  return NextResponse.redirect(`${siteUrl()}${bookPath(slug)}?cancelled=1${slug ? `&edition=${encodeURIComponent(slug)}` : ''}`, 303)
 }

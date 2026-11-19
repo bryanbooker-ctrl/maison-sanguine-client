@@ -1,11 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { cookies } from 'next/headers'
-import { createClient } from '@supabase/supabase-js'
-import { getLocale, localizeMetadata } from '@/lib/i18n'
-import { TRANSLATED } from '@/lib/locales'
-import { currencyOf, htmlLang, langOf } from '@/lib/locations'
-import { fixedPrice, minorUnits } from '@/lib/prices'
+import { localizeMetadata } from '@/lib/i18n'
+import { editionPrices } from '@/lib/mc-prices'
 import SitePage from '../../site/SitePage'
 import { MC_ARCHITECTURE_HTML, MC_EXTEND_HTML, MC_MIXOLOGY_HTML, MC_PAGE_APP, MC_RIO_HTML, MC_SCENOGRAPHY_HTML } from '../../site/masterclass-pages'
 import '../../site/masterclass.css'
@@ -66,42 +62,11 @@ export async function generateMetadata({ params }: Params) {
   return localizeMetadata(p ? p.meta : {})
 }
 
-type Edition = { slug: string; price_cents: number | null; currency: string | null; prices?: Record<string, number> | null }
-
-async function prices(slugs: string[]): Promise<Record<string, string>> {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  if (!url || !key) return {}
-  try {
-    const db = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } })
-    const { data } = await db.from('editions').select('*').in('slug', slugs)
-    const locale = await getLocale()
-    const jar = await cookies()
-    const wanted = currencyOf(locale, jar.get('ms_region')?.value).toLowerCase()
-    const lang = langOf(locale)
-    const fmtLang = htmlLang(TRANSLATED.includes(lang) ? lang : 'en')
-    const out: Record<string, string> = {}
-    for (const ed of (data || []) as Edition[]) {
-      const fixed = ed.price_cents ? fixedPrice(ed.price_cents / 100, wanted) : null
-      const local = ed.prices && Number(ed.prices[wanted]) > 0 ? Number(ed.prices[wanted]) : fixed ? minorUnits(fixed, wanted) : null
-      const amount = local ?? ed.price_cents
-      const currency = (local ? wanted : ed.currency || 'eur').toUpperCase()
-      if (!amount) continue
-      const fmt = new Intl.NumberFormat(fmtLang, { style: 'currency', currency, currencyDisplay: 'code' })
-      const digits = fmt.resolvedOptions().maximumFractionDigits ?? 2
-      out[ed.slug] = fmt.format(amount / 10 ** digits)
-    }
-    return out
-  } catch {
-    return {}
-  }
-}
-
 export default async function Page({ params }: Params) {
   const { slug } = await params
   const p = PAGES[slug]
   if (!p) notFound()
-  const price = p.editions.length ? await prices(p.editions) : {}
+  const price = p.editions.length ? await editionPrices(p.editions) : {}
   const html = p.html + `<script type="application/json" id="mc-prices">${JSON.stringify(price).replace(/</g, '\\u003c')}</script>`
   return <SitePage h1={p.h1} html={html} scripts={[MC_PAGE_APP]} />
 }

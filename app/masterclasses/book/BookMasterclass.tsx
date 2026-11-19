@@ -25,8 +25,8 @@ function money(amount: number, currency: string) {
   return fmt.format(amount / 10 ** (fmt.resolvedOptions().maximumFractionDigits ?? 2))
 }
 
-const TITLES = ['Introduction to Mixology', 'The Architecture of a Night', 'Scenography: Shaping the Space']
-const HOUSES = ['MS House Paris', 'MS House New York']
+const TITLES = ['Introduction to Mixology', 'The Architecture of a Night', 'Scenography: Shaping the Space', 'The Making of a Night']
+const HOUSES = ['MS House Paris', 'MS House New York', 'Maison Sanguine Studio Paris']
 
 function split(name: string) {
   return {
@@ -117,7 +117,7 @@ export default function BookMasterclass() {
           </div>
           <dl className="st-bk__dl">
             <dt>Masterclass</dt><dd>{title}</dd>
-            {house && <><dt>MS House</dt><dd>{house.replace('MS House ', '')}</dd></>}
+            {house && (house.startsWith('MS House') ? <><dt>MS House</dt><dd>{house.replace('MS House ', '')}</dd></> : <><dt>Studio</dt><dd>{house}</dd></>)}
             <dt>Date</dt><dd>{longDate(booking.date)}</dd>
             <dt>Time</dt><dd>{booking.time}</dd>
             <dt>Language</dt><dd>{booking.language}</dd>
@@ -129,6 +129,8 @@ export default function BookMasterclass() {
   }
 
   const sessions = info?.sessions || []
+  const studio = edition.startsWith('mc-the-making-of-a-night') || (info?.name || '').startsWith('The Making of a Night')
+  const back = studio ? { href: '/studio/masterclasses/the-making-of-a-night', label: 'Back to the masterclass' } : { href: '/masterclasses', label: 'All masterclasses' }
   const chosen = sessions.find(s => s.id === session)
   const { title, house } = split(info?.name || '')
   const maxPlaces = info?.maxPlaces || 2
@@ -149,7 +151,7 @@ export default function BookMasterclass() {
         {cancelled && <p className="st-bk__note">Your payment was not completed and your places have been released.</p>}
 
         {!loading && !info ? (
-          <p className="st-bk__empty">{error || ERRORS.load} <a href="/masterclasses">All masterclasses</a></p>
+          <p className="st-bk__empty">{error || ERRORS.load} <a href={back.href}>{back.label}</a></p>
         ) : (
           <form className="ms-sign__form" onSubmit={submit} noValidate>
             <div className="ms-sign__field">

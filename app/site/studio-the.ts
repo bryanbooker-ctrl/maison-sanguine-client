@@ -88,6 +88,6 @@ export const STUDIO_THE_HTML = `<section class="stp-top" aria-label="The Studio"
   <div class="ms-car__head">
     <h2 class="ms-car__title"><span>MASTERCLASS</span><span class="ms-it">THE MAKING</span><span class="ms-it">OF A NIGHT.</span></h2>
     <div class="ms-car__desc">This immersive experience invites each participant to discover the creative and production processes behind a Maison Sanguine night. From artistic direction and sound architecture to spatial design and scenography, participants explore the different disciplines that bring these productions to life. In close contact with the House’s creators and producers, they discover how every detail contributes to transforming a private property into an immersive nightlife experience.</div>
-    <a class="ms-car__link" href="/#st-visit"><i></i>Learn more</a>
+    <a class="ms-car__link" href="/studio/masterclasses/the-making-of-a-night" data-st-mc><i></i>Learn more</a>
   </div>
 </section>`
