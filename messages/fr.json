@@ -855,7 +855,13 @@
     "0js2g1f": "Le",
     "1pq502o": "NUITS",
     "0vh49ug": "D’EXCEPTION",
-    "1ik5sir": "SONORE"
+    "1ik5sir": "SONORE",
+    "1nh4ymw": "ARTISTIQUE",
+    "1dhdnbx": "SPATIAL",
+    "0nmzqmk": "SCÉNOGRAPHIE",
+    "1hphr1s": "SONORE",
+    "19hhrni": "TECHNIQUE",
+    "0xphin3": "ARCHITECTURE"
   },
   "design": {
     "0u9z06r": "Design spatial",
@@ -1839,7 +1845,10 @@
     "1s8lta0": "Au cœur de la maîtrise, le Studio Maison Sanguine réunit scénographie, architecture sonore et ingénierie technique pour faire de chaque nuit une expérience pleinement immersive.",
     "1hfrbkm": "Maison Sanguine Studio | À l’avant-garde du design",
     "1g1ef4u": "À l’avant-garde du design, Studio Maison Sanguine",
-    "0qmpxhq": "À l’avant-garde du design, le Studio Maison Sanguine imagine des designs spatiaux avant-gardistes inspirés par l’art, l’architecture et les courants culturels de chaque époque."
+    "0qmpxhq": "À l’avant-garde du design, le Studio Maison Sanguine imagine des designs spatiaux avant-gardistes inspirés par l’art, l’architecture et les courants culturels de chaque époque.",
+    "0osvmev": "Maison Sanguine Studio | Le Studio",
+    "036o5nb": "Le Studio, Studio Maison Sanguine",
+    "12y1f7s": "Le Studio Maison Sanguine réunit les créateurs et les producteurs de la Maison, là où prennent forme les créations artistiques, spatiales et techniques de chaque production."
   },
   "music": {
     "10whop9": "Maison Sanguine x Musique",
@@ -3155,5 +3164,37 @@
     "1bowqe3": "XXIe siècle",
     "0i4dlob": "XXIe",
     "0sajsmx": "Avec l’avènement de l’ère numérique, Maison Sanguine s’inscrit en précurseur d’une nouvelle vision du divertissement nocturne, en intégrant les technologies émergentes à la création d’expériences immersives et avant-gardistes, tout en restant fidèle à ses références artistiques et à sa culture de la nuit."
+  },
+  "studio-the": {
+    "1yxszai": "Le Studio",
+    "13o12r5": "CRÉATION ET",
+    "0quegne": "INNOVATION",
+    "07uz9zm": "Conçu comme un espace de création et d’innovation, le Studio Maison Sanguine réunit les créateurs et les producteurs de la Maison autour d’une vision commune. Une immersion au cœur de leur savoir-faire, une invitation à découvrir comment naissent les créations artistiques, spatiales et techniques qui donnent vie aux productions Maison Sanguine.",
+    "15rgxj3": "Les productions Maison Sanguine sont conçues par les créateurs et les producteurs de la Maison au sein du Studio, où sont développées les créations artistiques, spatiales et techniques qui composent chaque édition.",
+    "18k9plb": "Atelier de Direction Artistique",
+    "0itmf9e": "ATELIER DE",
+    "0jqy58q": "DIRECTION",
+    "1u9jx90": "L’Atelier de Direction Artistique définit l’univers créatif et visuel des productions Maison Sanguine. Directeurs artistiques et créateurs travaillent ensemble pour imaginer des identités singulières et donner vie à la vision de la Maison.",
+    "1ion7o7": "Atelier de Design Spatial",
+    "0i9fzj7": "ATELIER DE",
+    "12mzt73": "DESIGN",
+    "0cd0shy": "L’Atelier de Design Spatial ouvre une fenêtre sur la conception des espaces qui accueillent les productions Maison Sanguine. Designers et architectes travaillent ensemble pour composer des environnements en harmonie avec l’architecture des propriétés et les particularités de chaque destination.",
+    "0gl4l7s": "Atelier de Scénographie",
+    "1g8mari": "ATELIER DE",
+    "0prvajn": "L’Atelier de Scénographie donne vie aux univers imaginés par les créateurs de Maison Sanguine. Scénographes et concepteurs associent structures, installations et compositions lumineuses pour transformer chaque propriété en un environnement immersif.",
+    "1fcbdwr": "Atelier d’Architecture Sonore",
+    "1emlk38": "ATELIER D’",
+    "1j9oldu": "ARCHITECTURE",
+    "1gcluu9": "L’Atelier d’Architecture Sonore ouvre une fenêtre sur la conception de l’identité musicale des saisons Maison Sanguine. La Maison confie la direction sonore de chaque saison à un Master of Sound, qui travaille aux côtés de ses producteurs pour définir une vision musicale singulière.",
+    "11qec6v": "Atelier d’Ingénierie Technique",
+    "00gidgo": "ATELIER",
+    "11hucr4": "D’INGÉNIERIE",
+    "1in5dp1": "C’est au sein de l’Atelier d’Ingénierie Technique que sont étudiés et développés les dispositifs nécessaires à la réalisation des productions Maison Sanguine. Ingénieurs et techniciens travaillent ensemble pour mettre en œuvre les solutions techniques qui donnent vie aux créations du Studio.",
+    "16nf8ml": "Masterclass The Making of a Night",
+    "1ez0xs5": "MASTERCLASS",
+    "0y5bvvd": "THE MAKING",
+    "0jfjmyh": "OF A NIGHT.",
+    "08gxtr8": "Cette expérience immersive invite chaque participant à découvrir les coulisses de la conception et de la production d’une nuit Maison Sanguine. De la direction artistique à l’architecture sonore, en passant par le design spatial et la scénographie, les participants explorent les différentes disciplines qui donnent naissance à ces productions. Au contact des créateurs et des producteurs de la Maison, ils découvrent comment chaque détail contribue à transformer une propriété privée en une expérience nocturne immersive.",
+    "1n4iqey": "En savoir plus"
   }
 }

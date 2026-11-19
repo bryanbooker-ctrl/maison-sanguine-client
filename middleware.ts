@@ -7,7 +7,7 @@ import { INTL, LANGS, homePath, isContext, locationOf, parsePrefix, prefixOf } f
 
 const PROTECTED = ['/dashboard', '/request', '/admin']
 
-const STUDIO_PAGES = ['born-in-paris', 'at-the-heart-of-mastery', 'designing-night']
+const STUDIO_PAGES = ['born-in-paris', 'at-the-heart-of-mastery', 'designing-night', 'the-studio']
 
 const PASS = ['/_next', '/api', '/favicon.ico']
 

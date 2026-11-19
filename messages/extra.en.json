@@ -112,7 +112,13 @@
     "The >> Founder",
     "EXCEPTIONAL >> NIGHTS",
     "EXCEPTIONAL || NIGHTS",
-    "SPATIAL SOUND || ARCHITECTURE"
+    "SPATIAL SOUND || ARCHITECTURE",
+    "DIRECTION || STUDIO",
+    "DESIGN || STUDIO",
+    "SCENOGRAPHY || STUDIO",
+    "ARCHITECTURE || STUDIO",
+    "ENGINEERING || STUDIO",
+    "SOUND || ARCHITECTURE"
   ],
   "location": [
     "Change",
