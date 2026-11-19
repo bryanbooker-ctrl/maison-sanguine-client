@@ -6,7 +6,7 @@ import '../../../site/initiative.css'
 
 const META: Metadata = {
   title: 'Maison Sanguine | Initiative, About',
-  description: 'Discover the vision, missions and values of Initiative Maison Sanguine.',
+  description: 'Discover the vision, commitments and values of the Maison Sanguine Initiative.',
 }
 
 export const generateMetadata = () => localizeMetadata(META)
