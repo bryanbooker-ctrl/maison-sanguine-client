@@ -8,6 +8,13 @@
 .ini-btn i{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#fff;color:#000;transition:transform .3s}
 .ini-btn i svg{width:22px;height:22px}
 @media (hover:hover){.ini-btn:hover i{transform:translateX(6px)}}
+.ini-hero__bar{position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:flex-start;gap:18px;padding:0 24px 28px}
+.ini-hero__l{display:flex;align-items:center;gap:14px;min-width:0}
+.ini-in{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:#fff;color:#000}
+.ini-in svg{width:18px;height:18px}
+.ini-hero__copy{color:rgba(255,255,255,.7);font-size:12px}
+.ini-hero__links{display:flex;gap:20px}
+.ini-hero__links span{color:#fff;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
 html:has(.ini-pg) .ms-foot,html:has(.ini-pg) #ms-foot{display:none!important}
 html:has(.ini-pg) #ms-root .ms-navigation__top{grid-template-columns:auto 1fr auto}
 html:has(.ini-pg) #ms-root .ms-navigation__top-center-column{grid-column:1;grid-row:1;justify-self:start}
@@ -22,6 +29,12 @@ html:has(.ini-pg) #ms-root .ms-navigation__toggle::after{transform:translate(-50
 html:has(.ini-pg) #ms-root .ms-navigation__toggle[aria-expanded="true"]::before{transform:translate(-50%,0) rotate(45deg);box-shadow:none}
 html:has(.ini-pg) #ms-root .ms-navigation__toggle[aria-expanded="true"]::after{opacity:1;transform:translate(-50%,0) rotate(-45deg)}
 @media (min-width:1025px){
+  .ini-hero__bar{flex-direction:row;align-items:center;justify-content:space-between;padding:0 7.5vw 40px}
+  .ini-in{width:44px;height:44px}
+  .ini-in svg{width:22px;height:22px}
+  .ini-hero__copy{font-size:13px}
+  .ini-hero__links{gap:32px}
+  .ini-hero__links span{font-size:14px;letter-spacing:.1em}
   .ini-hero__title{font-size:var(--ms-h2-d)}
   .ini-hero__in{padding:0}
   .ini-btn{margin-top:56px}
