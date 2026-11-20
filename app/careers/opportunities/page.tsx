@@ -3,6 +3,7 @@ import { localizeMetadata } from '@/lib/i18n'
 import SitePage from '../../site/SitePage'
 import { OPPORTUNITIES_HTML, CAREERS_APP } from '../../site/careers'
 import '../../site/careers.css'
+import '../../site/careers-job.css'
 
 const META: Metadata = {
   title: 'Maison Sanguine | Opportunities',
