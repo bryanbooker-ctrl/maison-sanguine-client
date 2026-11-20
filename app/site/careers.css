@@ -80,8 +80,7 @@ html body .ms-jopp h1.ms-jtitle{font-size:clamp(30px,9vw,44px)!important}
 .ms-jsort{width:150px}
 html body .ms-jsort select{font-weight:500}
 .ms-jlist{display:grid;gap:10px;margin-top:24px}
-html body a.ms-job{display:grid;grid-template-columns:1fr;gap:18px;padding:28px 24px;border:1px solid var(--line);border-radius:10px;color:#fff!important;text-decoration:none!important;transition:border-color .3s}
-.ms-job:hover{border-color:#fff}
+html body a.ms-job{display:grid;grid-template-columns:1fr;gap:18px;padding:28px 24px;border:1px solid var(--line);border-radius:10px;color:#fff!important;text-decoration:none!important;-webkit-tap-highlight-color:transparent}
 .ms-job__t{font-size:clamp(20px,5.5vw,24px);font-weight:300;line-height:1.2}
 .ms-job__m{margin-top:8px;font-size:14px;font-weight:300;color:var(--mute)}
 .ms-job__tag{display:inline-block;margin-top:28px;padding:14px 18px;border-radius:999px;background:#1c1c1f;font-size:14px;font-weight:500}
