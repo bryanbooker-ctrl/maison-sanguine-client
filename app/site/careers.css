@@ -181,7 +181,7 @@ html body #ms-foot .ms-cfoot-legal a{font:500 14px/18px var(--ms-font)}
 @media (max-width:1024px){
   html body main.ms-page>section.ms-jfull.ms-jfull{clip-path:inset(0);-webkit-clip-path:inset(0)}
   .ms-jfull::before{content:"";display:block;height:100vh;height:100svh}
-  .ms-jfull__media{position:fixed;top:0;left:0;right:0;height:100vh;height:100lvh;z-index:0}
+  .ms-jfull__media{position:fixed;top:0;left:0;right:0;bottom:0;height:auto;z-index:0}
   .ms-jfull__in{z-index:1}
 }
 @media (min-width:1025px){
