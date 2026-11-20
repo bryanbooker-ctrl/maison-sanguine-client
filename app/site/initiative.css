@@ -55,7 +55,8 @@ html:has(.ini-site) #ms-root .ms-navigation__toggle[aria-expanded="true"]::after
 }
 
 .ini-about{background:#0a0a0c;color:#fff}
-.ini-col{display:block;height:70svh;min-height:0}
+.ini-col{display:block;padding-top:21.6vw;background:#0a0a0c}
+.ini-col__i:first-child{height:79.4vw}
 .ini-col__i:nth-child(n+2){display:none}
 .ini-col__i,.ini-duo__i,.ini-img{background:var(--ms-ph,#18181c)}
 .ini-quote{display:grid;place-items:center;padding:96px 24px;background:#111114;text-align:center}
@@ -85,7 +86,8 @@ html:has(.ini-site) #ms-root .ms-navigation__toggle[aria-expanded="true"]::after
 .ini-top.is-on{opacity:1;visibility:visible;transition:opacity .3s}
 .ini-top svg{width:22px;height:22px}
 @media (min-width:1025px){
-  .ini-col{display:grid;grid-template-columns:repeat(3,1fr);gap:0;height:100svh}
+  .ini-col{display:grid;grid-template-columns:repeat(3,1fr);gap:0;height:100svh;padding-top:0}
+  .ini-col__i:first-child{height:auto}
   .ini-col__i:nth-child(n+2),.ini-duo__i:nth-child(n+2){display:block}
   .ini-col__i:nth-child(2){margin:0 -1px}
   .ini-quote{padding:160px 7.5vw}
