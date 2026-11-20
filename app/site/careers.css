@@ -75,7 +75,7 @@ html body .ms-jopp h1.ms-jtitle{font-size:clamp(30px,9vw,44px)!important}
 .ms-jsearch--page{margin-top:48px}
 .ms-jfilters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
 .ms-jfilter{display:flex;align-items:center;min-width:170px;height:52px;padding:0 22px;border:1px solid var(--line);border-radius:999px}
-.ms-jbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-top:64px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.ms-jbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-top:64px;padding-bottom:20px}
 .ms-jcount{font-size:15px;font-weight:300;color:var(--mute)}
 .ms-jsort{width:150px}
 html body .ms-jsort select{font-weight:500}
