@@ -107,6 +107,8 @@ export async function middleware(request: NextRequest) {
     if (path === '/careers') return to('/')
     if (path === '/careers/life-at-ms') return to('/life-at-ms')
     if (path === '/careers/opportunities') return to('/opportunities')
+    if (path.startsWith('/opportunities/')) return go('/careers' + path)
+    if (path.startsWith('/careers/opportunities/')) return to(path.slice(8))
     return to(path, 'https://maisonsanguine.com')
   }
 

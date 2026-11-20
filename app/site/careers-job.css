@@ -1,0 +1,62 @@
+.ms-jd{--line:rgba(255,255,255,.22);--mute:#9a9a9a;display:block;width:100%;background:#000;color:#fff;font-family:var(--ms-font);box-sizing:border-box}
+.ms-jd *{box-sizing:border-box}
+.ms-jd__hero{position:relative;height:48vh;min-height:340px;background:#121212;overflow:hidden}
+.ms-jd__media{position:absolute;inset:0;background:#121212}
+.ms-jd__body{position:relative;padding:0 24px}
+.ms-jd__card{position:relative;z-index:2;margin-top:-72px;padding:32px 28px 36px;border:1px solid var(--line);border-radius:14px;background:#101010;box-shadow:0 14px 48px rgba(0,0,0,.55)}
+html body .ms-jd h1.ms-jd__t{margin:0!important;padding:0!important;font-family:var(--ms-font)!important;font-weight:300!important;font-style:normal!important;text-transform:none!important;font-size:clamp(24px,6.4vw,30px)!important;line-height:1.15!important;letter-spacing:-.01em!important;color:#fff!important;text-align:left}
+.ms-jd__card .ms-job__tag{margin-top:28px}
+.ms-jd__meta{margin-top:40px}
+.ms-jd__loc{font-size:16px;font-weight:500;line-height:1.3}
+.ms-jd__type{margin-top:4px;font-size:16px;font-weight:300;line-height:1.3}
+.ms-jd__pub{margin-top:26px;font-size:16px;font-weight:300;color:var(--mute)}
+.ms-jd__act{display:flex;align-items:center;gap:12px;margin-top:34px}
+.ms-jd__ic{position:relative;display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;margin:0;padding:0;border:1px solid var(--line);border-radius:50%;background:transparent;color:#fff;cursor:pointer;transition:border-color .3s,background .3s}
+.ms-jd__ic:hover,.ms-jd__ic.is-ok{border-color:#fff}
+.ms-jd__ic svg{display:block;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+html body a.ms-jd__apply{gap:12px;padding:0 28px}
+.ms-jd__apply svg{display:block;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ms-jd__txt{padding:56px 0 72px}
+.ms-jd__s+.ms-jd__s{margin-top:72px}
+html body .ms-jd h2.ms-jd__h{margin:0 0 28px!important;padding:0!important;font-family:var(--ms-font)!important;font-weight:500!important;font-style:normal!important;text-transform:none!important;font-size:18px!important;line-height:1.3!important;letter-spacing:0!important;color:#fff!important;text-align:left}
+.ms-jd__p{margin:0 0 22px;font-size:16px;font-weight:300;line-height:1.5}
+.ms-jd__sh{margin:36px 0 20px;font-size:16px;font-weight:500;line-height:1.4}
+html body .ms-jd ul.ms-jd__ul{margin:0 0 26px!important;padding:0 0 0 22px!important;list-style:disc!important}
+html body .ms-jd ul.ms-jd__ul li{display:list-item!important;margin:0!important;padding:0 0 0 4px!important;list-style:disc!important;font-size:16px;font-weight:300;line-height:1.5}
+.ms-jd__grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 24px}
+.ms-jd__grid>div{background:#121212;aspect-ratio:4/5}
+.ms-jd__g2{grid-column:1/-1;grid-row:1;aspect-ratio:4/3!important}
+.ms-jd__alert{display:grid;grid-template-columns:1fr;gap:36px;padding-top:96px;padding-bottom:96px}
+.ms-jd__amedia{aspect-ratio:16/10;background:#121212}
+.ms-jd__ap{margin:28px 0 36px;font-size:16px;font-weight:300;line-height:1.4}
+.ms-jd__atxt .ms-jtitle{text-align:left}
+@media (min-width:1025px){
+  .ms-jd__hero{height:70vh}
+  .ms-jd__body{display:grid;grid-template-columns:36fr 43fr;column-gap:7vw;padding:0 7.5vw;margin-top:-34vh;align-items:start}
+  .ms-jd__card{position:sticky;top:max(110px,16vh);margin-top:0;padding:clamp(32px,3.2vw,56px) clamp(32px,3.2vw,56px) clamp(36px,3.4vw,60px)}
+  html body .ms-jd h1.ms-jd__t{font-size:clamp(26px,2.2vw,40px)!important}
+  .ms-jd__txt{padding:calc(34vh + 14vh) 0 120px}
+  .ms-jd__s+.ms-jd__s{margin-top:110px}
+  html body .ms-jd h2.ms-jd__h{font-size:clamp(17px,1.35vw,22px)!important;margin-bottom:36px!important}
+  .ms-jd__p,.ms-jd__sh,html body .ms-jd ul.ms-jd__ul li{font-size:clamp(15px,1.3vw,21px)}
+  .ms-jd__p{margin-bottom:28px}
+  .ms-jd__loc,.ms-jd__type,.ms-jd__pub{font-size:clamp(15px,1.2vw,19px)}
+  .ms-jd__grid{grid-template-columns:24fr 49fr 24fr;grid-template-rows:repeat(6,1fr);height:44vw;gap:8px;padding:0 7.5vw}
+  .ms-jd__grid>div{aspect-ratio:auto}
+  .ms-jd__g1{grid-column:1;grid-row:1/5}
+  .ms-jd__g2{grid-column:2;grid-row:1/7;aspect-ratio:auto!important}
+  .ms-jd__g3{grid-column:1;grid-row:5/7}
+  .ms-jd__g4{grid-column:3;grid-row:1/3}
+  .ms-jd__g5{grid-column:3;grid-row:3/7}
+  .ms-jd__alert{grid-template-columns:1fr 1fr;align-items:center;column-gap:7vw;padding-top:clamp(120px,10vw,180px);padding-bottom:clamp(120px,10vw,180px)}
+  .ms-jd__amedia{aspect-ratio:16/10}
+  .ms-jd__ap{font-size:clamp(15px,1.2vw,19px)}
+}
+@media print{
+  #ms-header,#ms-foot,.ms-jd__hero,.ms-jd__grid,.ms-jd__alert,.ms-jd__act,.ms-jsec{display:none!important}
+  html,body,main.ms-page,.ms-jd{background:#fff!important}
+  .ms-jd,.ms-jd *{color:#000!important}
+  .ms-jd__body{display:block!important;margin:0!important;padding:0 24px!important}
+  .ms-jd__card{position:static!important;margin:0!important;border:0!important;box-shadow:none!important;background:none!important}
+  .ms-jd__txt{padding:24px 0!important}
+}
