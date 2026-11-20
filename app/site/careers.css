@@ -244,3 +244,19 @@ html body #ms-foot .ms-cfoot-legal a{font:500 14px/18px var(--ms-font)}
   html body main.ms-page .ms-jdept__nm{padding:0 18px 0 16.7px}
   html body main.ms-page .ms-jdept__ar{padding-right:13px}
 }
+
+@media (max-width:767px){
+  html body main.ms-page .ms-jhero__in{align-items:flex-end;padding-bottom:116.4px}
+  html body main.ms-page .ms-jsearch--hero{padding:6px 8px 8px}
+  html body main.ms-page .ms-jsearch--hero .ms-jsearch__f:first-child{min-height:57px;padding:0 18px 0 8.9px;gap:11.2px}
+  html body main.ms-page .ms-jsearch--hero .ms-jsearch__f:first-child input{font-size:16.4px}
+  html body main.ms-page .ms-jsearch--hero .ms-jsearch__f:not(:first-child){gap:6.2px;padding-top:9px}
+  html body main.ms-page .ms-jsearch--hero .ms-jsearch__f:nth-child(2){padding-left:9.6px;gap:5.2px}
+  html body main.ms-page .ms-jsearch--hero .ms-jsearch__f:nth-child(3){padding-left:17.4px;gap:6.5px}
+  html body main.ms-page .ms-jsearch--hero .ms-jsearch__f:not(:first-child)::before{content:"";flex:none;width:14px;height:14px;background:center/contain no-repeat}
+  html body main.ms-page .ms-jsearch--hero .ms-jsearch__f:nth-child(2)::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='4.5'/%3E%3Cpath d='M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7z'/%3E%3C/svg%3E")}
+  html body main.ms-page .ms-jsearch--hero .ms-jsearch__f:nth-child(3)::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z'/%3E%3Ccircle cx='12' cy='10' r='2.8'/%3E%3C/svg%3E")}
+  html body main.ms-page .ms-jsearch--hero .ms-jsearch__f:not(:first-child) select{background-image:none;padding-right:0;font-size:14.4px}
+  html body main.ms-page .ms-jsearch--hero button.ms-jsearch__btn{height:64px;margin-top:16px;font-size:17px;font-weight:600}
+  html body main.ms-page>section.ms-jhero+section.ms-txt--air{padding-top:100.6px!important}
+}
