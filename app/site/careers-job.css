@@ -1,7 +1,7 @@
 html body main.ms-page>section.ms-jd{padding:0!important}
 .ms-jd{--line:rgba(255,255,255,.22);--mute:#9a9a9a;display:block;width:100%;background:#000;color:#fff;font-family:var(--ms-font);box-sizing:border-box}
 .ms-jd *{box-sizing:border-box}
-.ms-jd__hero{position:relative;height:58vh;min-height:360px;background:var(--ms-ph);overflow:hidden}
+.ms-jd__hero{position:relative;height:126.5vw;max-height:72vh;min-height:360px;background:var(--ms-ph);overflow:hidden}
 .ms-jd__media{position:absolute;inset:0;background:var(--ms-ph)}
 .ms-jd__body{position:relative;padding:0 14px}
 .ms-jd__card{position:relative;z-index:2;margin-top:-90px;padding:40px 21px 36px;border:1px solid var(--line);border-radius:12px;background:#101010;box-shadow:0 14px 48px rgba(0,0,0,.55)}
