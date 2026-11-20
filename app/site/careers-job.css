@@ -55,6 +55,7 @@ html body main.ms-page>section.ms-sec--jdm{padding:56px 0 0!important;background
   html body .ms-jd h2.ms-jd__h,.ms-jd__p,.ms-jd__sh,html body .ms-jd ul.ms-jd__ul li{font-size:clamp(14px,1.1vw,17px)!important}
   .ms-jd__bar{display:none}
   html body main.ms-page>section.ms-sec--jdm{padding:14.5vw 0 0!important}
+  html body main.ms-page>section.ms-jd__alert{padding-top:10.1vw!important}
   .ms-jd__alert{grid-template-columns:43.3fr 33.7fr;align-items:center;column-gap:8vw}
   .ms-jd__ap{font-size:clamp(14px,1.1vw,17px)}
 }
