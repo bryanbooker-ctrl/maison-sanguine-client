@@ -1,8 +1,8 @@
 html body main.ms-page>section.ms-jd{padding:0!important}
 .ms-jd{--line:rgba(255,255,255,.22);--mute:#9a9a9a;display:block;width:100%;background:#000;color:#fff;font-family:var(--ms-font);box-sizing:border-box}
 .ms-jd *{box-sizing:border-box}
-.ms-jd__hero{position:relative;height:58vh;min-height:360px;background:#121212;overflow:hidden}
-.ms-jd__media{position:absolute;inset:0;background:#121212}
+.ms-jd__hero{position:relative;height:58vh;min-height:360px;background:var(--ms-ph);overflow:hidden}
+.ms-jd__media{position:absolute;inset:0;background:var(--ms-ph)}
 .ms-jd__body{position:relative;padding:0 14px}
 .ms-jd__card{position:relative;z-index:2;margin-top:-90px;padding:40px 21px 36px;border:1px solid var(--line);border-radius:12px;background:#101010;box-shadow:0 14px 48px rgba(0,0,0,.55)}
 html body .ms-jd h1.ms-jd__t{margin:0!important;padding:0!important;font-family:var(--ms-font)!important;font-weight:300!important;font-style:normal!important;text-transform:none!important;font-size:22px!important;line-height:1.2!important;letter-spacing:-.01em!important;color:#fff!important;text-align:left}
@@ -32,7 +32,7 @@ html body .ms-jd ul.ms-jd__ul li{display:list-item!important;margin:0!important;
 .ms-jd__bar .ms-jd__apply{flex:1}
 html body main.ms-page>section.ms-sec--jdm{padding:56px 0 0!important;background:#000}
 .ms-jd__alert{display:grid;grid-template-columns:1fr;gap:36px}
-.ms-jd__amedia{aspect-ratio:16/9;background:#121212}
+.ms-jd__amedia{aspect-ratio:16/9;background:var(--ms-ph)}
 .ms-jd__ap{margin:28px 0 36px;font-size:15px;font-weight:300;line-height:1.4}
 .ms-jd__atxt .ms-jtitle{text-align:left}
 @media (min-width:1025px){
