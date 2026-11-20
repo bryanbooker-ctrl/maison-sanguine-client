@@ -260,3 +260,12 @@ html body #ms-foot .ms-cfoot-legal a{font:500 14px/18px var(--ms-font)}
   html body main.ms-page .ms-jsearch--hero button.ms-jsearch__btn{height:64px;margin-top:16px;font-size:17px;font-weight:600}
   html body main.ms-page>section.ms-jhero+section.ms-txt--air{padding-top:100.6px!important}
 }
+@media (max-width:767px){
+html body .ms-jcar__track{grid-auto-columns:377.3px;column-gap:10.3px}
+html body .ms-jcard__img{aspect-ratio:377.3/252}
+html body .ms-jcard .ms-jcard__t{margin-top:25.3px;font-size:15.7px}
+html body .ms-jcard .ms-jcard__q{margin-top:19.7px;font-size:15.7px;line-height:23px;max-width:none}
+html body .ms-jcar__dots{padding:42px 25.3px 0 0;gap:7.3px}
+html body .ms-jcar__dot{width:6px;height:6px}
+html body .ms-jcar__dot[aria-current="true"]{width:24px;height:12px}
+}
