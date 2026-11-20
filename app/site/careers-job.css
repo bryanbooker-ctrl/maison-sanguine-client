@@ -73,3 +73,11 @@ html body main.ms-page>section.ms-sec--jdm{padding:56px 0 0!important;background
   .ms-jd__card{position:static!important;margin:0!important;border:0!important;box-shadow:none!important;background:none!important}
   .ms-jd__txt{padding:24px 0!important}
 }
+
+@media (max-width:1024px){
+  html body main.ms-page>section.ms-jd__alert{padding-bottom:72.8px!important;gap:26px}
+  html body main.ms-page>section.ms-jd__alert .ms-jd__amedia{aspect-ratio:auto;height:260px}
+  html body main.ms-page>section.ms-jd__alert .ms-jd__atxt .ms-jtitle{line-height:27.1px!important}
+  html body main.ms-page>section.ms-jd__alert .ms-jd__ap{margin:27.5px 0 23.4px;line-height:23px}
+  html body main.ms-page>section.ms-jd__alert .ms-jd__atxt .ms-jbtn{height:47.5px;padding:0 26px;min-height:0}
+}
