@@ -78,7 +78,7 @@ html body .ms-jopp h1.ms-jtitle{font-size:clamp(30px,9vw,44px)!important}
 .ms-jbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-top:64px;padding-bottom:20px}
 .ms-jcount{font-size:15px;font-weight:300;color:var(--mute)}
 .ms-jsort{width:150px}
-html body .ms-jsort select{font-weight:500}
+html body .ms-jsort select{font-weight:500;padding-right:16px}
 .ms-jlist{display:grid;gap:10px;margin-top:24px}
 html body a.ms-job{display:grid;grid-template-columns:1fr;gap:18px;padding:28px 24px;border:1px solid var(--line);border-radius:10px;color:#fff!important;text-decoration:none!important;-webkit-tap-highlight-color:transparent}
 .ms-job__t{font-size:clamp(20px,5.5vw,24px);font-weight:300;line-height:1.2}
