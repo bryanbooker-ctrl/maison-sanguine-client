@@ -197,3 +197,16 @@ html body #ms-foot .ms-cfoot-legal a{font:500 14px/18px var(--ms-font)}
 @media (min-width:1025px){.ms-jcar__dots{display:none}}
 @media (max-width:1024px){html body section.ms-jsec.ms-jsec--life{padding-top:56px}}
 
+@media (max-width:1024px){
+  .ms-jbar{margin-top:85px;padding-bottom:8px}
+  .ms-jcount{font-size:15px;line-height:22px}
+  html body .ms-jsort select{font-size:15px;line-height:22px}
+  .ms-jlist{gap:9px;margin-top:0}
+  html body a.ms-job{display:flex;flex-direction:column;align-items:flex-start;gap:0;padding:25px 20px 29px;border-radius:10px}
+  .ms-job__l,.ms-job__r{display:contents}
+  .ms-job__loc{order:1;font-size:13.5px;font-weight:300;line-height:18px;color:#fff}
+  .ms-job__t{order:2;margin-top:4px;font-size:16.5px;font-weight:600;line-height:22px}
+  .ms-job__m{order:3;margin:3.5px 0 0;font-size:14.5px;font-weight:300;line-height:20px;color:#fff}
+  .ms-job__d{order:4;margin-top:2px;font-size:14.5px;font-weight:300;line-height:20px;color:var(--mute)}
+  .ms-job__tag{order:5;display:inline-flex;align-items:center;height:49px;margin-top:26px;padding:0 20px;font-size:14.5px;font-weight:500;line-height:1}
+}
