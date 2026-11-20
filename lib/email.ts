@@ -20,12 +20,12 @@ function layout(title: string[], paragraphs: string[], cta?: { label: string; hr
 </table></td></tr></table></body></html>`
 }
 
-export async function sendEmail(to: string | string[], subject: string, html: string, replyTo?: string) {
+export async function sendEmail(to: string | string[], subject: string, html: string, replyTo?: string, attachments?: { filename: string; content: string }[]) {
   if (!process.env.RESEND_API_KEY) return { skipped: true }
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from: FROM, to, subject, html, ...(replyTo ? { reply_to: replyTo } : {}) }),
+    body: JSON.stringify({ from: FROM, to, subject, html, ...(replyTo ? { reply_to: replyTo } : {}), ...(attachments && attachments.length ? { attachments } : {}) }),
   })
   return { ok: res.ok }
 }
@@ -56,6 +56,19 @@ export const emails = {
   contactNew(a: Record<string, string>) {
     const rows = Object.entries(a).filter(([, v]) => v).map(([k, v]) => `<div style="font-size:14px;line-height:1.6;color:#ffffff;white-space:pre-wrap;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span> ${esc(v)}</div>`).join('')
     return layout(['New contact', 'message'], [], undefined, rows)
+  },
+  applicationNew(job: string, rows: [string, string][]) {
+    const html = rows.filter(([, v]) => v).map(([k, v]) => `<div style="font-size:14px;line-height:1.6;color:#ffffff;white-space:pre-wrap;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span> ${esc(v)}</div>`).join('')
+    return layout(['New', 'application'], [esc(job)], undefined, html)
+  },
+  applicationReceived(firstName: string, job: string) {
+    return layout(
+      ['Application', 'received'],
+      [
+        firstName ? `Dear ${esc(firstName)},` : 'Hello,',
+        `Thank you for applying for the position of ${esc(job)} at Maison Sanguine. Our team has received your application and will come back to you personally.`,
+      ]
+    )
   },
   contactReceived(firstName: string) {
     return layout(

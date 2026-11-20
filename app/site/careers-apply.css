@@ -1,0 +1,154 @@
+body:has(.ms-ap) #ms-header,body:has(.ms-ap) #ms-foot{display:none!important}
+html body main.ms-page>.ms-ap{display:block;padding:0!important;margin:0!important}
+.ms-ap{--l:rgba(255,255,255,.12);--b:rgba(255,255,255,.4);--m:rgba(255,255,255,.6);--rd:#ff6a5c;background:#000;color:#fff;font-family:var(--ms-font,"Helvetica Neue","Inter Tight",Helvetica,Arial,sans-serif);font-size:16px;line-height:20px;min-height:100vh;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.ms-ap *{box-sizing:border-box}
+.ms-ap button,.ms-ap input,.ms-ap select,.ms-ap textarea{font-family:inherit}
+.ms-ap [hidden]{display:none!important}
+.ms-ap a{color:inherit}
+
+.ms-ap__hdr{position:sticky;top:0;z-index:20;height:76px;background:#000;border-bottom:1px solid var(--l)}
+.ms-ap__hin{display:flex;align-items:center;justify-content:space-between;width:calc(100% - 48px);max-width:1137.5px;height:100%;margin:0 auto;padding:0 5px 0 4px}
+.ms-ap__logo{display:block;line-height:0}
+.ms-ap__logo img{display:block;width:245px;height:auto;max-height:28px}
+.ms-ap__job{text-align:right}
+.ms-ap__jt{font-size:18px;line-height:27px;font-weight:600}
+.ms-ap__jl{display:flex;align-items:center;justify-content:flex-end;gap:6px;font-size:16px;line-height:27px;color:rgba(255,255,255,.7)}
+.ms-ap__jl svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7}
+
+.ms-ap__form,.ms-ap__ok,.ms-ap__foot{width:calc(100% - 48px);max-width:1137.5px;margin-left:auto;margin-right:auto}
+.ms-ap__s{padding:20.25px 40px;border-bottom:2px solid var(--l)}
+.ms-ap__s--easy{padding-top:22.6px}
+.ms-ap__s--f,.ms-ap__s--cv,.ms-ap__s--m{padding-top:19.1px}
+.ms-ap__s--f{padding-bottom:48.5px}
+.ms-ap__s--m{padding-bottom:60.5px}
+.ms-ap__h{margin:0;font-size:26px;line-height:30px;font-weight:600;letter-spacing:0;color:#fff}
+.ms-ap__p{margin:9.2px 0 0;font-size:16px;line-height:21px;color:rgba(255,255,255,.85)}
+.ms-ap__easy{margin-top:15.2px}
+.ms-ap__cvz{margin-top:14.9px}
+.ms-ap__rq{color:var(--rd)}
+.ms-ap__rq--h{margin-left:8px}
+
+.ms-ap__dz{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8px;height:90.5px;border:2px dashed rgba(255,255,255,.5);border-radius:4px;background:rgba(255,255,255,.03);text-align:center;cursor:pointer;transition:background .25s,border-color .25s}
+.ms-ap__dz.is-drag{background:rgba(255,255,255,.08);border-color:#fff}
+.ms-ap__dz input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.ms-ap__dzt{font-size:16px;line-height:20px}
+.ms-ap__dzs{font-size:14px;line-height:17px;color:rgba(255,255,255,.8)}
+.ms-ap__lk{font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.ms-ap__fn{font-weight:500;word-break:break-all;padding:0 16px}
+.ms-ap__rm{padding:0;border:0;background:none;color:#fff;font-size:14px;line-height:17px;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.ms-ap__dzw.is-err .ms-ap__dz{border-color:var(--rd)}
+
+.ms-ap__av{position:relative;width:120px;height:120px;margin-top:14.7px;border-radius:50%;background:var(--ms-ph,#15151a) center/cover no-repeat}
+.ms-ap__pen{position:absolute;left:90px;top:11px;display:grid;place-items:center;width:30px;height:30px;padding:0;border:0;border-radius:50%;background:#fff;color:#000;cursor:pointer}
+.ms-ap__pen svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.ms-ap__flds{margin-top:19.4px}
+.ms-ap__flds--av{margin-top:34.8px}
+.ms-ap__flds--m{margin-top:15.8px}
+.ms-ap__g2{display:grid;grid-template-columns:1fr 1fr;column-gap:24.5px}
+.ms-ap__f{position:relative;margin-bottom:32.4px}
+.ms-ap__flds>.ms-ap__g2:last-child>.ms-ap__f,.ms-ap__flds>.ms-ap__f:last-child{margin-bottom:0}
+.ms-ap__l{display:block;margin:0 0 -.4px;font-size:16px;line-height:24px;font-weight:400;color:#fff}
+.ms-ap__in{display:block;width:100%;height:36px;margin:0;padding:0 12px;border:1px solid var(--b);border-radius:4px;background:transparent;color:#fff;font-size:16px;line-height:20px;outline:0;-webkit-appearance:none;appearance:none;transition:border-color .2s,box-shadow .2s}
+.ms-ap__in:focus{border-color:#fff;box-shadow:0 0 0 1px #fff}
+.ms-ap__in::placeholder{color:var(--m);opacity:1}
+.ms-ap__in:disabled{opacity:.4}
+.ms-ap__ta{height:80.5px;padding:8px 12px;resize:none;line-height:20px}
+.ms-ap__ta--m{height:227.5px}
+.ms-ap__f.is-err .ms-ap__in,.ms-ap__f.is-err .ms-ap__cc{border-color:var(--rd)}
+.ms-ap__err{position:absolute;left:0;top:100%;margin-top:4px;font-size:14px;line-height:18px;color:var(--rd);display:none}
+.is-err>.ms-ap__err{display:block}
+.ms-ap__dzw{position:relative}
+.ms-ap__dzw>.ms-ap__err{position:static;margin-top:8px}
+.ms-ap__sr{position:relative}
+.ms-ap__in--s{padding-right:44px}
+.ms-ap__in--d{padding-left:46px;cursor:pointer}
+.ms-ap__si,.ms-ap__ci{position:absolute;top:8px;width:20px;height:20px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.ms-ap__si{right:12px}
+.ms-ap__ci{left:12px}
+
+.ms-ap__ph{display:flex;gap:8.5px}
+.ms-ap__ph .ms-ap__in{flex:1;min-width:0}
+.ms-ap__cc{position:relative;flex:none;display:flex;align-items:center;width:109.5px;height:36px;padding:0 12px;border:1px solid var(--b);border-radius:4px}
+.ms-ap__ccv{display:flex;align-items:center;gap:10px;font-size:16px;line-height:20px;white-space:nowrap}
+.ms-ap__fl{font-size:18px;line-height:20px}
+.ms-ap__chev{position:absolute;right:10px;top:8px;width:18px;height:18px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.ms-ap__cc select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:16px}
+.ms-ap__cc:focus-within{border-color:#fff;box-shadow:0 0 0 1px #fff}
+
+.ms-ap__b{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border:1px solid #fff;border-radius:8px;background:transparent;color:#fff;font-size:16px;line-height:1;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:opacity .25s,background .25s}
+.ms-ap__b:hover{opacity:.8}
+.ms-ap__b--p{background:#fff;color:#000}
+.ms-ap__b svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.ms-ap__b:disabled{opacity:.5;cursor:default}
+
+.ms-ap__row{display:flex;align-items:center;justify-content:space-between}
+.ms-ap__cw{display:flex;align-items:flex-start;gap:15px;margin-top:20.5px}
+.ms-ap__slot:empty,.ms-ap__list:empty{display:none}
+.ms-ap__ic{flex:none;display:grid;place-items:center;width:75px;height:75px;border:1px solid var(--l);border-radius:50%;background:rgba(255,255,255,.03)}
+.ms-ap__ic svg{width:46px;height:46px;fill:none;stroke:rgba(255,255,255,.45);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.ms-ap__cd{flex:1;min-width:0;padding:34.6px 40.5px 29.5px;border:1px solid var(--l);border-radius:20px}
+.ms-ap__cd--s{padding:20px 40px}
+.ms-ap__nt{margin:0;font-size:14px;line-height:18px;color:var(--m)}
+.ms-ap__flds--c{margin-top:19.8px}
+.ms-ap__flds--c .ms-ap__g2{column-gap:40.5px}
+.ms-ap__ck{display:flex;align-items:center;gap:8px;font-size:16px;line-height:20px;cursor:pointer}
+.ms-ap__ck--c{margin-top:28.2px}
+.ms-ap__ck input{flex:none;width:18px;height:18px;margin:0;border:2px solid var(--b);border-radius:2px;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer;position:relative}
+.ms-ap__ck input:checked{background:#fff;border-color:#fff}
+.ms-ap__ck input:checked::after{content:"";position:absolute;left:4px;top:0;width:5px;height:10px;border:solid #000;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.ms-ap__ca{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.ms-ap__et{font-size:18px;line-height:24px;font-weight:600}
+.ms-ap__em{font-size:16px;line-height:22px;color:var(--m)}
+.ms-ap__ea{display:flex;gap:20px;margin-top:10px}
+.ms-ap__tl{padding:0;border:0;background:none;color:#fff;font-size:14px;line-height:18px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+.ms-ap__act{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20.5px 40px 0}
+.ms-ap__consent{flex:1;max-width:760px;margin:0}
+.ms-ap__consent .ms-ap__ck{align-items:flex-start;font-size:14px;line-height:18px;color:rgba(255,255,255,.8)}
+.ms-ap__consent .ms-ap__ck input{margin-top:0}
+.ms-ap__consent .ms-ap__err{top:100%}
+.ms-ap__submit{height:35.5px;flex:none}
+.ms-ap__submit.is-busy{opacity:.5}
+.ms-ap__ferr{display:none;padding:16px 40px 0;font-size:14px;line-height:18px;color:var(--rd);text-align:right}
+.ms-ap__ferr.is-on{display:block}
+.ms-ap__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.ms-ap__ok{padding:96px 40px;text-align:left}
+.ms-ap__ok .ms-ap__b{margin-top:32px}
+
+.ms-ap__pv{margin-top:36.9px;text-align:center;font-size:16px;line-height:20px}
+.ms-ap__pv a{text-decoration:underline;text-underline-offset:3px}
+.ms-ap__ft{display:flex;align-items:center;justify-content:space-between;min-height:26px;margin-top:32.6px;padding:0 20px 40px;font-size:16px;line-height:20px}
+.ms-ap__ft a{text-decoration:none}
+
+@media (max-width:767px){
+  .ms-ap__hdr{height:64px}
+  .ms-ap__hin{width:100%;padding:0 21px 0 20px}
+  .ms-ap__logo img{width:auto;height:26px}
+  .ms-ap__jt{font-size:14px;line-height:20px}
+  .ms-ap__jl{font-size:12px;line-height:20px}
+  .ms-ap__jl svg{display:none}
+  .ms-ap__form,.ms-ap__ok,.ms-ap__foot{width:calc(100% - 32px)}
+  .ms-ap__s{padding:10.25px 0}
+  .ms-ap__s--easy{padding-top:9.6px}
+  .ms-ap__s--f,.ms-ap__s--cv,.ms-ap__s--m{padding-top:9.3px}
+  .ms-ap__s--f{padding-bottom:38.3px}
+  .ms-ap__s--m{padding-bottom:50.4px}
+  .ms-ap__h{font-size:26px;line-height:28.5px}
+  .ms-ap__g2{display:block}
+  .ms-ap__f{margin-bottom:32.4px}
+  .ms-ap__flds>.ms-ap__g2:last-child>.ms-ap__f:not(:last-child){margin-bottom:32.4px}
+  .ms-ap__p{margin-top:10.6px}
+  .ms-ap__cw{gap:1px}
+  .ms-ap__cd{padding:25.2px 21px 21px}
+  .ms-ap__cd--s{padding:16px 21px}
+  .ms-ap__flds--c .ms-ap__g2{display:block}
+  .ms-ap__act{flex-direction:column;align-items:stretch;gap:20px;padding:10.3px 0 0}
+  .ms-ap__consent{max-width:none}
+  .ms-ap__submit{align-self:flex-end}
+  .ms-ap__ferr{padding:16px 0 0}
+  .ms-ap__ok{padding:48px 0}
+  .ms-ap__pv{margin-top:31.4px}
+  .ms-ap__ft{flex-direction:column;gap:12px;margin-top:28px;padding:0 0 40px}
+}
