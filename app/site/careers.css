@@ -219,3 +219,11 @@ html body #ms-foot .ms-cfoot-legal a{font:500 14px/18px var(--ms-font)}
   .ms-jopp .ms-jbar{margin-top:9.7vw;padding-bottom:1.6vw}
   .ms-jopp .ms-jlist{margin-top:0}
 }
+
+@media (max-width:1024px){
+  html body main.ms-page .ms-jbox{padding:103.4px 24px 129.4px}
+  html body main.ms-page .ms-jbox .ms-jtitle{line-height:27.8px!important}
+  html body main.ms-page .ms-jbox .ms-jbox__text{margin:27.2px auto 0;max-width:250px;line-height:23px}
+  html body main.ms-page .ms-jbox .ms-jsoc{margin-top:25.1px;gap:41.2px}
+  html body main.ms-page .ms-jbox .ms-jsoc a{width:28.4px;height:28.4px}
+}
