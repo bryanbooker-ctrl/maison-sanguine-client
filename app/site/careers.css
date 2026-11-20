@@ -233,3 +233,14 @@ html body #ms-foot .ms-cfoot-legal a{font:500 14px/18px var(--ms-font)}
   html body main.ms-page .ms-jbox .ms-jsoc{margin-top:25.1px;gap:41.2px}
   html body main.ms-page .ms-jbox .ms-jsoc a{width:28.4px;height:28.4px}
 }
+
+@media (max-width:767px){
+  html body main.ms-page .ms-txt--air .ms-txt__text{line-height:34px!important}
+  html body main.ms-page>section.ms-jsec[aria-label="Our professions"]{padding-top:127px!important}
+  html body main.ms-page .ms-jhead .ms-jtitle{line-height:27.7px!important}
+  html body main.ms-page .ms-jhead .ms-jhead__desc{margin-top:36.8px}
+  html body main.ms-page .ms-jhead{margin-bottom:26px}
+  html body main.ms-page a.ms-jdept{grid-template-columns:104.1px 1fr auto;height:112px}
+  html body main.ms-page .ms-jdept__nm{padding:0 18px 0 16.7px}
+  html body main.ms-page .ms-jdept__ar{padding-right:13px}
+}
