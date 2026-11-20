@@ -6,7 +6,7 @@ import '../site/careers.css'
 
 const META: Metadata = {
   title: 'Careers at Maison Sanguine',
-  description: 'Let your talent shape the night. Discover careers at Maison Sanguine.',
+  description: 'Let your talent shape the extraordinary. Discover careers at Maison Sanguine.',
 }
 
 export const generateMetadata = () => localizeMetadata(META)
