@@ -5,6 +5,8 @@ export const LANG_CSS = `.ms-lw{position:fixed;inset:0;z-index:2147483000;font-f
 @supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.ms-lw__veil{background:rgba(10,10,12,.92)}}
 .ms-lw__panel{position:absolute;top:0;bottom:0;left:0;display:flex;flex-direction:column;width:100%;max-width:100%;padding:28px 24px 24px;overflow-y:auto;background:transparent;opacity:0;transition:opacity .25s cubic-bezier(.4,0,.2,1);overscroll-behavior:contain}
 .ms-lw.is-open .ms-lw__veil{clip-path:inset(0 0 0 0)}
+html.ms-lw-from-menu .ms-lw__veil{clip-path:inset(0 0 0 0);background:rgba(10,10,12,.92);transition:none}
+html.ms-lw-from-menu .ms-cmenu{transition:none!important}
 .ms-lw.is-open .ms-lw__panel{opacity:1;transition:opacity .5s cubic-bezier(.4,0,.2,1) .35s}
 .ms-lw__close{display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:-10px 0 0 -10px;padding:0;border:0;background:none;color:inherit;cursor:pointer;transition:opacity .3s ease}
 .ms-lw__close:hover{opacity:.55}
@@ -150,6 +152,7 @@ export const LANG_SCRIPT = `(function(){
   }
   function close(){
     if(!root||root.hidden)return;
+    document.documentElement.classList.remove('ms-lw-from-menu');
     toggle(false);root.classList.remove('is-open');document.documentElement.classList.remove('ms-lw-lock');
     setTimeout(function(){if(!root.classList.contains('is-open'))root.hidden=true},750);
     if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});
