@@ -11,6 +11,39 @@ const field = (name: string, text: string, req: boolean, attrs?: string, inner?:
 const zone = (id: string) =>
   '<div class="ms-ap__dzw" data-zone="' + id + '"><label class="ms-ap__dz"><input type="file" class="ms-ap__file" accept=".pdf,.doc,.docx,.rtf,.odt,.txt"><span class="ms-ap__dzt"><span class="ms-ap__lk">Choose a file</span> or drop it here</span><span class="ms-ap__dzs">4MB maximum size</span></label><div class="ms-ap__err" role="alert"></div></div>'
 
+const RQ = '<span class="ms-ap__rq">*</span>'
+const PLUS = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>'
+const opts = (list: string[], ph?: string) => '<option value=""' + (ph ? '>' + ph : ' hidden>') + '</option>' + list.map((o: string) => '<option value="' + o + '">' + o + '</option>').join('')
+const sel = (name: string, text: string, list: string[]) =>
+  '<div class="ms-ap__f ms-ap__f--c" data-f="' + name + '">' + label(name, text, true) + '<div class="ms-ap__sr"><select class="ms-ap__in ms-ap__in--s ms-ap__sel" id="a-' + name + '" name="' + name + '">' + opts(list) + '</select>' + SEARCH + '</div><div class="ms-ap__err" role="alert"></div></div>'
+const radio = (name: string, text: string, req: boolean) =>
+  '<div class="ms-ap__f" data-f="' + name + '"><div class="ms-ap__l">' + text + (req ? RQ : '') + '</div><div class="ms-ap__rg" role="radiogroup"><label class="ms-ap__rd"><input type="radio" name="' + name + '" value="yes"><i></i><span>Yes</span></label><label class="ms-ap__rd"><input type="radio" name="' + name + '" value="no"><i></i><span>No</span></label></div><div class="ms-ap__err" role="alert"></div></div>'
+
+const LEVELS = ['Native or bilingual', 'Fluent', 'Advanced', 'Intermediate', 'Beginner']
+const EXTRAZONE = '<div class="ms-ap__f ms-ap__f--x"><div class="ms-ap__l">Other attachments</div><div class="ms-ap__dzw" data-zone="extra"><label class="ms-ap__dz"><input type="file" class="ms-ap__xfile" multiple accept=".pdf,.doc,.docx,.rtf,.odt,.txt,.jpg,.jpeg,.png"><span class="ms-ap__dzt"><span class="ms-ap__lk">Choose a file</span> or drop it here</span><span class="ms-ap__dzs">Supported files: PDF, DOC, DOCX, RTF, ODT, TXT, JPG, JPEG, PNG (4MB maximum size in total)</span></label><div class="ms-ap__xl"></div><div class="ms-ap__err" role="alert"></div></div></div>'
+const LANGS = '<div class="ms-ap__f ms-ap__f--lg" data-f="langs"><div class="ms-ap__l">Languages' + RQ + '</div><div class="ms-ap__lrs"><div class="ms-ap__lr"><input class="ms-ap__in" name="lang_n" type="text" placeholder="Please enter a language you speak" autocomplete="off" aria-label="Language"><div class="ms-ap__sr"><select class="ms-ap__in ms-ap__in--s ms-ap__sel" name="lang_l" aria-label="Level">' + opts(LEVELS, 'Choose your level.') + '</select>' + SEARCH + '</div></div></div><div class="ms-ap__err" role="alert"></div></div><div class="ms-ap__ad"><button type="button" class="ms-ap__b ms-ap__b--t ms-ap__addl">' + PLUS + 'Add</button></div>'
+
+const STEP2 =
+  '<div class="ms-ap__step" data-step="2" hidden>' +
+  '<section class="ms-ap__q"><h2 class="ms-ap__h">Preliminary questions</h2>' +
+  EXTRAZONE +
+  sel('civ', 'Title', ['Mr', 'Mrs', 'Other']) +
+  LANGS +
+  radio('speaks', 'Do you speak the language of the job posting?', true) +
+  sel('notice', 'What is the length of your notice period (months)?', ['None, available immediately', '1 month', '2 months', '3 months', 'More than 3 months']) +
+  radio('noncompete', 'Do you have a non-compete clause in your current contract?', true) +
+  radio('license', 'Do you hold a valid driver\'s license?', true) +
+  radio('car', 'Do you have a car?', true) +
+  sel('auth', 'Are you authorized to work in France?', ['Yes, EU, EEA or Swiss national', 'Yes, I hold a valid work permit', 'No, I would need sponsorship']) +
+  sel('years', 'How many years of experience do you have in a similar role?', ['Less than 1 year', '1 to 2 years', '3 to 5 years', '6 to 10 years', 'More than 10 years']) +
+  sel('rate', 'What is your ideal activity rate?', ['100%', '80%', '60%', '50%', 'Less than 50%']) +
+  radio('docs', 'I confirm that I have attached all the requested documents (a CV and a cover letter).', false) +
+  '</section>' +
+  '<section class="ms-ap__pvs"><p class="ms-ap__pvt">You will find details about our <a href="https://maisonsanguine.com/legal/privacy-notice" target="_blank" rel="noopener">privacy notice</a>.</p><div class="ms-ap__hr"></div>' +
+  '<div class="ms-ap__f ms-ap__consent" data-f="consent"><label class="ms-ap__ck"><input type="checkbox" name="consent"><span>You declare that you have read and accepted the Maison Sanguine Privacy Notice.' + RQ + '</span></label><div class="ms-ap__err" role="alert"></div></div></section>' +
+  '<div class="ms-ap__act"><button type="button" class="ms-ap__b ms-ap__back">Back</button><button type="submit" class="ms-ap__b ms-ap__b--p ms-ap__submit">Submit application</button></div>' +
+  '</div>'
+
 const build = (slug: string, title: string) =>
   '<div class="ms-ap" data-job="' + slug + '" data-title="' + title + '">' +
   '<header class="ms-ap__hdr"><div class="ms-ap__hin">' +
@@ -18,7 +51,7 @@ const build = (slug: string, title: string) =>
   '<div class="ms-ap__job"><div class="ms-ap__jt">' + title + '</div><div class="ms-ap__jl">' + PIN + '<span>Paris, France</span></div></div>' +
   '</div></header>' +
   '<form class="ms-ap__form" novalidate>' +
-
+  '<div class="ms-ap__step" data-step="1">' +
   '<section class="ms-ap__s ms-ap__s--easy"><h2 class="ms-ap__h">Apply easily</h2><p class="ms-ap__p">Choose an option to automatically fill in your application details. You can also complete your application manually.</p><div class="ms-ap__easy">' + zone('easy') + '</div></section>' +
 
   '<section class="ms-ap__s ms-ap__s--f"><h2 class="ms-ap__h">Personal information</h2><p class="ms-ap__p">Fields marked with an asterisk * are required.</p>' +
@@ -41,7 +74,9 @@ const build = (slug: string, title: string) =>
 
   '<section class="ms-ap__s ms-ap__s--m"><h2 class="ms-ap__h">Message to the recruitment team</h2><div class="ms-ap__flds ms-ap__flds--m"><div class="ms-ap__f" data-f="message"><label class="ms-ap__l" for="a-message">What brings you to apply to this company today?</label><textarea class="ms-ap__in ms-ap__ta ms-ap__ta--m" id="a-message" name="message" maxlength="4000"></textarea></div></div></section>' +
 
-  '<div class="ms-ap__act"><div class="ms-ap__f ms-ap__consent" data-f="consent"><label class="ms-ap__ck"><input type="checkbox" name="consent"><span>I agree that Maison Sanguine processes my data to handle my application, as described in the <a href="https://maisonsanguine.com/legal/privacy-notice" target="_blank" rel="noopener">Privacy Notice</a>.</span></label><div class="ms-ap__err" role="alert"></div></div><button type="submit" class="ms-ap__b ms-ap__b--p ms-ap__submit">Submit application</button></div>' +
+  '<div class="ms-ap__act"><button type="button" class="ms-ap__b ms-ap__b--p ms-ap__next">Next</button></div>' +
+  '</div>' +
+  STEP2 +
   '<div class="ms-ap__ferr" role="alert"></div>' +
   '<div class="ms-ap__hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>' +
   '</form>' +
@@ -60,7 +95,8 @@ export const FORM_APP = `(function(){
   var root=document.querySelector('.ms-ap');if(!root)return;
   var form=root.querySelector('.ms-ap__form');
   var MAX=4*1024*1024;
-  var state={cv:null,photo:null,exp:[],edu:[]};
+  var state={cv:null,photo:null,exp:[],edu:[],extra:[]};
+  var XOK=['pdf','doc','docx','rtf','odt','txt','jpg','jpeg','png'];
   var DIAL='dial:FR33,BE32,CH41,LU352,MC377,DE49,IT39,ES34,PT351,GB44,IE353,NL31,AT43,DK45,SE46,NO47,FI358,PL48,CZ420,GR30,TR90,RU7,UA380,AE971,SA966,QA974,KW965,BH973,OM968,IL972,LB961,EG20,MA212,DZ213,TN216,SN221,CI225,CM237,NG234,ZA27,KE254,US1,CA1,MX52,BR55,AR54,CL56,CO57,PE51,JP81,KR82,CN86,HK852,TW886,SG65,MY60,TH66,VN84,ID62,PH63,IN91,AU61,NZ64'.slice(5).split(',');
   function q(s,c){return (c||root).querySelector(s)}
   function qa(s,c){return [].slice.call((c||root).querySelectorAll(s))}
@@ -78,20 +114,22 @@ export const FORM_APP = `(function(){
   sel.addEventListener('change',showCc);showCc();
 
   function renderZones(){
-    qa('.ms-ap__dzw').forEach(function(z){
+    qa('.ms-ap__dzw[data-zone="easy"],.ms-ap__dzw[data-zone="cv"]').forEach(function(z){
       var t=q('.ms-ap__dzt',z),s=q('.ms-ap__dzs',z),dz=q('.ms-ap__dz',z);
       if(state.cv){dz.classList.add('has-file');t.innerHTML='<span class="ms-ap__fn">'+esc(state.cv.name)+'</span>';s.innerHTML=size(state.cv.size)+' · <button type="button" class="ms-ap__rm">Remove</button>'}
       else{dz.classList.remove('has-file');t.innerHTML='<span class="ms-ap__lk">Choose a file</span> or drop it here';s.textContent='4MB maximum size'}
     });
   }
+  function xsum(){return state.extra.reduce(function(a,f){return a+f.size},0)}
   function setCv(f){
     if(!f)return;
     var ext=(f.name.split('.').pop()||'').toLowerCase();
     if(['pdf','doc','docx','rtf','odt','txt'].indexOf(ext)<0){setErr('cv','This file type is not supported.');setErr('easy','This file type is not supported.');return}
     if(f.size>MAX){setErr('cv','This file is too large. The maximum size is 4MB.');setErr('easy','This file is too large. The maximum size is 4MB.');return}
+    if(f.size+xsum()>MAX){setErr('cv','The total size of your files cannot exceed 4MB.');setErr('easy','The total size of your files cannot exceed 4MB.');return}
     state.cv=f;clrErr('cv');clrErr('easy');renderZones();
   }
-  qa('.ms-ap__dzw').forEach(function(z){
+  qa('.ms-ap__dzw[data-zone="easy"],.ms-ap__dzw[data-zone="cv"]').forEach(function(z){
     var inp=q('.ms-ap__file',z),dz=q('.ms-ap__dz',z);
     inp.addEventListener('change',function(){setCv(inp.files[0]);inp.value=''});
     z.addEventListener('click',function(e){if(e.target.closest('.ms-ap__rm')){e.preventDefault();state.cv=null;renderZones()}});
@@ -186,28 +224,92 @@ export const FORM_APP = `(function(){
     if(!el.value){el.type='text';el.readOnly=true}
   });
 
+
+  function renderX(){
+    var box=q('.ms-ap__xl');
+    box.innerHTML=state.extra.map(function(f,i){return '<div class="ms-ap__xr" data-i="'+i+'"><span class="ms-ap__xn">'+esc(f.name)+'</span><span class="ms-ap__xs">'+size(f.size)+'</span><button type="button" class="ms-ap__rm">Remove</button></div>'}).join('');
+  }
+  function addX(list){
+    var z=q('.ms-ap__dzw[data-zone="extra"]');clrErr('extra');
+    [].slice.call(list||[]).forEach(function(f){
+      var ext=(f.name.split('.').pop()||'').toLowerCase();
+      if(XOK.indexOf(ext)<0){setErr('extra','This file type is not supported.');return}
+      if(state.extra.length>=3){setErr('extra','You can add up to 3 files.');return}
+      if((state.cv?state.cv.size:0)+xsum()+f.size>MAX){setErr('extra','The total size of your files cannot exceed 4MB.');return}
+      state.extra.push(f);
+    });
+    renderX();
+  }
+  (function(){
+    var z=q('.ms-ap__dzw[data-zone="extra"]'),inp=q('.ms-ap__xfile',z),dz=q('.ms-ap__dz',z);
+    inp.addEventListener('change',function(){addX(inp.files);inp.value=''});
+    z.addEventListener('click',function(e){var b=e.target.closest('.ms-ap__rm');if(!b)return;e.preventDefault();var r=b.closest('.ms-ap__xr');state.extra.splice(+r.getAttribute('data-i'),1);clrErr('extra');renderX()});
+    ['dragenter','dragover'].forEach(function(n){dz.addEventListener(n,function(e){e.preventDefault();dz.classList.add('is-drag')})});
+    ['dragleave','drop'].forEach(function(n){dz.addEventListener(n,function(e){e.preventDefault();dz.classList.remove('is-drag')})});
+    dz.addEventListener('drop',function(e){if(e.dataTransfer&&e.dataTransfer.files.length)addX(e.dataTransfer.files)});
+  })();
+
+  var lrs=q('.ms-ap__lrs'),lrTpl=lrs.firstElementChild.cloneNode(true);
+  q('.ms-ap__addl').addEventListener('click',function(){
+    if(lrs.children.length>=6)return;
+    var r=lrTpl.cloneNode(true);
+    [].slice.call(r.querySelectorAll('input,select')).forEach(function(el){el.value=''});
+    var b=document.createElement('button');b.type='button';b.className='ms-ap__lx';b.setAttribute('aria-label','Remove');
+    b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+    r.appendChild(b);lrs.appendChild(r);
+  });
+  lrs.addEventListener('click',function(e){var b=e.target.closest('.ms-ap__lx');if(b){b.parentNode.parentNode.removeChild(b.parentNode);clrErr('langs')}});
+
+  var step=1;
+  function go(n){
+    step=n;
+    qa('.ms-ap__step').forEach(function(el){el.hidden=el.getAttribute('data-step')!==String(n)});
+    var fe=q('.ms-ap__ferr');fe.classList.remove('is-on');fe.textContent='';
+    window.scrollTo(0,0);
+  }
+
   form.addEventListener('input',function(e){var w=e.target.closest&&e.target.closest('[data-f]');if(w)clrErr(w.getAttribute('data-f'))});
   form.addEventListener('change',function(e){var w=e.target.closest&&e.target.closest('[data-f]');if(w)clrErr(w.getAttribute('data-f'))});
 
   function val(n){var el=form.elements[n];return el?el.value.trim():''}
-  function validate(){
+  function jump(bad,open){
+    var t=bad==='slot'?open:q('[data-f="'+bad+'"],[data-zone="'+bad+'"]');
+    if(t){var y=t.getBoundingClientRect().top+window.scrollY-110;window.scrollTo({top:y,behavior:'smooth'})}
+  }
+  function validate1(){
     var bad=null,REQ='This field is required.';
     function fail(n,m){setErr(n,m);if(!bad)bad=n}
     ['first','last','email','email2','city','phone'].forEach(function(n){clrErr(n);if(!val(n))fail(n,REQ)});
     if(val('email')&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(val('email')))fail('email','Please enter a valid email address.');
     if(val('email2')&&val('email')&&val('email2').toLowerCase()!==val('email').toLowerCase())fail('email2','The email addresses do not match.');
     clrErr('cv');if(!state.cv){fail('cv','Please add your CV.')}
-    clrErr('consent');if(!form.elements.consent.checked)fail('consent','Please accept to continue.');
     var open=qa('.ms-ap__slot').filter(function(s){return s.firstChild})[0];
     if(open&&!bad){bad='slot';var fe=q('.ms-ap__ferr');fe.textContent='Please save or cancel the entry you are editing.';fe.classList.add('is-on')}
-    if(bad){var t=bad==='slot'?open:q('[data-f="'+bad+'"],[data-zone="'+bad+'"]');if(t){var y=t.getBoundingClientRect().top+window.scrollY-110;window.scrollTo({top:y,behavior:'smooth'})}return false}
+    if(bad){jump(bad,open);return false}
     return true;
   }
+  function langs(){
+    return qa('.ms-ap__lr',lrs).map(function(r){return {lang:q('[name="lang_n"]',r).value.trim(),level:q('[name="lang_l"]',r).value}}).filter(function(l){return l.lang||l.level});
+  }
+  function validate2(){
+    var bad=null,REQ='This field is required.';
+    function fail(n,m){setErr(n,m);if(!bad)bad=n}
+    ['civ','notice','auth','years','rate'].forEach(function(n){clrErr(n);if(!val(n))fail(n,REQ)});
+    ['speaks','noncompete','license','car'].forEach(function(n){clrErr(n);if(!form.elements[n].value)fail(n,REQ)});
+    clrErr('langs');var L=langs();if(!L.length||L.some(function(l){return !l.lang||!l.level}))fail('langs',REQ);
+    clrErr('consent');if(!form.elements.consent.checked)fail('consent','Please accept to continue.');
+    if(bad){var o=['civ','langs','speaks','notice','noncompete','license','car','auth','years','rate','consent'].filter(function(n){return q('[data-f="'+n+'"].is-err')})[0];jump(o||bad);return false}
+    return true;
+  }
+  q('.ms-ap__next').addEventListener('click',function(){if(validate1())go(2)});
+  q('.ms-ap__back').addEventListener('click',function(){go(1)});
   var busy=false;
   form.addEventListener('submit',function(e){
     e.preventDefault();if(busy)return;
+    if(step===1){if(validate1())go(2);return}
     var fe=q('.ms-ap__ferr');fe.classList.remove('is-on');fe.textContent='';
-    if(!validate())return;
+    if(!validate1()){go(1);validate1();return}
+    if(!validate2())return;
     var fd=new FormData();
     fd.append('job',root.getAttribute('data-job'));
     ['first','last','email','email2','city','phone','linkedin','facebook','x','site','message','website'].forEach(function(n){fd.append(n,val(n))});
@@ -215,6 +317,9 @@ export const FORM_APP = `(function(){
     fd.append('consent','true');fd.append('lang',document.documentElement.lang||'');
     fd.append('exp',JSON.stringify(state.exp));fd.append('edu',JSON.stringify(state.edu));
     fd.append('cv',state.cv,state.cv.name);
+    ['civ','speaks','noncompete','license','car','auth','notice','years','rate','docs'].forEach(function(n){fd.append(n,val(n)||(form.elements[n]&&form.elements[n].value)||'')});
+    fd.append('langs',JSON.stringify(langs()));
+    state.extra.forEach(function(f){fd.append('extra',f,f.name)});
     if(state.photo)fd.append('photo',state.photo,'photo.jpg');
     var btn=q('.ms-ap__submit');busy=true;btn.disabled=true;btn.classList.add('is-busy');
     fetch('/api/careers/apply',{method:'POST',body:fd}).then(function(r){

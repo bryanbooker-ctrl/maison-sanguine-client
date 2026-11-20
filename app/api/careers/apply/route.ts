@@ -10,7 +10,9 @@ const JOBS: Record<string, string> = {
   'brand-communications-manager': 'Brand & Communications Manager',
 }
 const CV_EXT = ['pdf', 'doc', 'docx', 'rtf', 'odt', 'txt']
-const MAX_CV = 4 * 1024 * 1024
+const EXTRA_EXT = ['pdf', 'doc', 'docx', 'rtf', 'odt', 'txt', 'jpg', 'jpeg', 'png']
+const MAX_TOTAL = 4 * 1024 * 1024
+const YN: Record<string, string> = { yes: 'Yes', no: 'No' }
 const MAX_PHOTO = 600 * 1024
 const clean = (v: unknown, max = 200) => (typeof v === 'string' ? v.trim().slice(0, max) : '')
 const hits = new Map<string, number[]>()
@@ -53,18 +55,42 @@ export async function POST(request: Request) {
     site: clean(fd.get('site'), 300),
     message: clean(fd.get('message'), 4000),
     lang: clean(fd.get('lang'), 12),
+    civ: clean(fd.get('civ'), 20),
+    notice: clean(fd.get('notice'), 80),
+    auth: clean(fd.get('auth'), 80),
+    years: clean(fd.get('years'), 80),
+    rate: clean(fd.get('rate'), 40),
+    speaks: YN[clean(fd.get('speaks'), 3)] || '',
+    noncompete: YN[clean(fd.get('noncompete'), 3)] || '',
+    license: YN[clean(fd.get('license'), 3)] || '',
+    car: YN[clean(fd.get('car'), 3)] || '',
+    docs: YN[clean(fd.get('docs'), 3)] || '',
   }
+  let langs: { lang: string; level: string }[] = []
+  try {
+    const raw = JSON.parse(clean(fd.get('langs'), 2000) || '[]')
+    if (Array.isArray(raw)) langs = raw.slice(0, 6).map((l: Record<string, unknown>) => ({ lang: clean(l.lang, 60), level: clean(l.level, 60) })).filter(l => l.lang && l.level)
+  } catch {}
+  const extras = fd.getAll('extra').filter((f): f is File => f instanceof File && f.size > 0).slice(0, 3)
   const cv = fd.get('cv')
   const photo = fd.get('photo')
-  if (!title || !d.first || !d.last || !d.city || !d.phone || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email) || fd.get('consent') !== 'true' || !(cv instanceof File))
+  if (!title || !d.first || !d.last || !d.city || !d.phone || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email) || fd.get('consent') !== 'true' || !(cv instanceof File)
+    || !d.civ || !d.notice || !d.auth || !d.years || !d.rate || !d.speaks || !d.noncompete || !d.license || !d.car || !langs.length)
     return NextResponse.json({ error: 'fields' }, { status: 400 })
   const ext = (cv.name.split('.').pop() || '').toLowerCase()
-  if (!CV_EXT.includes(ext) || cv.size === 0 || cv.size > MAX_CV) return NextResponse.json({ error: 'fields' }, { status: 400 })
+  if (!CV_EXT.includes(ext) || cv.size === 0) return NextResponse.json({ error: 'fields' }, { status: 400 })
+  const total = cv.size + extras.reduce((n, f) => n + f.size, 0)
+  if (total > MAX_TOTAL || extras.some(f => !EXTRA_EXT.includes((f.name.split('.').pop() || '').toLowerCase()))) return NextResponse.json({ error: 'fields' }, { status: 400 })
 
   if (!process.env.RESEND_API_KEY) return NextResponse.json({ error: 'config' }, { status: 500 })
   const to = (process.env.CAREERS_EMAILS || 'careers@maisonsanguine.com').split(',').map(e => e.trim()).filter(Boolean)
 
   const attachments = [{ filename: `CV-${d.first}-${d.last}.${ext}`.replace(/[^\w.\-]+/g, '_'), content: Buffer.from(await cv.arrayBuffer()).toString('base64') }]
+  for (let i = 0; i < extras.length; i++) {
+    const f = extras[i]
+    const e = (f.name.split('.').pop() || '').toLowerCase()
+    attachments.push({ filename: `Attachment-${i + 1}-${d.first}-${d.last}.${e}`.replace(/[^\w.\-]+/g, '_'), content: Buffer.from(await f.arrayBuffer()).toString('base64') })
+  }
   if (photo instanceof File && photo.size > 0 && photo.size <= MAX_PHOTO && photo.type === 'image/jpeg')
     attachments.push({ filename: 'photo.jpg', content: Buffer.from(await photo.arrayBuffer()).toString('base64') })
 
@@ -72,6 +98,10 @@ export async function POST(request: Request) {
     ['Position', title], ['First name', d.first], ['Last name', d.last], ['Email', d.email],
     ['Phone', `${d.dial} ${d.phone}`.trim()], ['City', d.city], ['LinkedIn', d.linkedin], ['Facebook', d.facebook],
     ['X', d.x], ['Website', d.site], ['Language', d.lang],
+    ['Title', d.civ], ['Languages', langs.map(l => `${l.lang} (${l.level})`).join('\n')],
+    ['Speaks the language of the job posting', d.speaks], ['Notice period', d.notice], ['Non-compete clause', d.noncompete],
+    ['Driver\'s license', d.license], ['Car', d.car], ['Authorized to work in France', d.auth], ['Years of experience', d.years],
+    ['Ideal activity rate', d.rate], ['All requested documents attached', d.docs], ['Other attachments', extras.map(f => f.name).join(', ')],
     ['Experience', entries(fd.get('exp'), 'exp')], ['Education', entries(fd.get('edu'), 'edu')], ['Message', d.message],
   ]
   const sent = await sendEmail(to, `Application: ${title}, ${d.first} ${d.last}`, emails.applicationNew(title, rows), d.email, attachments)
