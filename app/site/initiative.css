@@ -43,10 +43,9 @@ html:has(.ini-site) #ms-root .ms-navigation__toggle[aria-expanded="true"]::befor
 html:has(.ini-site) #ms-root .ms-navigation__toggle[aria-expanded="true"]::after{opacity:1;transform:translate(-50%,0) rotate(-45deg)}
 @media (min-width:1025px){
   html:has(.ini-site) #ms-root .ms-navigation__toggle{display:none}
-  html:has(.ini-site) #ms-root .ini-hnav{display:flex;align-items:center;gap:56px}
+  html:has(.ini-site) #ms-root .ini-hnav{display:flex;align-items:center;gap:40px}
   #ms-root .ini-hnav a{color:var(--hf);font-size:14px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:opacity .25s}
   #ms-root .ini-hnav a:hover{opacity:.55}
-  #ms-root .ini-hnav a[aria-current]{text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:1px}
   #ms-root .ini-menu a{font-size:var(--ms-h2-d)}
   .ini-hero__bar{display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding:0 7.5vw 40px}
   .ini-hero__l{display:flex;align-items:center;gap:14px;min-width:0}
