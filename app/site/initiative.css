@@ -25,7 +25,15 @@ html:has(.ini-site) #ms-root .ms-navigation__top{grid-template-columns:auto 1fr 
 html:has(.ini-site) #ms-root .ms-navigation__top-center-column{grid-column:1;grid-row:1;justify-self:start}
 html:has(.ini-site) #ms-root .ms-navigation__top-center-column img{width:auto!important;height:52px!important;position:static!important}
 html:has(.ini-site) #ms-root .ms-navigation__top-end-column{display:none}
-html:has(.ini-site) #ms-root .ms-navigation__top-start-column{grid-column:3;grid-row:1;justify-self:end}
+html:has(.ini-site) #ms-root .ms-navigation__top-start-column{grid-column:3;grid-row:1;justify-self:end;display:flex;align-items:center}
+html:has(.ini-site) #ms-root .ini-hnav{display:none}
+html[data-ms-site="initiative"] #ms-root .ms-drawer__head,html[data-ms-site="initiative"] #ms-root .ms-drawer__track,html[data-ms-site="initiative"] #ms-root .ms-drawer__dots{display:none}
+#ms-root .ini-menu{display:flex;flex-direction:column;align-items:center;gap:24px;padding:0 24px;text-align:center}
+#ms-root .ini-menu a{color:#fff;text-decoration:none;font-size:var(--ms-h2);font-weight:200;line-height:1.1;letter-spacing:-.02em;text-transform:uppercase;opacity:0;transform:translate3d(0,16px,0);transition:opacity .3s ease,transform .3s ease}
+#ms-root .ms-drawer.is-open .ini-menu a{opacity:1;transform:none;transition:opacity .7s var(--ms-ease-soft) .45s,transform .9s var(--ms-ease-out) .45s}
+#ms-root .ms-drawer.is-open .ini-menu a:nth-child(2){transition-delay:.53s}
+#ms-root .ms-drawer.is-open .ini-menu a:nth-child(3){transition-delay:.61s}
+#ms-root .ini-menu a[aria-current]{text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:1px}
 html:has(.ini-site) #ms-root .ms-navigation__toggle{width:44px;height:44px;border-radius:50%;background:#fff;color:#000}
 html:has(.ini-site) #ms-root .ms-navigation__toggle svg{display:none}
 html:has(.ini-site) #ms-root .ms-navigation__toggle::before,html:has(.ini-site) #ms-root .ms-navigation__toggle::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:1.5px;background:#000;transition:transform .3s}
@@ -34,6 +42,12 @@ html:has(.ini-site) #ms-root .ms-navigation__toggle::after{transform:translate(-
 html:has(.ini-site) #ms-root .ms-navigation__toggle[aria-expanded="true"]::before{transform:translate(-50%,0) rotate(45deg);box-shadow:none}
 html:has(.ini-site) #ms-root .ms-navigation__toggle[aria-expanded="true"]::after{opacity:1;transform:translate(-50%,0) rotate(-45deg)}
 @media (min-width:1025px){
+  html:has(.ini-site) #ms-root .ms-navigation__toggle{display:none}
+  html:has(.ini-site) #ms-root .ini-hnav{display:flex;align-items:center;gap:56px}
+  #ms-root .ini-hnav a{color:var(--hf);font-size:14px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:opacity .25s}
+  #ms-root .ini-hnav a:hover{opacity:.55}
+  #ms-root .ini-hnav a[aria-current]{text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:1px}
+  #ms-root .ini-menu a{font-size:var(--ms-h2-d)}
   .ini-hero__bar{display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding:0 7.5vw 40px}
   .ini-hero__l{display:flex;align-items:center;gap:14px;min-width:0}
   .ini-hero__t{display:flex;flex-direction:column;gap:4px}
