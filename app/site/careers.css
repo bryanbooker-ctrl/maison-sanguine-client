@@ -210,3 +210,13 @@ html body #ms-foot .ms-cfoot-legal a{font:500 14px/18px var(--ms-font)}
   .ms-job__d{order:4;margin-top:2px;font-size:14.5px;font-weight:300;line-height:20px;color:var(--mute)}
   .ms-job__tag{order:5;display:inline-flex;align-items:center;height:49px;margin-top:26px;padding:0 20px;font-size:14.5px;font-weight:500;line-height:1}
 }
+@media (min-width:1025px){
+  html body .ms-jopp h1.ms-jtitle{line-height:.83!important}
+  html body .ms-jopp .ms-jsearch{margin-top:4.57vw}
+  .ms-jopp .ms-jsearch__f{min-height:calc(6.25vw - 22px)}
+  .ms-jopp .ms-jfilters{margin-top:2.77vw;gap:.8vw}
+  .ms-jopp .ms-jfilter{min-width:0;height:3vw;padding:0 1.4vw}
+  html body .ms-jopp .ms-jfilter select{font-size:clamp(12px,1vw,16px);font-weight:500;padding-right:2vw}
+  .ms-jopp .ms-jbar{margin-top:9.7vw;padding-bottom:1.6vw}
+  .ms-jopp .ms-jlist{margin-top:0}
+}
