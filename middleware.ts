@@ -104,6 +104,8 @@ export async function middleware(request: NextRequest) {
     if (path === '/') return go('/careers')
     if (path === '/opportunities') return go('/careers/opportunities')
     if (path === '/life-at-ms') return go('/careers/life-at-ms')
+    if (path === '/applications') return go('/careers/applications')
+    if (path === '/careers/applications') return to('/applications')
     if (path === '/careers') return to('/')
     if (path === '/careers/life-at-ms') return to('/life-at-ms')
     if (path === '/careers/opportunities') return to('/opportunities')

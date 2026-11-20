@@ -81,7 +81,7 @@ const build = (slug: string, title: string) =>
   '<div class="ms-ap__hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>' +
   '</form>' +
 
-  '<div class="ms-ap__ok" hidden><h2 class="ms-ap__h">Thank you</h2><p class="ms-ap__p">Your application for this position has been received. A confirmation has been sent to your email address, and our team will come back to you personally.</p><a class="ms-ap__b ms-ap__b--p" href="/careers/opportunities">Back to opportunities</a></div>' +
+  '<div class="ms-ap__ok" hidden><h2 class="ms-ap__h">Thank you</h2><p class="ms-ap__p">Your application for this position has been received. A confirmation has been sent to your email address, and our team will come back to you personally.</p><a class="ms-ap__b ms-ap__b--p ms-ap__trk" href="/applications">Track my application</a> <a class="ms-ap__b" href="/careers/opportunities">Back to opportunities</a></div>' +
 
   '<footer class="ms-ap__foot"><div class="ms-ap__pv"><a href="https://maisonsanguine.com/legal/privacy-notice">Privacy Notice</a></div><div class="ms-ap__ft"><span>Maison Sanguine</span><a href="https://maisonsanguine.com/legal/cookie-policy">Cookie Policy</a></div></footer>' +
   '</div>'
@@ -326,7 +326,7 @@ export const FORM_APP = `(function(){
       return r.json().catch(function(){return {}}).then(function(j){return {ok:r.ok,s:r.status,j:j}});
     }).then(function(r){
       if(r.ok&&r.j.ok){
-        form.hidden=true;q('.ms-ap__ok').hidden=false;window.scrollTo({top:0,behavior:'smooth'});return;
+        var tk=q('.ms-ap__trk');if(tk&&r.j.ref)tk.setAttribute('href','/applications?ref='+r.j.ref);form.hidden=true;q('.ms-ap__ok').hidden=false;window.scrollTo({top:0,behavior:'smooth'});return;
       }
       var m='Something went wrong. Please try again in a moment.';
       if(r.s===429)m='Too many attempts. Please try again later.';

@@ -150,7 +150,7 @@ html body main.ms-page>.ms-ap{display:block;padding:0!important;margin:0!importa
 .ms-ap__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 .ms-ap__ok{padding:96px 40px;text-align:left}
-.ms-ap__ok .ms-ap__b{margin-top:32px}
+.ms-ap__ok .ms-ap__b{margin-top:32px;margin-right:12px}
 
 .ms-ap__pv{margin-top:36.9px;text-align:center;font-size:16px;line-height:20px}
 .ms-ap__pv a{text-decoration:underline;text-underline-offset:3px}

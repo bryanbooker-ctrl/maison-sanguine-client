@@ -6,7 +6,10 @@ function esc(s: string) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 }
 
-function layout(title: string[], paragraphs: string[], cta?: { label: string; href: string }, extra = '') {
+const FOOT_EN = 'Maison Sanguine will never request payments, passwords, or confidential information through unofficial channels.'
+const FOOT_FR = 'Maison Sanguine ne demandera jamais de paiement, de mot de passe ou d\'informations confidentielles par des canaux non officiels.'
+
+function layout(title: string[], paragraphs: string[], cta?: { label: string; href: string }, extra = '', after = '', foot = FOOT_EN) {
   const t = title.map((l, i) => `<div style="${i ? 'font-style:italic;font-weight:300;' : ''}">${esc(l)}</div>`).join('')
   const p = paragraphs.map(x => `<p style="margin:0 0 18px;font-size:15px;line-height:1.5;font-weight:300;color:#ffffff;">${x}</p>`).join('')
   const b = cta ? `<a href="${cta.href}" style="display:inline-block;margin-top:18px;padding:18px 36px;background:#ffffff;color:#000000;text-decoration:none;font-size:15px;font-weight:500;">${esc(cta.label)}</a>` : ''
@@ -15,8 +18,8 @@ function layout(title: string[], paragraphs: string[], cta?: { label: string; hr
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#ffffff;">
 <tr><td style="padding-bottom:56px;font-size:13px;letter-spacing:.3em;text-transform:uppercase;">Maison Sanguine</td></tr>
 <tr><td style="padding-bottom:36px;font-size:34px;line-height:1.05;font-weight:200;letter-spacing:-0.03em;text-transform:uppercase;">${t}</td></tr>
-<tr><td>${p}${extra}${b}</td></tr>
-<tr><td style="padding-top:64px;font-size:12px;line-height:1.5;color:rgba(255,255,255,.5);">Maison Sanguine will never request payments, passwords, or confidential information through unofficial channels.</td></tr>
+<tr><td>${p}${extra}${b}${after}</td></tr>
+<tr><td style="padding-top:64px;font-size:12px;line-height:1.5;color:rgba(255,255,255,.5);">${foot}</td></tr>
 </table></td></tr></table></body></html>`
 }
 
@@ -61,13 +64,76 @@ export const emails = {
     const html = rows.filter(([, v]) => v).map(([k, v]) => `<div style="font-size:14px;line-height:1.6;color:#ffffff;white-space:pre-wrap;"><span style="color:rgba(255,255,255,.5);">${esc(k)}</span> ${esc(v)}</div>`).join('')
     return layout(['New', 'application'], [esc(job)], undefined, html)
   },
-  applicationReceived(firstName: string, job: string) {
+  applicationReceived(firstName: string, job: string, link: string, lang = 'en') {
+    const fr = lang === 'fr'
+    const note = (t: string) => `<p style="margin:28px 0 0;font-size:13px;line-height:1.5;font-weight:300;color:rgba(255,255,255,.55);">${t}</p>`
+    const sign = fr ? 'Cordialement,' : 'Kind regards,'
+    const team = fr ? 'L\'Équipe Recrutement, Maison Sanguine' : 'The Recruitment Team, Maison Sanguine'
     return layout(
-      ['Application', 'received'],
-      [
-        firstName ? `Dear ${esc(firstName)},` : 'Hello,',
-        `Thank you for applying for the position of ${esc(job)} at Maison Sanguine. Our team has received your application and will come back to you personally.`,
-      ]
+      fr ? ['Candidature', 'reçue'] : ['Application', 'received'],
+      fr ? [
+        firstName ? `Bonjour ${esc(firstName)},` : 'Bonjour,',
+        `Nous vous remercions pour votre candidature au poste de ${esc(job)} et de l'intérêt que vous portez à Maison Sanguine.`,
+        'Nous examinons votre demande avec le plus grand soin et vous remercions pour votre patience. Nous reviendrons vers vous dans les meilleurs délais.',
+        'Vous pouvez suivre l\'avancement de votre candidature à tout moment depuis votre espace de suivi.',
+        sign,
+        `<strong style="font-weight:500;">${team}</strong>`,
+      ] : [
+        firstName ? `Hello ${esc(firstName)},` : 'Hello,',
+        `Thank you for your application for the position of ${esc(job)} and for your interest in Maison Sanguine.`,
+        'We are reviewing your application with the greatest care and thank you for your patience. We will come back to you as soon as possible.',
+        'You can follow the progress of your application at any time from your tracking space.',
+        sign,
+        `<strong style="font-weight:500;">${team}</strong>`,
+      ],
+      link ? { label: fr ? 'Accéder à ma candidature' : 'Access my application', href: link } : undefined,
+      '',
+      note(fr ? 'Si vous n\'êtes pas à l\'origine de cette candidature, vous pouvez ignorer ce message.' : 'If you did not submit this application, you can ignore this message.') +
+        note(fr ? 'Merci de ne pas partager ni transférer ce message, il concerne spécifiquement votre candidature.' : 'Please do not share or forward this message, it concerns your application specifically.'),
+      fr ? FOOT_FR : FOOT_EN
+    )
+  },
+  trackCode(code: string, lang = 'en') {
+    const fr = lang === 'fr'
+    const box = `<div style="margin:8px 0 26px;font-size:38px;line-height:1;font-weight:200;letter-spacing:.32em;color:#ffffff;">${esc(code)}</div>`
+    return layout(
+      fr ? ['Votre', 'code'] : ['Your', 'code'],
+      fr ? ['Bonjour,', 'Voici votre code à usage unique pour accéder au suivi de votre candidature :'] : ['Hello,', 'Here is your one-time code to access the tracking of your application:'],
+      undefined,
+      box + `<p style="margin:0 0 18px;font-size:15px;line-height:1.5;font-weight:300;color:#ffffff;">${fr ? 'Ce code expire 5 minutes après son envoi.' : 'This code expires 5 minutes after it was sent.'}</p><p style="margin:0;font-size:13px;line-height:1.5;font-weight:300;color:rgba(255,255,255,.55);">${fr ? 'Si vous n\'êtes pas à l\'origine de cette demande, vous pouvez ignorer ce message. Merci de ne partager ce code avec personne.' : 'If you did not request this code, you can ignore this message. Please do not share this code with anyone.'}</p>`,
+      '',
+      fr ? FOOT_FR : FOOT_EN
+    )
+  },
+  applicationStatus(firstName: string, job: string, status: string, link: string, lang = 'en') {
+    const fr = lang === 'fr'
+    const T: Record<string, [string, string]> = {
+      review: [
+        `Votre candidature au poste de ${esc(job)} est désormais en cours d'évaluation par notre équipe.`,
+        `Your application for the position of ${esc(job)} is now being reviewed by our team.`,
+      ],
+      interview: [
+        `Votre candidature au poste de ${esc(job)} a retenu notre attention. Nous vous contacterons très prochainement afin d'organiser un entretien.`,
+        `Your application for the position of ${esc(job)} has caught our attention. We will contact you shortly to arrange an interview.`,
+      ],
+      offer: [
+        `Bonne nouvelle : une offre vous a été soumise pour le poste de ${esc(job)}. Retrouvez-en le suivi dans votre espace.`,
+        `Good news: an offer has been submitted to you for the position of ${esc(job)}. You can follow it from your tracking space.`,
+      ],
+      declined: [
+        `Après un examen attentif, nous ne donnerons pas suite à votre candidature au poste de ${esc(job)}. Nous vous remercions sincèrement de l'intérêt que vous portez à Maison Sanguine et vous souhaitons le meilleur pour la suite.`,
+        `After careful consideration, we will not be moving forward with your application for the position of ${esc(job)}. We sincerely thank you for your interest in Maison Sanguine and wish you every success.`,
+      ],
+    }
+    const t = T[status] || T.review
+    return layout(
+      fr ? ['Mise à jour', 'de votre candidature'] : ['Application', 'update'],
+      [firstName ? (fr ? `Bonjour ${esc(firstName)},` : `Hello ${esc(firstName)},`) : (fr ? 'Bonjour,' : 'Hello,'), fr ? t[0] : t[1],
+        fr ? 'Cordialement,' : 'Kind regards,', `<strong style="font-weight:500;">${fr ? 'L\'Équipe Recrutement, Maison Sanguine' : 'The Recruitment Team, Maison Sanguine'}</strong>`],
+      link ? { label: fr ? 'Accéder à ma candidature' : 'Access my application', href: link } : undefined,
+      '',
+      '',
+      fr ? FOOT_FR : FOOT_EN
     )
   },
   contactReceived(firstName: string) {

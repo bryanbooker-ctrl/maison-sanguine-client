@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 import { emails, sendEmail } from '@/lib/email'
+import { createServiceClient } from '@/lib/supabase-server'
+import { careersUrl, langOf } from '@/lib/careers-track'
 
 export const runtime = 'nodejs'
 
@@ -16,6 +18,17 @@ const YN: Record<string, string> = { yes: 'Yes', no: 'No' }
 const MAX_PHOTO = 600 * 1024
 const clean = (v: unknown, max = 200) => (typeof v === 'string' ? v.trim().slice(0, max) : '')
 const hits = new Map<string, number[]>()
+
+function listOf(raw: unknown, keys: string[]) {
+  let v: unknown = []
+  try { v = JSON.parse(typeof raw === 'string' ? raw : '[]') } catch {}
+  if (!Array.isArray(v)) return []
+  return v.slice(0, 12).map((e: Record<string, unknown>) => {
+    const o: Record<string, string | boolean> = {}
+    for (const k of keys) o[k] = k === 'cur' ? !!e.cur : clean(e[k], k === 'desc' ? 1500 : 120)
+    return o
+  })
+}
 
 function entries(raw: unknown, kind: 'exp' | 'edu') {
   let list: unknown = []
@@ -104,8 +117,30 @@ export async function POST(request: Request) {
     ['Ideal activity rate', d.rate], ['All requested documents attached', d.docs], ['Other attachments', extras.map(f => f.name).join(', ')],
     ['Experience', entries(fd.get('exp'), 'exp')], ['Education', entries(fd.get('edu'), 'edu')], ['Message', d.message],
   ]
+  let ref = ''
+  try {
+    const photoUrl = photo instanceof File && photo.size > 0 && photo.size <= 300 * 1024 && photo.type === 'image/jpeg'
+      ? 'data:image/jpeg;base64,' + Buffer.from(await photo.arrayBuffer()).toString('base64') : null
+    const { data: row } = await createServiceClient().from('job_applications').insert({
+      job_slug: slug, job_title: title, email: d.email, first_name: d.first, last_name: d.last,
+      phone: `${d.dial} ${d.phone}`.trim(), city: d.city, locale: langOf(d.lang), photo: photoUrl,
+      answers: { civ: d.civ, langs, speaks: d.speaks, notice: d.notice, noncompete: d.noncompete, license: d.license, car: d.car, auth: d.auth, years: d.years, rate: d.rate, docs: d.docs },
+      experience: listOf(fd.get('exp'), ['title', 'company', 'loc', 'desc', 'from', 'to', 'cur']),
+      education: listOf(fd.get('edu'), ['school', 'spec', 'level', 'loc', 'desc', 'from', 'to', 'cur']),
+      links: { linkedin: d.linkedin, facebook: d.facebook, x: d.x, site: d.site },
+      message: d.message,
+      files: [{ name: cv.name, size: cv.size, kind: 'cv' }, ...extras.map(f => ({ name: f.name, size: f.size, kind: 'other' }))],
+    }).select('id').single()
+    ref = row?.id || ''
+  } catch {}
+
   const sent = await sendEmail(to, `Application: ${title}, ${d.first} ${d.last}`, emails.applicationNew(title, rows), d.email, attachments)
-  if (!('ok' in sent) || !sent.ok) return NextResponse.json({ error: 'send' }, { status: 502 })
-  await sendEmail(d.email, 'Your application has been received', emails.applicationReceived(d.first, title))
-  return NextResponse.json({ ok: true })
+  if (!('ok' in sent) || !sent.ok) {
+    if (ref) { try { await createServiceClient().from('job_applications').delete().eq('id', ref) } catch {} }
+    return NextResponse.json({ error: 'send' }, { status: 502 })
+  }
+  const lang = langOf(d.lang)
+  const link = `${careersUrl()}/applications${ref ? `?ref=${ref}` : ''}`
+  await sendEmail(d.email, lang === 'fr' ? 'Votre candidature a bien été reçue' : 'Your application has been received', emails.applicationReceived(d.first, title, link, lang))
+  return NextResponse.json({ ok: true, ref })
 }

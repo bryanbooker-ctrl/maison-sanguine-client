@@ -76,6 +76,7 @@ export default function AdminPage() {
       <section className="ms-acc__dark ms-adm">
         <div className="ms-adm__top">
           <h1 className="ms-acc__title"><span>Guest</span><span className="ms-it">Relations</span></h1>
+          <a className="ms-acc__btn ms-acc__btn--line" href="/admin/applications">Job applications</a>
           <select className="ms-adm__sel" value={edition} onChange={e => setEdition(e.target.value)} aria-label="Night">
             <option value="">All nights</option>
             {Object.values(eds).map(e => <option key={e.slug} value={e.slug}>{e.name}</option>)}
