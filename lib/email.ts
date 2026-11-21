@@ -30,6 +30,7 @@ export async function sendEmail(to: string | string[], subject: string, html: st
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({ from: FROM, to, subject, html, ...(replyTo ? { reply_to: replyTo } : {}), ...(attachments && attachments.length ? { attachments } : {}) }),
   })
+  if (!res.ok) console.error('resend', res.status, await res.text().catch(() => ''))
   return { ok: res.ok }
 }
 

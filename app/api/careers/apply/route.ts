@@ -96,7 +96,7 @@ export async function POST(request: Request) {
   if (total > MAX_TOTAL || extras.some(f => !EXTRA_EXT.includes((f.name.split('.').pop() || '').toLowerCase()))) return NextResponse.json({ error: 'fields' }, { status: 400 })
 
   if (!process.env.RESEND_API_KEY) return NextResponse.json({ error: 'config' }, { status: 500 })
-  const to = (process.env.CAREERS_EMAILS || 'careers@maisonsanguine.com').split(',').map(e => e.trim()).filter(Boolean)
+  const to = (process.env.CAREERS_EMAILS || 'careers@maisonsanguine.com').split(/[,;\s]+/).map(e => e.replace(/^["'<\s]+|["'>.\s]+$/g, '')).filter(e => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e))
 
   const attachments = [{ filename: `CV-${d.first}-${d.last}.${ext}`.replace(/[^\w.\-]+/g, '_'), content: Buffer.from(await cv.arrayBuffer()).toString('base64') }]
   for (let i = 0; i < extras.length; i++) {
