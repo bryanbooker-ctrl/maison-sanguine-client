@@ -1264,7 +1264,7 @@ html body .ms-vn a.ms-vn__btn:hover,html body .ms-vn a.ms-vn__btn:focus-visible{
 .ms-dt__text{padding:0 24px;}
 .ms-dt__specs{margin-top:56px;}
 .ms-dt__spec+.ms-dt__spec{margin-top:18px;}
-.ms-dt__v{margin-top:6px;font-size:36px;font-weight:200;line-height:1;letter-spacing:-0.02em;}
+.ms-dt__v{margin-top:6px;font-size:var(--ms-h2);font-weight:200;line-height:1.05;letter-spacing:-0.03em;}
 .ms-dt__v small{margin-left:5px;font-size:13px;font-weight:300;letter-spacing:0;}
 .ms-dt__v small.ms-dt__s{display:block;margin:8px 0 0;line-height:1.3;}
 
