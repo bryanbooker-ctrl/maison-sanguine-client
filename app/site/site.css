@@ -1312,7 +1312,7 @@ html body .ms-vn a.ms-vn__btn{margin:40px 24px 0!important;}
   .ms-dt__v{margin-top:.5vw;font-size:clamp(34px,2.6vw,52px);}
   .ms-dt__v small{font-size:var(--t);}
 
-  .ms-sp{display:grid;grid-template-columns:minmax(0,1fr) 15vw;grid-template-areas:"t t" "b b" "p m";column-gap:8vw;padding:80px 7.5vw;}
+  .ms-sp{display:grid;grid-template-columns:minmax(0,1fr) 30vw;grid-template-areas:"t t" "b b" "p m";column-gap:8vw;padding:80px 7.5vw;}
   .ms-sp__title{grid-area:t;}
   .ms-sp__tabs{grid-area:b;gap:clamp(24px,2.5vw,48px);margin-top:4vw;}
   .ms-sp__tab{padding-bottom:22px;font-size:clamp(13px,.95vw,17px);}
@@ -1322,7 +1322,7 @@ html body .ms-vn a.ms-vn__btn{margin:40px 24px 0!important;}
   .ms-sp__group--full .ms-sp__items{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:4.4vw;row-gap:3vw;}
   .ms-sp__h{font-size:clamp(32px,2.4vw,46px);}
   .ms-sp__items{margin-top:2.6vw;}
-  .ms-sp__media{grid-area:m;align-self:start;margin-top:6vw;aspect-ratio:.78;}
+  .ms-sp__media{grid-area:m;align-self:start;margin-top:6vw;aspect-ratio:1.6;}
 
   .ms-car.ms-car--uc{--card:42.5vw;--ratio:1.52;--half:.329;--gap:2.5vw;--rail:7.5vw;padding:var(--pt) 0 var(--pb);}
   .ms-car--uc .ms-car__head{padding:0 7.5vw;margin-bottom:4vw;}
