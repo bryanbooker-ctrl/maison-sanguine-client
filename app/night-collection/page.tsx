@@ -3,6 +3,7 @@ import { localizeMetadata } from '@/lib/i18n'
 import SitePage from '../site/SitePage'
 import { NIGHT_COLLECTION_HTML } from '../site/night-collection'
 import { COLLECTION_APP } from '../site/collection-app'
+import { withNightPages } from '@/lib/night-compare'
 
 const META: Metadata = {
   title: 'Maison Sanguine | Night Collection',
@@ -14,5 +15,5 @@ export const generateMetadata = () => localizeMetadata(META)
 const SCRIPTS = [COLLECTION_APP]
 
 export default function NightCollection() {
-  return <SitePage html={NIGHT_COLLECTION_HTML} scripts={SCRIPTS} />
+  return <SitePage html={withNightPages(NIGHT_COLLECTION_HTML)} scripts={SCRIPTS} />
 }
