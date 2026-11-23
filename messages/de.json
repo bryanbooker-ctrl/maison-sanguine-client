@@ -46,7 +46,7 @@
     "0rtn7ta": "Erlebnisse",
     "0btctu7": "Entdecken Sie das Savoir-faire der Maison in Masterclasses ihrer Creative Division und erleben Sie die Kunst der Nacht von innen.",
     "1t8siyh": "Masterclass buchen",
-    "05e7m62": "The Night",
+    "05e7m62": "Der Abend",
     "18kiif8": "Keepers",
     "1wbjp3h": "Ein künftiger Service für authentifizierte Maison Sanguine Nächte, mit Zugang zu verfügbaren Plätzen und Clubreservierungen.",
     "14ho4vt": "Demnächst",
@@ -393,7 +393,7 @@
     "16yiww4": "allein",
     "0i1j8z3": "Für das Studio ist jede Kreation eine Gelegenheit zum gemeinsamen Ausdruck. Ob Künstler, kreative Köpfe oder technische Talente: Jeder bringt eine eigene Perspektive und sein Savoir-faire in die Maison ein. Hinter jeder Produktion steht eine Gemeinschaft von Mitwirkenden, deren gemeinsamer Anspruch Konventionen hinterfragt und Kreation neu denkt.",
     "0ocx4yb": "Mehr entdecken",
-    "00h8q1v": "Eckdaten",
+    "00h8q1v": "Spezifikationen",
     "05e7m62": "Der Abend",
     "0osf0rg": "Veranstaltungsort",
     "0ow1nnv": "Zugang",
@@ -455,8 +455,8 @@
     "1s0tizh": "Alpines Chalet",
     "0u8ra03": "900 m²",
     "00ir07n": "Auf Einladung",
-    "0q54zlq": "Zugangsanfrage über die Website",
-    "1dhdcws": "Nach Bestätigung der Zulassung sichert die Zahlung die Reservierung. Anschließend werden alle Informationen zur Veranstaltung mitgeteilt."
+    "0q54zlq": "Eine Zugangsanfrage über die Website einreichen",
+    "1dhdcws": "Sobald die Zulassung bestätigt wurde, sichert die Zahlung die Reservierung. Alle weiteren Informationen zur Veranstaltung werden anschließend mitgeteilt."
   },
   "atmospheres": {
     "0uxcp4z": "Galerie der Atmosphären",
@@ -2469,7 +2469,7 @@
     "16yiww4": "allein",
     "0i1j8z3": "Für das Studio ist jede Kreation eine Gelegenheit zum gemeinsamen Ausdruck. Ob Künstler, kreative Köpfe oder technische Talente: Jeder bringt eine eigene Perspektive und sein Savoir-faire in die Maison ein. Hinter jeder Produktion steht eine Gemeinschaft von Mitwirkenden, deren gemeinsamer Anspruch Konventionen hinterfragt und Kreation neu denkt.",
     "0ocx4yb": "Mehr entdecken",
-    "00h8q1v": "Eckdaten",
+    "00h8q1v": "Spezifikationen",
     "05e7m62": "Der Abend",
     "0osf0rg": "Veranstaltungsort",
     "0ow1nnv": "Zugang",
@@ -2539,7 +2539,9 @@
     "1bkc1tz": "Hoch über Manhattan gelegen, bietet das Rooftop einen privilegierten Blick auf eine der bekanntesten Skylines der Welt. Umgeben von den architektonischen Wahrzeichen der Stadt und mit weitläufigem Blick auf die urbane Landschaft bildet es einen außergewöhnlichen Rahmen für die Spring Edition von Maison Sanguine. Seine erhöhte Lage und die offene Perspektive auf die Stadt schaffen eine unmittelbare Verbindung zu New York und lassen dessen Dimension, Energie und zeitgenössischen Charakter in die kreative Vision des Studios einfließen.",
     "1tfqrzi": "Rooftop",
     "1ez55l5": "Während einer der lebendigsten Wochen im Kulturkalender New Yorks findet die Spring Edition statt, wenn sich die Aufmerksamkeit der Stadt auf die internationalen Kunst-, Mode- und Kreativszene richtet. Zeitgleich mit der Woche des Met Gala verleiht diese Phase intensiver kultureller Aktivität Manhattan eine besondere Energie, in der internationale Perspektiven und kreative Einflüsse aufeinandertreffen. Maison Sanguine verankert seine Produktion in dieser außergewöhnlichen Atmosphäre und verbindet die eigene künstlerische Vision mit dem kosmopolitischen Geist New Yorks.",
-    "0ijmm55": "Der Eintritt zur Spring Edition umfasst den Zugang zur gesamten Veranstaltung, eine von der Maison sorgfältig zusammengestellte Auswahl an Champagnern, Spirituosen und Cocktails sowie einen persönlichen Empfang, der die vorab mitgeteilten Präferenzen berücksichtigt. Die My MS App stellt einen persönlichen Bereich bereit, in dem alle Zugangsinformationen gebündelt sind und die zugehörigen Services verwaltet werden können."
+    "0ijmm55": "Der Eintritt zur Spring Edition umfasst den Zugang zur gesamten Veranstaltung, eine von der Maison sorgfältig zusammengestellte Auswahl an Champagnern, Spirituosen und Cocktails sowie einen persönlichen Empfang, der die vorab mitgeteilten Präferenzen berücksichtigt. Die My MS App stellt einen persönlichen Bereich bereit, in dem alle Zugangsinformationen gebündelt sind und die zugehörigen Services verwaltet werden können.",
+    "01kn4f0": "Wird noch bekannt gegeben",
+    "1e4mrxc": "New York, New York, Vereinigte Staaten"
   },
   "night-collection": {
     "14l8mh7": "Alle Nächte",

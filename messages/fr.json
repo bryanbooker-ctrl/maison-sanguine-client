@@ -46,7 +46,7 @@
     "0rtn7ta": "Haute Nuit",
     "0btctu7": "Découvrez le savoir-faire de la Maison à travers des masterclasses animées par sa Creative Division, et vivez l’art de la nuit de l’intérieur.",
     "1t8siyh": "Réserver une masterclass",
-    "05e7m62": "The Night",
+    "05e7m62": "La soirée",
     "18kiif8": "Keepers",
     "1wbjp3h": "Un service à venir dédié aux nuits Maison Sanguine authentifiées, donnant accès aux places disponibles et aux réservations en club.",
     "14ho4vt": "Bientôt disponible",
@@ -476,7 +476,7 @@
     "16yiww4": "seul",
     "0i1j8z3": "Pour le Studio, chaque création est une occasion d’expression collective. Des artistes et esprits créatifs aux talents techniques, chacun apporte à la Maison un regard et un savoir-faire singuliers. Derrière chaque production se tient une communauté de collaborateurs dont l’ambition commune bouscule les conventions et redéfinit la création.",
     "0ocx4yb": "Découvrir",
-    "00h8q1v": "Caractéristiques",
+    "00h8q1v": "Informations",
     "05e7m62": "La soirée",
     "0osf0rg": "Lieu",
     "0ow1nnv": "Accès",
@@ -532,14 +532,14 @@
     "1kgijsl": "Pour cette Winter Edition, la Maison investit un chalet alpin d’exception. Son architecture, ses matériaux naturels et son environnement montagnard offrent un cadre singulier aux créateurs et producteurs du Studio, qui y déploient une production conçue pour inscrire sa vision créative dans le caractère exceptionnel de la destination.",
     "0n6x21f": "L’admission à la Winter Edition comprend l’accès à l’ensemble de l’événement, une sélection de champagnes, de spiritueux et de cocktails soigneusement élaborée par la Maison, ainsi qu’un accueil personnalisé tenant compte des préférences communiquées en amont. L’application My MS met à votre disposition un espace personnel dédié, qui réunit les informations d’accès et permet de gérer les services associés.",
     "0oqsc8t": "Tenue de ski",
-    "1q4eyv8": "Heure",
+    "1q4eyv8": "Horaire",
     "0q8397r": "Après-ski",
     "1tdg0ce": "Aspen, Colorado, États-Unis",
     "1s0tizh": "Chalet alpin",
     "0u8ra03": "900 m²",
     "00ir07n": "Sur invitation",
-    "0q54zlq": "Demande d’accès sur le site",
-    "1dhdcws": "Après confirmation de l’admission, le règlement valide la réservation. L’ensemble des informations relatives à l’événement est ensuite communiqué."
+    "0q54zlq": "Soumettre une demande d’accès sur le site internet",
+    "1dhdcws": "Une fois l’admission confirmée, le paiement permet de sécuriser la réservation. L’ensemble des informations relatives à l’événement est ensuite communiqué."
   },
   "atmospheres": {
     "0uxcp4z": "Galerie des atmosphères",
@@ -2789,7 +2789,7 @@
     "16yiww4": "seul",
     "0i1j8z3": "Pour le Studio, chaque création est une occasion d’expression collective. Des artistes et esprits créatifs aux talents techniques, chacun apporte à la Maison un regard et un savoir-faire singuliers. Derrière chaque production se tient une communauté de collaborateurs dont l’ambition commune bouscule les conventions et redéfinit la création.",
     "0ocx4yb": "Découvrir",
-    "00h8q1v": "Caractéristiques",
+    "00h8q1v": "Informations",
     "05e7m62": "La soirée",
     "0osf0rg": "Lieu",
     "0ow1nnv": "Accès",
@@ -2859,7 +2859,9 @@
     "1bkc1tz": "Surplombant Manhattan, le rooftop offre un point de vue privilégié sur l’une des skylines les plus reconnaissables au monde. Entouré des grandes signatures architecturales de la ville et ouvert sur de vastes perspectives urbaines, il constitue un cadre singulier pour la Spring Edition de Maison Sanguine. Sa position en hauteur et son ouverture sur la ville créent un lien direct avec New York, intégrant son échelle, son énergie et son caractère contemporain à la vision créative du Studio.",
     "1tfqrzi": "Rooftop",
     "1ez55l5": "Au cours de l’une des semaines les plus effervescentes du calendrier culturel new-yorkais, la Spring Edition prend place alors que la ville se tourne vers les scènes internationales de l’art, de la mode et de la création. En coïncidant avec la semaine du Met Gala, ce moment d’intense activité culturelle insuffle à Manhattan une énergie singulière, où se croisent influences créatives et perspectives internationales. Maison Sanguine inscrit sa production dans cette atmosphère particulière, en faisant dialoguer sa propre vision artistique avec l’esprit cosmopolite de New York.",
-    "0ijmm55": "L’admission à la Spring Edition comprend l’accès à l’ensemble de l’événement, une sélection de champagnes, de spiritueux et de cocktails soigneusement élaborée par la Maison, ainsi qu’un accueil personnalisé tenant compte des préférences communiquées en amont. L’application My MS met à disposition un espace personnel dédié, qui réunit les informations d’accès et permet la gestion des services associés."
+    "0ijmm55": "L’admission à la Spring Edition comprend l’accès à l’ensemble de l’événement, une sélection de champagnes, de spiritueux et de cocktails soigneusement élaborée par la Maison, ainsi qu’un accueil personnalisé tenant compte des préférences communiquées en amont. L’application My MS met à disposition un espace personnel dédié, qui réunit les informations d’accès et permet la gestion des services associés.",
+    "01kn4f0": "À communiquer",
+    "1e4mrxc": "New York, New York, États-Unis"
   },
   "night-collection": {
     "14l8mh7": "Toutes les nuits",
