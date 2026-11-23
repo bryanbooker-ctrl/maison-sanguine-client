@@ -12,6 +12,7 @@ const PAGES: Record<string, string> = {
   stbarth: STBARTH_EVENT_HTML,
 }
 
+const SKIP = /^(Arrival|Application)$/
 const clean = (s: string) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim()
 const take = (h: string, re: RegExp) => [...h.matchAll(re)].map(m => m[1])
 
@@ -49,7 +50,7 @@ function specs(html: string): Sec {
     }
     const d = g.match(/<div class="ms-sp__desc">([\s\S]*?)<\/div>/)
     if (d) rows.push(['', clean(d[1])])
-    groups.push({ h: clean(h[1]), rows })
+    if (!SKIP.test(clean(h[1]))) groups.push({ h: clean(h[1]), rows })
   }
   return { groups }
 }
