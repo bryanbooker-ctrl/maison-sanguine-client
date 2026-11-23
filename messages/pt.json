@@ -393,7 +393,7 @@
     "16yiww4": "em conjunto",
     "0i1j8z3": "Para o Studio, cada criação é uma oportunidade de expressão coletiva. De artistas e mentes criativas a talentos técnicos, cada um traz à Maison um olhar e um savoir-faire próprios. Por detrás de cada produção está uma comunidade de colaboradores cuja ambição comum desafia as convenções e redefine a criação.",
     "0ocx4yb": "Descobrir mais",
-    "00h8q1v": "Especificações",
+    "00h8q1v": "Informações",
     "05e7m62": "A noite",
     "0osf0rg": "Local",
     "0ow1nnv": "Acesso",
@@ -454,9 +454,9 @@
     "1tdg0ce": "Aspen, Colorado, Estados Unidos",
     "1s0tizh": "Chalé alpino",
     "0u8ra03": "900 m²",
-    "00ir07n": "Por convite",
-    "0q54zlq": "Submeter um pedido de acesso através do website",
-    "1dhdcws": "Após a confirmação da admissão, o pagamento garante a reserva. Todos os detalhes do evento serão posteriormente comunicados."
+    "00ir07n": "Mediante convite",
+    "0q54zlq": "Enviar um pedido de acesso através do website",
+    "1dhdcws": "Após a confirmação da admissão, o pagamento garante a reserva. De seguida, são comunicadas todas as informações relativas ao evento."
   },
   "atmospheres": {
     "0uxcp4z": "Galeria de atmosferas",
@@ -2469,7 +2469,7 @@
     "16yiww4": "em conjunto",
     "0i1j8z3": "Para o Studio, cada criação é uma oportunidade de expressão coletiva. De artistas e mentes criativas a talentos técnicos, cada um traz à Maison um olhar e um savoir-faire próprios. Por detrás de cada produção está uma comunidade de colaboradores cuja ambição comum desafia as convenções e redefine a criação.",
     "0ocx4yb": "Descobrir mais",
-    "00h8q1v": "Especificações",
+    "00h8q1v": "Informações",
     "05e7m62": "A noite",
     "0osf0rg": "Local",
     "0ow1nnv": "Acesso",
@@ -2546,7 +2546,10 @@
     "0ksk0wg": "Riviera Francesa, França",
     "0pykhea": "Situada em Saint-Tropez, na Riviera Francesa, a villa oferece um cenário mediterrânico singular para Rite of Summer. A sua arquitetura, os espaços exteriores e o ambiente natural constituem a base de uma produção moldada pelo carácter do destino. O Studio inspira-se na luz, na atmosfera e na arte de viver da região para desenvolver uma visão criativa que reflete o espírito da Riviera Francesa.",
     "06jnatm": "Na Riviera Francesa, com a chegada do verão mediterrânico, a White Party emblemática da Maison Sanguine tem lugar em Saint-Tropez. Inspirando-se nas figuras, nas tradições e no património cultural que moldaram a identidade da Riviera, o Studio encontra inspiração no espírito singular da região e no seu encanto intemporal como um dos destinos mais exclusivos da temporada.",
-    "0vciad2": "A admissão a Rite of Summer inclui acesso a todo o evento, uma seleção de champanhes, bebidas espirituosas e cocktails de verão cuidadosamente escolhida pela Maison, bem como um acolhimento personalizado que tem em conta as preferências comunicadas antecipadamente. A aplicação My MS disponibiliza um espaço pessoal dedicado, que reúne as informações de acesso e permite gerir os serviços associados."
+    "0vciad2": "A admissão a Rite of Summer inclui acesso a todo o evento, uma seleção de champanhes, bebidas espirituosas e cocktails de verão cuidadosamente escolhida pela Maison, bem como um acolhimento personalizado que tem em conta as preferências comunicadas antecipadamente. A aplicação My MS disponibiliza um espaço pessoal dedicado, que reúne as informações de acesso e permite gerir os serviços associados.",
+    "0i7rt6u": "17:00 – 02:00",
+    "0fe9wyx": "ALL WHITE",
+    "1r7ejs6": "Saint-Tropez, Côte d’Azur, França"
   },
   "night-collection": {
     "14l8mh7": "Todas as noites",

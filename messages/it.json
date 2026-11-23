@@ -393,9 +393,9 @@
     "16yiww4": "da soli",
     "0i1j8z3": "Per lo Studio ogni creazione è un’occasione di espressione collettiva. Artisti, menti creative e talenti tecnici portano alla Maison il proprio sguardo e il proprio savoir-faire. Dietro ogni produzione c’è una comunità di collaboratori la cui ambizione condivisa sfida le convenzioni e ridefinisce la creazione.",
     "0ocx4yb": "Scopri di più",
-    "00h8q1v": "Specifiche",
+    "00h8q1v": "Informazioni",
     "05e7m62": "La serata",
-    "0osf0rg": "Location",
+    "0osf0rg": "Luogo",
     "0ow1nnv": "Accesso",
     "0ggjuyh": "Data",
     "1rn97db": "Sabato 20 febbraio 2027",
@@ -456,7 +456,7 @@
     "0u8ra03": "900 m²",
     "00ir07n": "Su invito",
     "0q54zlq": "Inviare una richiesta di accesso tramite il sito web",
-    "1dhdcws": "Una volta confermata l’ammissione, il pagamento garantisce la prenotazione. Tutte le informazioni relative all’evento saranno successivamente comunicate."
+    "1dhdcws": "Una volta confermata l’ammissione, il pagamento consente di assicurare la prenotazione. Successivamente vengono comunicate tutte le informazioni relative all’evento."
   },
   "atmospheres": {
     "0uxcp4z": "Galleria delle atmosfere",
@@ -2469,9 +2469,9 @@
     "16yiww4": "da soli",
     "0i1j8z3": "Per lo Studio ogni creazione è un’occasione di espressione collettiva. Artisti, menti creative e talenti tecnici portano alla Maison il proprio sguardo e il proprio savoir-faire. Dietro ogni produzione c’è una comunità di collaboratori la cui ambizione condivisa sfida le convenzioni e ridefinisce la creazione.",
     "0ocx4yb": "Scopri di più",
-    "00h8q1v": "Specifiche",
+    "00h8q1v": "Informazioni",
     "05e7m62": "La serata",
-    "0osf0rg": "Location",
+    "0osf0rg": "Luogo",
     "0ow1nnv": "Accesso",
     "0ggjuyh": "Data",
     "0pghiva": "Località",
@@ -2546,7 +2546,10 @@
     "0ksk0wg": "Costa Azzurra, Francia",
     "0pykhea": "Situata a Saint-Tropez, sulla Costa Azzurra, la villa offre una cornice mediterranea distintiva per Rite of Summer. La sua architettura, gli spazi esterni e il contesto naturale costituiscono il punto di partenza di una produzione plasmata dal carattere della destinazione. Lo Studio trae ispirazione dalla luce, dall’atmosfera e dall’arte di vivere della regione per sviluppare una visione creativa che rifletta lo spirito della Riviera francese.",
     "06jnatm": "Sulla Costa Azzurra, con l’arrivo dell’estate mediterranea, la White Party emblematica di Maison Sanguine prende vita a Saint-Tropez. Traendo ispirazione dalle figure, dalle tradizioni e dal patrimonio culturale che hanno plasmato l’identità della Riviera, lo Studio si lascia guidare dallo spirito distintivo della regione e dal suo fascino senza tempo, che ne fa una delle destinazioni più esclusive della stagione.",
-    "0vciad2": "L’ammissione a Rite of Summer comprende l’accesso all’intero evento, una selezione di champagne, distillati e cocktail estivi accuratamente curata dalla Maison, oltre a un’accoglienza personalizzata che tiene conto delle preferenze comunicate in anticipo. L’app My MS mette a disposizione uno spazio personale dedicato, che riunisce le informazioni relative all’accesso e consente di gestire i servizi associati."
+    "0vciad2": "L’ammissione a Rite of Summer comprende l’accesso all’intero evento, una selezione di champagne, distillati e cocktail estivi accuratamente curata dalla Maison, oltre a un’accoglienza personalizzata che tiene conto delle preferenze comunicate in anticipo. L’app My MS mette a disposizione uno spazio personale dedicato, che riunisce le informazioni relative all’accesso e consente di gestire i servizi associati.",
+    "0i7rt6u": "17:00 – 02:00",
+    "0fe9wyx": "ALL WHITE",
+    "1r7ejs6": "Saint-Tropez, Costa Azzurra, Francia"
   },
   "night-collection": {
     "14l8mh7": "Tutte le notti",
