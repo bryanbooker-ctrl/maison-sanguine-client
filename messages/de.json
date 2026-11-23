@@ -441,7 +441,7 @@
     "1hzusm5": "Hoch oben in den Colorado Rocky Mountains findet die Aspen Edition in einem außergewöhnlichen alpinen Chalet statt. Seine Architektur, die natürlichen Materialien und die Berglandschaft bilden den Rahmen für eine Maison Sanguine Produktion, die darauf ausgerichtet ist, in jeder Immobilie eine unverwechselbare kreative Vision zum Leben zu erwecken.",
     "1yddwpk": "Aspen",
     "10tbqfl": "Colorado, Vereinigte Staaten",
-    "16o7guo": "Objektart",
+    "16o7guo": "Immobilientyp",
     "0cfoepp": "Alpines Chalet",
     "1l4eq1g": "Szenografische Fläche",
     "05vltdq": "m²",
@@ -1467,7 +1467,7 @@
     "1crwaz7": "Zulassung anfragen",
     "0esdi1r": "Spring Edition New York",
     "0zatwy0": "New York",
-    "1y9rpub": "New York, USA",
+    "1y9rpub": "New York, Vereinigte Staaten",
     "1isjych": "Rite of Summer Saint-Tropez",
     "0bbrbir": "Saint-Tropez",
     "0ngfddp": "Saint-Tropez, Côte d’Azur",
@@ -2475,7 +2475,7 @@
     "0ow1nnv": "Zugang",
     "0ggjuyh": "Datum",
     "0pghiva": "Standort",
-    "1y9rpub": "New York, USA",
+    "1y9rpub": "New York, Vereinigte Staaten",
     "0152t02": "Ankunft",
     "1msj7ts": "Die genaue Adresse erhält jeder Gast nach bestätigter Zulassung, zusammen mit allen Angaben zur Anreise.",
     "1gp7tba": "Zutritt",
@@ -2535,7 +2535,9 @@
     "1thp343": "„Saint-Tropez“",
     "0rmmyly": "Montag, 3. Mai 2027",
     "05u9fh2": "MONTAG, 3. MAI 2027",
-    "1swcf0p": "Night Access"
+    "1swcf0p": "Night Access",
+    "1bkc1tz": "Hoch über Manhattan gelegen, bietet das Rooftop einen privilegierten Blick auf eine der bekanntesten Skylines der Welt. Umgeben von den architektonischen Wahrzeichen der Stadt und mit weitläufigem Blick auf die urbane Landschaft bildet es einen außergewöhnlichen Rahmen für die Spring Edition von Maison Sanguine. Seine erhöhte Lage und die offene Perspektive auf die Stadt schaffen eine unmittelbare Verbindung zu New York und lassen dessen Dimension, Energie und zeitgenössischen Charakter in die kreative Vision des Studios einfließen.",
+    "1tfqrzi": "Rooftop"
   },
   "night-collection": {
     "14l8mh7": "Alle Nächte",
