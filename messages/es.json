@@ -401,12 +401,12 @@
     "1rn97db": "Sábado, 20 de febrero de 2027",
     "18w2kpa": "Apertura de puertas",
     "08pu1wl": "22:00",
-    "0kc5qit": "Código de vestimenta",
+    "0kc5qit": "Dress Code",
     "0yjdxc2": "Black tie",
     "036tv8o": "Arquitectura sonora espacial EXTEND™, ajustada a los volúmenes de la residencia para un sonido denso, preciso y equilibrado en cada espacio.",
     "1toju0u": "Escenografía",
     "19tmwfn": "Luz, materia y nieve compuestas por el Studio, al ritmo de la noche, de las primeras notas a las últimas horas.",
-    "0pghiva": "Localización",
+    "0pghiva": "Ubicación",
     "1t5pv9f": "Aspen, Colorado",
     "1ut8qv1": "2,438 m",
     "1i8fbu1": "350 como máximo",
@@ -456,7 +456,7 @@
     "0u8ra03": "900 m²",
     "00ir07n": "Por invitación",
     "0q54zlq": "Enviar una solicitud de acceso a través del sitio web",
-    "1dhdcws": "Una vez confirmada la admisión, el pago permite asegurar la reserva. A continuación, se facilita toda la información relativa al evento."
+    "1dhdcws": "Una vez confirmada la admisión, el pago permite formalizar la reserva. A continuación, se facilitan todos los detalles del evento."
   },
   "atmospheres": {
     "0uxcp4z": "Galería de atmósferas",
@@ -535,7 +535,7 @@
     "1v2sege": "Producción &amp; escenografía",
     "1fcwdn9": "Hospitalidad &amp; relaciones con los invitados",
     "1dsmj1r": "Marca &amp; comunicación",
-    "0pghiva": "Localización",
+    "0pghiva": "Ubicación",
     "0a3y5vk": "París",
     "0wv4401": "Destinos de la Temporada",
     "1j0itop": "Buscar",
@@ -1430,7 +1430,7 @@
   },
   "location": {
     "18wuq59": "Cambiar",
-    "0pghiva": "Localización",
+    "0pghiva": "Ubicación",
     "16us7mj": "Idioma",
     "1k6e5zv": "Aplicar",
     "1l0xxoj": "Cerrar",
@@ -2474,7 +2474,7 @@
     "0osf0rg": "Lugar",
     "0ow1nnv": "Acceso",
     "0ggjuyh": "Fecha",
-    "0pghiva": "Localización",
+    "0pghiva": "Ubicación",
     "1y9rpub": "Nueva York, Estados Unidos",
     "0152t02": "Llegada",
     "1msj7ts": "La dirección exacta se comunica a cada invitado una vez confirmada la admisión, junto con los detalles de llegada para la noche.",
@@ -2554,7 +2554,10 @@
     "1pd0xqd": "Île-de-France, Francia",
     "10muxz2": "Hôtel particulier",
     "0jd81r3": "En otoño, París se convierte en escenario de una efervescencia creativa excepcional. Impulsada por la Fashion Week, la capital cobra vida al ritmo de sus estudios, talleres y casas creativas, donde las ideas toman forma y las expresiones artísticas convergen. Es en esta dinámica donde Maison Sanguine despliega su propia visión. Reuniendo sus conocimientos creativos y técnicos bajo una misma dirección artística, la Maison da forma a una noche singular, inspirada en el patrimonio cultural de París y reinterpretada a través de un lenguaje decididamente contemporáneo.",
-    "087ljuv": "El acceso a Paris Fall Edition incluye la entrada a toda la producción, así como una selección de champanes, bebidas espirituosas y creaciones de cócteles cuidadosamente seleccionadas por la Maison. La aplicación My MS ofrece un espacio personal dedicado que reúne la información de acceso y permite gestionar los servicios asociados."
+    "087ljuv": "El acceso a Paris Fall Edition incluye la entrada a toda la producción, así como una selección de champanes, bebidas espirituosas y creaciones de cócteles cuidadosamente seleccionadas por la Maison. La aplicación My MS ofrece un espacio personal dedicado que reúne la información de acceso y permite gestionar los servicios asociados.",
+    "0lv37ol": "23:30 – 5:00",
+    "0rdzjn4": "Enviar una solicitud de acceso a través del sitio web.",
+    "1ko7uj6": "París, Isla de Francia, Francia"
   },
   "night-collection": {
     "14l8mh7": "Todas las noches",
