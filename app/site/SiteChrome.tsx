@@ -6,7 +6,7 @@ import { LANG_CSS, LANG_SCRIPT } from './lang'
 import MenuSession from './MenuSession'
 
 declare global {
-  interface Window { __msChrome?: boolean }
+  interface Window { __msChrome?: boolean; __msChromeReady?: boolean }
 }
 
 function SiteChrome({ data, scripts, menu }: { data: string; scripts: string[]; menu?: Record<string, string> }) {
@@ -18,6 +18,8 @@ function SiteChrome({ data, scripts, menu }: { data: string; scripts: string[]; 
       s.text = code
       document.body.appendChild(s)
     })
+    window.__msChromeReady = true
+    window.dispatchEvent(new Event('ms:chrome'))
   }, [scripts])
 
   return (

@@ -8,13 +8,20 @@ const OVERLAYS = '.ms-col-bk,.ms-col-fp,.ms-col-bar,.ms-col-cv,.ms-pop'
 
 export default function SiteScripts({ extra = [] }: { extra?: string[] }) {
   useEffect(() => {
-    const nodes = [...SITE_SCRIPTS, ...extra, FIT_SCRIPT].map(code => {
-      const s = document.createElement('script')
-      s.text = code
-      document.body.appendChild(s)
-      return s
-    })
+    let nodes: HTMLScriptElement[] = []
+    const run = () => {
+      nodes = [...SITE_SCRIPTS, ...extra, FIT_SCRIPT].map(code => {
+        const s = document.createElement('script')
+        s.text = code
+        document.body.appendChild(s)
+        return s
+      })
+    }
+    const w = window as unknown as { __msChromeReady?: boolean }
+    if (w.__msChromeReady) run()
+    else window.addEventListener('ms:chrome', run, { once: true })
     return () => {
+      window.removeEventListener('ms:chrome', run)
       nodes.forEach(n => n.remove())
       document.querySelectorAll(OVERLAYS).forEach(n => n.remove())
       document.documentElement.classList.remove('ms-col-lock', 'ms-col-gut')
