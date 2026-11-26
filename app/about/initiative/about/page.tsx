@@ -12,5 +12,5 @@ const META: Metadata = {
 export const generateMetadata = () => localizeMetadata(META)
 
 export default function Page() {
-  return <SitePage html={INITIATIVE_ABOUT_HTML} scripts={[INITIATIVE_APP]} />
+  return <SitePage h1="Initiative Maison Sanguine" html={INITIATIVE_ABOUT_HTML} scripts={[INITIATIVE_APP]} />
 }

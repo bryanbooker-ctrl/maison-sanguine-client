@@ -15,5 +15,5 @@ export const generateMetadata = () => localizeMetadata(META)
 const SCRIPTS = [FORM_APP]
 
 export default function ApplyHeadOfGuestExperience() {
-  return <SitePage html={FORM_GUEST_HTML} scripts={SCRIPTS} />
+  return <SitePage h1={META.title as string} html={FORM_GUEST_HTML} scripts={SCRIPTS} />
 }

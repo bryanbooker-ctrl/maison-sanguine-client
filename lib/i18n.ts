@@ -178,6 +178,8 @@ export function trJs(code: string, locale: Locale): string {
   return out
 }
 
+const OG_IMAGE = 'https://images.squarespace-cdn.com/content/v1/690a2434f370707dc2fccae4/0eed5992-584a-49a1-abcd-e8e9c66158c3/MS-SOCIAL-LOGO.png?format=1500w'
+
 export async function localizeMetadata<M extends { title?: unknown; description?: unknown }>(meta: M): Promise<M & { alternates: { canonical: string; languages: Record<string, string> } }> {
   const h = await headers()
   const locale = await getLocale()
@@ -187,11 +189,20 @@ export async function localizeMetadata<M extends { title?: unknown; description?
   const languages: Record<string, string> = {}
   for (const l of LOCATIONS) for (const lang of l.langs) if (TRANSLATED.includes(lang)) languages[hreflangOf(l.code, lang)] = origin + '/' + prefixOf(l.code, lang) + path
   const intl = origin + '/en' + path
+  const title = typeof meta.title === 'string' ? t(meta.title, locale) : meta.title
+  const description = typeof meta.description === 'string' ? t(meta.description, locale) : meta.description
+  const canonical = TRANSLATED.includes(langOf(locale)) ? origin + '/' + locale + path : intl
   return {
     ...meta,
-    title: typeof meta.title === 'string' ? t(meta.title, locale) : meta.title,
-    description: typeof meta.description === 'string' ? t(meta.description, locale) : meta.description,
-    alternates: { canonical: TRANSLATED.includes(langOf(locale)) ? origin + '/' + locale + path : intl, languages: { ...languages, 'x-default': intl } },
+    title,
+    description,
+    alternates: { canonical, languages: { ...languages, 'x-default': intl } },
+    openGraph: {
+      type: 'website', siteName: 'Maison Sanguine', url: canonical,
+      ...(typeof title === 'string' ? { title } : {}), ...(typeof description === 'string' ? { description } : {}),
+      images: [{ url: OG_IMAGE, alt: 'Maison Sanguine' }],
+    },
+    twitter: { card: 'summary', ...(typeof title === 'string' ? { title } : {}), ...(typeof description === 'string' ? { description } : {}), images: [OG_IMAGE] },
   }
 }
 

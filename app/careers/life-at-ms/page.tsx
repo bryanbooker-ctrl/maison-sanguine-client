@@ -14,5 +14,5 @@ export const generateMetadata = () => localizeMetadata(META)
 const SCRIPTS = [CAREERS_APP]
 
 export default function LifeAtMs() {
-  return <SitePage html={LIFEATMS_HTML} scripts={SCRIPTS} />
+  return <SitePage h1={META.title as string} html={LIFEATMS_HTML} scripts={SCRIPTS} />
 }

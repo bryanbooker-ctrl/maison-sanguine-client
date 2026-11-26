@@ -15,5 +15,5 @@ export const generateMetadata = () => localizeMetadata(META)
 const SCRIPTS = [FORM_APP]
 
 export default function ApplyHeadOfProduction() {
-  return <SitePage html={FORM_PRODUCTION_HTML} scripts={SCRIPTS} />
+  return <SitePage h1={META.title as string} html={FORM_PRODUCTION_HTML} scripts={SCRIPTS} />
 }
