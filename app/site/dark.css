@@ -10,7 +10,6 @@ html body section.ms-loc a.ms-loc__btn:hover,html body section.ms-loc a.ms-loc__
 html body section.ms-vn{--fg:#fff;--bg:#000;--mute:rgba(255,255,255,.5);background:#000}
 html body section.ms-vn .ms-vn__map{background:var(--ms-ph)}
 html body .ms-vn a.ms-vn__btn:hover,html body .ms-vn a.ms-vn__btn:focus-visible{background:#fff!important;color:#000!important}
-html body .ms-loc__map .gm-style,html body .ms-vn__map .gm-style{filter:invert(1) hue-rotate(180deg) brightness(.9)}
 html body section.ms-col,html body .ms-col-fp,html body .ms-col-bar,html body .ms-col-cv{filter:invert(1) hue-rotate(180deg)}
 html body section.ms-col img,html body section.ms-col video,html body .ms-col-cv img,html body .ms-col-bar img{filter:invert(1) hue-rotate(180deg)}
 html body section.ms-car--mc .ms-car__card{background:#0e0e10!important;border:1px solid rgba(255,255,255,.14)}
