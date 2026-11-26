@@ -45,9 +45,6 @@ html.ms-rh-pre body:has(section.ms-rh) #ms-root .ms-navigation{opacity:0}
 html.ms-rh-run .ms-rh__wrap{transition:--rh-i 1.6s cubic-bezier(.16,1,.3,1)}
 html.ms-rh-run .ms-rh__stage{transition:opacity .9s ease,filter .9s ease}
 html.ms-rh-run .ms-rh__logo{transition:opacity .5s ease .45s}
-.ms-rh__logo::after{content:"";position:absolute;inset:0;background:url(/brand/ms-27-base.png) center/100% 100% no-repeat;opacity:0;pointer-events:none}
-html.ms-rh-pre .ms-rh__logo::after{opacity:1}
-html.ms-rh-run .ms-rh__logo::after{transition:opacity .55s ease 1.05s}
 html.ms-rh-run .ms-rh__bar,html.ms-rh-run .ms-rh__date,html.ms-rh-run a.ms-rh__btn{transition:opacity .7s ease 1.4s}
 html.ms-rh-run .ms-rh__chev{transition:opacity .6s ease .3s}
 html.ms-rh-run body:has(section.ms-rh) #ms-root .ms-navigation{transition:opacity .7s ease 1.55s,transform var(--ms-scroll-dur) var(--ms-ease-out),color var(--ms-color-fade) var(--ms-ease-soft)}
