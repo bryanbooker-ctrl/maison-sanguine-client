@@ -4,8 +4,8 @@ import SitePage from './site/SitePage'
 import { HOME_HTML } from './site/home'
 
 const META: Metadata = {
-  title: 'Maison Sanguine',
-  description: 'Maison Sanguine, the art of celebration.',
+  title: 'Maison Sanguine | Luxury Entertainment Experiences',
+  description: 'Maison Sanguine’s luxury experiences, between Parisian nightlife heritage and an avant-garde vision of international entertainment. Boundless creativity, driven by exceptional creative and technical mastery.',
 }
 
 export const generateMetadata = () => localizeMetadata(META)
