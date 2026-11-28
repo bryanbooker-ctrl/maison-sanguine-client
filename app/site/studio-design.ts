@@ -81,7 +81,7 @@ export const STUDIO_DESIGN_HTML = `<section class="stp-top" aria-label="At the F
 </section>
 <section class="ms-car ms-car--square ms-car--float" aria-label="Late 20th Century">
   <div class="ms-car__head">
-    <h2 class="ms-car__title"><span>LATE</span><span class="ms-it">20TH</span><span class="ms-it">CENTURY</span></h2>
+    <h2 class="ms-car__title"><span>LATE</span><span class="ms-it">20TH CENTURY</span></h2>
     <div class="ms-car__desc">As new technologies and innovative materials open up new possibilities in the world of design, Maison Sanguine’s creators draw inspiration from these developments to explore streamlined architectural forms, lightweight structures and bold compositions, bringing technical innovation into dialogue with aesthetic expression.</div>
   </div>
   <div class="ms-car__stage">
